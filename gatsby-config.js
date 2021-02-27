@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'arche-de-noe'
+    title: 'arche-de-noe',
+    siteUrl: ''
   },
   plugins: [
     'gatsby-plugin-netlify-cms',
