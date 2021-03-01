@@ -7,7 +7,7 @@ public_folder: /img
 locale: 'fr'
 
 collections:
-  - label: "Cours Enfant"
+  - label: "Cours enfant"
     name: "enfant"
     folder: "content/enfant"
     create: true
@@ -15,13 +15,17 @@ collections:
       preview: false
     fields:
       - {label: "Nom de la matiere", name: "title", widget: "string", hint: "Indiquer le nom de la matiere a afficher", required: true}
-
-      - label: "Lundi"
-        name: "lundi"
-        collapsed: true
-        widget: "object"
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "enfant"}
+      - label: "Jours à afficher"
+        name: "day"
+        minimize_collapsed: false
+        widget: "list"
         fields:
-          - {label: "Afficher Lundi", name: "lundi", widget: "boolean", default: false, hint: "Activer pour afficher les cours du lundi."}
+          - label: "Jours de la semaine"
+            name: "daySelected"
+            widget: "select"
+            options: [ "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ]
+          - {label: "Afficher", name: "show", widget: "boolean", default: false, hint: "Activer pour afficher."}
           - label: "Cours"
             name: "cours"
             minimize_collapsed: true
@@ -32,116 +36,33 @@ collections:
               - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour"  }
               - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
 
-      - label: "Mardi"
-        name: "Mardi"
-        collapsed: true
-        widget: "object"
-        fields:
-          - { label: "Afficher Mardi", name: "Mardi", widget: "boolean", default: false, hint: "Activer pour afficher les cours du Mardi." }
-          - label: "Cours"
-            name: "cours"
-            minimize_collapsed: true
-            widget: "list"
-            allow_add: true
-            label_singular: "un cour"
-            fields:
-              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour" }
-              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
-
-      - label: "Mercredi"
-        name: "mercredi"
-        collapsed: true
-        widget: "object"
-        fields:
-          - { label: "Afficher Mercredi", name: "mercredi", widget: "boolean", default: false, hint: "Activer pour afficher les cours du mercredi." }
-          - label: "Cours"
-            name: "cours"
-            minimize_collapsed: true
-            widget: "list"
-            allow_add: true
-            label_singular: "un cour"
-            fields:
-              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour" }
-              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
 
 
-      - label: "Jeudi"
-        name: "jeudi"
-        collapsed: true
-        widget: "object"
-        fields:
-          - { label: "Afficher Jeudi", name: "lundi", widget: "boolean", default: false, hint: "Activer pour afficher les cours du jeudi." }
-          - label: "Cours"
-            name: "cours"
-            minimize_collapsed: true
-            widget: "list"
-            allow_add: true
-            label_singular: "un cour"
-            fields:
-              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour" }
-              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
-
-
-      - label: "Vendredi"
-        name: "vendredi"
-        collapsed: true
-        widget: "object"
-        fields:
-          - { label: "Afficher Vendredi", name: "vendredi", widget: "boolean", default: false, hint: "Activer pour afficher les cours du vendredi." }
-          - label: "Cours"
-            name: "cours"
-            minimize_collapsed: true
-            widget: "list"
-            allow_add: true
-            label_singular: "un cour"
-            fields:
-              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour" }
-              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
-
-
-      - label: "Samedi"
-        name: "samedi"
-        collapsed: true
-        widget: "object"
-        fields:
-          - { label: "Afficher Samedi", name: "samedi", widget: "boolean", default: false, hint: "Activer pour afficher les cours du samedi." }
-          - label: "Cours"
-            name: "cours"
-            minimize_collapsed: true
-            widget: "list"
-            allow_add: true
-            label_singular: "un cour"
-            fields:
-              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour" }
-              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
-
-
-      - label: "Dimanche"
-        name: "dimanche"
-        collapsed: true
-        widget: "object"
-        fields:
-          - { label: "Afficher Dimanche", name: "dimanche", widget: "boolean", default: false, hint: "Activer pour afficher les cours du dimanche." }
-          - label: "Cours"
-            name: "cours"
-            minimize_collapsed: true
-            widget: "list"
-            allow_add: true
-            label_singular: "un cour"
-            fields:
-              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour" }
-              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
-
-
-  - label: "Adulte"
+  - label: "Cours adulte"
     name: "adulte"
     folder: "content/adulte"
     create: true
     editor:
       preview: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
+    - { label: "Nom de la matiere", name: "title", widget: "string", hint: "Indiquer le nom de la matiere a afficher", required: true }
+    - { label: "Template Key", name: "templateKey", widget: "hidden", default: "enfant" }
+    - label: "Jours à afficher"
+      name: "day"
+      minimize_collapsed: false
+      widget: "list"
+      fields:
+        - label: "Jours de la semaine"
+          name: "daySelected"
+          widget: "select"
+          options: [ "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ]
+        - { label: "Afficher", name: "show", widget: "boolean", default: false, hint: "Activer pour afficher." }
+        - label: "Cours"
+          name: "cours"
+          minimize_collapsed: true
+          widget: "list"
+          allow_add: true
+          label_singular: "un cour"
+          fields:
+            - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour" }
+            - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
