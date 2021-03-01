@@ -14,7 +14,7 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Nom de la matiere", name: "title", widget: "string", hint: "Indiquer le nom de la matiere a afficher", required: true}
+      - {label: "Nom de la matiere", name: "title", widget: "string", hint: "Indiquer le nom de la matiere a afficher dans l'onglet.", required: true}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "enfant"}
       - label: "Jours à afficher"
         name: "day"
@@ -25,17 +25,17 @@ collections:
             name: "daySelected"
             widget: "select"
             options: [ "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ]
-          - {label: "Afficher", name: "show", widget: "boolean", default: false, hint: "Activer pour afficher."}
+            hint: "Sélectionner le jour a afficher."
+          - {label: "Afficher", name: "show", widget: "boolean", default: false, hint: "Activer pour afficher ce jour sur le site."}
           - label: "Cours"
             name: "cours"
             minimize_collapsed: true
             widget: "list"
             allow_add: true
-            label_singular: "un cour"
+            label_singular: "un cours"
             fields:
-              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour"  }
-              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
-
+              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cours"  }
+              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
 
 
   - label: "Cours adulte"
@@ -45,7 +45,7 @@ collections:
     editor:
       preview: false
     fields:
-    - { label: "Nom de la matiere", name: "title", widget: "string", hint: "Indiquer le nom de la matiere a afficher", required: true }
+    - { label: "Nom de la matiere", name: "title", widget: "string", hint: "Indiquer le nom de la matiere a afficher dans l'onglet.", required: true }
     - { label: "Template Key", name: "templateKey", widget: "hidden", default: "enfant" }
     - label: "Jours à afficher"
       name: "day"
@@ -56,13 +56,14 @@ collections:
           name: "daySelected"
           widget: "select"
           options: [ "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ]
-        - { label: "Afficher", name: "show", widget: "boolean", default: false, hint: "Activer pour afficher." }
+          hint: "Sélectionner le jour a afficher."
+        - { label: "Afficher", name: "show", widget: "boolean", default: false, hint: "Activer pour afficher ce jour sur le site." }
         - label: "Cours"
           name: "cours"
           minimize_collapsed: true
           widget: "list"
           allow_add: true
-          label_singular: "un cour"
+          label_singular: "un cours"
           fields:
-            - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cour" }
-            - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer l'heure du cour, ex: 16:30" }
+            - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cours" }
+            - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
