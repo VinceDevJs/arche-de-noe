@@ -36,8 +36,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'data',
-        path: './content/blog'
+        name: 'enfant',
+        path: './content/enfant'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'adulte',
+        path: './content/adulte'
       }
     }
   ]
