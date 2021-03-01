@@ -35,7 +35,17 @@ collections:
             label_singular: "un cours"
             fields:
               - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cours"  }
-              - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
+              - label: "Niveaux du cours"
+                name: "level"
+                widget: "select"
+                options: [ "Débutant", "Confirmé", "Tous niveaux", "Niveau 1", "Niveau 2", "Niveau 3", "Niveau 4", "Niveau 5", "Niveau 6"  ]
+                hint: "Sélectionner le Niveau a afficher pour ce cours."
+              - label: "Salle de classe"
+                name: "room"
+                widget: "select"
+                options: [ "Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4" ]
+                hint: "Sélectionner la salle de cours a afficher."
+              - { label: "Créneaux horaire", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
 
 
   - label: "Categorie Adulte"
@@ -52,18 +62,15 @@ collections:
       minimize_collapsed: false
       widget: "list"
       fields:
-        - label: "Jours de la semaine"
-          name: "daySelected"
+        - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cours" }
+        - label: "Niveaux du cours"
+          name: "level"
           widget: "select"
-          options: [ "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ]
-          hint: "Sélectionner le jour a afficher."
-        - { label: "Afficher", name: "show", widget: "boolean", default: false, hint: "Activer pour afficher ce jour sur le site." }
-        - label: "Cours"
-          name: "cours"
-          minimize_collapsed: true
-          widget: "list"
-          allow_add: true
-          label_singular: "un cours"
-          fields:
-            - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cours" }
-            - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
+          options: [ "Débutant", "Confirmé", "Tous niveaux", "Niveau 1", "Niveau 2", "Niveau 3", "Niveau 4", "Niveau 5", "Niveau 6" ]
+          hint: "Sélectionner le Niveau a afficher pour ce cours."
+        - label: "Salle de classe"
+          name: "room"
+          widget: "select"
+          options: [ "Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4" ]
+          hint: "Sélectionner la salle de cours a afficher."
+        - { label: "Créneaux horaire", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
