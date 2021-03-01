@@ -4,7 +4,7 @@ lundi:
   show: true
   day: Lundi
   cours:
-    - curse name: arabe
+    - curse name: arabe 2
       curse hour: 11:30
 Mardi:
   show: false
