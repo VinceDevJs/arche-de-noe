@@ -6,6 +6,8 @@ lundi:
   cours:
     - curse name: test
       curse hour: 45:12
+    - curse name: test 2
+      curse hour: 12:29
 Mardi:
   show: false
   day: Mardi
