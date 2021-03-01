@@ -7,7 +7,7 @@ public_folder: /img
 locale: 'fr'
 
 collections:
-  - label: "Cours enfant"
+  - label: "Categorie Enfant"
     name: "enfant"
     folder: "content/enfant"
     create: true
@@ -38,7 +38,7 @@ collections:
               - { label: "Heure du cour", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
 
 
-  - label: "Cours adulte"
+  - label: "Categorie Adulte"
     name: "adulte"
     folder: "content/adulte"
     create: true
