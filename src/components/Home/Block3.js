@@ -3,6 +3,12 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { breakpoints, primaryColor, secondaryColor } from '../../utils/styles.js'
+import quranIcon from '../../assets/images/home/block3/quran.png'
+import hadithIcon from '../../assets/images/home/block3/hadith.png'
+import salatIcon from '../../assets/images/home/block3/salat.png'
+import arabicIcon from '../../assets/images/home/block3/arabic.png'
+import handIcon from '../../assets/images/home/block3/hand.png'
+import booksIcon from '../../assets/images/home/block3/books_lamp.png'
 
 const Block3 = () => {
   const image = useStaticQuery(graphql`
@@ -21,13 +27,59 @@ const Block3 = () => {
 
   return (
     <Container>
-      <BooksImg fluid={image.books.childImageSharp.fluid} />
+      <ImageWrapper>
+        <BooksImg fluid={image.books.childImageSharp.fluid} />
+      </ImageWrapper>
       <ContentWrapper>
         <TitleBox>
           <Title title>Nos Domaines</Title>
           <Title>d’enseignement</Title>
           <TextContent>L’Institut l’Arche de Noé a développé, au ﬁl des ans une réelle expertise dans différents domaines relatifes à la culture Islamique ainsi qu’à la langue Arabe en général.</TextContent>
         </TitleBox>
+
+        <IconContainer>
+          <IconWrapper left>
+            <IconBox>
+              <Icon src={quranIcon} alt='arche de noe' />
+              <IconText>Coran</IconText>
+            </IconBox>
+
+            <Separator />
+
+            <IconBox primary>
+              <Icon src={hadithIcon} alt='arche de noe' />
+              <IconText>Hadith</IconText>
+            </IconBox>
+
+            <Separator />
+
+            <IconBox>
+              <Icon src={salatIcon} alt='arche de noe' />
+              <IconText>Sciences<br />Islamiques</IconText>
+            </IconBox>
+          </IconWrapper>
+
+          <IconWrapper>
+            <IconBox primary>
+              <Icon src={arabicIcon} alt='arche de noe' />
+              <IconText>Langue Arabe</IconText>
+            </IconBox>
+
+            <Separator />
+
+            <IconBox>
+              <Icon src={handIcon} alt='arche de noe' />
+              <IconText>Grammaire Arabe</IconText>
+            </IconBox>
+
+            <Separator />
+
+            <IconBox primary>
+              <Icon src={booksIcon} alt='arche de noe' />
+              <IconText>Conjugaison Arabe</IconText>
+            </IconBox>
+          </IconWrapper>
+        </IconContainer>
         <Button>Accéder à nos formations</Button>
       </ContentWrapper>
     </Container>
@@ -43,13 +95,16 @@ export const Container = styled.div`
     justify-items: center;
 `
 
+export const ImageWrapper = styled.div`
+    margin-right: 2em;
+    width: 45%;
+`
+
 export const BooksImg = styled(Img)`
-    width: 35%;
-    margin-right: 1em;
 `
 
 export const ContentWrapper = styled.div`
-    width: 65%;
+    width: 50%;
     padding-top: 4em;
 `
 export const TitleBox = styled.div`
@@ -72,6 +127,44 @@ export const TextContent = styled.p`
     margin-top: 2em;
 `
 
+export const IconContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2em;
+`
+
+export const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 27em;
+  width: 50%;
+`
+
+export const Separator = styled.div`
+  border-bottom: 3px solid ${secondaryColor};
+  width: 3.5em;
+`
+
+export const IconBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 8em;
+  color: ${props => (props.primary ? primaryColor : secondaryColor)};
+`
+
+export const Icon = styled.img`
+  width: 4.5em;
+  margin-right: 1.5em;
+`
+
+export const IconText = styled.p`
+  font-family: 'Avenir Next Bold';
+`
+
 export const Button = styled.button`
     background-color: ${secondaryColor};
     color: white;
@@ -80,4 +173,6 @@ export const Button = styled.button`
     border: 2px solid transparent;
     padding: .2em 1.3em;
     font-weight: bold;
+    margin: 2em auto 0 auto;
+    display: block;
 `

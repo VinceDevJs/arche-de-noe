@@ -69,7 +69,7 @@ export const Logo = styled(img)`
 export const Title = styled.h2`
   font-family: 'Avenir Next Bold', sans-serif;
   color: #007cad;
-  font-size: 3.3em;
+  font-size: 3.2em;
   font-weight: bold;
   margin: .2em 0;
 `
