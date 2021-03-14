@@ -40,7 +40,7 @@ export const Nav = styled.ul`
 
   a {
     text-decoration: none;
-    font-family: 'Avenir Next Bold';
+    font-family: 'Avenir Next Bold Demi';
     color: ${secondaryColor};
   }
 
