@@ -1,46 +1,69 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import {breakpoints} from '../../../utils/styles'
+import logoHeader from './../../../assets/icons/header/logo_header.png'
+import { breakpoints, secondaryColor, primaryColor } from '../../../utils/styles.js'
 
 const Index = () => {
   return (
-    <Header>
-      <Logo>L'arche de noe</Logo>
+    <>
       <Nav>
-        <li><Link to='/'>menu1</Link></li>
-        <li><Link to='/'>menu2</Link></li>
-        <li><Link to='/'>menu3</Link></li>
+        <li><Link to='/'>Accueil</Link></li>
+        <li><Link to='/'>Formation</Link></li>
+        <li><Link to='/'>Emplois du temps</Link></li>
+        <li><Link to='/'><Logo src={logoHeader} alt='arche de noe' /></Link></li>
+        <li><Link to='/'>Nos  ouvrages</Link></li>
+        <li><Link to='/'>Inscription</Link></li>
+        <li><Link to='/'>Contact</Link></li>
+        <li><Button>Espace pro</Button></li>
       </Nav>
-    </Header>
+    </>
   )
 }
 
 export default Index
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+export const Logo = styled.img`
   height: 5em;
-  background-color: antiquewhite;
-  padding: 0 2em;
-  margin-bottom: 2em;
+  width: 5em;
 `
 
-export const Logo = styled.h1`
-  margin: 0;
-`
-
-export const Nav = styled.nav`
+export const Nav = styled.ul`
   display: flex;
   flex-direction: row;
+  height: 5em;
   justify-content: space-between;
+  align-items: center;
   list-style-type: none;
-  width: 13em;
+  padding: 0 2em;
+  font-size: 1.1em;
+
+  a {
+    text-decoration: none;
+    font-family: 'Avenir Next Bold';
+    color: ${secondaryColor};
+  }
 
   @media (max-width: ${breakpoints.l}px) {
     display: none;
+  }
+`
+
+export const Button = styled.button`
+  background-color: ${primaryColor};
+  color: white;
+  border-radius: 30px;
+  border: none;
+  padding: 5px 25px;
+  line-height: 1.1;
+  font-size: 1.1em;
+  border: 2px solid transparent;
+  font-family: 'Avenir Next Bold';
+
+  :hover {
+    background-color: transparent;
+    border: 2px solid ${secondaryColor};
+    color: ${secondaryColor};
+    cursor: pointer;
   }
 `
