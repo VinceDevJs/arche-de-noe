@@ -4,6 +4,7 @@ import Block2 from '../components/Home/Block2'
 import Block3 from '../components/Home/Block3'
 import Layout from '../Layouts/Layout'
 import waves from '../assets//images/home/waves_2.png'
+import Block4 from '../components/Home/Block4'
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = () => {
       <Block2 />
       <Block3 />
       <img src={waves} style={{ width: '100%', marginTop: '2.5em' }} alt='' />
+      <Block4 />
     </Layout>
   )
 }
