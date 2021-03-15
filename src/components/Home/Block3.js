@@ -175,4 +175,11 @@ export const Button = styled.button`
     font-weight: bold;
     margin: 2em auto 0 auto;
     display: block;
+
+    :hover {
+      border: 2px solid ${secondaryColor};
+        cursor: pointer;
+        color: ${secondaryColor};
+        background-color: transparent;
+    }
 `

@@ -50,8 +50,8 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  padding: 5em 5em 2em 5em;
-  height: 35em;
+  padding: 5em 5em 2em 3em;
+  height: 34em;
 `
 
 export const LeftBox = styled.div`
@@ -100,8 +100,8 @@ export const Button = styled.button`
 
 export const RightBox = styled.div`
 position: absolute;
-  width: 58%;
-  right: 3em;
+  width: 65%;
+  right: 0;
 `
 
 export const BookImage = styled(img)`

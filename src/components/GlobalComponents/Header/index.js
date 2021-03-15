@@ -42,6 +42,10 @@ export const Nav = styled.ul`
     text-decoration: none;
     font-family: 'Avenir Next Bold Demi';
     color: ${secondaryColor};
+  
+    :hover {
+      color: ${primaryColor};
+    }
   }
 
   @media (max-width: ${breakpoints.l}px) {
