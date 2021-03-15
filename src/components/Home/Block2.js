@@ -87,5 +87,5 @@ export const Text = styled.p`
 `
 
 export const Icon = styled.img`
-  height: 4em;
+  height: 4.5em;
 `

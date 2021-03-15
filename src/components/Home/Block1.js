@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
-import img from 'gatsby-image'
 import React from 'react'
+import booksSvg from '../../assets/images/home/block1/books.svg'
+import logoSvg from '../../assets/images/home/block1/logo.svg'
 import wavesBackground from '../../assets/images/home/block1/waves.png'
 import { secondaryColor } from '../../utils/styles'
 
@@ -32,13 +33,13 @@ const Block1 = () => {
     <Container>
       <Waves src={wavesBackground} alt='arche de noe' />
       <LeftBox>
-        <Logo fixed={images.logo.childImageSharp.fixed} />
+        <Logo src={logoSvg} />
         <Title>L'Arche de Noé</Title>
         <Text>L’Institut l’arche de Noé dispense des cours d’arabe et de culture islamique pour enfants et adultes.</Text>
         <Button>En savoir plus</Button>
       </LeftBox>
       <RightBox>
-        <BookImage fluid={images.books.childImageSharp.fluid} />
+        <BookImage src={booksSvg} />
       </RightBox>
     </Container>
   )
@@ -64,8 +65,8 @@ export const LeftBox = styled.div`
   padding: 0 1em;
 `
 
-export const Logo = styled(img)`
- 
+export const Logo = styled.img`
+ width: 180px;
 `
 export const Title = styled.h2`
   font-family: 'Avenir Next Bold', sans-serif;
@@ -103,11 +104,12 @@ export const RightBox = styled.div`
   width: 65%;
   max-width: 800px;
   right: 0;
+  z-index: 1000;
 `
 
-export const BookImage = styled(img)`
+export const BookImage = styled.img`
   width: 100%;
-  bottom: -2.5em;
+  margin-top: 1em;
 `
 
 export const Waves = styled.img`
@@ -115,4 +117,5 @@ export const Waves = styled.img`
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 0;
 `
