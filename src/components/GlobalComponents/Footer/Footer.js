@@ -4,7 +4,7 @@ import React from 'react'
 import facebookIcon from '../../../assets/images/footer/facebook.png'
 import bottomImg from '../../../assets/images/footer/footer_bottom.png'
 import topImg from '../../../assets/images/footer/footer_top.png'
-import logoIcon from '../../../assets/images/footer/logo.png'
+import logoSvg from '../../../assets/images/footer/logo_footer.svg'
 import twitterIcon from '../../../assets/images/footer/twitter.png'
 
 const Footer = () => {
@@ -34,7 +34,7 @@ const Footer = () => {
       </BlockLeft>
 
       <BlockRight>
-        <Image src={logoIcon} />
+        <Image src={logoSvg} />
       </BlockRight>
     </FooterContainer>
   )
@@ -79,6 +79,10 @@ export const LinkText = styled(Link)`
   margin-bottom: 0.5em;
   font-family: 'Avenir Next Bold Demi';
   text-decoration: none;
+
+  :hover {
+    color: #00b9d8;
+  }
 `
 
 export const IconBox = styled.div``
