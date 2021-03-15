@@ -69,13 +69,13 @@ export const Box = styled.div`
 export const Title = styled.p`
   font-family: 'Avenir Next Bold';
   color: #00b9d8;
-  font-size: 3em;
+  font-size: 2.7em;
   margin: 0 0 0.7em 0;
 `
 
 export const LinkText = styled(Link)`
   color: white;
-  font-size: 1.6em;
+  font-size: 1.4em;
   margin-bottom: 0.5em;
   font-family: 'Avenir Next Bold Demi';
   text-decoration: none;

@@ -8,6 +8,7 @@ const Index = () => {
   return (
     <>
       <Nav>
+        <li style={{ color: 'white' }}>Arche de noe</li>
         <li><Link to='/'>Accueil</Link></li>
         <li><Link to='/'>Formation</Link></li>
         <li><Link to='/'>Emplois du temps</Link></li>

@@ -68,7 +68,7 @@ export const Title = styled.p`
 
 export const Text = styled.p`
   display: inline-block;
-  max-width: 30em;
+  max-width: 25em;
   text-align: right;
   color: white;
 `
@@ -89,8 +89,8 @@ export const Form = styled.form`
   align-items: center;
   border: 2.5px solid white;
   padding: 0 .5em 0 1em;
-  height: 3.8em;
-  width: 28em;
+  height: 3.5em;
+  max-width: 25em;
   border-radius: 50px;
 `
 
