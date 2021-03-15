@@ -1,14 +1,14 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import { breakpoints, primaryColor, secondaryColor } from '../../utils/styles.js'
-import quranIcon from '../../assets/images/home/block3/quran.png'
-import hadithIcon from '../../assets/images/home/block3/hadith.png'
-import salatIcon from '../../assets/images/home/block3/salat.png'
+import React from 'react'
 import arabicIcon from '../../assets/images/home/block3/arabic.png'
-import handIcon from '../../assets/images/home/block3/hand.png'
 import booksIcon from '../../assets/images/home/block3/books_lamp.png'
+import hadithIcon from '../../assets/images/home/block3/hadith.png'
+import handIcon from '../../assets/images/home/block3/hand.png'
+import quranIcon from '../../assets/images/home/block3/quran.png'
+import salatIcon from '../../assets/images/home/block3/salat.png'
+import { primaryColor, secondaryColor } from '../../utils/styles.js'
 
 const Block3 = () => {
   const image = useStaticQuery(graphql`
@@ -97,7 +97,8 @@ export const Container = styled.div`
 
 export const ImageWrapper = styled.div`
     margin-right: 2em;
-    width: 45%;
+    width: 50%;
+    max-width: 550px;
 `
 
 export const BooksImg = styled(Img)`

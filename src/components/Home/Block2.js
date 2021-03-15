@@ -1,9 +1,9 @@
-import React from 'react'
 import styled from '@emotion/styled'
-import professorsIcon from '../../assets/images/home/block2/professors.png'
-import penIcon from '../../assets/images/home/block2/pen.png'
-import studentsIcon from '../../assets/images/home/block2/students.png'
+import React from 'react'
 import booksIcon from '../../assets/images/home/block2/books.png'
+import penIcon from '../../assets/images/home/block2/pen.png'
+import professorsIcon from '../../assets/images/home/block2/professors.png'
+import studentsIcon from '../../assets/images/home/block2/students.png'
 
 const Block2 = () => {
   return (
@@ -51,7 +51,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 4em;
-  height: 15em;
+  height: 17em;
   background-color: #00a1c6;
 `
 
@@ -61,6 +61,7 @@ export const Box = styled.div`
   height: 5em;
   font-family: 'Oswald';
   font-weight: 400;
+  align-items: flex-end;
 `
 
 export const TextBox = styled.div`
@@ -86,5 +87,5 @@ export const Text = styled.p`
 `
 
 export const Icon = styled.img`
-  height: 5em;
+  height: 4em;
 `

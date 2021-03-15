@@ -1,8 +1,8 @@
-import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import React from 'react'
+import { breakpoints, primaryColor, secondaryColor } from '../../../utils/styles.js'
 import logoHeader from './../../../assets/icons/header/logo_header.png'
-import { breakpoints, secondaryColor, primaryColor } from '../../../utils/styles.js'
 
 const Index = () => {
   return (
@@ -59,10 +59,10 @@ export const Button = styled.button`
   border-radius: 30px;
   border: none;
   padding: 5px 25px;
-  line-height: 1.1;
-  font-size: 1.1em;
+  line-height: 1;
+  font-size: 1em;
   border: 2px solid transparent;
-  font-family: 'Avenir Next Bold';
+  font-family: 'Avenir Next Bold Demi';
 
   :hover {
     background-color: transparent;

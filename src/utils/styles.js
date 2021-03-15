@@ -1,7 +1,7 @@
 import { css, Global } from '@emotion/react'
 import React from 'react'
-import avenirNextBoldDemi from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Demi.otf'
 import avenirNextBold from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Bold.otf'
+import avenirNextBoldDemi from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Demi.otf'
 import avenirNext from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Regular.otf'
 
 export const breakpoints = {
@@ -32,7 +32,8 @@ export const GlobalStyle = props => (
         src: url(${avenirNextBoldDemi}) format('truetype');
       }
       body {
-        margin: 0;
+        margin: 0 auto;
+        max-width: 1600px;
       }
       html {
         font-family: 'Avenir Next', sans-serif;

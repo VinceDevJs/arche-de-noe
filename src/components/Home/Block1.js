@@ -1,9 +1,9 @@
-import React from 'react'
-import img from 'gatsby-image'
 import styled from '@emotion/styled'
-import { useStaticQuery, graphql } from 'gatsby'
-import { primaryColor, secondaryColor } from '../../utils/styles'
+import { graphql, useStaticQuery } from 'gatsby'
+import img from 'gatsby-image'
+import React from 'react'
 import wavesBackground from '../../assets/images/home/block1/waves.png'
+import { secondaryColor } from '../../utils/styles'
 
 const Block1 = () => {
   const images = useStaticQuery(graphql`
@@ -50,7 +50,8 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  padding: 5em 5em 2em 3em;
+  justify-content: center;
+  padding: 5em 0em 2em 3em;
   height: 34em;
 `
 
@@ -99,13 +100,14 @@ export const Button = styled.button`
 `
 
 export const RightBox = styled.div`
-position: absolute;
   width: 65%;
+  max-width: 800px;
   right: 0;
 `
 
 export const BookImage = styled(img)`
   width: 100%;
+  bottom: -2.5em;
 `
 
 export const Waves = styled.img`
