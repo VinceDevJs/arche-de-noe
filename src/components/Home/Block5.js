@@ -1,12 +1,12 @@
-import React from 'react'
 import styled from '@emotion/styled'
-import { breakpoints, primaryColor, secondaryColor } from '../../utils/styles.js'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import quranIcon from '../../assets/images/home/block5/quran.png'
-import salatIcon from '../../assets/images/home/block5/salat.png'
+import { graphql, useStaticQuery } from 'gatsby'
+import React from 'react'
 import arabicIcon from '../../assets/images/home/block5/arabic.png'
 import boardIcon from '../../assets/images/home/block5/board.png'
+import booksSvg from '../../assets/images/home/block5/books_large.svg'
+import quranIcon from '../../assets/images/home/block5/quran.png'
+import salatIcon from '../../assets/images/home/block5/salat.png'
+import { primaryColor, secondaryColor } from '../../utils/styles.js'
 
 const Block5 = () => {
   const image = useStaticQuery(graphql`
@@ -27,7 +27,7 @@ const Block5 = () => {
       <Title sub>langue Arabe</Title>
       <Text>L’arche de Noé enseigne l’arabe suivant la méthode des livres de la Madrassah de Cheikh Ayoub Leseur.</Text>
       <Text>Les supports utilisés sont les manuels de la Madrassah. Une de nos principales activités est l’enseignement de la langue arabe. Nous portons une attention particulière à cet héritage culturel et religieux car il est le vecteur d’une religion ainsi que de toute une civilisation qui existe encore aujourd’hui.</Text>
-      <BooksImage fluid={image.books.childImageSharp.fluid} />
+      <BooksImage src={booksSvg} />
       <SubTitle>Ce que me permet l’apprentissage <br /> de la langue Arabe</SubTitle>
       <IconsWrapper>
         <IconBox>
@@ -79,7 +79,7 @@ export const Text = styled.p`
     color: #195780;
 `
 
-export const BooksImage = styled(Img)`
+export const BooksImage = styled.img`
     margin: 2.5em 0;
 `
 

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import React from 'react'
 import arabicIcon from '../../assets/images/home/block3/arabic.png'
+import booksSvg from '../../assets/images/home/block3/books.svg'
 import booksIcon from '../../assets/images/home/block3/books_lamp.png'
 import hadithIcon from '../../assets/images/home/block3/hadith.png'
 import handIcon from '../../assets/images/home/block3/hand.png'
@@ -28,7 +28,7 @@ const Block3 = () => {
   return (
     <Container>
       <ImageWrapper>
-        <BooksImg fluid={image.books.childImageSharp.fluid} />
+        <BooksImg src={booksSvg} />
       </ImageWrapper>
       <ContentWrapper>
         <TitleBox>
@@ -101,7 +101,7 @@ export const ImageWrapper = styled.div`
     max-width: 550px;
 `
 
-export const BooksImg = styled(Img)`
+export const BooksImg = styled.img`
 `
 
 export const ContentWrapper = styled.div`

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import React from 'react'
+import computerSvg from '../../assets/images/home/block4/computer.svg'
 import wave from '../../assets/images/home/block4/waves_3.png'
 import zoomLogo from '../../assets/images/home/block4/zoom_icon.png'
 import { secondaryColor } from '../../utils/styles.js'
@@ -30,7 +30,7 @@ const Block4 = () => {
         <ZoomIcon src={zoomLogo} />
       </ContentWrapper>
       <ImageWrapper>
-        <RightImage fluid={image.computer.childImageSharp.fluid} />
+        <RightImage src={computerSvg} />
       </ImageWrapper>
     </Container>
   )
@@ -76,10 +76,11 @@ export const ZoomIcon = styled.img`
 export const ImageWrapper = styled.div`
     width: 40%;
     max-width: 450px;
+    margin-top: -10em;
 `
 
-export const RightImage = styled(Img)`
-    top: -9em;
+export const RightImage = styled.img`
+    
 `
 
 export const Wave = styled.img`

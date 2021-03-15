@@ -1,9 +1,10 @@
 import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import React from 'react'
-import checkIcon from '../../assets//icons/check.png'
+import checkIcon from '../../assets/icons/check.png'
+import logoBoat from '../../assets/images/home/block6/logo_boat.svg'
 import { secondaryColor } from '../../utils/styles.js'
+
 
 const Block6 = () => {
   const image = useStaticQuery(graphql`
@@ -20,7 +21,7 @@ const Block6 = () => {
 
   return (
     <Container>
-      <LogoImage fixed={image.boat.childImageSharp.fixed} />
+      <LogoImage src={logoBoat} />
       <LeftBox>
         <Title>Restons en <span style={{ color: '#007cad' }}>contact</span></Title>
         <Text>Recevez l'actualité de notre institut : derniers événements, nouveaux cours, dates des inscriptions et les infos majeures à ne pas manquer.</Text>
@@ -120,10 +121,11 @@ export const Button = styled.button`
   cursor: pointer;
 `
 
-export const LogoImage = styled(Img)`
+export const LogoImage = styled.img`
  position: absolute!important;
  margin-left: auto;
  margin-right: auto;
  left: 0;
  right: 0;
+ width: 150px;
 `
