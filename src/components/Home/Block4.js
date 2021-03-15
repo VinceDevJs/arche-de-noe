@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import computerSvg from '../../assets/images/home/block4/computer.svg'
 import wave from '../../assets/images/home/block4/waves_3.png'
@@ -7,18 +6,6 @@ import zoomLogo from '../../assets/images/home/block4/zoom_icon.png'
 import { secondaryColor } from '../../utils/styles.js'
 
 const Block4 = () => {
-  const image = useStaticQuery(graphql`
-    query {
-      computer: file(relativePath: { eq: "images/home/block4/computer.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Container>
       <Wave src={wave} />

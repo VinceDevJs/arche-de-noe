@@ -1,24 +1,10 @@
 import styled from '@emotion/styled'
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import checkIcon from '../../assets/icons/check.png'
 import logoBoat from '../../assets/images/home/block6/logo_boat.svg'
 import { secondaryColor } from '../../utils/styles.js'
 
-
 const Block6 = () => {
-  const image = useStaticQuery(graphql`
-    query {
-      boat: file(relativePath: { eq: "images/home/block6/logo_boat.png" }) {
-        childImageSharp {
-          fixed(width: 150) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Container>
       <LogoImage src={logoBoat} />

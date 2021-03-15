@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import booksSvg from '../../assets/images/home/block1/books.svg'
 import logoSvg from '../../assets/images/home/block1/logo.svg'
@@ -7,28 +6,6 @@ import wavesBackground from '../../assets/images/home/block1/waves.png'
 import { secondaryColor } from '../../utils/styles'
 
 const Block1 = () => {
-  const images = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "images/home/block1/logo.png" }) {
-        childImageSharp {
-            fixed(width: 180) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    
-      books: file(relativePath: { eq: "images/home/block1/books.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  console.log(images)
-
   return (
     <Container>
       <Waves src={wavesBackground} alt='arche de noe' />

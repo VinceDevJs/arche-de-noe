@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import arabicIcon from '../../assets/images/home/block3/arabic.png'
 import booksSvg from '../../assets/images/home/block3/books.svg'
@@ -11,20 +10,6 @@ import salatIcon from '../../assets/images/home/block3/salat.png'
 import { primaryColor, secondaryColor } from '../../utils/styles.js'
 
 const Block3 = () => {
-  const image = useStaticQuery(graphql`
-    query {
-      books: file(relativePath: { eq: "images/home/block3/books.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  console.log(image)
-
   return (
     <Container>
       <ImageWrapper>
