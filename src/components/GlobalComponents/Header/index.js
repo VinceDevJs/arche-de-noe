@@ -41,7 +41,7 @@ export const Nav = styled.ul`
 
   a {
     text-decoration: none;
-    font-family: 'Avenir Next Bold Demi';
+    font-family: 'Avenir Next Bold Demi', sans-serif;
     color: ${secondaryColor};
   
     :hover {
