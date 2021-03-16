@@ -5,7 +5,7 @@ import boardIcon from '../../assets/images/home/block5/board.png'
 import booksSvg from '../../assets/images/home/block5/books_large.svg'
 import quranIcon from '../../assets/images/home/block5/quran.png'
 import salatIcon from '../../assets/images/home/block5/salat.png'
-import { primaryColor, secondaryColor } from '../../utils/styles.js'
+import { breakpoints, primaryColor, secondaryColor } from '../../utils/styles.js'
 
 const Block5 = () => {
   return (
@@ -52,6 +52,10 @@ export const Container = styled.div`
     width: 45%;
     margin: 5em auto;
     text-align: center;
+
+    @media (max-width: ${breakpoints.m}px) {
+      width: 80%;
+  }
 `
 
 export const Title = styled.p`

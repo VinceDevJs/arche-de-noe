@@ -166,6 +166,10 @@ export const IconBox = styled.div`
 export const Icon = styled.img`
   width: 4.5em;
   margin-right: 1.5em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 3em;
+  }
 `
 
 export const IconText = styled.p`

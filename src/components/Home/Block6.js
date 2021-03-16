@@ -34,6 +34,10 @@ export const Container = styled.div`
   align-items: center;
   height: 18em;
   width: 100%;
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+  }
 `
 
 export const LeftBox = styled.div`
@@ -44,6 +48,11 @@ export const LeftBox = styled.div`
   width: 50%;
   height: 100%;
   background-image: linear-gradient(270deg, #70c2e1 0%, #0094be 100%);
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+    height: 50%;
+  }
 `
 
 export const Title = styled.p`
@@ -54,6 +63,11 @@ export const Title = styled.p`
 
   @media (max-width: ${breakpoints.l}px) {
     font-size: 2.2em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    font-size: 2em;
+    margin-right: 1em;
   }
 `
 
@@ -67,6 +81,11 @@ export const Text = styled.p`
     font-size: 1em;
     max-width: 20em;
   }
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin-right: 3em;
+    max-width: 18em;
+  }
 `
 
 export const RightBox = styled.div`
@@ -76,7 +95,12 @@ export const RightBox = styled.div`
   align-items: center;
   width: 50%;
   height: 100%;
-  background-color: ${secondaryColor}
+  background-color: ${secondaryColor};
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+    height: 50%;
+  }
 `
 
 export const Form = styled.form`
@@ -92,6 +116,11 @@ export const Form = styled.form`
   @media (max-width: ${breakpoints.l}px) {
     max-width: 18em;
   }
+
+  @media (max-width: ${breakpoints.m}px) {
+    max-width: 16em;
+    margin-left: 3em;
+  }
 `
 
 export const Input = styled.input`
@@ -103,6 +132,10 @@ export const Input = styled.input`
 
   @media (max-width: ${breakpoints.l}px) {
     font-size: 1.5em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    font-size: 1.3em;
   }
 
   ::placeholder {
@@ -134,5 +167,16 @@ export const LogoImage = styled.img`
 
  @media (max-width: ${breakpoints.l}px) {
     width: 120px;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 100px;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 `

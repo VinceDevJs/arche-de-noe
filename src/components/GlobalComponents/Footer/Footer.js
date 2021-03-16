@@ -65,6 +65,10 @@ export const Box = styled.div`
   margin-left: 5em;
   height: 25em;
   width: 50%;
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin-left: 2.5em;
+  }
 `
 
 export const Title = styled.p`
@@ -75,6 +79,10 @@ export const Title = styled.p`
 
   @media (max-width: ${breakpoints.l}px) {
     font-size: 2.2em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    font-size: 2em;
   }
 `
 

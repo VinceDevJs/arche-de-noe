@@ -33,13 +33,13 @@ const Block2 = () => {
         <Icon src={penIcon} />
       </Box>
 
-      <Box column>
-        <TextBox row style={{ margin: '0 auto', width: 'auto', alignItems: 'flex-end' }}>
-          <Number style={{ marginBottom: '0.1em', marginRight: '0.1em' }}>4</Number>
-          <Icon style={{ height: '3.5em' }} src={booksIcon} />
-        </TextBox>
-        <Text style={{ color: 'white', lineHeight: '1.1' }}>Domaines d’apprentissage</Text>
-      </Box>
+      <LastBox column>
+        <LastTextBox row>
+          <LastNumber>4</LastNumber>
+          <LastIcon src={booksIcon} />
+        </LastTextBox>
+        <LastText>Domaines d’apprentissage</LastText>
+      </LastBox>
     </Container>
   )
 }
@@ -58,6 +58,11 @@ export const Container = styled.div`
   @media (max-width: ${breakpoints.l}px) {
     padding: 0 3em;
   }
+
+  @media (max-width: ${breakpoints.m}px) {
+    padding: 0 1em;
+    height: 15em;
+  }
 `
 
 export const Box = styled.div`
@@ -67,6 +72,10 @@ export const Box = styled.div`
   font-family: 'Oswald';
   font-weight: 400;
   align-items: flex-end;
+
+  @media (max-width: ${breakpoints.m}px) {
+    
+  }
 `
 
 export const TextBox = styled.div`
@@ -77,6 +86,7 @@ export const TextBox = styled.div`
   color: ${props => (props.color ? '#80edff' : 'white')};
   text-align: right;
   justify-content: flex-end;
+  
 `
 
 export const Number = styled.p`
@@ -84,13 +94,55 @@ export const Number = styled.p`
   font-weight: bold;
   margin: 0;
   line-height: 0.8;
+
+  @media (max-width: ${breakpoints.m}px) {
+    font-size: 2em;
+  }
 `
 
 export const Text = styled.p`
   margin: 0;
   font-size: 1.5em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    font-size: 1.2em;
+  }
 `
 
 export const Icon = styled.img`
   height: 4.5em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    height: 3.5em;
+  }
+`
+
+export const LastBox = styled(Box)` 
+  width: auto; 
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.2em;
+`
+
+export const LastTextBox = styled(TextBox)`
+  align-items: flex-end;
+`
+
+export const LastNumber = styled(Number)`
+  margin-bottom: 0.2em;
+  margin-right: 0.1em;
+`
+
+export const LastIcon = styled(Icon)`
+  height: 3.5em;
+  margin-bottom: 0.3em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    height: 3em;
+  }
+`
+
+export const LastText = styled(Text)`
+  color: white; 
+  line-height: 1.1
 `

@@ -32,8 +32,12 @@ export const Container = styled.div`
   padding: 5em 0em 2em 3em;
   height: 34em;
 
-  @media (max-width: ${breakpoints.xl}px) {
-    
+  @media (max-width: ${breakpoints.m}px) {
+    flex-direction: column;
+    align-items: center;
+    height: 48em;
+    padding: 0 2em;
+    margin-top: 2em;
   }
 `
 
@@ -44,6 +48,10 @@ export const LeftBox = styled.div`
   align-items: center;
   width: 35%;
   padding: 0 1em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 100%;
+  }
 `
 
 export const Logo = styled.img`
@@ -66,6 +74,10 @@ export const Text = styled.p`
   color: #195780;
   font-size: 1.1em;
   margin: 0;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 80%;
+  }
 `
 
 export const Button = styled.button`
@@ -90,6 +102,12 @@ export const RightBox = styled.div`
   max-width: 800px;
   right: 0;
   z-index: 1000;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 80%;
+    margin-top: 2em;
+    margin-left: 6em;
+  }
 `
 
 export const BookImage = styled.img`
@@ -97,7 +115,7 @@ export const BookImage = styled.img`
   margin-top: 1em;
 
   @media (max-width: ${breakpoints.l}px) {
-    margin-top: 0;
+    margin-top: 2em;
   }
 `
 

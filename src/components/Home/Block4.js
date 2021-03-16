@@ -73,6 +73,10 @@ export const ImageWrapper = styled.div`
     @media (max-width: ${breakpoints.l}px) {
       margin-top: -8em;
   }
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin-top: 3em;
+  }
 `
 
 export const RightImage = styled.img`
