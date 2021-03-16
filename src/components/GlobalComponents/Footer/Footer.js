@@ -6,6 +6,7 @@ import bottomImg from '../../../assets/images/footer/footer_bottom.png'
 import topImg from '../../../assets/images/footer/footer_top.png'
 import logoSvg from '../../../assets/images/footer/logo_footer.svg'
 import twitterIcon from '../../../assets/images/footer/twitter.png'
+import { breakpoints } from '../../../utils/styles.js'
 
 const Footer = () => {
   return (
@@ -71,6 +72,10 @@ export const Title = styled.p`
   color: #00b9d8;
   font-size: 2.7em;
   margin: 0 0 0.7em 0;
+
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 2.2em;
+  }
 `
 
 export const LinkText = styled(Link)`

@@ -3,7 +3,7 @@ import React from 'react'
 import booksSvg from '../../assets/images/home/block1/books.svg'
 import logoSvg from '../../assets/images/home/block1/logo.svg'
 import wavesBackground from '../../assets/images/home/block1/waves.png'
-import { secondaryColor } from '../../utils/styles'
+import { breakpoints, secondaryColor } from '../../utils/styles'
 
 const Block1 = () => {
   return (
@@ -31,6 +31,10 @@ export const Container = styled.div`
   justify-content: center;
   padding: 5em 0em 2em 3em;
   height: 34em;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    
+  }
 `
 
 export const LeftBox = styled.div`
@@ -51,6 +55,10 @@ export const Title = styled.h2`
   font-size: 3.2em;
   font-weight: bold;
   margin: .2em 0;
+
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 2.5em;
+  }
 `
 
 export const Text = styled.p`
@@ -87,6 +95,10 @@ export const RightBox = styled.div`
 export const BookImage = styled.img`
   width: 100%;
   margin-top: 1em;
+
+  @media (max-width: ${breakpoints.l}px) {
+    margin-top: 0;
+  }
 `
 
 export const Waves = styled.img`

@@ -18,6 +18,9 @@ const Index = () => {
         <li><Link to='/'>Contact</Link></li>
         <li><Button>Espace pro</Button></li>
       </Nav>
+      <NavMobile>
+        <LogoMobile src={logoHeader} alt='arche de noe' />
+      </NavMobile>
     </>
   )
 }
@@ -52,6 +55,23 @@ export const Nav = styled.ul`
   @media (max-width: ${breakpoints.l}px) {
     display: none;
   }
+`
+
+export const NavMobile = styled.div`
+  @media (max-width: ${breakpoints.l}px) {
+    height: 6em;
+  }
+  @media (min-width: ${breakpoints.l}px) {
+    display: none;
+  }
+`
+
+export const LogoMobile = styled.img`
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  top: 12px;
+  left: 15px;
 `
 
 export const Button = styled.button`

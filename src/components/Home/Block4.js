@@ -3,7 +3,7 @@ import React from 'react'
 import computerSvg from '../../assets/images/home/block4/computer.svg'
 import wave from '../../assets/images/home/block4/waves_3.png'
 import zoomLogo from '../../assets/images/home/block4/zoom_icon.png'
-import { secondaryColor } from '../../utils/styles.js'
+import { breakpoints, secondaryColor } from '../../utils/styles.js'
 
 const Block4 = () => {
   return (
@@ -34,6 +34,11 @@ export const Container = styled.div`
     background: rgb(112,194,225);
 background: radial-gradient(circle, rgba(112,194,225,1) 14%, rgba(0,148,190,1) 49%);
     height: 43em;
+
+    @media (max-width: ${breakpoints.l}px) {
+      height: 38em;
+      padding: 5em 2em 0 2em;
+  }
 `
 
 export const ContentWrapper = styled.div`
@@ -64,6 +69,10 @@ export const ImageWrapper = styled.div`
     width: 40%;
     max-width: 450px;
     margin-top: -10em;
+
+    @media (max-width: ${breakpoints.l}px) {
+      margin-top: -8em;
+  }
 `
 
 export const RightImage = styled.img`

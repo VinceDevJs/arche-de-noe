@@ -7,7 +7,7 @@ import avenirNext from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Regular.ot
 export const breakpoints = {
   s: 576,
   m: 813,
-  l: 1023,
+  l: 1025,
   xl: 1200
 }
 
@@ -53,20 +53,27 @@ export const GlobalStyle = props => (
         font-size: 1.15em;
       }
 
-      @media (max-width: 1025px) {
-        .bm-burger-button {
-          position: fixed;
-          top: 15px;
-          right: 30px;
-          width: 40px;
-        }
-      }
-
       @media (min-width: 1025px) {
         .bm-burger-button {
           display: none;
         }
       }
+
+      @media (max-width: 1025px) {
+        .bm-burger-button {
+          position: absolute;
+          top: 0;
+          right: 15px;
+          width: 40px;
+          margin: 1.9em 0 0 0.8em;
+        }
+      }
+
+        .bm-icon {
+          top: 15px!important;
+          right: 30px;
+        }
+    
 
       .bm-burger-bars {
         display: absolute;

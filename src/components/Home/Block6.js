@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import checkIcon from '../../assets/icons/check.png'
 import logoBoat from '../../assets/images/home/block6/logo_boat.svg'
-import { secondaryColor } from '../../utils/styles.js'
+import { breakpoints, secondaryColor } from '../../utils/styles.js'
 
 const Block6 = () => {
   return (
@@ -51,6 +51,10 @@ export const Title = styled.p`
   color: white;
   font-size: 3em;
   margin: 0;
+
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 2.2em;
+  }
 `
 
 export const Text = styled.p`
@@ -58,6 +62,11 @@ export const Text = styled.p`
   max-width: 25em;
   text-align: right;
   color: white;
+
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 1em;
+    max-width: 20em;
+  }
 `
 
 export const RightBox = styled.div`
@@ -79,6 +88,10 @@ export const Form = styled.form`
   height: 3.5em;
   max-width: 25em;
   border-radius: 50px;
+
+  @media (max-width: ${breakpoints.l}px) {
+    max-width: 18em;
+  }
 `
 
 export const Input = styled.input`
@@ -87,6 +100,10 @@ export const Input = styled.input`
   width: 90%;
   font-size: 2em;
   color: white;
+
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 1.5em;
+  }
 
   ::placeholder {
     color: white;
@@ -114,4 +131,8 @@ export const LogoImage = styled.img`
  left: 0;
  right: 0;
  width: 150px;
+
+ @media (max-width: ${breakpoints.l}px) {
+    width: 120px;
+  }
 `

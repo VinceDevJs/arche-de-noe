@@ -7,7 +7,7 @@ import hadithIcon from '../../assets/images/home/block3/hadith.png'
 import handIcon from '../../assets/images/home/block3/hand.png'
 import quranIcon from '../../assets/images/home/block3/quran.png'
 import salatIcon from '../../assets/images/home/block3/salat.png'
-import { primaryColor, secondaryColor } from '../../utils/styles.js'
+import { breakpoints, primaryColor, secondaryColor } from '../../utils/styles.js'
 
 const Block3 = () => {
   return (
@@ -78,12 +78,20 @@ export const Container = styled.div`
     flex-direction: row;
     padding: 2em 5em;
     justify-items: center;
+
+    @media (max-width: ${breakpoints.l}px) {
+      padding: 2em 2em;
+  }
 `
 
 export const ImageWrapper = styled.div`
     margin-right: 2em;
     width: 50%;
     max-width: 550px;
+
+    @media (max-width: ${breakpoints.l}px) {
+      max-width: 400px;
+  }
 `
 
 export const BooksImg = styled.img`
@@ -92,6 +100,10 @@ export const BooksImg = styled.img`
 export const ContentWrapper = styled.div`
     width: 50%;
     padding-top: 4em;
+
+    @media (max-width: ${breakpoints.l}px) {
+      padding-top: 0;
+  }
 `
 export const TitleBox = styled.div`
 
@@ -104,6 +116,10 @@ export const Title = styled.p`
     color: ${props => (props.title ? primaryColor : secondaryColor)};
     font-family: 'Avenir Next Bold';
     line-height: 1.1;
+
+    @media (max-width: ${breakpoints.l}px) {
+      font-size: 2.8em;
+  }
 `
 
 export const TextContent = styled.p`
@@ -111,6 +127,11 @@ export const TextContent = styled.p`
     width: 30em;
     color: #195780;
     margin-top: 2em;
+
+    @media (max-width: ${breakpoints.l}px) {
+      font-size: 1em;
+      width: 100%;
+  }
 `
 
 export const IconContainer = styled.div`

@@ -4,6 +4,7 @@ import booksIcon from '../../assets/images/home/block2/books.png'
 import penIcon from '../../assets/images/home/block2/pen.png'
 import professorsIcon from '../../assets/images/home/block2/professors.png'
 import studentsIcon from '../../assets/images/home/block2/students.png'
+import { breakpoints } from '../../utils/styles'
 
 const Block2 = () => {
   return (
@@ -53,6 +54,10 @@ export const Container = styled.div`
   padding: 0 4em;
   height: 17em;
   background-color: #00a1c6;
+
+  @media (max-width: ${breakpoints.l}px) {
+    padding: 0 3em;
+  }
 `
 
 export const Box = styled.div`
@@ -67,7 +72,7 @@ export const Box = styled.div`
 export const TextBox = styled.div`
   display: flex;
   flex-direction: ${props => (props.row ? 'row' : 'column')};
-  width: 8em;
+  width: fit-content;
   margin: 0 .2em -0.4em 0;
   color: ${props => (props.color ? '#80edff' : 'white')};
   text-align: right;
