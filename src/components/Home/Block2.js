@@ -51,12 +51,12 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4em;
+  padding: 0 8em;
   height: 17em;
   background-color: #00a1c6;
 
   @media (max-width: ${breakpoints.l}px) {
-    padding: 0 3em;
+    padding: 0 4em;
   }
 
   @media (max-width: ${breakpoints.m}px) {
