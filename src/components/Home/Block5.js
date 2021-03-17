@@ -99,6 +99,10 @@ export const IconsWrapper = styled.div`
       width: 100%;
       justify-content: center;
       align-items: center;
+
+      & :nth-child(3) { 
+        order: 4; 
+        }
   }
 `
 
