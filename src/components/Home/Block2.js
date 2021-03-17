@@ -63,6 +63,12 @@ export const Container = styled.div`
     padding: 0 1em;
     height: 15em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    height: fit-content;
+    padding: 3em 0;
+  }
 `
 
 export const Box = styled.div`
@@ -73,8 +79,12 @@ export const Box = styled.div`
   font-weight: 400;
   align-items: flex-end;
 
-  @media (max-width: ${breakpoints.m}px) {
-    
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column-reverse;
+    margin: 3em 0 ;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
   }
 `
 
@@ -98,6 +108,11 @@ export const Number = styled.p`
   @media (max-width: ${breakpoints.m}px) {
     font-size: 2em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+    font-size: 3em;
+  }
 `
 
 export const Text = styled.p`
@@ -107,6 +122,11 @@ export const Text = styled.p`
   @media (max-width: ${breakpoints.m}px) {
     font-size: 1.2em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+    font-size: 2.5em;
+  }
 `
 
 export const Icon = styled.img`
@@ -115,6 +135,11 @@ export const Icon = styled.img`
   @media (max-width: ${breakpoints.m}px) {
     height: 3.5em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin-bottom: .8em;
+    height: 7em;
+  }
 `
 
 export const LastBox = styled(Box)` 
@@ -122,6 +147,10 @@ export const LastBox = styled(Box)`
   align-items: center;
   justify-content: flex-end;
   margin-top: 0.2em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+  }
 `
 
 export const LastTextBox = styled(TextBox)`
@@ -139,6 +168,10 @@ export const LastIcon = styled(Icon)`
 
   @media (max-width: ${breakpoints.m}px) {
     height: 3em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    height: 5em;
   }
 `
 

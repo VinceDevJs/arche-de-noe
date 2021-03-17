@@ -39,6 +39,11 @@ export const Container = styled.div`
     padding: 0 2em;
     margin-top: 2em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    height: 41em;
+    margin-top: 4em;
+  }
 `
 
 export const LeftBox = styled.div`
@@ -106,7 +111,11 @@ export const RightBox = styled.div`
   @media (max-width: ${breakpoints.m}px) {
     width: 80%;
     margin-top: 2em;
-    margin-left: 6em;
+    margin-left: 3.5em;
+  }
+  
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
   }
 `
 

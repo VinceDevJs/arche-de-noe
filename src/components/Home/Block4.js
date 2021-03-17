@@ -39,12 +39,25 @@ background: radial-gradient(circle, rgba(112,194,225,1) 14%, rgba(0,148,190,1) 4
       height: 38em;
       padding: 5em 2em 0 2em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column-reverse;
+    padding: 0 1em;
+    height: 58em;
+  }
 `
 
 export const ContentWrapper = styled.div`
     width: 44%;
     text-align: right;
     margin-right: 2em;
+
+    @media (max-width: ${breakpoints.s}px) {
+      width: 100%;
+      text-align: center;
+      margin-right: 0;
+  }
+
 `
 
 export const Title = styled.p`
@@ -63,6 +76,10 @@ export const Text = styled.p`
 export const ZoomIcon = styled.img`
     height: 3em;
     margin: 2em 2em 0 0;
+
+    @media (max-width: ${breakpoints.s}px) {
+      margin: 2em 0 0;
+  }
 `
 
 export const ImageWrapper = styled.div`
@@ -76,6 +93,11 @@ export const ImageWrapper = styled.div`
 
   @media (max-width: ${breakpoints.m}px) {
     margin-top: 3em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 80%;
+    margin: -8em auto 3em auto;
   }
 `
 

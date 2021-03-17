@@ -56,6 +56,11 @@ export const Container = styled.div`
     @media (max-width: ${breakpoints.m}px) {
       width: 80%;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+   width: 90%;
+   margin: 2em auto;
+  }
 `
 
 export const Title = styled.p`
@@ -64,6 +69,10 @@ export const Title = styled.p`
     margin: 0;
     margin-bottom: ${props => (props.sub ? '1em' : '0')};
     color: ${props => (!props.sub ? secondaryColor : primaryColor)};
+
+    @media (max-width: ${breakpoints.s}px) {
+      font-size: 2.4em;
+  }
 `
 
 export const Text = styled.p`
@@ -85,6 +94,12 @@ export const IconsWrapper = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: ${breakpoints.s}px) {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+  }
 `
 
 export const IconBox = styled.div`
@@ -94,6 +109,12 @@ export const IconBox = styled.div`
     justify-content: flex-end;
     align-items: center;
     height: 12em;
+
+    @media (max-width: ${breakpoints.s}px) {
+      width: 80%;
+      justify-content: center;
+      margin-bottom: 1em;
+  }
 `
 
 export const Icon = styled.img`

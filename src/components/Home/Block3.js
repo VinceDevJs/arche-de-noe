@@ -82,6 +82,10 @@ export const Container = styled.div`
     @media (max-width: ${breakpoints.l}px) {
       padding: 2em 2em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+      padding: 2em 1em;
+  }
 `
 
 export const ImageWrapper = styled.div`
@@ -91,6 +95,10 @@ export const ImageWrapper = styled.div`
 
     @media (max-width: ${breakpoints.l}px) {
       max-width: 400px;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+      display: none;
   }
 `
 
@@ -104,9 +112,13 @@ export const ContentWrapper = styled.div`
     @media (max-width: ${breakpoints.l}px) {
       padding-top: 0;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+      width: 100%;
+      text-align: center;
+  }
 `
 export const TitleBox = styled.div`
-
 `
 
 export const Title = styled.p`
@@ -119,6 +131,11 @@ export const Title = styled.p`
 
     @media (max-width: ${breakpoints.l}px) {
       font-size: 2.8em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+      text-align: center;
+      font-size: 2.4em;
   }
 `
 
@@ -148,6 +165,13 @@ export const IconWrapper = styled.div`
   align-items: flex-start;
   height: 27em;
   width: 50%;
+
+  @media (max-width: ${breakpoints.s}px) {
+      width: 45%;
+      align-items: center;
+      margin-top: 3em;
+      height: 30em;
+  }
 `
 
 export const Separator = styled.div`
@@ -161,6 +185,11 @@ export const IconBox = styled.div`
   align-items: center;
   height: 8em;
   color: ${props => (props.primary ? primaryColor : secondaryColor)};
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `
 
 export const Icon = styled.img`
@@ -170,10 +199,18 @@ export const Icon = styled.img`
   @media (max-width: ${breakpoints.m}px) {
     width: 3em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin-right: 0;
+    width: 4em;
+  }
 `
 
 export const IconText = styled.p`
   font-family: 'Avenir Next Bold';
+  @media (max-width: ${breakpoints.s}px) {
+   font-size: 1.2em;
+  }
 `
 
 export const Button = styled.button`

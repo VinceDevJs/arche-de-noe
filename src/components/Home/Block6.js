@@ -37,6 +37,7 @@ export const Container = styled.div`
 
   @media (max-width: ${breakpoints.s}px) {
     flex-direction: column;
+    height: 35em;
   }
 `
 
@@ -69,6 +70,11 @@ export const Title = styled.p`
     font-size: 2em;
     margin-right: 1em;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+    margin-right: 0;
+  }
 `
 
 export const Text = styled.p`
@@ -85,6 +91,11 @@ export const Text = styled.p`
   @media (max-width: ${breakpoints.m}px) {
     margin-right: 3em;
     max-width: 18em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+    margin-right: 0;
   }
 `
 
@@ -120,6 +131,13 @@ export const Form = styled.form`
   @media (max-width: ${breakpoints.m}px) {
     max-width: 16em;
     margin-left: 3em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+    margin-left: 0;
+    width: 90%;
+    max-width: 18em;
   }
 `
 
@@ -178,5 +196,9 @@ export const LogoImage = styled.img`
     bottom: 0;
     margin-top: auto;
     margin-bottom: auto;
+
+    @media (max-width: ${breakpoints.s}px) {
+      width: 110px;
+  }
   }
 `

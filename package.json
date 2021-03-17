@@ -36,5 +36,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
 }

@@ -49,6 +49,12 @@ export const FooterContainer = styled.footer`
   height: 45em;
   background-color: #0079b2;
   color: antiquewhite;
+
+  @media (max-width: ${breakpoints.s}px) {
+    height: 59em;
+    flex-direction: column;
+    padding: 4em 0;
+  }
 `
 
 export const BlockLeft = styled.div`
@@ -56,6 +62,11 @@ export const BlockLeft = styled.div`
   flex-direction: row;
   align-items: center;
   width: 50%;
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `
 
 export const Box = styled.div`
@@ -68,6 +79,12 @@ export const Box = styled.div`
 
   @media (max-width: ${breakpoints.m}px) {
     margin-left: 2.5em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    height: fit-content;
+    margin: 1em 0;
+    align-items: center;
   }
 `
 
@@ -83,6 +100,10 @@ export const Title = styled.p`
 
   @media (max-width: ${breakpoints.m}px) {
     font-size: 2em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    
   }
 `
 
@@ -110,6 +131,12 @@ export const BlockRight = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+    height: fit-content;
+    margin-top: 3em;
+  }
 `
 
 export const Image = styled.img`
