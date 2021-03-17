@@ -131,6 +131,10 @@ export const IconText = styled.p`
     margin: 0;
     color: ${props => (props.primary ? primaryColor : secondaryColor)};
     font-family: 'Avenir Next Bold Demi';
+
+    @media (max-width: ${breakpoints.m}px) {
+      font-size: 0.9em;
+  }
 `
 
 export const Button = styled.button`

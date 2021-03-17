@@ -41,7 +41,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${breakpoints.s}px) {
-    height: 41em;
+    height: 42em;
     margin-top: 4em;
   }
 `

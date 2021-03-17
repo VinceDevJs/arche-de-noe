@@ -43,7 +43,7 @@ background: radial-gradient(circle, rgba(112,194,225,1) 14%, rgba(0,148,190,1) 4
   @media (max-width: ${breakpoints.s}px) {
     flex-direction: column-reverse;
     padding: 0 1em;
-    height: 58em;
+    height: 63em;
   }
 `
 
@@ -67,6 +67,14 @@ export const Title = styled.p`
     margin-bottom: ${props => (props.sub ? '0.7em' : '0')};
     color: ${props => (props.sub ? secondaryColor : 'white')};
     line-height: 1;
+
+    @media (max-width: ${breakpoints.m}px) {
+      font-size: 3em;
+  }
+
+    @media (max-width: 340px) {
+    font-size: 3em;
+  }
 `
 
 export const Text = styled.p`
@@ -97,7 +105,7 @@ export const ImageWrapper = styled.div`
 
   @media (max-width: ${breakpoints.s}px) {
     width: 80%;
-    margin: -8em auto 3em auto;
+    margin: -10em auto 3em auto;
   }
 `
 

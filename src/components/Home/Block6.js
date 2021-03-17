@@ -67,7 +67,7 @@ export const Title = styled.p`
   }
 
   @media (max-width: ${breakpoints.m}px) {
-    font-size: 2em;
+    font-size: 1.8em;
     margin-right: 1em;
   }
 
@@ -91,6 +91,7 @@ export const Text = styled.p`
   @media (max-width: ${breakpoints.m}px) {
     margin-right: 3em;
     max-width: 18em;
+    font-size: 0.9em;
   }
 
   @media (max-width: ${breakpoints.s}px) {
@@ -129,7 +130,7 @@ export const Form = styled.form`
   }
 
   @media (max-width: ${breakpoints.m}px) {
-    max-width: 16em;
+    max-width: 15em;
     margin-left: 3em;
   }
 
@@ -137,7 +138,7 @@ export const Form = styled.form`
     text-align: center;
     margin-left: 0;
     width: 90%;
-    max-width: 18em;
+    max-width: 17em;
   }
 `
 

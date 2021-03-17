@@ -51,7 +51,7 @@ export const FooterContainer = styled.footer`
   color: antiquewhite;
 
   @media (max-width: ${breakpoints.s}px) {
-    height: 59em;
+    height: 57em;
     flex-direction: column;
     padding: 4em 0;
   }
@@ -85,6 +85,7 @@ export const Box = styled.div`
     height: fit-content;
     margin: 1em 0;
     align-items: center;
+    text-align: center;
   }
 `
 
@@ -99,7 +100,7 @@ export const Title = styled.p`
   }
 
   @media (max-width: ${breakpoints.m}px) {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   @media (max-width: ${breakpoints.s}px) {
@@ -113,6 +114,10 @@ export const LinkText = styled(Link)`
   margin-bottom: 0.5em;
   font-family: 'Avenir Next Bold Demi';
   text-decoration: none;
+
+  @media (max-width: ${breakpoints.m}px) {
+    font-size: 1.3em;
+  }
 
   :hover {
     color: #00b9d8;
@@ -141,6 +146,10 @@ export const BlockRight = styled.div`
 
 export const Image = styled.img`
   width: 18em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 13em;
+  }
 `
 
 export const Img = styled.img`

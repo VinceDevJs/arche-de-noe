@@ -133,9 +133,17 @@ export const Title = styled.p`
       font-size: 2.8em;
   }
 
+  @media (max-width: ${breakpoints.m}px) {
+      font-size: 2.2em;
+  }
+
   @media (max-width: ${breakpoints.s}px) {
       text-align: center;
       font-size: 2.4em;
+  }
+
+  @media (max-width: 340px) {
+    font-size: 2em;
   }
 `
 
@@ -198,6 +206,7 @@ export const Icon = styled.img`
 
   @media (max-width: ${breakpoints.m}px) {
     width: 3em;
+    margin-right: 0.3em;
   }
 
   @media (max-width: ${breakpoints.s}px) {
@@ -208,6 +217,11 @@ export const Icon = styled.img`
 
 export const IconText = styled.p`
   font-family: 'Avenir Next Bold';
+
+  @media (max-width: ${breakpoints.m}px) {
+    font-size: 0.9em;
+  }
+
   @media (max-width: ${breakpoints.s}px) {
    font-size: 1.2em;
   }
