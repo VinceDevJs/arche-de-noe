@@ -15,7 +15,7 @@ const Block1 = () => {
         <Text>L’Institut l’arche de Noé dispense des cours d’arabe et de culture islamique pour enfants et adultes.</Text>
         <Button>En savoir plus</Button>
       </LeftBox>
-      <RightBox data-aos='zoom-in' data-aos-duration='3000'>
+      <RightBox data-aos='fade-down' data-aos-duration='2000'>
         <BookImage src={booksSvg} />
       </RightBox>
     </Container>
@@ -122,6 +122,19 @@ export const RightBox = styled.div`
 export const BookImage = styled.img`
   width: 100%;
   margin-top: 1em;
+  animation: MoveUpDown 3s linear infinite;
+  left: 0;
+  bottom: 0;
+
+
+ @keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
 
   @media (max-width: ${breakpoints.l}px) {
     margin-top: 2em;
