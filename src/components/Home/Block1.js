@@ -9,17 +9,13 @@ const Block1 = () => {
   return (
     <Container>
       <Waves src={wavesBackground} alt='arche de noe' />
-      <LeftBox
-        data-sal='slide-right'
-        data-sal-duration='2000'
-        data-sal-delay='300'
-      >
+      <LeftBox data-aos='fade-right' data-aos-duration='3000'>
         <Logo src={logoSvg} />
         <Title>L'Arche de Noé</Title>
         <Text>L’Institut l’arche de Noé dispense des cours d’arabe et de culture islamique pour enfants et adultes.</Text>
         <Button>En savoir plus</Button>
       </LeftBox>
-      <RightBox data-sal='slide-down' data-sal-duration='2000'>
+      <RightBox data-aos='fade-down' data-aos-duration='2000'>
         <BookImage src={booksSvg} />
       </RightBox>
     </Container>
