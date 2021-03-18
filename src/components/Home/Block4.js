@@ -9,14 +9,17 @@ const Block4 = () => {
   return (
     <Container>
       <Wave src={wave} />
-      <ContentWrapper>
+      <ContentWrapper
+        data-aos='fade-right'
+        data-aos-duration='3000'
+      >
         <Title>Les cours à</Title>
         <Title sub>distance</Title>
         <Text>Suite à la pandémie du Covid-19 ainsi qu’aux restrictions et mesures de sécurité misent en place aﬁn de limiter lapropagation du virus, l’insitut l’Arche de Noé a du tres vite s’adapter afin de proposer des solutions efficaces afin d’assurer la continuité des ses cours dans les meilleures conditions.</Text>
         <Text>C’est pour cela que l’Institut l’Arche de Noé propose aujourdhui des cours à distance via l’interface ZOOM avec un suivi et une pédagogie tout aussi rigoureuse et soignée.</Text>
         <ZoomIcon src={zoomLogo} />
       </ContentWrapper>
-      <ImageWrapper>
+      <ImageWrapper data-aos='zoom-in' data-aos-duration='3000'>
         <RightImage src={computerSvg} />
       </ImageWrapper>
     </Container>

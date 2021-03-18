@@ -13,7 +13,12 @@ const Block3 = () => {
   return (
     <Container>
       <ImageWrapper>
-        <BooksImg src={booksSvg} />
+        <BooksImg
+          data-aos='fade-right'
+          data-aos-duration='2000'
+          data-aos-delay='500'
+          src={booksSvg}
+        />
       </ImageWrapper>
       <ContentWrapper>
         <TitleBox>
@@ -23,7 +28,12 @@ const Block3 = () => {
         </TitleBox>
 
         <IconContainer>
-          <IconWrapper left>
+          <IconWrapper
+            left
+            data-aos='fade-left'
+            data-aos-easing='linear'
+            data-aos-duration='800'
+          >
             <IconBox>
               <Icon src={quranIcon} alt='arche de noe' />
               <IconText>Coran</IconText>
@@ -44,7 +54,12 @@ const Block3 = () => {
             </IconBox>
           </IconWrapper>
 
-          <IconWrapper>
+          <IconWrapper
+            left
+            data-aos='fade-left'
+            data-aos-easing='linear'
+            data-aos-duration='1800'
+          >
             <IconBox primary>
               <Icon src={arabicIcon} alt='arche de noe' />
               <IconText>Langue Arabe</IconText>
