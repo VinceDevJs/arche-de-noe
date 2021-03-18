@@ -19,6 +19,7 @@ export const GlobalStyle = props => (
     {...props}
     styles={css`
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+    @import './node_modules/sal.js/dist/sal.css';
     @font-face {
         font-family: 'Avenir Next Bold';
         src: url(${avenirNextBold}) format('truetype');

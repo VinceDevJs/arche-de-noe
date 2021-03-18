@@ -9,7 +9,7 @@ import { breakpoints } from '../../utils/styles'
 const Block2 = () => {
   return (
     <Container>
-      <Box data-aos='fade-down' data-aos-delay='100' data-aos-duration='1000'>
+      <Box data-sal='slide-down' data-sal-delay='300' data-sal-duration='1000'>
         <TextBox color>
           <Number>250</Number>
           <Text>élèves</Text>
@@ -17,7 +17,7 @@ const Block2 = () => {
         <Icon src={studentsIcon} />
       </Box>
 
-      <Box data-aos='fade-down' data-aos-delay='300' data-aos-duration='1000'>
+      <Box data-sal='slide-down' data-sal-delay='300' data-sal-duration='1000'>
         <TextBox>
           <Number>15</Number>
           <Text>Professeurs</Text>
@@ -25,7 +25,7 @@ const Block2 = () => {
         <Icon src={professorsIcon} />
       </Box>
 
-      <Box data-aos='fade-down' data-aos-delay='500' data-aos-duration='1000'>
+      <Box data-sal='slide-down' data-sal-delay='300' data-sal-duration='1000'>
         <TextBox color>
           <Number>11</Number>
           <Text>Professeurs</Text>
@@ -33,7 +33,7 @@ const Block2 = () => {
         <Icon src={penIcon} />
       </Box>
 
-      <LastBox data-aos='fade-down' data-aos-delay='700' data-aos-duration='1000' column>
+      <LastBox data-sal='slide-down' data-sal-delay='300' data-sal-duration='1000' column>
         <LastTextBox row>
           <LastNumber>4</LastNumber>
           <LastIcon src={booksIcon} />
