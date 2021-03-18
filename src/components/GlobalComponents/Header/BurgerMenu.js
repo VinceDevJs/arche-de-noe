@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { slide as Menu } from 'react-burger-menu'
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { primaryColor, secondaryColor } from '../../../utils/styles.js'
 import hamburgerIcon from './../../../assets/icons/hamburger_icon.png'
 import hamburgerClose from '../../../assets/icons/hamburger_close.png'
 
@@ -21,13 +23,45 @@ const BurgerMenu = () => {
         onStateChange={isMenuOpen}
         isOpen={isOpen}
       >
-        <Link onClick={() => setIsOpen(!isOpen)} to='/'>Home</Link>
-        <Link onClick={() => setIsOpen(!isOpen)} to='/about'>About</Link>
-        <Link onClick={() => setIsOpen(!isOpen)} to='/contact'>Contact</Link>
-        <Link onClick={() => setIsOpen(!isOpen)} to=''>Settings</Link>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Accueil</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/about'>Formation</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/contact'>Emplois du temps</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to=''>Nos  ouvrages</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/about'>Inscription</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/contact'>Contact</LinkText>
+        <Button>Espace pro</Button>
       </Menu>
     </div>
   )
 }
 
 export default BurgerMenu
+
+export const LinkText = styled(Link)`
+  margin-bottom: 0.6em;
+  text-decoration: none;
+  color: ${secondaryColor};
+  font-size: 1.1em;
+  outline: none;
+  
+`
+
+export const Button = styled.button`
+  background-color: ${primaryColor};
+  width: 100%;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  padding: 5px 25px;
+  line-height: 1;
+  font-size: 1em;
+  border: 2px solid transparent;
+  font-family: 'Avenir Next Bold Demi';
+
+  :hover {
+    background-color: transparent;
+    border: 2px solid ${secondaryColor};
+    color: ${secondaryColor};
+    cursor: pointer;
+  }
+`

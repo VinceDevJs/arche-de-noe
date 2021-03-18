@@ -53,6 +53,15 @@ export const GlobalStyle = props => (
         font-size: 1.15em;
       }
 
+      .bm-item-list {
+        margin-top: 3em;
+      }
+
+      .bm-cross-button {
+        margin-right: 1em;
+        margin-top: 1em;
+      }
+
       @media (min-width: 1025px) {
         .bm-burger-button {
           display: none;
