@@ -34,7 +34,18 @@ export const GlobalStyle = props => (
       body {
         margin: 0 auto;
         max-width: 1600px;
+        overflow-x: hidden;
+        width:100%;
       }
+      // FIX AOS WHITE SPACE
+      html, body{
+        display: block;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+        width: 100%;
+}
+
       html {
         font-family: 'Avenir Next', sans-serif;
         -ms-text-size-adjust: 100%;
