@@ -7,6 +7,10 @@ import Block4 from '../components/Home/Block4'
 import Block5 from '../components/Home/Block5'
 import Block6 from '../components/Home/Block6'
 import Layout from '../Layouts/Layout'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init()
 
 const IndexPage = () => {
   return (
