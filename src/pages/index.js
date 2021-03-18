@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import waves from '../assets//images/home/waves_2.png'
 import Block1 from '../components/Home/Block1'
 import Block2 from '../components/Home/Block2'

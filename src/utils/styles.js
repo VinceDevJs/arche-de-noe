@@ -18,7 +18,6 @@ export const GlobalStyle = props => (
   <Global
     {...props}
     styles={css`
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
     @font-face {
         font-family: 'Avenir Next Bold';
         src: url(${avenirNextBold}) format('truetype');

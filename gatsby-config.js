@@ -10,6 +10,15 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Oswald\: 300,400,700'
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png'
