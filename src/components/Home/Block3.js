@@ -22,7 +22,7 @@ const Block3 = () => {
       </ImageWrapper>
       <ContentWrapper>
         <TitleBox>
-          <Title title>Nos Domaines</Title>
+          <Title title='true'>Nos Domaines</Title>
           <Title>d’enseignement</Title>
           <TextContent>L’Institut l’Arche de Noé a développé, au ﬁl des ans une réelle expertise dans différents domaines relatifes à la culture Islamique ainsi qu’à la langue Arabe en général.</TextContent>
         </TitleBox>
@@ -60,7 +60,7 @@ const Block3 = () => {
             data-aos-easing='linear'
             data-aos-duration='1800'
           >
-            <IconBox primary>
+            <IconBox primary='true'>
               <Icon src={arabicIcon} alt='arche de noe' />
               <IconText>Langue Arabe</IconText>
             </IconBox>
@@ -74,7 +74,7 @@ const Block3 = () => {
 
             <Separator />
 
-            <IconBox primary>
+            <IconBox primary='true'>
               <Icon src={booksIcon} alt='arche de noe' />
               <IconText>Conjugaison Arabe</IconText>
             </IconBox>

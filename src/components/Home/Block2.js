@@ -10,7 +10,7 @@ const Block2 = () => {
   return (
     <Container>
       <Box data-aos='fade-down' data-aos-delay='100' data-aos-duration='1000'>
-        <TextBox color>
+        <TextBox color='true'>
           <Number>250</Number>
           <Text>élèves</Text>
         </TextBox>
@@ -26,7 +26,7 @@ const Block2 = () => {
       </Box>
 
       <Box data-aos='fade-down' data-aos-delay='500' data-aos-duration='1000'>
-        <TextBox color>
+        <TextBox color='true'>
           <Number>11</Number>
           <Text>Professeurs</Text>
         </TextBox>

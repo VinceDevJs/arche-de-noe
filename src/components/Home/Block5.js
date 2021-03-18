@@ -25,13 +25,13 @@ const Block5 = () => {
 
         <IconBox data-aos='fade-left' data-aos-delay='200' data-aos-duration='2000'>
           <Icon src={arabicIcon} />
-          <Separator primary />
+          <Separator primary='true' />
           <IconText primary>COMMUNIQUER AVEC DES <br /> MILLIONS DE PERSONNES</IconText>
         </IconBox>
 
         <IconBox data-aos='fade-right' data-aos-delay='300' data-aos-duration='2000'>
           <Icon src={salatIcon} style={{ height: '4em' }} />
-          <Separator primary />
+          <Separator primary='true' />
           <IconText primary>UN TREMPLIN VERS L’ETUDE DE LA <br /> SCIENCE RELIGIEUSE.</IconText>
         </IconBox>
 
@@ -100,7 +100,7 @@ export const IconsWrapper = styled.div`
       justify-content: center;
       align-items: center;
 
-      & :nth-child(3) { 
+      & :nth-of-type(3) { 
         order: 4; 
         }
   }

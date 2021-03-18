@@ -28,8 +28,8 @@ const Footer = () => {
           <LinkText to='/'>Mentions légales</LinkText>
           <LinkText to='/'>FAQ</LinkText>
           <IconBox>
-            <Link><SocialIcon style={{ marginRight: '1em' }} src={facebookIcon} /></Link>
-            <Link><SocialIcon src={twitterIcon} /></Link>
+            <Link to='/'><SocialIcon style={{ marginRight: '1em' }} src={facebookIcon} /></Link>
+            <Link to='/'><SocialIcon src={twitterIcon} /></Link>
           </IconBox>
         </Box>
       </BlockLeft>
