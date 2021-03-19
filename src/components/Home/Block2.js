@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import booksIcon from '../../assets/images/home/block2/books.png'
 import penIcon from '../../assets/images/home/block2/pen.png'
 import professorsIcon from '../../assets/images/home/block2/professors.png'
@@ -7,11 +8,32 @@ import studentsIcon from '../../assets/images/home/block2/students.png'
 import { breakpoints } from '../../utils/styles'
 
 const Block2 = () => {
+  const numbers = useStaticQuery(graphql`
+   { 
+      allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "homeNumber"}}}) {
+        edges {
+          node {
+            frontmatter {
+              templateKey
+              curses
+              teachers
+              teachers2
+              students
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(numbers.allMarkdownRemark.edges[0].node.frontmatter)
+
+  const numbersData = numbers.allMarkdownRemark.edges[0].node.frontmatter
   return (
     <Container>
       <Box data-aos='fade-down' data-aos-delay='100' data-aos-duration='1000'>
         <TextBox color='true'>
-          <Number>250</Number>
+          <Number>{numbersData.students}</Number>
           <Text>élèves</Text>
         </TextBox>
         <Icon src={studentsIcon} />
@@ -19,7 +41,7 @@ const Block2 = () => {
 
       <Box data-aos='fade-down' data-aos-delay='300' data-aos-duration='1000'>
         <TextBox>
-          <Number>15</Number>
+          <Number>{numbersData.teachers}</Number>
           <Text>Professeurs</Text>
         </TextBox>
         <Icon src={professorsIcon} />
@@ -27,7 +49,7 @@ const Block2 = () => {
 
       <Box data-aos='fade-down' data-aos-delay='500' data-aos-duration='1000'>
         <TextBox color='true'>
-          <Number>11</Number>
+          <Number>{numbersData.teachers}</Number>
           <Text>Professeurs</Text>
         </TextBox>
         <Icon src={penIcon} />
@@ -35,7 +57,7 @@ const Block2 = () => {
 
       <LastBox data-aos='fade-down' data-aos-delay='700' data-aos-duration='1000' column>
         <LastTextBox row>
-          <LastNumber>4</LastNumber>
+          <LastNumber>{numbersData.curses}</LastNumber>
           <LastIcon src={booksIcon} />
         </LastTextBox>
         <LastText>Domaines d’apprentissage</LastText>
