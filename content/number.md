@@ -1,7 +1,7 @@
 ---
+students: 251
 templateKey: homeNumber
-students: 250
 teachers: 15
-teachers2: 11
-curses: 4
+teachers2: 22
+curses: 5
 ---
