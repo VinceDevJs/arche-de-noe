@@ -17,8 +17,8 @@ collections:
         name: "nombre"
         file: "/content/number.md"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "homeNumber" }
           - { label: "Nombres de d'éleves", name: "students", widget: "number", hint: "Indiquer le nombres d'éleves.", required: true }
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "homeNumber" }
           - { label: "Nombres de professeurs", name: "teachers", widget: "number", hint: "Indiquer le nombres de professeurs.", required: true }
           - { label: "Nombres de professuers 2", name: "teachers2", widget: "number", hint: "Indiquer le nombres professeurs2.", required: true }
           - { label: "Nombres de matieres", name: "curses", widget: "number", hint: "Indiquer le nombres de matieres.", required: true }

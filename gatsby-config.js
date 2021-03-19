@@ -55,6 +55,13 @@ module.exports = {
         name: 'adulte',
         path: './content/adulte'
       }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'home',
+        path: './content/'
+      }
     }
   ]
 }
