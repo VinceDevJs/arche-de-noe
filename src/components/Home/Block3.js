@@ -58,7 +58,7 @@ const Block3 = () => {
             left
             data-aos='fade-left'
             data-aos-easing='linear'
-            data-aos-duration='1800'
+            data-aos-duration='1500'
           >
             <IconBox primary='true'>
               <Icon src={arabicIcon} alt='arche de noe' />

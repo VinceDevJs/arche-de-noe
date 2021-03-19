@@ -159,7 +159,7 @@ export const LastTextBox = styled(TextBox)`
 `
 
 export const LastNumber = styled(Number)`
-  margin-bottom: 0.2em;
+  margin-bottom: 0.32em;
   margin-right: 0.1em;
 `
 
