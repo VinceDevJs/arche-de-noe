@@ -49,7 +49,7 @@ const Block2 = () => {
 
       <Box data-aos='fade-down' data-aos-delay='500' data-aos-duration='1000'>
         <TextBox color='true'>
-          <Number>{numbersData.teachers}</Number>
+          <Number>{numbersData.teachers2}</Number>
           <Text>Professeurs</Text>
         </TextBox>
         <Icon src={penIcon} />

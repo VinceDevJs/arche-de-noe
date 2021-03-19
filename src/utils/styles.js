@@ -39,7 +39,6 @@ export const GlobalStyle = props => (
       // FIX AOS WHITE SPACE
       html, body{
         display: block;
-        margin: 0px;
         padding: 0px;
         overflow-x: hidden;
         width: 100%;

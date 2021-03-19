@@ -1,10 +1,66 @@
 import styled from '@emotion/styled'
-import React from 'react'
+import React, { useState } from 'react'
 import checkIcon from '../../assets/icons/check.png'
 import logoBoat from '../../assets/images/home/block6/logo_boat.svg'
 import { breakpoints, secondaryColor } from '../../utils/styles.js'
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const Block6 = () => {
+  const initialMessage = 'Votre adresse mail'
+
+  const [email, setEmail] = useState('')
+  const [emailErr, setEmailErr] = useState(false)
+  const [message, setMessage] = useState(initialMessage)
+  const [status, setStatus] = useState('normal')
+
+  const validateEmail = (mail) => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(String(mail).toLowerCase())
+  }
+
+  let color
+
+  switch (status) {
+    case 'success':
+      color = 'green'
+      break
+    case 'error':
+      color = 'red'
+      break
+    default:
+      color = 'white'
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log('send')
+
+    if (validateEmail(email)) {
+      addToMailchimp(email).then((resp) => {
+        console.log(resp)
+
+        if (resp.result === 'success') {
+          setEmail('')
+          setEmailErr(false)
+          setStatus('success')
+          setMessage('Inscription réussi!')
+          setTimeout(() => setMessage(initialMessage), 5000)
+          setTimeout(() => setStatus('normal'), 5000)
+        } else {
+          setEmail('')
+          setStatus('error')
+          setEmailErr(true)
+          setMessage('Une erreur s\'est produite! Recommencer')
+          // setTimeout(() => setMessage(initialMessage), 5000)
+        }
+      })
+    } else {
+      setEmail('')
+      setStatus('error')
+      setMessage('Email non valide !')
+    }
+  }
+
   return (
     <Container>
       <LogoImage src={logoBoat} />
@@ -13,10 +69,13 @@ const Block6 = () => {
         <Text>Recevez l'actualité de notre institut : derniers événements, nouveaux cours, dates des inscriptions et les infos majeures à ne pas manquer.</Text>
       </LeftBox>
       <RightBox>
-        <Form>
+        <Form border={color} onSubmit={handleSubmit}>
           <Input
-            placeholder='Votre adresse mail'
+            textColor={color}
+            placeholder={message}
             type='text'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <Button><img style={{ width: '2em', marginTop: '.3em' }} src={checkIcon} /></Button>
         </Form>
@@ -119,7 +178,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 2.5px solid white;
+  border: 2.5px solid ${props => (props.border)};
   padding: 0 .5em 0 1em;
   height: 3.5em;
   max-width: 25em;
@@ -158,7 +217,8 @@ export const Input = styled.input`
   }
 
   ::placeholder {
-    color: white;
+    display: block;
+    color: ${props => (props.textColor)};
     font-size: .6em;
   }
 
