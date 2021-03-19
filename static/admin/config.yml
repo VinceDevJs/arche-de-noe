@@ -10,6 +10,19 @@ display_url: https://archedenoe.netlify.app/
 locale: 'fr'
 
 collections:
+  - label: "home page"
+    name: "home_page"
+    files:
+      - label: "nombre"
+        name: "nombre"
+        file: "/content/number.md"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "homeNumber" }
+          - { label: "Nombres de d'éleves", name: "students", widget: "number", hint: "Indiquer le nombres d'éleves.", required: true }
+          - { label: "Nombres de professeurs", name: "teachers", widget: "number", hint: "Indiquer le nombres de professeurs.", required: true }
+          - { label: "Nombres de professuers 2", name: "teachers2", widget: "number", hint: "Indiquer le nombres professeurs2.", required: true }
+          - { label: "Nombres de matieres", name: "curses", widget: "number", hint: "Indiquer le nombres de matieres.", required: true }
+
   - label: "Categorie Enfant"
     name: "enfant"
     folder: "content/enfant"
@@ -77,17 +90,5 @@ collections:
           options: [ "Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4" ]
           hint: "Sélectionner la salle de cours a afficher."
         - { label: "Créneaux horaire", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
-
-
-  - label: "Chiffres home page"
-    name: "home_number"
-    folder: "content/number.md"
-    editor:
-      preview: false
-    fields:
-    - { label: "Template Key", name: "templateKey", widget: "hidden", default: "homeNumber" }
-    - { label: "Nombres de d'éleves", name: "students", widget: "number", hint: "Indiquer le nombres d'éleves.", required: true }
-    - { label: "Nombres de professeurs", name: "teachers", widget: "number", hint: "Indiquer le nombres de professeurs.", required: true }
-    - { label: "Nombres de professuers 2", name: "teachers2", widget: "number", hint: "Indiquer le nombres professeurs2.", required: true }
-    - { label: "Nombres de matieres", name: "curses", widget: "number", hint: "Indiquer le nombres de matieres.", required: true }
+    
     
