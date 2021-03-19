@@ -53,6 +53,10 @@ export const Container = styled.div`
     margin: 5em auto;
     text-align: center;
 
+    @media (max-width: ${breakpoints.l}px) {
+      width: 60%;
+  }
+
     @media (max-width: ${breakpoints.m}px) {
       width: 80%;
   }

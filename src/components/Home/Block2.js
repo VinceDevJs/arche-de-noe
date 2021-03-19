@@ -57,6 +57,7 @@ export const Container = styled.div`
 
   @media (max-width: ${breakpoints.l}px) {
     padding: 0 4em;
+    padding: 0 2em;
   }
 
   @media (max-width: ${breakpoints.m}px) {

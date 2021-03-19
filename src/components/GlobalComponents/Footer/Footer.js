@@ -77,6 +77,10 @@ export const Box = styled.div`
   height: 25em;
   width: 50%;
 
+  @media (max-width: ${breakpoints.l}px) {
+    margin-left: 3em;
+  }
+
   @media (max-width: ${breakpoints.m}px) {
     margin-left: 2.5em;
   }

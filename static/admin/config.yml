@@ -5,8 +5,8 @@ backend:
 media_folder: static/img
 public_folder: /img
 logo_url: http://institutarchedenoe.fr/wp-content/uploads/2018/04/logo-principal.png
-site_url: http://localhost:8000
-display_url: http://localhost:8000
+site_url: https://archedenoe.netlify.app/
+display_url: https://archedenoe.netlify.app/
 locale: 'fr'
 
 collections:
