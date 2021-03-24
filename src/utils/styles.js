@@ -18,7 +18,7 @@ export const GlobalStyle = props => (
   <Global
     {...props}
     styles={css`
-    @font-face {
+      @font-face {
         font-family: 'Avenir Next Bold';
         src: url(${avenirNextBold}) format('truetype');
       }
@@ -34,15 +34,16 @@ export const GlobalStyle = props => (
         margin: 0 auto;
         max-width: 1600px;
         overflow-x: hidden;
-        width:100%;
+        width: 100%;
       }
       // FIX AOS WHITE SPACE
-      html, body{
+      html,
+      body {
         display: block;
         padding: 0px;
         overflow-x: hidden;
         width: 100%;
-}
+      }
 
       html {
         font-family: 'Avenir Next', sans-serif;
@@ -87,11 +88,10 @@ export const GlobalStyle = props => (
         }
       }
 
-        .bm-icon {
-          top: 15px!important;
-          right: 30px;
-        }
-    
+      .bm-icon {
+        top: 15px !important;
+        right: 30px;
+      }
 
       .bm-burger-bars {
         display: absolute;

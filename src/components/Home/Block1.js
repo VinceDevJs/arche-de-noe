@@ -12,7 +12,10 @@ const Block1 = () => {
       <LeftBox data-aos='fade-right' data-aos-duration='3000'>
         <Logo src={logoSvg} />
         <Title>L'Arche de Noé</Title>
-        <Text>L’Institut l’arche de Noé dispense des cours d’arabe et de culture islamique pour enfants et adultes.</Text>
+        <Text>
+          L’Institut l’arche de Noé dispense des cours d’arabe et de culture
+          islamique pour enfants et adultes.
+        </Text>
         <Button>En savoir plus</Button>
       </LeftBox>
       <RightBox data-aos='fade-down' data-aos-duration='2000'>
@@ -60,14 +63,15 @@ export const LeftBox = styled.div`
 `
 
 export const Logo = styled.img`
- width: 180px;
+  width: 180px;
 `
 export const Title = styled.h2`
   font-family: 'Avenir Next Bold', sans-serif;
   color: #007cad;
   font-size: 3.2em;
   font-weight: bold;
-  margin: .2em 0;
+  margin: 0.2em 0;
+  text-align: center;
 
   @media (max-width: ${breakpoints.l}px) {
     font-size: 2.5em;
@@ -113,7 +117,7 @@ export const RightBox = styled.div`
     margin-top: 2em;
     margin-left: 3.5em;
   }
-  
+
   @media (max-width: ${breakpoints.s}px) {
     width: 100%;
   }
@@ -126,15 +130,15 @@ export const BookImage = styled.img`
   left: 0;
   bottom: 0;
 
-
- @keyframes MoveUpDown {
-  0%, 100% {
-    transform: translateY(-20px);
+  @keyframes MoveUpDown {
+    0%,
+    100% {
+      transform: translateY(-20px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
   }
-  50% {
-    transform: translateY(0px);
-  }
-}
 
   @media (max-width: ${breakpoints.l}px) {
     margin-top: 2em;

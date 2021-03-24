@@ -24,11 +24,11 @@ const BurgerMenu = () => {
         isOpen={isOpen}
       >
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Accueil</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Formation</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Emplois du temps</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Nos  ouvrages</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Inscription</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Contact</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/formation'>Formation</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/emplois-du-temps'>Emplois du temps</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/nos-ouvrages'>Nos  ouvrages</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/inscription'>Inscription</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/contact'>Contact</LinkText>
         <Button>Espace pro</Button>
       </Menu>
     </div>

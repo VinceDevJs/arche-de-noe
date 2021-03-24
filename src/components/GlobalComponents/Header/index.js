@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import React from 'react'
-import { breakpoints, primaryColor, secondaryColor } from '../../../utils/styles.js'
+import {
+  breakpoints,
+  primaryColor,
+  secondaryColor
+} from '../../../utils/styles.js'
 import logoHeader from './../../../assets/icons/header/logo_header.png'
 
 const Index = () => {
@@ -9,14 +13,32 @@ const Index = () => {
     <>
       <Nav>
         <li style={{ color: 'white' }}>Arche de noe</li>
-        <li><Link to='/'>Accueil</Link></li>
-        <li><Link to='/'>Formation</Link></li>
-        <li><Link to='/'>Emplois du temps</Link></li>
-        <li><Link to='/'><Logo src={logoHeader} alt='arche de noe' /></Link></li>
-        <li><Link to='/'>Nos  ouvrages</Link></li>
-        <li><Link to='/'>Inscription</Link></li>
-        <li><Link to='/'>Contact</Link></li>
-        <li><Button>Espace pro</Button></li>
+        <li>
+          <Link to='/'>Accueil</Link>
+        </li>
+        <li>
+          <Link to='/formation'>Formation</Link>
+        </li>
+        <li>
+          <Link to='/emplois-du-temps'>Emplois du temps</Link>
+        </li>
+        <li>
+          <Link to='/'>
+            <Logo src={logoHeader} alt='arche de noe' />
+          </Link>
+        </li>
+        <li>
+          <Link to='/nos-ouvrages'>Nos ouvrages</Link>
+        </li>
+        <li>
+          <Link to='/inscription'>Inscription</Link>
+        </li>
+        <li>
+          <Link to='/contact'>Contact</Link>
+        </li>
+        <li>
+          <Button>Espace pro</Button>
+        </li>
       </Nav>
       <NavMobile>
         <LogoMobile src={logoHeader} alt='arche de noe' />
@@ -46,7 +68,7 @@ export const Nav = styled.ul`
     text-decoration: none;
     font-family: 'Avenir Next Bold Demi', sans-serif;
     color: ${secondaryColor};
-  
+
     :hover {
       color: ${primaryColor};
     }
@@ -77,9 +99,9 @@ export const LogoMobile = styled.img`
 export const Button = styled.button`
   background-color: ${primaryColor};
   color: white;
-  border-radius: 30px;
+  border-radius: 40px;
   border: none;
-  padding: 5px 25px;
+  padding: 2px 25px;
   line-height: 1;
   font-size: 1em;
   border: 2px solid transparent;

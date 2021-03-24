@@ -17,19 +17,19 @@ const Footer = () => {
         <Box>
           <Title>L’Institut</Title>
           <LinkText to='/'>Accueil</LinkText>
-          <LinkText to='/'>Formation</LinkText>
-          <LinkText to='/'>Emplois du temps</LinkText>
-          <LinkText to='/'>Nos  ouvrages</LinkText>
-          <LinkText to='/'>Inscription</LinkText>
-          <LinkText to='/'>Contact</LinkText>
+          <LinkText to='/formation'>Formation</LinkText>
+          <LinkText to='/emplois-du-temps'>Emplois du temps</LinkText>
+          <LinkText to='/nos-ouvrages'>Nos  ouvrages</LinkText>
+          <LinkText to='/inscription'>Inscription</LinkText>
+          <LinkText to='/contact'>Contact</LinkText>
         </Box>
         <Box>
           <Title>A propos</Title>
           <LinkText to='/'>Mentions légales</LinkText>
           <LinkText to='/'>FAQ</LinkText>
           <IconBox>
-            <Link to='/'><SocialIcon style={{ marginRight: '1em' }} src={facebookIcon} /></Link>
-            <Link to='/'><SocialIcon src={twitterIcon} /></Link>
+            <a href='https://fr-fr.facebook.com/institutarchedenoe'><SocialIcon style={{ marginRight: '1em' }} src={facebookIcon} /></a>
+            <a href='https://twitter.com'><SocialIcon src={twitterIcon} /></a>
           </IconBox>
         </Box>
       </BlockLeft>

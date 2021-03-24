@@ -31,13 +31,10 @@ export default PushUp
 export const ArrowBox = styled.div`
   position: fixed;
   right: 2.5em;
-  bottom: 5.7em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 3em;
-  height: 3em;
-  border: 7px solid #eed7b8;
+  bottom: 6em;
+  width: 55px;
+  height: 55px;
+  border: 3px solid white;
   border-radius: 50px;
   cursor: pointer;
   z-index: 100;
@@ -46,9 +43,19 @@ export const ArrowBox = styled.div`
 
   @media (max-width: ${breakpoints.s}px) {
     right: 1.5em;
-    bottom: 2em;
+    bottom: 3em;
+`
+
+export const Circle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 47px;
+  height: 47px;
+  border: 4px solid #0094be;
+  border-radius: 50px;
 `
 
 export const Arrow = styled.img`
-  width: 1.5em;
+  width: 100%;
 `

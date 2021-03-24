@@ -9,56 +9,25 @@ const Block6 = () => {
   const initialMessage = 'Votre adresse mail'
 
   const [email, setEmail] = useState('')
-  const [emailErr, setEmailErr] = useState(false)
   const [message, setMessage] = useState(initialMessage)
-  const [status, setStatus] = useState('normal')
-
-  const validateEmail = (mail) => {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return re.test(String(mail).toLowerCase())
-  }
-
-  let color
-
-  switch (status) {
-    case 'success':
-      color = 'green'
-      break
-    case 'error':
-      color = 'red'
-      break
-    default:
-      color = 'white'
-  }
 
   const handleSubmit = e => {
     e.preventDefault()
     console.log('send')
 
-    if (validateEmail(email)) {
-      addToMailchimp(email).then((resp) => {
-        console.log(resp)
+    addToMailchimp(email).then((resp) => {
+      console.log(resp)
 
-        if (resp.result === 'success') {
-          setEmail('')
-          setEmailErr(false)
-          setStatus('success')
-          setMessage('Inscription réussi!')
-          setTimeout(() => setMessage(initialMessage), 5000)
-          setTimeout(() => setStatus('normal'), 5000)
-        } else {
-          setEmail('')
-          setStatus('error')
-          setEmailErr(true)
-          setMessage('Une erreur s\'est produite! Recommencer')
-          // setTimeout(() => setMessage(initialMessage), 5000)
-        }
-      })
-    } else {
-      setEmail('')
-      setStatus('error')
-      setMessage('Email non valide !')
-    }
+      if (resp.result === 'success') {
+        setEmail('')
+        setMessage('Inscription réussi!')
+        setTimeout(() => setMessage(initialMessage), 5000)
+      } else {
+        setEmail('')
+        setMessage('Une erreur s\'est produite! Recommencer')
+        setTimeout(() => setMessage(initialMessage), 5000)
+      }
+    })
   }
 
   return (
@@ -69,11 +38,10 @@ const Block6 = () => {
         <Text>Recevez l'actualité de notre institut : derniers événements, nouveaux cours, dates des inscriptions et les infos majeures à ne pas manquer.</Text>
       </LeftBox>
       <RightBox>
-        <Form border={color} onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <Input
-            textColor={color}
             placeholder={message}
-            type='text'
+            type='email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -178,7 +146,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 2.5px solid ${props => (props.border)};
+  border: 2.5px solid white;
   padding: 0 .5em 0 1em;
   height: 3.5em;
   max-width: 25em;
@@ -218,7 +186,7 @@ export const Input = styled.input`
 
   ::placeholder {
     display: block;
-    color: ${props => (props.textColor)};
+    color: white;
     font-size: .6em;
   }
 

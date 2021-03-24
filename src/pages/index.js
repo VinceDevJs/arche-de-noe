@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import waves from '../assets//images/home/waves_2.png'
 import Block1 from '../components/Home/Block1'
 import Block2 from '../components/Home/Block2'
@@ -11,6 +12,9 @@ import Layout from '../Layouts/Layout'
 const IndexPage = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>Acceuil | Arche de noé</title>
+      </Helmet>
       <Block1 />
       <Block2 />
       <Block3 />

@@ -9,8 +9,10 @@ import { breakpoints } from '../../utils/styles'
 
 const Block2 = () => {
   const numbers = useStaticQuery(graphql`
-   { 
-      allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "homeNumber"}}}) {
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "homeNumber" } } }
+      ) {
         edges {
           node {
             frontmatter {
@@ -26,7 +28,7 @@ const Block2 = () => {
     }
   `)
 
-  console.log(numbers.allMarkdownRemark.edges[0].node.frontmatter)
+  // console.log(numbers.allMarkdownRemark.edges[0].node.frontmatter)
 
   const numbersData = numbers.allMarkdownRemark.edges[0].node.frontmatter
   return (
@@ -55,7 +57,12 @@ const Block2 = () => {
         <Icon src={penIcon} />
       </Box>
 
-      <LastBox data-aos='fade-down' data-aos-delay='700' data-aos-duration='1000' column>
+      <LastBox
+        data-aos='fade-down'
+        data-aos-delay='700'
+        data-aos-duration='1000'
+        column
+      >
         <LastTextBox row>
           <LastNumber>{numbersData.curses}</LastNumber>
           <LastIcon src={booksIcon} />
@@ -104,7 +111,7 @@ export const Box = styled.div`
 
   @media (max-width: ${breakpoints.s}px) {
     flex-direction: column-reverse;
-    margin: 3em 0 ;
+    margin: 3em 0;
     justify-content: center;
     align-items: center;
     height: fit-content;
@@ -115,11 +122,10 @@ export const TextBox = styled.div`
   display: flex;
   flex-direction: ${props => (props.row ? 'row' : 'column')};
   width: fit-content;
-  margin: 0 .2em -0.4em 0;
+  margin: 0 0.2em -0.4em 0;
   color: ${props => (props.color ? '#80edff' : 'white')};
   text-align: right;
   justify-content: flex-end;
-  
 `
 
 export const Number = styled.p`
@@ -160,13 +166,13 @@ export const Icon = styled.img`
   }
 
   @media (max-width: ${breakpoints.s}px) {
-    margin-bottom: .8em;
+    margin-bottom: 0.8em;
     height: 7em;
   }
 `
 
-export const LastBox = styled(Box)` 
-  width: auto; 
+export const LastBox = styled(Box)`
+  width: auto;
   align-items: center;
   justify-content: flex-end;
   margin-top: 0.2em;
@@ -199,6 +205,6 @@ export const LastIcon = styled(Icon)`
 `
 
 export const LastText = styled(Text)`
-  color: white; 
-  line-height: 1.1
+  color: white;
+  line-height: 1.1;
 `
