@@ -98,6 +98,7 @@ export const Button = styled.button`
   font-weight: bold;
   padding: 2px 20px;
   margin-top: 1.8em;
+  font-family: 'Avenir Next Bold', sans-serif;
 
   :hover {
     background-color: ${secondaryColor};

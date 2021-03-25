@@ -9,12 +9,11 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-layout',
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [
-          'Oswald\: 300,400,700'
-        ],
+        fonts: ['Oswald: 300,400,700'],
         display: 'swap'
       }
     },
@@ -66,7 +65,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: 'https://gmail.us1.list-manage.com/subscribe/post?u=c1df17cce4a530a5a12d7189a&amp;id=db5ca6de4a', // string; add your MC list endpoint here; see instructions below
+        endpoint:
+          'https://gmail.us1.list-manage.com/subscribe/post?u=c1df17cce4a530a5a12d7189a&amp;id=db5ca6de4a', // string; add your MC list endpoint here; see instructions below
         timeout: 3500 // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       }
     }

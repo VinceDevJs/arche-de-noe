@@ -14,9 +14,8 @@ export const breakpoints = {
 export const primaryColor = '#00a1c6'
 export const secondaryColor = '#007cad'
 
-export const GlobalStyle = props => (
+export const GlobalStyle = () => (
   <Global
-    {...props}
     styles={css`
       @font-face {
         font-family: 'Avenir Next Bold';

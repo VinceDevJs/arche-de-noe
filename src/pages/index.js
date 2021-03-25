@@ -7,11 +7,10 @@ import Block3 from '../components/Home/Block3'
 import Block4 from '../components/Home/Block4'
 import Block5 from '../components/Home/Block5'
 import Block6 from '../components/Home/Block6'
-import Layout from '../Layouts/Layout'
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <>
       <Helmet>
         <title>Acceuil | Arche de noé</title>
       </Helmet>
@@ -23,7 +22,7 @@ const IndexPage = () => {
       <Block5 />
       <img src={waves} style={{ width: '100%', marginTop: '2.5em' }} alt='' />
       <Block6 />
-    </Layout>
+    </>
   )
 }
 
