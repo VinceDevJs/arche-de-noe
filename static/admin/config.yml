@@ -216,7 +216,7 @@ collections:
         }
       - {
           label: "Afficher",
-          name: "draft",
+          name: "show",
           widget: "boolean",
           default: false,
           hint: "Activer pour afficher le produit sur le site",
@@ -240,7 +240,7 @@ collections:
           widget: "number",
           default: 0,
           value_type: "float",
-          hint: "Indiquer le prix du produit ( ex: 10, 12,50 ect... ).",
+          hint: "Indiquer le prix du produit ( ex: 10, 12.50 ect... ).",
           required: true,
         }
       - {
@@ -251,6 +251,16 @@ collections:
           hint: "Ecrivez la description du produit.",
         }
       - label: "Images"
-        name: "thumbnail"
-        widget: "image"
-        hint: "Sélectionner les images a afficher ( 4 max!!! )"
+        name: "images"
+        minimize_collapsed: true
+        widget: "list"
+        allow_add: true
+        label_singular: "une image"
+        max: 4
+        min: 1
+        hint: "Ajouter jusqu'a 4 images!"
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+            hint: "Sélectionner une image"

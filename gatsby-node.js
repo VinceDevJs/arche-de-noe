@@ -4,25 +4,28 @@ const { convertToSlug } = require('./src/utils/functions')
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const results = await graphql(`
         {
-            allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "shop"}}}) {
+          allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "shop"}}}) {
             edges {
                 node {
                 frontmatter {
                     templateKey
-                    thumbnail
+                    images {
+                      image
+                    }
                     price
                     name
-                    draft
+                    show
                     description
                     avaible
+                  }
                 }
-                }
-            }
+              }
             }
         }
     `)
   results.data.allMarkdownRemark.edges.forEach(edge => {
     const product = edge.node.frontmatter
+    if (!product.show) return
     const path = convertToSlug(product.name)
 
     createPage({

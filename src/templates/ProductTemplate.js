@@ -13,7 +13,6 @@ export const query = graphql`
           thumbnail
           price
           name
-          draft
           description
           avaible
         }
@@ -24,14 +23,14 @@ export const query = graphql`
 `
 
 const ProductTemplate = ({ data }) => {
-  const { avaible, description, draft, name, price, thumbnail } = data.allMarkdownRemark.edges[0].node.frontmatter
+  const { avaible, description, name, price, images } = data.allMarkdownRemark.edges[0].node.frontmatter
   console.log(name, description)
   return (
         <div>
             <p>{name}</p>
             <p>{price} €</p>
             <p>{description}</p>
-            <img src={thumbnail} alt=""/>
+            <img src={images[0]} alt=""/>
             <button disabled={!avaible}>ajouter au panier</button>
         </div>
   )
