@@ -7,7 +7,7 @@ public_folder: /img
 logo_url: http://institutarchedenoe.fr/wp-content/uploads/2018/04/logo-principal.png
 site_url: https://archedenoe.netlify.app/
 display_url: https://archedenoe.netlify.app/
-locale: 'fr'
+locale: "fr"
 
 collections:
   - label: "home page"
@@ -17,11 +17,40 @@ collections:
         name: "nombre"
         file: "/content/number.md"
         fields:
-          - { label: "Nombres de d'éleves", name: "students", widget: "number", hint: "Indiquer le nombres d'éleves.", required: true }
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "homeNumber" }
-          - { label: "Nombres de professeurs", name: "teachers", widget: "number", hint: "Indiquer le nombres de professeurs.", required: true }
-          - { label: "Nombres de professuers 2", name: "teachers2", widget: "number", hint: "Indiquer le nombres professeurs2.", required: true }
-          - { label: "Nombres de matieres", name: "curses", widget: "number", hint: "Indiquer le nombres de matieres.", required: true }
+          - {
+              label: "Nombres de d'éleves",
+              name: "students",
+              widget: "number",
+              hint: "Indiquer le nombres d'éleves.",
+              required: true,
+            }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "homeNumber",
+            }
+          - {
+              label: "Nombres de professeurs",
+              name: "teachers",
+              widget: "number",
+              hint: "Indiquer le nombres de professeurs.",
+              required: true,
+            }
+          - {
+              label: "Nombres de professuers 2",
+              name: "teachers2",
+              widget: "number",
+              hint: "Indiquer le nombres professeurs2.",
+              required: true,
+            }
+          - {
+              label: "Nombres de matieres",
+              name: "curses",
+              widget: "number",
+              hint: "Indiquer le nombres de matieres.",
+              required: true,
+            }
 
   - label: "Categorie Enfant"
     name: "enfant"
@@ -30,8 +59,19 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Nom de la matiere", name: "title", widget: "string", hint: "Indiquer le nom de la matiere a afficher dans l'onglet.", required: true}
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "enfant"}
+      - {
+          label: "Nom de la matiere",
+          name: "title",
+          widget: "string",
+          hint: "Indiquer le nom de la matiere a afficher dans l'onglet.",
+          required: true,
+        }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "enfant",
+        }
       - label: "Jours à afficher"
         name: "day"
         minimize_collapsed: false
@@ -40,9 +80,24 @@ collections:
           - label: "Jours de la semaine"
             name: "daySelected"
             widget: "select"
-            options: [ "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ]
+            options:
+              [
+                "lundi",
+                "mardi",
+                "mercredi",
+                "jeudi",
+                "vendredi",
+                "samedi",
+                "dimanche",
+              ]
             hint: "Sélectionner le jour a afficher."
-          - {label: "Afficher", name: "show", widget: "boolean", default: false, hint: "Activer pour afficher ce jour sur le site."}
+          - {
+              label: "Afficher",
+              name: "show",
+              widget: "boolean",
+              default: false,
+              hint: "Activer pour afficher ce jour sur le site.",
+            }
           - label: "Cours"
             name: "cours"
             minimize_collapsed: true
@@ -50,19 +105,41 @@ collections:
             allow_add: true
             label_singular: "un cours"
             fields:
-              - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cours"  }
+              - {
+                  label: "Nom du cour",
+                  name: "curse name",
+                  widget: string,
+                  require: true,
+                  hint: "Indiquer le nom du cours",
+                }
               - label: "Niveaux du cours"
                 name: "level"
                 widget: "select"
-                options: [ "Débutant", "Confirmé", "Tous niveaux", "Niveau 1", "Niveau 2", "Niveau 3", "Niveau 4", "Niveau 5", "Niveau 6"  ]
+                options:
+                  [
+                    "Débutant",
+                    "Confirmé",
+                    "Tous niveaux",
+                    "Niveau 1",
+                    "Niveau 2",
+                    "Niveau 3",
+                    "Niveau 4",
+                    "Niveau 5",
+                    "Niveau 6",
+                  ]
                 hint: "Sélectionner le Niveau a afficher pour ce cours."
               - label: "Salle de classe"
                 name: "room"
                 widget: "select"
-                options: [ "Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4" ]
+                options: ["Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4"]
                 hint: "Sélectionner la salle de cours a afficher."
-              - { label: "Créneaux horaire", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
-
+              - {
+                  label: "Créneaux horaire",
+                  name: "curse hour",
+                  widget: string,
+                  require: true,
+                  hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
+                }
 
   - label: "Categorie Adulte"
     name: "adulte"
@@ -71,24 +148,105 @@ collections:
     editor:
       preview: false
     fields:
-    - { label: "Nom de la matiere", name: "title", widget: "string", hint: "Indiquer le nom de la matiere a afficher dans l'onglet.", required: true }
-    - { label: "Template Key", name: "templateKey", widget: "hidden", default: "adulte" }
-    - label: "Jours à afficher"
-      name: "day"
-      minimize_collapsed: false
-      widget: "list"
-      fields:
-        - { label: "Nom du cour", name: "curse name", widget: string, require: true, hint: "Indiquer le nom du cours" }
-        - label: "Niveaux du cours"
-          name: "level"
-          widget: "select"
-          options: [ "Débutant", "Confirmé", "Tous niveaux", "Niveau 1", "Niveau 2", "Niveau 3", "Niveau 4", "Niveau 5", "Niveau 6" ]
-          hint: "Sélectionner le Niveau a afficher pour ce cours."
-        - label: "Salle de classe"
-          name: "room"
-          widget: "select"
-          options: [ "Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4" ]
-          hint: "Sélectionner la salle de cours a afficher."
-        - { label: "Créneaux horaire", name: "curse hour", widget: string, require: true, hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30" }
-    
-    
+      - {
+          label: "Nom de la matiere",
+          name: "title",
+          widget: "string",
+          hint: "Indiquer le nom de la matiere a afficher dans l'onglet.",
+          required: true,
+        }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "adulte",
+        }
+      - label: "Jours à afficher"
+        name: "day"
+        minimize_collapsed: false
+        widget: "list"
+        fields:
+          - {
+              label: "Nom du cour",
+              name: "curse name",
+              widget: string,
+              require: true,
+              hint: "Indiquer le nom du cours",
+            }
+          - label: "Niveaux du cours"
+            name: "level"
+            widget: "select"
+            options:
+              [
+                "Débutant",
+                "Confirmé",
+                "Tous niveaux",
+                "Niveau 1",
+                "Niveau 2",
+                "Niveau 3",
+                "Niveau 4",
+                "Niveau 5",
+                "Niveau 6",
+              ]
+            hint: "Sélectionner le Niveau a afficher pour ce cours."
+          - label: "Salle de classe"
+            name: "room"
+            widget: "select"
+            options: ["Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4"]
+            hint: "Sélectionner la salle de cours a afficher."
+          - {
+              label: "Créneaux horaire",
+              name: "curse hour",
+              widget: string,
+              require: true,
+              hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
+            }
+
+      - label: "Shop"
+        name: "shop"
+        folder: "content/shop"
+        create: true
+        fields:
+          - {
+              label: "Nom du produit",
+              name: "name",
+              widget: "string",
+              hint: "Indiquer le nom du produit.",
+              required: true,
+            }
+          - {
+              label: "Afficher",
+              name: "draft",
+              widget: "boolean",
+              default: false,
+              hint: "Activer pour afficher le produit sur le site",
+            }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "shop",
+            }
+          - {
+              label: "Prix",
+              name: "price",
+              widget: "number",
+              default: 0,
+              value_type: "float",
+              hint: "Indiquer le prix du produit ( ex: 10, 12,50 ect... ).",
+              required: true,
+            }
+          - {
+              label: "description",
+              name: "description",
+              widget: "markdown",
+              default: "shop",
+              hint: "Ecrivez la description du produit.",
+            }
+          - {
+              label: "Images",
+              name: "thumbnail",
+              widget: "image",
+              media_library: { config: { multiple: true } },
+              hint: "Sélectionner les images a afficher ( 4 max!!! )",
+            }

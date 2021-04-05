@@ -36,6 +36,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     width: 25%;
+    min-width: 20em;
     border-right: 2px solid #00A1C6;
 `
 
