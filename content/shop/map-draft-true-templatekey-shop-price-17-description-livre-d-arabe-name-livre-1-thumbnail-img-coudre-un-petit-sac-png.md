@@ -6,7 +6,5 @@ templateKey: shop
 price: 17
 description: livre d arabe
 images:
-  - image: /img/coudre-un-petit-sac.png
-  - image: /img/hadith.png
-  - image: /img/madalenacouture-4-.png
+  - image: /img/volume-1-methode-de-la-madrassah.jpg
 ---
