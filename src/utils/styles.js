@@ -52,6 +52,10 @@ export const GlobalStyle = () => (
         margin: 0;
       }
 
+      .snipcart-cart-button--highlight {
+        border-radius: 30px !important;
+      }
+
       button {
         outline: none;
       }

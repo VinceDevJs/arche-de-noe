@@ -111,7 +111,7 @@ export const RightBox = styled.div`
   width: 65%;
   max-width: 800px;
   right: 0;
-  z-index: 1000;
+  z-index: 10;
 
   @media (max-width: ${breakpoints.m}px) {
     width: 80%;

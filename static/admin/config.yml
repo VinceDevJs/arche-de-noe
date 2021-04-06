@@ -264,3 +264,109 @@ collections:
             name: "image"
             widget: "image"
             hint: "Sélectionner une image"
+
+
+  - label: "Formations"
+    name: "formations"
+    folder: "content/formations"
+    create: true
+    fields: 
+      - {
+          label: "Nom de la formation",
+          name: "formation_name",
+          widget: "string",
+          hint: "Indiquer le nom de la formation.",
+          required: true,
+        }
+      
+      - {
+          label: "Afficher sur le site",
+          name: "show_formation",
+          widget: "boolean",
+          default: false,
+          hint: "Activer pour afficher la formation sur le site.",
+        }
+
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "formation",
+        }
+
+      - label: "Featured Image"
+        name: "thumbnail"
+        widget: "image"
+        hint: "Sélectionner l'image de la formation."
+
+      - label: "Titre a afficher"
+        name: "subjects"
+        widget: "select"
+        options:
+          [
+            "Arabe",
+            "Coran",
+            "Science",
+          ]
+        hint: "Sélectionner le nom de la matière à afficher en titre."
+        required: true
+
+      - label: "Sous titres de la formation"
+        name: "sub_title"
+        widget: "select"
+        options:
+          [
+            "Niv.1",
+            "Niv.2",
+            "Niv.3",
+            "Niv.4",
+            "Niv.5",
+            "Niv.6",
+          ]
+        hint: "Sélectionner le niveau a afficher en dessous de la matiere."
+        required: true
+
+      - {
+          label: "Prix",
+          name: "price",
+          widget: "number",
+          default: 0,
+          value_type: "float",
+          hint: "Indiquer le prix du produit ( ex: 10, 12,50 ect... ).",
+          required: true
+        }
+
+      - label: "Age"
+        name: "age"
+        widget: "select"
+        options:
+          [
+            "Maternelles",
+            "Enfant",
+            "Collèges",
+            "Adultes"
+          ]
+        hint: "Sélectionner l'age des étudiants de la formation."
+        required: true
+
+      - label: "Niveau"
+        name: "level"
+        widget: "select"
+        options:
+          [
+            "Débutant",
+            "Intermédiaire",
+            "Confirmé"
+          ]
+        hint: "Sélectionner le niveau de la formation."
+        required: true
+
+      - {
+          label: "PLace disponible",
+          name: "place_avaible",
+          widget: "number",
+          default: 0,
+          value_type: "int",
+          hint: "Indiquer le nombre de place disponible pour cette formation.",
+          required: true
+        }

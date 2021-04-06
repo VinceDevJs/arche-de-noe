@@ -1,18 +1,22 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useContext } from 'react'
+import { SnipcartContext } from 'gatsby-plugin-snipcart-advanced/context'
 import {
   breakpoints,
   primaryColor,
   secondaryColor
 } from '../../../utils/styles.js'
 import logoHeader from './../../../assets/icons/header/logo_header.png'
+import cartIcon from './../../../assets/icons/header/cart-icon.png'
 
 const Index = () => {
+  const { state } = useContext(SnipcartContext)
+  console.log(state)
+  const { userStatus, cartQuantity } = state
   return (
     <>
       <Nav>
-        <li style={{ color: 'white' }}>Arche de noe</li>
         <li>
           <Link to='/'>Accueil</Link>
         </li>
@@ -20,7 +24,10 @@ const Index = () => {
           <Link to='/formation'>Formation</Link>
         </li>
         <li>
-          <Link to='/emplois-du-temps'>Emplois du temps</Link>
+          <Link to='/inscription'>Inscription</Link>
+        </li>
+        <li>
+          <Link to='/nos-ouvrages'>Nos ouvrages</Link>
         </li>
         <li>
           <Link to='/'>
@@ -28,10 +35,7 @@ const Index = () => {
           </Link>
         </li>
         <li>
-          <Link to='/nos-ouvrages'>Nos ouvrages</Link>
-        </li>
-        <li>
-          <Link to='/inscription'>Inscription</Link>
+          <Link to='/emplois-du-temps'>Emplois du temps</Link>
         </li>
         <li>
           <Link to='/contact'>Contact</Link>
@@ -39,6 +43,10 @@ const Index = () => {
         <li>
           <Button>Espace pro</Button>
         </li>
+        <CartContainer className='snipcart-checkout'>
+          <CartIcon src={cartIcon} />
+          {cartQuantity > 0 ? <CartQuantity>{cartQuantity}</CartQuantity> : ''}
+        </CartContainer>
       </Nav>
       <NavMobile>
         <LogoMobile src={logoHeader} alt='arche de noe' />
@@ -113,4 +121,30 @@ export const Button = styled.button`
     color: ${secondaryColor};
     cursor: pointer;
   }
+`
+
+export const CartContainer = styled.li`
+  position: relative;
+  cursor: pointer;
+`
+
+export const CartIcon = styled.img`
+  width: 1.6em;
+`
+
+export const CartQuantity = styled.p`
+  position: absolute;
+  display: block;
+  text-align: center;
+  background-color: ${primaryColor};
+  color: white;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  top: -8px;
+  right: -5px;
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.35;
+  font-family: 'Avenir Next Bold';
 `

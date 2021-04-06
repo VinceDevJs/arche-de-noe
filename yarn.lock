@@ -969,6 +969,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.9.2":
+  version "7.13.10"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
+  integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.12.6":
   version "7.13.8"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.13.8.tgz#0bec5b3d61e7753b89ef84c8f306610e033d74ff"
@@ -6714,6 +6721,13 @@ gatsby-plugin-sitemap@^3.1.0:
     minimatch "^3.0.4"
     pify "^3.0.0"
     sitemap "^1.13.0"
+
+gatsby-plugin-snipcart-advanced@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-snipcart-advanced/-/gatsby-plugin-snipcart-advanced-1.0.3.tgz#ac886c7ff5350f891ca992179f50d27b2afd19d8"
+  integrity sha512-jlfMm6FN8dJU+EHDWyj4qBG7DldKjypE9KeDX9c4m5g+vPJD4t/Ri/WUGlabqGY4chklWFOtDkZ5ChLr/iVFHQ==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
 
 gatsby-plugin-typescript@^3.1.0:
   version "3.1.0"
