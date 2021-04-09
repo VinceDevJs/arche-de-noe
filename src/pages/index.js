@@ -6,7 +6,6 @@ import Block2 from '../components/Home/Block2'
 import Block3 from '../components/Home/Block3'
 import Block4 from '../components/Home/Block4'
 import Block5 from '../components/Home/Block5'
-import Block6 from '../components/Home/Block6'
 
 const IndexPage = () => {
   return (

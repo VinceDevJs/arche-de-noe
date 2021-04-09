@@ -6,7 +6,7 @@ import avenirNext from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Regular.ot
 
 export const breakpoints = {
   s: 576,
-  m: 813,
+  m: 825,
   l: 1025,
   xl: 1200
 }

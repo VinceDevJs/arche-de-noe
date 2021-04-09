@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import waves from './../assets/images/formation/waves_2.png'
 import styled from '@emotion/styled'
+import { breakpoints } from '../utils/styles'
 
 import cerveauIcon from './../assets/images/formation/template/cerveau.svg'
 import bookIcon from './../assets/images/formation/template/books.svg'
@@ -38,6 +39,10 @@ export const query = graphql`
             subjects
             age
             place_avaible
+            prerequis
+            ouvrages
+            objectifs
+            programme
           }
         }
       }
@@ -57,7 +62,11 @@ const FormationTemplate = ({ data, path }) => {
     formation_name,
     subjects,
     age,
-    place_avaible
+    place_avaible,
+    prerequis,
+    ouvrages,
+    objectifs,
+    programme
   } = data.allMarkdownRemark.edges[0].node.frontmatter
   return (
     <Container>
@@ -65,26 +74,26 @@ const FormationTemplate = ({ data, path }) => {
 
       <TitleWrapper>
         <ReturnLink to='/formation'>Revenir à la page des formations</ReturnLink>
-        <Title>ARABE Niv. 2</Title>
+        <Title>{subjects.toUpperCase()} {sub_title}</Title>
       </TitleWrapper>
 
       <ContentWrapper>
         <ContainerLeft>
-          <Img src={exempleImg} />
+          <Img src={thumbnail} />
           <IconsWrapper>
             <IconBox>
               <Icon src={priceIcon} />
-              <IconText>200€</IconText>
+              <IconText>{price}€</IconText>
             </IconBox>
 
             <IconBox>
               <Icon src={levelIcon} />
-              <IconText>Debutant</IconText>
+              <IconText>{level}</IconText>
             </IconBox>
 
             <IconBox>
               <Icon src={tableIcon} />
-              <IconText>40 places</IconText>
+              <IconText>{place_avaible} places</IconText>
             </IconBox>
           </IconsWrapper>
           <Link to='/emplois-du-temps' style={{ textDecoration: 'none' }}>
@@ -101,7 +110,7 @@ const FormationTemplate = ({ data, path }) => {
               <ContentIcon alt='' src={cerveauIcon} />
               <ContentBox>
                 <RightContentTitle>Prérequis</RightContentTitle>
-                <RightContentText>Savoir lire et écrire sans confondre les lettres et les voyelles</RightContentText>
+                <RightContentText>{prerequis}</RightContentText>
               </ContentBox>
             </RightContentWrapper>
 
@@ -109,7 +118,7 @@ const FormationTemplate = ({ data, path }) => {
               <ContentIcon alt='' src={cibleIcon} />
               <ContentBox>
                 <RightContentTitle>Objectif(s)</RightContentTitle>
-                <RightContentText>Amélioration de la lecture. Dictée Traduction de texte Enrichissement du vocabulaire Etude des bases de la grammaire et de la conjugaison Introduction aux sciences islamiques (Fiqh, Sira, Adab, ‘Aqida) Apprentissage des bases des règles de TAJWID Lecture du Coran et apprentissages de sourates Savoir lire et écrire sans confondre les lettres et les voyelles</RightContentText>
+                <RightContentText>{objectifs}</RightContentText>
               </ContentBox>
             </RightContentWrapper>
 
@@ -117,7 +126,7 @@ const FormationTemplate = ({ data, path }) => {
               <ContentIcon alt='' src={programmeIcon} />
               <ContentBox>
                 <RightContentTitle>Programme</RightContentTitle>
-                <RightContentText>Amélioration de la lecture. Dictée Traduction de texte Enrichissement du vocabulaire Etude des bases de la grammaire et de la conjugaison Introduction aux sciences</RightContentText>
+                <RightContentText>{programme}</RightContentText>
               </ContentBox>
             </RightContentWrapper>
 
@@ -125,7 +134,7 @@ const FormationTemplate = ({ data, path }) => {
               <ContentIcon alt='' src={bookIcon} />
               <ContentBox>
                 <RightContentTitle>Ouvrage(s) utilisé(s)</RightContentTitle>
-                <RightContentText>Savoir lire et écrire sans confondre les lettres et les voyelles</RightContentText>
+                <RightContentText>{ouvrages}</RightContentText>
               </ContentBox>
             </RightContentWrapper>
           </RightContentContainer>
@@ -137,10 +146,10 @@ const FormationTemplate = ({ data, path }) => {
 
             <SocialText>J’informe une connaissance <br /> de la formation</SocialText>
             <SocialBox>
-              <a href='#'>
+              <a href='https://fr-fr.facebook.com/institutarchedenoe'>
                 <SocialIcon src={facebookIcon} />
               </a>
-              <a href='#'>
+              <a href='https://twitter.com'>
                 <SocialIcon src={twitterIcon} />
               </a>
             </SocialBox>
@@ -163,11 +172,21 @@ export const TitleWrapper = styled.div`
   font-family: 'Avenir Next Bold', sans-serif;
   color: #00A1C6;
   margin-left: 4em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin-left: 0;
+  }
 `
 
 export const Title = styled.p`
   font-size: 4em;
   margin: 0;
+
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1em;
+  }
 `
 
 export const ReturnLink = styled(Link)`
@@ -178,20 +197,49 @@ export const ReturnLink = styled(Link)`
   :hover {
     color: #007bac;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin-left: 1em;
+  }
 `
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 5em;
+  padding: 0 8em;
   margin: 4em 0 3em;
+
+  @media (max-width: ${breakpoints.l}px) {
+    padding: 0 3em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    padding: 0 1em;
+  }
 `
 
 export const ContainerLeft = styled.div`
   width: 50%;
   max-width: 30em;
   font-family: 'Avenir Next Bold', sans-serif;
+
+  @media (max-width: ${breakpoints.l}px) {
+    max-width: 25em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    max-width: 45em;
+    width: 90%;
+  }
 `
 
 export const Img = styled.img`
@@ -204,6 +252,14 @@ export const IconsWrapper = styled.div`
   justify-content: space-between;
   width: 75%;
   margin: 2em auto 0;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+  }
 `
 
 export const IconBox = styled.div`
@@ -242,6 +298,11 @@ export const PlanningIcon = styled.img`
 
 export const ContainerRight = styled.div`
   width: 50%;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 100%;
+    margin-top: 3em;
+  }
 `
 
 export const RightContentContainer = styled.div`
@@ -252,6 +313,14 @@ export const RightContentContainer = styled.div`
   padding: 2.5em;
   border-radius: 35px;
   height: 44em;
+
+  @media (max-width: ${breakpoints.l}px) {
+    height: fit-content;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    padding: 1.5em;
+  }
 `
 
 export const RightContentWrapper = styled.div`
@@ -263,6 +332,10 @@ export const RightContentWrapper = styled.div`
 export const ContentIcon = styled.img`
   width: 5em;
   margin-right: 2em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 4em;
+  }
 `
 
 export const ContentBox = styled.div``
@@ -280,6 +353,10 @@ export const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 3em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    align-items: center;
+  }
 `
 
 export const LinkButton = styled(Link)`
@@ -301,6 +378,10 @@ export const SocialText = styled.p`
   font-family: 'Avenir Next Bold', sans-serif;
   color: #00A1C6;
   font-size: 1.7em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    text-align: center;
+  }
 `
 
 export const SocialBox = styled.div`
