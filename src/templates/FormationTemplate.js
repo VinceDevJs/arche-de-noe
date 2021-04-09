@@ -131,8 +131,8 @@ const FormationTemplate = ({ data, path }) => {
           </RightContentContainer>
 
           <LinkContainer>
-            <LinkButton to='/inscription' fontSize>Connaitre les modalités <br /> d’inscription</LinkButton>
-            <LinkButton to='/nos-ouvrages' color>Nos ouvrages</LinkButton>
+            <LinkButton to='/inscription' fontSize='true'>Connaitre les modalités <br /> d’inscription</LinkButton>
+            <LinkButton to='/nos-ouvrages' color='true'>Nos ouvrages</LinkButton>
             <LinkButton to='/contact'>J’ai une question</LinkButton>
 
             <SocialText>J’informe une connaissance <br /> de la formation</SocialText>
@@ -257,7 +257,6 @@ export const RightContentContainer = styled.div`
 export const RightContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: flex-start;
 `
 
