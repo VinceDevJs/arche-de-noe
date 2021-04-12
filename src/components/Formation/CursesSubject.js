@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import quranLogo from '../../assets/images/formation/quran.svg'
 import salatLogo from '../../assets/images/formation/salat.svg'
 import arabicLogo from '../../assets/images/formation/arabic.svg'
+import { breakpoints } from '../../utils/styles'
 
 const CursesSubject = () => {
   return (
@@ -35,6 +36,10 @@ export const Container = styled.div`
     justify-content: space-between;
     width: 55%;
     margin: 0 auto 4em auto;
+
+  @media (max-width: ${breakpoints.m}px) {
+    display: none;
+  }
 `
 
 export const ImgBox = styled.div`

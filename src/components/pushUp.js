@@ -37,7 +37,7 @@ export const ArrowBox = styled.div`
   border: 3px solid white;
   border-radius: 50px;
   cursor: pointer;
-  z-index: 100;
+  z-index: 10;
   transform: ${props => (props.disable ? 'scale(1)' : 'scale(0)')};
   transition: transform 0.3s;
 

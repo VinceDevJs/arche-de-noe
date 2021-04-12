@@ -55,6 +55,10 @@ export const GlobalStyle = () => (
       .snipcart-cart-button--highlight {
         border-radius: 30px !important;
       }
+      
+      .snipcart-modal__container {
+      z-index: 1000000000!important;
+      }
 
       button {
         outline: none;
@@ -73,6 +77,7 @@ export const GlobalStyle = () => (
       .bm-cross-button {
         margin-right: 1em;
         margin-top: 1em;
+        left: 1em;
       }
 
       @media (min-width: 1025px) {

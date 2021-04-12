@@ -523,8 +523,12 @@ type MarkdownRemarkFrontmatter {
     images: [MarkdownRemarkFrontmatterImages]
     level: String
     name: String
+    objectifs: String
+    ouvrages: String
     place_avaible: Int
+    prerequis: String
     price: Int
+    programme: String
     show: Boolean
     show_formation: Boolean
     students: Int
@@ -1075,8 +1079,12 @@ enum FileFieldsEnum {
     childMarkdownRemark___frontmatter___images___image
     childMarkdownRemark___frontmatter___level
     childMarkdownRemark___frontmatter___name
+    childMarkdownRemark___frontmatter___objectifs
+    childMarkdownRemark___frontmatter___ouvrages
     childMarkdownRemark___frontmatter___place_avaible
+    childMarkdownRemark___frontmatter___prerequis
     childMarkdownRemark___frontmatter___price
+    childMarkdownRemark___frontmatter___programme
     childMarkdownRemark___frontmatter___show
     childMarkdownRemark___frontmatter___show_formation
     childMarkdownRemark___frontmatter___students
@@ -1226,8 +1234,12 @@ enum FileFieldsEnum {
     childrenMarkdownRemark___frontmatter___images___image
     childrenMarkdownRemark___frontmatter___level
     childrenMarkdownRemark___frontmatter___name
+    childrenMarkdownRemark___frontmatter___objectifs
+    childrenMarkdownRemark___frontmatter___ouvrages
     childrenMarkdownRemark___frontmatter___place_avaible
+    childrenMarkdownRemark___frontmatter___prerequis
     childrenMarkdownRemark___frontmatter___price
+    childrenMarkdownRemark___frontmatter___programme
     childrenMarkdownRemark___frontmatter___show
     childrenMarkdownRemark___frontmatter___show_formation
     childrenMarkdownRemark___frontmatter___students
@@ -1623,8 +1635,12 @@ enum MarkdownRemarkFieldsEnum {
     frontmatter___images___image
     frontmatter___level
     frontmatter___name
+    frontmatter___objectifs
+    frontmatter___ouvrages
     frontmatter___place_avaible
+    frontmatter___prerequis
     frontmatter___price
+    frontmatter___programme
     frontmatter___show
     frontmatter___show_formation
     frontmatter___students
@@ -2540,8 +2556,12 @@ input MarkdownRemarkFrontmatterFilterInput {
     images: MarkdownRemarkFrontmatterImagesFilterListInput
     level: StringQueryOperatorInput
     name: StringQueryOperatorInput
+    objectifs: StringQueryOperatorInput
+    ouvrages: StringQueryOperatorInput
     place_avaible: IntQueryOperatorInput
+    prerequis: StringQueryOperatorInput
     price: IntQueryOperatorInput
+    programme: StringQueryOperatorInput
     show: BooleanQueryOperatorInput
     show_formation: BooleanQueryOperatorInput
     students: IntQueryOperatorInput

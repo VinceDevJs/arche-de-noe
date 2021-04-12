@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
+import { breakpoints } from '../../utils/styles'
 
 import books from '../../assets/images/formation/books.svg'
 import twitter from '../../assets/images/formation/twitter.svg'
@@ -10,34 +11,37 @@ import level from '../../assets/images/formation/level.svg'
 import price from '../../assets/images/formation/price.svg'
 
 const Main = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "formation" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              templateKey
-              thumbnail
-              price
-              sub_title
-              show_formation
-              level
-              formation_name
-              subjects
-              age
-              place_avaible
-            }
-          }
-        }
-      }
-    }
-  `)
-  const formations = data.allMarkdownRemark.edges
-  console.log(formations)
   return (
     <Container>
+      <FormationBox>
+        <ImgWrapper>
+          <FormationImg src={books} alt='formation book' />
+          <FormationTitle>
+            Arabe <br />
+            <span>Niv.4</span>
+          </FormationTitle>
+        </ImgWrapper>
+        <IconsWrapper>
+          <IconBox>
+            <Icon src={price} />
+            <IconText>250€</IconText>
+          </IconBox>
+          <IconBox>
+            <Icon src={level} />
+            <IconText>Intermédiaire</IconText>
+          </IconBox>
+          <IconBox>
+            <Icon src={table} />
+            <IconText>24 Places</IconText>
+          </IconBox>
+        </IconsWrapper>
+        <Button to='/'>En savoir plus</Button>
+        <SocialBox>
+          <SocialIcon src={facebook} />
+          <SocialIcon src={twitter} />
+        </SocialBox>
+      </FormationBox>
+
       <FormationBox>
         <ImgWrapper>
           <FormationImg src={books} alt='formation book' />
@@ -107,12 +111,34 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0em 6em;
+  padding: 0 3em;
   width: 75%;
+
+  @media (max-width: ${breakpoints.m}px) {
+    padding: 0 2em;
+    width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0 1em;
+    margin: 0 auto;
+  }
 `
 
 export const FormationBox = styled.div`
   width: 40%;
+  max-width: 19em;
+  margin: 0 0 4em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 47%;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+  }
 `
 
 export const ImgWrapper = styled.div`
@@ -143,6 +169,10 @@ export const IconsWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 100%;
+  }
 `
 
 export const IconBox = styled.div`
@@ -161,6 +191,10 @@ export const Icon = styled.img`
 export const IconText = styled.p`
   color: #007cad;
   font-family: 'Avenir Next Bold', sans-serif;
+
+  @media (max-width: ${breakpoints.l}px) {
+   font-size: 0.9em;
+  }
 `
 
 export const Button = styled(Link)`

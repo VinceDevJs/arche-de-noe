@@ -49,7 +49,9 @@ const Index = () => {
         </CartContainer>
       </Nav>
       <NavMobile>
-        <LogoMobile src={logoHeader} alt='arche de noe' />
+        <Link to='/'>
+          <LogoMobile src={logoHeader} alt='arche de noe' />
+        </Link>
       </NavMobile>
     </>
   )
