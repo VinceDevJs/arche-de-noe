@@ -1,5 +1,5 @@
 ---
-formation_name: coran lecture
+formation_name: coran lec
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
