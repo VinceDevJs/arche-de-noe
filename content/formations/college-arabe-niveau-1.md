@@ -3,7 +3,7 @@ formation_name: college arabe niveau 1
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Arabe
+subjects: Collège
 sub_title: Niv.1
 price: 220
 age: Collèges
