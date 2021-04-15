@@ -3,7 +3,7 @@ formation_name: enfant arabe niveau 2
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Arabe
+subjects: Enfant
 sub_title: Niv.2
 price: 218
 age: Enfant
