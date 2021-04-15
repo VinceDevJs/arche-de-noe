@@ -1,9 +1,9 @@
 ---
-formation_name: enfant arabe 3
+formation_name: enfant arabe niveau 3
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Arabe
+subjects: Enfant
 sub_title: Niv.3
 price: 218
 age: Enfant
