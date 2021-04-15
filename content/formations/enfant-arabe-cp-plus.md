@@ -3,8 +3,8 @@ formation_name: enfant arabe cp plus
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Arabe
-sub_title: Cp+
+subjects: Enfant 1+
+sub_title: vide
 price: 219
 age: Enfant
 level: Débutant
