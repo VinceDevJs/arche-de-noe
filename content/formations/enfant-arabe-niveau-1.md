@@ -1,10 +1,10 @@
 ---
-formation_name: enfant arabe niveau 1
+formation_name: enfant arabe cp
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
 subjects: Arabe
-sub_title: Niv.1
+sub_title: Cp
 price: 218
 age: Enfant
 level: Débutant
@@ -31,7 +31,6 @@ programme: "-\tApprentissage des lettre de l’alphabet arabe\r
   La pédagogie adopter par l’institut permet à chaque enfant d’apprendre et de
   developer ses connaissances tout en s’amusant et progresser vers la lecture,
   l’écriture et l’apprentissage des mots en arabe\r\n"
-ouvrages: >-
-  -	Manuel  « J’apprends l’arabe » Niveau CP-	Support « J’apprends ma religion »
-  Niveau CP
+ouvrages: "-\tManuel  « J’apprends l’arabe » Niveau CP-\tSupport « J’apprends ma
+  religion » Niveau CP"
 ---
