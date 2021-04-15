@@ -1,10 +1,10 @@
 ---
-formation_name: coran lec
+formation_name: coran lecture debutant
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Coran
-sub_title: Lecture
+subjects: Coran Lec
+sub_title: Débutant
 price: 219
 age: Enfant
 level: Intermédiaire
