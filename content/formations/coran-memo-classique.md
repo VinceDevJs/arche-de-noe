@@ -3,8 +3,8 @@ formation_name: coran memo classique
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Coran
-sub_title: Mémo Classique
+subjects: Coran Memo
+sub_title: Classique
 price: 209
 age: Enfant
 level: Intermédiaire
