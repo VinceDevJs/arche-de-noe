@@ -305,13 +305,7 @@ collections:
 
       - label: "Titre a afficher"
         name: "subjects"
-        widget: "select"
-        options:
-          [
-            "Arabe",
-            "Coran",
-            "Science",
-          ]
+        widget: "string"
         hint: "Sélectionner le nom de la matière à afficher en titre."
         required: true
 
@@ -320,14 +314,20 @@ collections:
         widget: "select"
         options:
           [
-            "Cp",
-            "Cp+",
+            "vide",
+            "Eveil",
             "Niv.1",
             "Niv.2",
             "Niv.3",
             "Niv.4",
             "Niv.5",
             "Niv.6",
+            "Débutant",
+            "Intérmédiaire",
+            "Confirmé",
+            "Classique",
+            "semi-intensif",
+            "intensif",
           ]
         hint: "Sélectionner le niveau a afficher en dessous de la matiere."
         required: true
