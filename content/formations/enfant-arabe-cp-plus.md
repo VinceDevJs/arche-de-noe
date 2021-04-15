@@ -1,24 +1,23 @@
 ---
-formation_name: enfant arabe niveau 1 plus
+formation_name: enfant arabe cp plus
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
 subjects: Arabe
-sub_title: Niv.1+
-price: 217
+sub_title: Cp+
+price: 219
 age: Enfant
-level: Intermédiaire
-place_avaible: 28
+level: Débutant
+place_avaible: 39
 prerequis: Savoir  lire un texte simple vocalisée ( Avoir validé le Niveau CP )
-objectifs: >-
-  -	Lire un texte simple vocalisé en arabe-	Ecrire un texte simple vocalisé en
-  respectant la bonne graphie des lettres 
+objectifs: "-\tLire un texte simple vocalisé en arabe\r
 
-  -	Réciter des sourates courtes du Coran
+  -\tEcrire un texte simple vocalisé en respectant la bonne graphie des
+  lettres \r
 
-  -	Connaitre les éléments essentiels de la Biographie du Prophète ﷺ
+  -\tRéciter des sourates courtes du Coran\r
 
-  ﻿
+  -\tConnaitre les éléments essentiels de la Biographie du Prophète ﷺ\r\n"
 programme: "Perfectionnement de la lecture \r
 
   -\tPerfectionnement de l’écriture\r
