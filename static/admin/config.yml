@@ -320,6 +320,8 @@ collections:
         widget: "select"
         options:
           [
+            "Cp",
+            "Cp+",
             "Niv.1",
             "Niv.2",
             "Niv.3",
