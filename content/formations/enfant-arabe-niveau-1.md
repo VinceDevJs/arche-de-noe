@@ -3,8 +3,8 @@ formation_name: enfant arabe cp
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Arabe
-sub_title: Cp
+subjects: Enfant Cp
+sub_title: vide
 price: 218
 age: Enfant
 level: Débutant
