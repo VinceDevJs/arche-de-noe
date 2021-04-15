@@ -3,8 +3,8 @@ formation_name: coran memo intensif
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Coran
-sub_title: Mémo intensif
+subjects: Coran Memo
+sub_title: intensif
 price: 198
 age: Enfant
 level: Intermédiaire
