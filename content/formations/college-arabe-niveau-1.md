@@ -19,20 +19,26 @@ objectifs: |-
   * Réciter des sourates du Coran
   * Maitriser les éléments essentiels de la Biographie du Prophète ﷺ
   * Maitriser les actes d’adorations étudiés
-programme: "- Perfectionnement de la lecture et compréhension de textes\r
+programme: >-
+  \- Perfectionnement de la lecture et compréhension de textes
 
-  - Etude des règles de dictée \r
 
-  - Etude de la grammaire arabe\r
+  \- Etude des règles de dictée 
 
-  - Apprentissage de vocabulaires\r
 
-  - Mémorisation de sourate des deux derniers juz du Coran et explication
-  simplifiée\r
+  \- Etude de la grammaire arabe
 
-  - Etude de la Biographie du Prophète ﷺ (poème)\r
 
-  - Etude sur « J’apprends ma religion » (jurisprudence, ahadith)\r\n"
+  \- Apprentissage de vocabulaires
+
+
+  \- Mémorisation de sourate des deux derniers juz du Coran et explication simplifiée
+
+
+  \- Etude de la Biographie du Prophète ﷺ (poème)
+
+
+  \- Etude sur « J’apprends ma religion » (jurisprudence, ahadith)
 ouvrages: "- Manuel  « Grammaire simplifié » La Madrassah\r
 
   - Manuel  « Les histoires des Prophètes » La Madrassah\r
