@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Collège
 sub_title: Niv.1
 price: 220
+discipline: arabe
 age: Collèges
 level: Débutant
 place_avaible: 37
