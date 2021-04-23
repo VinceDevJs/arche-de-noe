@@ -4,8 +4,9 @@ show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
 subjects: Arabe
-sub_title: Cp+
+sub_title: Niv.1
 price: 217
+discipline: arabe
 age: Enfant
 level: Intermédiaire
 place_avaible: 28
