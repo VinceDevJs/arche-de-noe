@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Coran
 sub_title: Eveil
 price: 218
+discipline: coran
 age: Maternelles
 level: Débutant
 place_avaible: 39
