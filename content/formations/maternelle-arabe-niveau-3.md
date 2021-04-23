@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Arabe
 sub_title: Niv.3
 price: 238
+discipline: arabe
 age: Maternelles
 level: Intermédiaire
 place_avaible: 28
