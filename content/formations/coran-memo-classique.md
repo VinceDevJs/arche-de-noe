@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Coran Memo
 sub_title: Classique
 price: 209
+discipline: coran
 age: Enfant
 level: Intermédiaire
 place_avaible: 18
