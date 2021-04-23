@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Arabe
 sub_title: Niv.2
 price: 448
+discipline: arabe
 age: Maternelles
 level: Débutant
 place_avaible: 28
