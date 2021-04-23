@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Enfant 1+
 sub_title: vide
 price: 219
+discipline: arabe
 age: Enfant
 level: Débutant
 place_avaible: 39
