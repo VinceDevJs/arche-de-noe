@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Coran
 sub_title: Débutant
 price: 220
+discipline: coran
 age: Enfant
 level: Débutant
 place_avaible: 29
