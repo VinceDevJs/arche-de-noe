@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Coran Lec
 sub_title: Débutant
 price: 219
+discipline: coran
 age: Enfant
 level: Intermédiaire
 place_avaible: 19
