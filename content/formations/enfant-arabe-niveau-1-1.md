@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Enfant
 sub_title: Niv.1
 price: 220
+discipline: arabe
 age: Enfant
 level: Intermédiaire
 place_avaible: 28
