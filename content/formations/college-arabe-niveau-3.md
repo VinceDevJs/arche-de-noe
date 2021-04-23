@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Collège
 sub_title: Niv.3
 price: 248
+discipline: arabe
 age: Collèges
 level: Intermédiaire
 place_avaible: 43
