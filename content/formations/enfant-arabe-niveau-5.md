@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Enfant
 sub_title: Niv.5
 price: 219
+discipline: arabe
 age: Enfant
 level: Confirmé
 place_avaible: 39
