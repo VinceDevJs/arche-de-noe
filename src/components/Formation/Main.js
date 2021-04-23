@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
+import { convertToSlug } from './../../utils/functions'
 
 import books from '../../assets/images/formation/books.svg'
 import twitter from '../../assets/images/formation/twitter.svg'
@@ -10,95 +11,45 @@ import table from '../../assets/images/formation/table.svg'
 import level from '../../assets/images/formation/level.svg'
 import price from '../../assets/images/formation/price.svg'
 
-const Main = () => {
+const Main = ({ allFormations }) => {
+  console.log(allFormations)
   return (
     <Container>
-      <FormationBox>
+      {allFormations && allFormations.map(({ node: data }) => {
+        const formation = data.frontmatter
+        const formationSlug = convertToSlug(formation.formation_name)
+        return (
+        <FormationBox key={formation.formation_name}>
         <ImgWrapper>
           <FormationImg src={books} alt='formation book' />
-          <FormationTitle>
-            Arabe <br />
-            <span>Niv.4</span>
+          <FormationTitle small={formation.subjects.length > 7}>
+            {formation.subjects} <br />
+            <span>{formation.sub_title !== 'vide' ? formation.sub_title : ''}</span>
           </FormationTitle>
         </ImgWrapper>
         <IconsWrapper>
           <IconBox>
             <Icon src={price} />
-            <IconText>250€</IconText>
+            <IconText>{formation.price}€</IconText>
           </IconBox>
           <IconBox>
             <Icon src={level} />
-            <IconText>Intermédiaire</IconText>
+            <IconText>{formation.level}</IconText>
           </IconBox>
           <IconBox>
             <Icon src={table} />
-            <IconText>24 Places</IconText>
+            <IconText>{formation.place_avaible} Places</IconText>
           </IconBox>
         </IconsWrapper>
-        <Button to='/'>En savoir plus</Button>
+        <Button to={`/formation/${formationSlug}`}>En savoir plus</Button>
         <SocialBox>
           <SocialIcon src={facebook} />
           <SocialIcon src={twitter} />
         </SocialBox>
       </FormationBox>
-
-      <FormationBox>
-        <ImgWrapper>
-          <FormationImg src={books} alt='formation book' />
-          <FormationTitle>
-            Arabe <br />
-            <span>Niv.4</span>
-          </FormationTitle>
-        </ImgWrapper>
-        <IconsWrapper>
-          <IconBox>
-            <Icon src={price} />
-            <IconText>250€</IconText>
-          </IconBox>
-          <IconBox>
-            <Icon src={level} />
-            <IconText>Intermédiaire</IconText>
-          </IconBox>
-          <IconBox>
-            <Icon src={table} />
-            <IconText>24 Places</IconText>
-          </IconBox>
-        </IconsWrapper>
-        <Button to='/'>En savoir plus</Button>
-        <SocialBox>
-          <SocialIcon src={facebook} />
-          <SocialIcon src={twitter} />
-        </SocialBox>
-      </FormationBox>
-
-      <FormationBox>
-        <ImgWrapper>
-          <FormationImg src={books} alt='formation book' />
-          <FormationTitle>
-            Arabe <br />
-            <span>Niv.4</span>
-          </FormationTitle>
-        </ImgWrapper>
-        <IconsWrapper>
-          <IconBox>
-            <Icon src={price} />
-            <IconText>250€</IconText>
-          </IconBox>
-          <IconBox>
-            <Icon src={level} />
-            <IconText>Intermédiaire</IconText>
-          </IconBox>
-          <IconBox>
-            <Icon src={table} />
-            <IconText>24 Places</IconText>
-          </IconBox>
-        </IconsWrapper>
-        <Button to='/'>En savoir plus</Button>
-        <SocialBox>
-          <SocialIcon src={facebook} />
-          <SocialIcon src={twitter} />
-        </SocialBox>
-      </FormationBox>
+        )
+      })}
+      {!allFormations.length && <p>Aucune formation disponible</p>}
     </Container>
   )
 }
@@ -154,13 +105,14 @@ export const FormationImg = styled.img`
 
 export const FormationTitle = styled.p`
   font-family: 'Avenir Next Bold', sans-serif;
-  font-size: 2.2em;
+  font-size:  ${props => props.small ? '1.8em' : '2.2em'};
   margin-left: -0.8em;
   color: #00a1c6;
 
   span {
     -webkit-text-stroke: 2px #00a1c6;
     color: white;
+    font-size: 40px;
   }
 `
 

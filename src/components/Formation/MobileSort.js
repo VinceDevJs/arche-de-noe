@@ -3,31 +3,31 @@ import styled from '@emotion/styled'
 import { breakpoints } from '../../utils/styles'
 import selectArrow from './../../assets/icons/select-arrow.png'
 
-const MobileSort = () => {
+const MobileSort = ({ handleFilterFormations, handleReset, age, level, discipline }) => {
   return (
     <Container>
-      <SelectInput arrow={selectArrow}>
-        <option value='arabic'>Langue Arabe</option>
-        <option value='quran'>Coran</option>
-        <option value='science'>Sciences Islamiques</option>
+      <SelectInput value={discipline} arrow={selectArrow} onChange={(e) => handleFilterFormations('discipline', e.target.value)}>
+        <option value='arabe'>Langue Arabe</option>
+        <option value='coran'>Coran</option>
+        <option value='science islamique'>Sciences Islamiques</option>
       </SelectInput>
 
-      <SelectInput arrow={selectArrow}>
-        <option defaultValue='default' disabled selected>Sélectionner un age</option>
-        <option value='maternelles'>Maternelles</option>
-        <option value='enfant'>Enfant</option>
-        <option value='collèges'>Collèges</option>
-        <option value='adultes'>Adultes</option>
+      <SelectInput value={!age ? 'default' : age} arrow={selectArrow} onChange={(e) => handleFilterFormations('age', e.target.value)}>
+        <option value='default' disabled selected>Sélectionner un age</option>
+        <option value='Maternelles'>Maternelles</option>
+        <option value='Enfant'>Enfant</option>
+        <option value='Collèges'>Collèges</option>
+        <option value='Adultes'>Adultes</option>
       </SelectInput>
 
-      <SelectInput arrow={selectArrow}>
+      <SelectInput value={!level ? 'default' : level} arrow={selectArrow} onChange={(e) => handleFilterFormations('level', e.target.value)}>
         <option value='default' disabled selected>Sélectionner un niveau</option>
-        <option value='debutant'>Débutant</option>
-        <option value='intermediaire'>Intermédiaire</option>
-        <option value='confirmé'>Confirmé</option>
+        <option value='Débutant'>Débutant</option>
+        <option value='Intermédiaire'>Intermédiaire</option>
+        <option value='Confirmé'>Confirmé</option>
       </SelectInput>
 
-      <Reset>Reset</Reset>
+      <Reset onClick={handleReset}>Reset</Reset>
     </Container>
   )
 }

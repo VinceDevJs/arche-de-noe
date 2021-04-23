@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 import Header from './../components/Formation/Header'
@@ -23,6 +23,7 @@ const Formation = () => {
                           thumbnail
                           price
                           sub_title
+                          discipline
                           show_formation
                           level
                           formation_name
@@ -36,17 +37,61 @@ const Formation = () => {
       }
   `)
   const formations = data.allMarkdownRemark.edges
-  console.log(formations)
+  const [discipline, setDiscipline] = useState('arabe')
+  const [age, setAge] = useState()
+  const [level, setLevel] = useState()
+  const [formationFiltered, setFormationFiltered] = useState(formations)
+
+  const handleFilterFormations = (type, name) => {
+    // console.log(type, name)
+    if (type === 'discipline') {
+      setDiscipline(name)
+    } else if (type === 'age') {
+      setAge(name)
+    } else {
+      setLevel(name)
+    }
+  }
+
+  const handleReset = () => {
+    setDiscipline('arabe')
+    setLevel('')
+    setAge('')
+  }
+
+  useEffect(() => {
+    if (formations) {
+      const result = formations
+        .filter(({ node: el }) => el.frontmatter.discipline === discipline)
+        .filter(({ node: el }) => level ? el.frontmatter.level === level : el.frontmatter.level)
+        .filter(({ node: el }) => age ? el.frontmatter.age === age : el.frontmatter.age)
+
+      setFormationFiltered(result)
+    }
+  }, [discipline, age, level])
+
   return (
     <>
       <Helmet>
         <title>Formation | Arche de noé</title>
       </Helmet>
       <Header />
-      <MobileSort />
+      <MobileSort
+        handleFilterFormations={handleFilterFormations}
+        handleReset={handleReset}
+        age={age}
+        discipline={discipline}
+        level={level}
+      />
       <MainContainer>
-        <SideBar />
-        <Main />
+        <SideBar
+          handleFilterFormations={handleFilterFormations}
+          age={age}
+          discipline={discipline}
+          level={level}
+          handleReset={handleReset}
+        />
+        <Main allFormations={formationFiltered} />
       </MainContainer>
       <img src={waves} style={{ width: '100%', marginTop: '3.5em', transform: 'rotate(180deg) scaleX(-1)' }} alt='' />
     </>

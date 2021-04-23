@@ -268,13 +268,12 @@ collections:
             widget: "image"
             hint: "Sélectionner une image"
 
-
   - label: "Formations"
     name: "formations"
     identifier_field: formation_name
     folder: "content/formations"
     create: true
-    fields: 
+    fields:
       - {
           label: "Nom de la formation",
           name: "formation_name",
@@ -282,7 +281,7 @@ collections:
           hint: "Indiquer le nom de la formation.",
           required: true,
         }
-      
+
       - {
           label: "Afficher sur le site",
           name: "show_formation",
@@ -339,45 +338,27 @@ collections:
           default: 0,
           value_type: "float",
           hint: "Indiquer le prix du produit ( ex: 10, 12,50 ect... ).",
-          required: true
+          required: true,
         }
-
 
       - label: "Discipline"
         name: "discipline"
         widget: "select"
-        options:
-          [
-              "coran",
-              "arabe",
-              "science islamique"
-          ]
+        options: ["coran", "arabe", "science islamique"]
         hint: "Sélectionner la matière."
         required: true
-
 
       - label: "Age"
         name: "age"
         widget: "select"
-        options:
-          [
-            "Maternelles",
-            "Enfant",
-            "Collèges",
-            "Adultes"
-          ]
+        options: ["Maternelles", "Enfant", "Collèges", "Adultes"]
         hint: "Sélectionner l'age des étudiants de la formation."
         required: true
 
       - label: "Niveau"
         name: "level"
         widget: "select"
-        options:
-          [
-            "Débutant",
-            "Intermédiaire",
-            "Confirmé"
-          ]
+        options: ["Débutant", "Intermédiaire", "Confirmé"]
         hint: "Sélectionner le niveau de la formation."
         required: true
 
@@ -391,30 +372,30 @@ collections:
           required: true,
         }
       - {
-        label: "Prérequis",
-        name: "prerequis",
-        widget: "markdown",
-        required: true,
-        hint: "Indiquez les prérequis nécéssaire.",
+          label: "Prérequis",
+          name: "prerequis",
+          widget: "markdown",
+          required: true,
+          hint: "Indiquez les prérequis nécéssaire.",
         }
       - {
-        label: "Objectifs",
-        name: "objectifs",
-        widget: "markdown",
-        required: true,
-        hint: "Indiquez les objectifs.",
+          label: "Objectifs",
+          name: "objectifs",
+          widget: "markdown",
+          required: true,
+          hint: "Indiquez les objectifs.",
         }
       - {
-        label: "Programme",
-        name: "programme",
-        widget: "markdown",
-        required: true,
-        hint: "décrivez le programme de la formation.",
-      }
+          label: "Programme",
+          name: "programme",
+          widget: "markdown",
+          required: true,
+          hint: "décrivez le programme de la formation.",
+        }
       - {
-        label: "Ouvrages utilisés",
-        name: "ouvrages",
-        widget: "markdown",
-        required: true,
-        hint: "Indiquez les ouvrages utilisez.",
-      }
+          label: "Ouvrages utilisés",
+          name: "ouvrages",
+          widget: "markdown",
+          required: true,
+          hint: "Indiquez les ouvrages utilisez.",
+        }

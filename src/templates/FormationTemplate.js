@@ -359,8 +359,8 @@ export const RightContentText = styled(ReactMarkdown)`
   }
 
   li {
-    list-style-type: '-';
-    margin: .2em;
+    list-style-type: '- ';
+    margin: .3em 0;
   }
 `
 
