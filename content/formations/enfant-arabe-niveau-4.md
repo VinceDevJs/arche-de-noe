@@ -5,7 +5,8 @@ templateKey: formation
 thumbnail: /img/formation.png
 subjects: Enfant
 sub_title: Niv.4
-price: 0
+price: 222
+discipline: arabe
 age: Enfant
 level: Confirmé
 place_avaible: 38
