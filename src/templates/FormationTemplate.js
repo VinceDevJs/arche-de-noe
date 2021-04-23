@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import waves from './../assets/images/formation/waves_2.png'
 import styled from '@emotion/styled'
+import ReactMarkdown from 'react-markdown'
 import { breakpoints } from '../utils/styles'
 
 import cerveauIcon from './../assets/images/formation/template/cerveau.svg'
@@ -312,11 +313,9 @@ export const RightContentContainer = styled.div`
   background-color: #d9f1f7;
   padding: 2.5em;
   border-radius: 35px;
-  height: 44em;
+  height: fit-content;
 
-  @media (max-width: ${breakpoints.l}px) {
-    height: fit-content;
-  }
+  @media (max-width: ${breakpoints.l}px) {  }
 
   @media (max-width: ${breakpoints.s}px) {
     padding: 1.5em;
@@ -327,6 +326,7 @@ export const RightContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-bottom: 1em;
 `
 
 export const ContentIcon = styled.img`
@@ -347,7 +347,22 @@ export const RightContentTitle = styled.p`
   color: #00A1C6;
 `
 
-export const RightContentText = styled.p``
+export const RightContentText = styled(ReactMarkdown)`
+  p {
+    margin: 0.3em 0;
+    font-size: .9em;
+    text-align: match-parent;
+  }
+  
+  ul {
+    padding-inline-start: 0!important;
+  }
+
+  li {
+    list-style-type: '-';
+    margin: .2em;
+  }
+`
 
 export const LinkContainer = styled.div`
   display: flex;

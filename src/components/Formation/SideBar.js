@@ -6,6 +6,16 @@ const SideBar = () => {
   return (
     <Container>
       <Wrapper>
+        <SortTitle>Par matière</SortTitle>
+        <Separator />
+        <SortBox>
+          <SortText>Langue arabe</SortText>
+          <SortText>Coran</SortText>
+          <SortText>Science religieuse</SortText>
+        </SortBox>
+      </Wrapper>
+
+      <Wrapper style={{ marginTop: '3em' }}>
         <SortTitle>Par age</SortTitle>
         <Separator />
         <SortBox>
@@ -46,7 +56,7 @@ export const Container = styled.div`
 `
 
 export const Wrapper = styled.div`
-    width: 40%;
+    width: 70%;
     color: #00A1C6;
 `
 

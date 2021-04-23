@@ -2,7 +2,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 import Header from './../components/Formation/Header'
-import CursesSubject from './../components/Formation/CursesSubject'
 import SideBar from '../../src/components/Formation/SideBar'
 import Main from '../../src/components/Formation/Main'
 import MobileSort from '../components/Formation/MobileSort'
@@ -44,7 +43,6 @@ const Formation = () => {
         <title>Formation | Arche de noé</title>
       </Helmet>
       <Header />
-      <CursesSubject />
       <MobileSort />
       <MainContainer>
         <SideBar />
@@ -60,7 +58,7 @@ export default Formation
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 9em 0;
+  margin: 10em 0;
 
   @media (max-width: ${breakpoints.m}px) {
     margin: 4em 0;
