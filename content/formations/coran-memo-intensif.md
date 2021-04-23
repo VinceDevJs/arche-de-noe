@@ -6,6 +6,7 @@ thumbnail: /img/formation.png
 subjects: Coran Memo
 sub_title: intensif
 price: 198
+discipline: coran
 age: Enfant
 level: Intermédiaire
 place_avaible: 18
