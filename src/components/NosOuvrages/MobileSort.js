@@ -4,7 +4,7 @@ import { breakpoints } from '../../utils/styles'
 import selectArrow from './../../assets/icons/select-arrow.png'
 
 const MobileSort = ({
-  handleFilterFormations,
+  handleFilterOuvrages,
   handleReset,
   age,
   level,
@@ -13,19 +13,9 @@ const MobileSort = ({
   return (
     <Container>
       <SelectInput
-        value={discipline}
-        arrow={selectArrow}
-        onChange={e => handleFilterFormations('discipline', e.target.value)}
-      >
-        <option value='arabe'>Langue Arabe</option>
-        <option value='coran'>Coran</option>
-        <option value='science islamique'>Sciences Islamiques</option>
-      </SelectInput>
-
-      <SelectInput
         value={!age ? 'default' : age}
         arrow={selectArrow}
-        onChange={e => handleFilterFormations('age', e.target.value)}
+        onChange={e => handleFilterOuvrages('age', e.target.value)}
       >
         <option value='default' disabled selected>
           Sélectionner un age
@@ -39,7 +29,7 @@ const MobileSort = ({
       <SelectInput
         value={!level ? 'default' : level}
         arrow={selectArrow}
-        onChange={e => handleFilterFormations('level', e.target.value)}
+        onChange={e => handleFilterOuvrages('level', e.target.value)}
       >
         <option value='default' disabled selected>
           Sélectionner un niveau

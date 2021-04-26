@@ -15,7 +15,10 @@ export const query = graphql`
             templateKey
             price
             name
+            pointsForts
+            subTitle
             description
+            title
             avaible
             images {
               image
@@ -32,6 +35,7 @@ const ProductTemplate = ({ data, path }) => {
     avaible,
     description,
     name,
+    title,
     price,
     images
   } = data.allMarkdownRemark.edges[0].node.frontmatter
@@ -39,7 +43,7 @@ const ProductTemplate = ({ data, path }) => {
   return (
     <div>
       <Helmet>
-        <title>{name} | Arche de noé</title>
+        <title>{title} | Arche de noé</title>
       </Helmet>
       <p>{name}</p>
       <p>{price} €</p>

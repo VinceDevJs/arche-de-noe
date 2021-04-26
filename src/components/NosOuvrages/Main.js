@@ -4,47 +4,35 @@ import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
 import { convertToSlug } from './../../utils/functions'
 
-import books from '../../assets/images/formation/books.svg'
 import twitter from '../../assets/images/formation/twitter.svg'
 import facebook from '../../assets/images/formation/facebook.svg'
-import table from '../../assets/images/formation/table.svg'
-import level from '../../assets/images/formation/level.svg'
-import price from '../../assets/images/formation/price.svg'
 
-const Main = ({ allFormations }) => {
-  console.log(allFormations)
+const Main = ({ allOuvrages }) => {
+  console.log(allOuvrages)
   return (
     <Container>
-      {allFormations &&
-        allFormations.map(({ node: data }) => {
-          const formation = data.frontmatter
-          const formationSlug = convertToSlug(formation.formation_name)
+      {allOuvrages &&
+        allOuvrages.map(({ node: data }) => {
+          const ouvrage = data.frontmatter
+          const ouvrageSlug = convertToSlug(ouvrage.name)
           return (
-            <FormationBox key={formation.formation_name}>
+            <FormationBox key={ouvrage.name}>
               <ImgWrapper>
-                <FormationImg src={books} alt='formation book' />
-                <FormationTitle small={formation.subjects.length > 7}>
-                  {formation.subjects} <br />
+                <FormationImg
+                  src={ouvrage.images[0].image}
+                  alt='formation book'
+                />
+                <FormationTitle>
+                  {ouvrage.title} <br />
                   <span>
-                    {formation.sub_title !== 'vide' ? formation.sub_title : ''}
+                    {ouvrage.subTitle.length !== 0 ? ouvrage.subTitle : ''}
                   </span>
                 </FormationTitle>
+                <Price>{ouvrage.productPrice} €</Price>
               </ImgWrapper>
-              <IconsWrapper>
-                <IconBox>
-                  <Icon src={price} />
-                  <IconText>{formation.price}€</IconText>
-                </IconBox>
-                <IconBox>
-                  <Icon src={level} />
-                  <IconText>{formation.level}</IconText>
-                </IconBox>
-                <IconBox>
-                  <Icon src={table} />
-                  <IconText>{formation.place_avaible} Places</IconText>
-                </IconBox>
-              </IconsWrapper>
-              <Button to={`/formation/${formationSlug}`}>En savoir plus</Button>
+              <Button to={`/nos-ouvrages/${ouvrageSlug}`}>
+                En savoir plus
+              </Button>
               <SocialBox>
                 <SocialIcon src={facebook} />
                 <SocialIcon src={twitter} />
@@ -52,7 +40,7 @@ const Main = ({ allFormations }) => {
             </FormationBox>
           )
         })}
-      {!allFormations.length && (
+      {!allOuvrages.length && (
         <p
           style={{
             fontSize: '2em',
@@ -62,7 +50,7 @@ const Main = ({ allFormations }) => {
             textAlign: 'center'
           }}
         >
-          Aucune formation disponible pour cette sélection
+          Aucun ouvrage disponible pour cette sélection
         </p>
       )}
     </Container>
@@ -93,8 +81,8 @@ export const Container = styled.div`
 `
 
 export const FormationBox = styled.div`
-  width: 40%;
-  max-width: 19em;
+  width: 50%;
+  max-width: 22em;
   margin: 0 0 4em;
 
   @media (max-width: ${breakpoints.m}px) {
@@ -108,9 +96,10 @@ export const FormationBox = styled.div`
 
 export const ImgWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 `
 
 export const FormationImg = styled.img`
@@ -123,49 +112,17 @@ export const FormationImg = styled.img`
 
 export const FormationTitle = styled.p`
   font-family: 'Avenir Next Bold', sans-serif;
-  font-size: ${props => (props.small ? '1.8em' : '2.2em')};
-  margin-left: -0.8em;
+  font-size: 1.7em;
   color: #00a1c6;
+  margin: 0.8em 0;
 
   span {
-    -webkit-text-stroke: 2px #00a1c6;
-    color: white;
-    font-size: 40px;
+    font-size: 25px;
+    text-transform: uppercase;
   }
 `
 
-export const IconsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-
-  @media (max-width: ${breakpoints.m}px) {
-    width: 100%;
-  }
-`
-
-export const IconBox = styled.div`
-  width: 33%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 1.5em 0;
-`
-
-export const Icon = styled.img`
-  width: 3em;
-`
-
-export const IconText = styled.p`
-  color: #007cad;
-  font-family: 'Avenir Next Bold', sans-serif;
-
-  @media (max-width: ${breakpoints.l}px) {
-    font-size: 0.9em;
-  }
-`
+export const Price = styled.p``
 
 export const Button = styled(Link)`
   display: block;

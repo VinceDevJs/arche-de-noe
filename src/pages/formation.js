@@ -103,9 +103,15 @@ export default Formation
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 10em 0;
+  margin: 10em auto;
+  max-width: 80%;
+
+  @media (max-width: ${breakpoints.l}px) {
+    max-width: 95%;
+    margin: 8em auto;
+  }
 
   @media (max-width: ${breakpoints.m}px) {
-    margin: 4em 0;
+    margin: 4em auto;
   }
 `

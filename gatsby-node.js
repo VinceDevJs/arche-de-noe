@@ -49,21 +49,14 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         edges {
           node {
             frontmatter {
-              templateKey
-              images {
-                image
-              }
-              price
               name
-              show
-              description
-              avaible
             }
           }
         }
       }
     }
   `)
+
   products.data.allMarkdownRemark.edges.forEach(edge => {
     const product = edge.node.frontmatter
     if (!product.show) return

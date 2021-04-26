@@ -38,7 +38,7 @@ collections:
               required: true,
             }
           - {
-              label: "Nombres de professuers 2",
+              label: "Nombres de professeurs 2",
               name: "teachers2",
               widget: "number",
               hint: "Indiquer le nombres professeurs2.",
@@ -217,6 +217,7 @@ collections:
           hint: "Indiquer le nom du produit.",
           required: true,
         }
+
       - {
           label: "Afficher",
           name: "show",
@@ -224,6 +225,7 @@ collections:
           default: false,
           hint: "Activer pour afficher le produit sur le site",
         }
+
       - {
           label: "Disponible",
           name: "avaible",
@@ -231,28 +233,66 @@ collections:
           default: false,
           hint: "Activer pour indiquer si le produit est disponible.",
         }
+
       - {
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
           default: "shop",
         }
+
       - {
           label: "Prix",
-          name: "price",
-          widget: "number",
-          default: 0,
-          value_type: "float",
+          name: "productPrice",
+          widget: "string",
           hint: "Indiquer le prix du produit ( ex: 10, 12.50 ect... ).",
           required: true,
         }
+
+      - {
+          label: "Titre",
+          name: "title",
+          widget: "string",
+          hint: "Indiquer le nom de l'ouvrage a afficher.",
+          required: true,
+        }
+
+      - {
+          label: "Sous titre",
+          name: "subTitle",
+          widget: "string",
+          hint: "Indiquer le sous titre a afficher.",
+          required: true,
+        }
+
       - {
           label: "description",
           name: "description",
           widget: "markdown",
-          default: "shop",
           hint: "Ecrivez la description du produit.",
         }
+
+      - {
+          label: "Points forts",
+          name: "pointsForts",
+          widget: "markdown",
+          hint: "Ecrivez les points forts de l’ouvrage.",
+        }
+
+      - label: "Niveau de l'ouvrage"
+        name: "level"
+        widget: "select"
+        options: ["Débutant", "Intermédiaire", "Confirmé"]
+        hint: "Sélectionner le niveau de l'ouvrage."
+        required: true
+
+      - label: "Tranche d'age"
+        name: "age"
+        widget: "select"
+        options: ["Maternelles", "Enfant", "Collèges", "Adultes"]
+        hint: "Sélectionner la Tranche d'age."
+        required: true
+
       - label: "Images"
         name: "images"
         minimize_collapsed: true
