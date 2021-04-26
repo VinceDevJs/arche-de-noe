@@ -3,7 +3,7 @@ name: J’apprends L’Arabe Niveau CP
 show: true
 avaible: true
 templateKey: shop
-price: 12.39
+price: 12.3
 title: J’apprends L’Arabe
 subTitle: Niveau CP
 description: Amélioration de la lecture. Dictée Traduction de
