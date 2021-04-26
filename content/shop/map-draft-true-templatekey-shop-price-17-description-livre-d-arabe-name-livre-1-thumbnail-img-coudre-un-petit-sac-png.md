@@ -16,6 +16,8 @@ pointsForts: Amélioration de la lecture. Dictée Traduction de
   ‘Aqida) Apprentissage des bases des règles de TAJWID Lecture du Coran et
   apprentissages de sourates Savoir lire et écrire sans confondre les lettres et
   les voyelles
+level: Débutant
+age: Enfant
 images:
   - image: /img/cover.png
   - image: /img/volume-1-methode-de-la-madrassah.jpg
