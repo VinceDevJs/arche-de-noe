@@ -4,6 +4,8 @@ show: true
 avaible: true
 templateKey: shop
 price: 12.3
+title: J’apprends L’Arabe
+subTitle: Niveau CP
 description: Amélioration de la lecture. Dictée Traduction de
   texte Enrichissement du vocabulaire Etude des bases de la grammaire et de la
   conjugaison Introduction aux sciences islamiques (Fiqh, Sira, Adab,
