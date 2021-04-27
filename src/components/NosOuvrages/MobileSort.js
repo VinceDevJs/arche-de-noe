@@ -51,6 +51,10 @@ export const Container = styled.div`
   width: 20em;
   font-family: 'Avenir Next Bold', sans-serif;
 
+  @media (max-width: ${breakpoints.s}px) {
+    margin: 10em auto 2em auto;
+  }
+
   @media (min-width: ${breakpoints.m}px) {
     display: none;
   }

@@ -52,12 +52,51 @@ export const GlobalStyle = () => (
         margin: 0;
       }
 
+      .image-gallery-image {
+      }
+
+      .image-gallery {
+        width: 100% !important;
+      }
+
+      .image-gallery-bullets .image-gallery-bullets-container {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        position: absolute;
+        margin-top: 3em;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+      }
+
+      .image-gallery-bullets .image-gallery-bullet {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: grey;
+        border: none;
+        border-radius: 50%;
+        box-shadow: none;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+        outline: none;
+        padding: 4px;
+        transition: background 0.2s ease-out;
+      }
+
+      .active {
+        background-color: #007cad !important;
+      }
+
       .snipcart-cart-button--highlight {
         border-radius: 30px !important;
       }
-      
+
       .snipcart-modal__container {
-      z-index: 1000000000!important;
+        z-index: 1000000000 !important;
       }
 
       button {

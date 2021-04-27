@@ -132,6 +132,7 @@ export const FormationTitle = styled.p`
 export const Price = styled.p`
   margin: 0 0 1em;
   font-family: 'Avenir Next Bold', sans-serif;
+  font-size: 1.4em;
 `
 
 export const Button = styled(Link)`

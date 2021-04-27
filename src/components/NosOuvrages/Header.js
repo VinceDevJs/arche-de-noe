@@ -84,7 +84,7 @@ export const ComputerImg = styled.img`
   }
 
   @media (max-width: ${breakpoints.s}px) {
-    width: 100%;
+    width: 90%;
   }
 `
 

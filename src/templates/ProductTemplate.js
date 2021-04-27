@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import Helmet from 'react-helmet'
+import ImageGallery from 'react-image-gallery'
 
+import 'react-image-gallery/styles/css/image-gallery.css'
 import { breakpoints } from '../utils/styles'
 import waves from './../assets/images/formation/waves_2.png'
 import descriptionIcon from './../assets/icons/description_icon.svg'
@@ -52,6 +54,18 @@ const ProductTemplate = ({ data, path }) => {
     images
   } = data.allMarkdownRemark.edges[0].node.frontmatter
 
+  const gallery = []
+
+  images.map(({ image }) =>
+    gallery.push({
+      original: image,
+      thumbnail: image,
+      sizes: '800px'
+    })
+  )
+
+  console.log(gallery)
+
   const productSelectQuantity = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const [quantity, setQuantity] = useState(1)
   console.log(path)
@@ -72,13 +86,21 @@ const ProductTemplate = ({ data, path }) => {
           Revenir à la page de Nos Ouvrages
         </ReturnLink>
         <Title>
-          {title} | {subTitle.toUpperCase()}
+          {title} <TitleSeparator>|</TitleSeparator>
+          <Br /> {subTitle.toUpperCase()}
         </Title>
       </TitleWrapper>
 
       <MainContainer>
         <LeftWrapper>
-          <ProductImage src={images[0].image} />
+          <ProductImage
+            showNav={false}
+            infinite={false}
+            showPlayButton={false}
+            showBullets={true}
+            showThumbnails={false}
+            items={gallery}
+          />
           <LinkButton color='true' to='/formation'>
             Nos Formations
           </LinkButton>
@@ -121,12 +143,12 @@ const ProductTemplate = ({ data, path }) => {
               disabled={!avaible}
               className='snipcart-add-item'
               data-item-id={name}
-              data-item-price={productPrice}
+              data-item-price={productPrice.replace(',', '.')}
               data-item-url={`http://localhost:8000/${path}`} // TODO changer l url
               data-item-description={description}
               data-item-image={images && images[0].image}
               data-item-name={name}
-              data-item-quantity='1'
+              data-item-quantity={quantity}
             >
               Ajouter au panier
             </AddToCartButton>
@@ -186,6 +208,15 @@ export const TitleWrapper = styled.div`
   color: #00a1c6;
   margin-left: 9em;
 
+  @media (max-width: ${breakpoints.l}px) {
+    margin-left: 3em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin-left: 0;
+    text-align: center;
+  }
+
   @media (max-width: ${breakpoints.s}px) {
     margin-left: 0;
   }
@@ -196,9 +227,21 @@ export const Title = styled.p`
   margin: 0.4em 0 0;
 
   @media (max-width: ${breakpoints.s}px) {
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     margin-top: 1em;
+  }
+`
+
+export const Br = styled.br`
+  @media (min-width: ${breakpoints.m}px) {
+    display: none;
+  }
+`
+
+export const TitleSeparator = styled.span`
+  @media (max-width: ${breakpoints.m}px) {
+    display: none;
   }
 `
 
@@ -220,18 +263,45 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 9em 0 9em;
+  padding: 0 9em;
   margin: 5em 0;
+
+  @media (max-width: ${breakpoints.l}px) {
+    padding: 0 3em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    padding: 0 1em;
+  }
 `
 
 export const LeftWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 50%;
+  max-width: 32em;
+
+  @media (max-width: ${breakpoints.l}px) {
+    max-width: 25em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 40em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+  }
 `
 
-export const ProductImage = styled.img`
+export const ProductImage = styled(ImageGallery)`
   width: 100%;
   margin-bottom: 2em;
 `
@@ -240,13 +310,32 @@ export const RightWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  max-width: 38em;
+  max-width: 35em;
+
+  @media (max-width: ${breakpoints.l}px) {
+    max-width: 28em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 3em auto;
+    width: 90%;
+    max-width: 40em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+  }
 `
 
 export const ContentBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 2em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const IconWrapper = styled.div`
@@ -256,12 +345,21 @@ export const IconWrapper = styled.div`
   width: 5em;
   margin-right: 2em;
 
+  @media (max-width: ${breakpoints.s}px) {
+    margin-right: 0;
+  }
+
   img {
     width: 5em;
   }
 `
 
-export const TextWrapper = styled.div``
+export const TextWrapper = styled.div`
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+    margin-top: 1em;
+  }
+`
 
 export const ContentTitle = styled.p`
   margin: 0;
@@ -281,6 +379,13 @@ export const Price = styled.p`
 
 export const AddToCartWrapper = styled.div`
   margin-top: 2em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 1em auto;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+  }
 `
 
 export const AddToCartButton = styled.button`
@@ -292,6 +397,10 @@ export const AddToCartButton = styled.button`
   font-family: 'Avenir Next Bold', sans-serif;
   padding: 0.2em 1.4em;
   cursor: pointer;
+
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 1.2em;
+  }
 
   :hover {
     background-color: white;
@@ -323,7 +432,8 @@ export const AddToCartQuantity = styled.select`
   cursor: pointer;
   
   @media (max-width: ${breakpoints.s}px) {
-    margin-left: 0;
+    margin-left: 1em;
+    height: 1.8em;
   }
 `
 
@@ -334,6 +444,10 @@ export const LinkContainer = styled.div`
 
   @media (max-width: ${breakpoints.m}px) {
     align-items: center;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
   }
 `
 
@@ -350,6 +464,7 @@ export const LinkButton = styled(Link)`
   text-align: center;
   line-height: ${props => (props.fontSize ? '1.3' : '2.7')};
   text-decoration: none;
+  margin-top: ${props => (props.color ? '4em' : '0.1em')};
 `
 
 export const SocialText = styled.p`
