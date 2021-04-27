@@ -53,12 +53,12 @@ export const Container = styled.div`
 
   @media (max-width: ${breakpoints.m}px) {
     flex-direction: column-reverse;
-    height: 40em;
+    height: 53em;
     padding-top: 3em;
   }
 
   @media (max-width: ${breakpoints.s}px) {
-    height: 35em;
+    height: 40em;
     padding-top: 3em;
   }
 `
@@ -99,12 +99,16 @@ export const TitleWrapper = styled.div`
   margin-right: 3em;
 
   @media (max-width: ${breakpoints.m}px) {
-    margin-left: 0;
+    margin-right: 0;
+    margin-top: 12em;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: fit-content;
   }
 
   @media (max-width: ${breakpoints.s}px) {
+    margin-top: 7em;
     width: 100%;
   }
 `
@@ -114,6 +118,10 @@ export const Title = styled.p`
   text-align: right;
   margin: 0;
   font-family: 'Avenir Next Bold', sans-serif;
+
+  @media (max-width: ${breakpoints.m}px) {
+    text-align: center;
+  }
 
   @media (max-width: ${breakpoints.s}px) {
     font-size: 3.3em;
@@ -132,4 +140,8 @@ export const Separator = styled.div`
 
 export const SubTitle = styled.p`
   text-align: end;
+
+  @media (max-width: ${breakpoints.m}px) {
+    text-align: center;
+  }
 `

@@ -12,11 +12,17 @@ const Main = ({ allOuvrages }) => {
   return (
     <Container>
       {allOuvrages &&
-        allOuvrages.map(({ node: data }) => {
+        allOuvrages.map(({ node: data }, index) => {
           const ouvrage = data.frontmatter
           const ouvrageSlug = convertToSlug(ouvrage.name)
+          const slideTime = `${index}00`
           return (
-            <FormationBox key={ouvrage.name}>
+            <FormationBox
+              key={ouvrage.name}
+              data-aos='fade-left'
+              data-aos-duration='2000'
+              data-aos-delay={slideTime}
+            >
               <ImgWrapper>
                 <FormationImg
                   src={ouvrage.images[0].image}
@@ -118,13 +124,14 @@ export const FormationTitle = styled.p`
 
   span {
     font-family: 'Avenir Next', sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     text-transform: uppercase;
   }
 `
 
 export const Price = styled.p`
   margin: 0 0 1em;
+  font-family: 'Avenir Next Bold', sans-serif;
 `
 
 export const Button = styled(Link)`

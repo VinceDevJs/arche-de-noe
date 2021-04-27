@@ -71,11 +71,19 @@ const FormationTemplate = ({ data, path }) => {
   } = data.allMarkdownRemark.edges[0].node.frontmatter
   return (
     <Container>
-      <img src={waves} style={{ width: '100%', marginBottom: '2.5em' }} alt='' />
+      <img
+        src={waves}
+        style={{ width: '100%', marginBottom: '2.5em' }}
+        alt=''
+      />
 
       <TitleWrapper>
-        <ReturnLink to='/formation'>Revenir à la page des formations</ReturnLink>
-        <Title>{subjects.toUpperCase()} {sub_title}</Title>
+        <ReturnLink to='/formation'>
+          Revenir à la page des formations
+        </ReturnLink>
+        <Title>
+          {subjects.toUpperCase()} {sub_title}
+        </Title>
       </TitleWrapper>
 
       <ContentWrapper>
@@ -141,11 +149,17 @@ const FormationTemplate = ({ data, path }) => {
           </RightContentContainer>
 
           <LinkContainer>
-            <LinkButton to='/inscription' fontSize='true'>Connaitre les modalités <br /> d’inscription</LinkButton>
-            <LinkButton to='/nos-ouvrages' color='true'>Nos ouvrages</LinkButton>
+            <LinkButton to='/inscription' fontSize='true'>
+              Connaitre les modalités <br /> d’inscription
+            </LinkButton>
+            <LinkButton to='/nos-ouvrages' color='true'>
+              Nos ouvrages
+            </LinkButton>
             <LinkButton to='/contact'>J’ai une question</LinkButton>
 
-            <SocialText>J’informe une connaissance <br /> de la formation</SocialText>
+            <SocialText>
+              J’informe une connaissance <br /> de la formation
+            </SocialText>
             <SocialBox>
               <a href='https://fr-fr.facebook.com/institutarchedenoe'>
                 <SocialIcon src={facebookIcon} />
@@ -155,23 +169,28 @@ const FormationTemplate = ({ data, path }) => {
               </a>
             </SocialBox>
           </LinkContainer>
-
         </ContainerRight>
       </ContentWrapper>
-      <img src={waves} style={{ width: '100%', marginTop: '3.5em', transform: 'rotate(180deg) scaleX(-1)' }} alt='' />
+      <img
+        src={waves}
+        style={{
+          width: '100%',
+          marginTop: '3.5em',
+          transform: 'rotate(180deg) scaleX(-1)'
+        }}
+        alt=''
+      />
     </Container>
   )
 }
 
 export default FormationTemplate
 
-export const Container = styled.div`
-  
-`
+export const Container = styled.div``
 
 export const TitleWrapper = styled.div`
   font-family: 'Avenir Next Bold', sans-serif;
-  color: #00A1C6;
+  color: #00a1c6;
   margin-left: 4em;
 
   @media (max-width: ${breakpoints.s}px) {
@@ -193,8 +212,8 @@ export const Title = styled.p`
 export const ReturnLink = styled(Link)`
   font-size: 1em;
   text-decoration: none;
-  color: #00A1C6;
-  
+  color: #00a1c6;
+
   :hover {
     color: #007bac;
   }
@@ -244,7 +263,7 @@ export const ContainerLeft = styled.div`
 `
 
 export const Img = styled.img`
- width: 100%;
+  width: 100%;
 `
 
 export const IconsWrapper = styled.div`
@@ -269,7 +288,7 @@ export const IconBox = styled.div`
   justify-content: flex-end;
   text-align: center;
   height: 8em;
-  color: #00A1C6;
+  color: #00a1c6;
 `
 
 export const IconText = styled.p`
@@ -279,16 +298,16 @@ export const IconText = styled.p`
 export const Icon = styled.img``
 
 export const PlanningButton = styled.div`
-  border: 2px solid #007CAD;
+  border: 2px solid #007cad;
   border-radius: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 13em;
-  margin: .5em auto 0;
+  margin: 0.5em auto 0;
   padding: 0 1.2em;
   p {
-    color: #007CAD;
+    color: #007cad;
     font-size: 1.1em;
   }
 `
@@ -315,7 +334,8 @@ export const RightContentContainer = styled.div`
   border-radius: 35px;
   height: fit-content;
 
-  @media (max-width: ${breakpoints.l}px) {  }
+  @media (max-width: ${breakpoints.l}px) {
+  }
 
   @media (max-width: ${breakpoints.s}px) {
     padding: 1.5em;
@@ -344,23 +364,23 @@ export const RightContentTitle = styled.p`
   font-family: 'Avenir Next Bold', sans-serif;
   font-size: 2em;
   margin: 0;
-  color: #00A1C6;
+  color: #00a1c6;
 `
 
 export const RightContentText = styled(ReactMarkdown)`
   p {
     margin: 0.3em 0;
-    font-size: .9em;
+    font-size: 0.9em;
     text-align: match-parent;
   }
-  
+
   ul {
-    padding-inline-start: 0!important;
+    padding-inline-start: 0 !important;
   }
 
   li {
     list-style-type: '- ';
-    margin: .3em 0;
+    margin: 0.3em 0;
   }
 `
 
@@ -376,22 +396,22 @@ export const LinkContainer = styled.div`
 
 export const LinkButton = styled(Link)`
   font-family: 'Avenir Next Bold', sans-serif;
-  background-color: ${props => props.color ? '#007CAD' : '#00A1C6'};
+  background-color: ${props => (props.color ? '#007CAD' : '#00A1C6')};
   color: white;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   display: inline-block;
   width: 17em;
   border-radius: 30px;
   height: 2.7em;
   padding: 0.2em 0;
   text-align: center;
-  line-height: ${props => props.fontSize ? '1.3' : '2.7'};
+  line-height: ${props => (props.fontSize ? '1.3' : '2.7')};
   text-decoration: none;
 `
 
 export const SocialText = styled.p`
   font-family: 'Avenir Next Bold', sans-serif;
-  color: #00A1C6;
+  color: #00a1c6;
   font-size: 1.7em;
 
   @media (max-width: ${breakpoints.m}px) {

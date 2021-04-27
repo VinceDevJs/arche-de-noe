@@ -47,7 +47,7 @@ const MobileSort = ({
 export default MobileSort
 
 export const Container = styled.div`
-  margin: 10em auto 2em auto;
+  margin: 15em auto 2em auto;
   width: 20em;
   font-family: 'Avenir Next Bold', sans-serif;
 

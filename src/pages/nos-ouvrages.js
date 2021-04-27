@@ -116,7 +116,7 @@ export const MainContainer = styled.div`
 
   @media (max-width: ${breakpoints.l}px) {
     max-width: 95%;
-    margin: 8em auto;
+    margin: 14em auto;
   }
 
   @media (max-width: ${breakpoints.m}px) {

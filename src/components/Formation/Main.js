@@ -16,11 +16,17 @@ const Main = ({ allFormations }) => {
   return (
     <Container>
       {allFormations &&
-        allFormations.map(({ node: data }) => {
+        allFormations.map(({ node: data }, index) => {
           const formation = data.frontmatter
           const formationSlug = convertToSlug(formation.formation_name)
+          const slideTime = `${index}00`
           return (
-            <FormationBox key={formation.formation_name}>
+            <FormationBox
+              key={formation.formation_name}
+              data-aos='fade-left'
+              data-aos-duration='2000'
+              data-aos-delay={slideTime}
+            >
               <ImgWrapper>
                 <FormationImg src={books} alt='formation book' />
                 <FormationTitle small={formation.subjects.length > 7}>

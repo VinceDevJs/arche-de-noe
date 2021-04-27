@@ -741,7 +741,10 @@ enum FileFieldsEnum {
   childrenMarkdownRemark___frontmatter___name
   childrenMarkdownRemark___frontmatter___show
   childrenMarkdownRemark___frontmatter___avaible
+  childrenMarkdownRemark___frontmatter___productPrice
+  childrenMarkdownRemark___frontmatter___subTitle
   childrenMarkdownRemark___frontmatter___description
+  childrenMarkdownRemark___frontmatter___pointsForts
   childrenMarkdownRemark___frontmatter___images
   childrenMarkdownRemark___frontmatter___images___image
   childrenMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -824,7 +827,10 @@ enum FileFieldsEnum {
   childMarkdownRemark___frontmatter___name
   childMarkdownRemark___frontmatter___show
   childMarkdownRemark___frontmatter___avaible
+  childMarkdownRemark___frontmatter___productPrice
+  childMarkdownRemark___frontmatter___subTitle
   childMarkdownRemark___frontmatter___description
+  childMarkdownRemark___frontmatter___pointsForts
   childMarkdownRemark___frontmatter___images
   childMarkdownRemark___frontmatter___images___image
   childMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1776,7 +1782,10 @@ enum MarkdownRemarkFieldsEnum {
   frontmatter___name
   frontmatter___show
   frontmatter___avaible
+  frontmatter___productPrice
+  frontmatter___subTitle
   frontmatter___description
+  frontmatter___pointsForts
   frontmatter___images
   frontmatter___images___image
   excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1916,7 +1925,7 @@ type MarkdownRemarkFrontmatter {
   thumbnail: String
   subjects: String
   sub_title: String
-  price: Int
+  price: Float
   discipline: String
   age: String
   level: String
@@ -1928,7 +1937,10 @@ type MarkdownRemarkFrontmatter {
   name: String
   show: Boolean
   avaible: Boolean
+  productPrice: String
+  subTitle: String
   description: String
+  pointsForts: String
   images: [MarkdownRemarkFrontmatterImages]
 }
 
@@ -1979,7 +1991,7 @@ input MarkdownRemarkFrontmatterFilterInput {
   thumbnail: StringQueryOperatorInput
   subjects: StringQueryOperatorInput
   sub_title: StringQueryOperatorInput
-  price: IntQueryOperatorInput
+  price: FloatQueryOperatorInput
   discipline: StringQueryOperatorInput
   age: StringQueryOperatorInput
   level: StringQueryOperatorInput
@@ -1991,7 +2003,10 @@ input MarkdownRemarkFrontmatterFilterInput {
   name: StringQueryOperatorInput
   show: BooleanQueryOperatorInput
   avaible: BooleanQueryOperatorInput
+  productPrice: StringQueryOperatorInput
+  subTitle: StringQueryOperatorInput
   description: StringQueryOperatorInput
+  pointsForts: StringQueryOperatorInput
   images: MarkdownRemarkFrontmatterImagesFilterListInput
 }
 
