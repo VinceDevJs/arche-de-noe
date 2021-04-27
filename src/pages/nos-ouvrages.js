@@ -111,7 +111,7 @@ export default NosOuvrages
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 10em auto;
+  margin: 14em auto;
   max-width: 80%;
 
   @media (max-width: ${breakpoints.l}px) {

@@ -10,12 +10,12 @@ const Header = () => {
     <Container>
       <Wave src={wave} alt='wave logo' />
       <ComputerImg
-        data-aos='fade-right'
+        data-aos='fade-left'
         data-aos-duration='2000'
         src={store}
         alt='çomputer logo'
       />
-      <TitleWrapper data-aos='fade-left' data-aos-duration='2500'>
+      <TitleWrapper data-aos='fade-right' data-aos-duration='2500'>
         <Title>
           Nos <br />
           Ouvrages

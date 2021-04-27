@@ -103,10 +103,10 @@ export const ImgWrapper = styled.div`
 `
 
 export const FormationImg = styled.img`
-  width: 12em;
+  width: 14em;
 
   @media (max-width: ${breakpoints.m}px) {
-    width: 10em;
+    width: 14em;
   }
 `
 
@@ -117,12 +117,15 @@ export const FormationTitle = styled.p`
   margin: 0.8em 0;
 
   span {
+    font-family: 'Avenir Next', sans-serif;
     font-size: 25px;
     text-transform: uppercase;
   }
 `
 
-export const Price = styled.p``
+export const Price = styled.p`
+  margin: 0 0 1em;
+`
 
 export const Button = styled(Link)`
   display: block;

@@ -13,7 +13,7 @@ export const query = graphql`
         node {
           frontmatter {
             templateKey
-            price
+            productPrice
             name
             pointsForts
             subTitle
@@ -36,7 +36,7 @@ const ProductTemplate = ({ data, path }) => {
     description,
     name,
     title,
-    price,
+    productPrice,
     images
   } = data.allMarkdownRemark.edges[0].node.frontmatter
   console.log(path)
@@ -46,14 +46,14 @@ const ProductTemplate = ({ data, path }) => {
         <title>{title} | Arche de noé</title>
       </Helmet>
       <p>{name}</p>
-      <p>{price} €</p>
+      <p>{productPrice} €</p>
       <p>{description}</p>
       <img src={images[0].image} alt='' />
       <button
         disabled={!avaible}
         className='snipcart-add-item'
         data-item-id={name}
-        data-item-price={price}
+        data-item-price={productPrice}
         data-item-url={`http://localhost:8000/${path}`}
         data-item-description={description}
         data-item-image={images && images[0].image}
