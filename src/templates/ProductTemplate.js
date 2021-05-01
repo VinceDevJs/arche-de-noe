@@ -214,11 +214,6 @@ export const TitleWrapper = styled.div`
 
   @media (max-width: ${breakpoints.m}px) {
     margin-left: 0;
-    text-align: center;
-  }
-
-  @media (max-width: ${breakpoints.s}px) {
-    margin-left: 0;
   }
 `
 
@@ -229,7 +224,7 @@ export const Title = styled.p`
   @media (max-width: ${breakpoints.s}px) {
     font-size: 2em;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 2em;
   }
 `
 
