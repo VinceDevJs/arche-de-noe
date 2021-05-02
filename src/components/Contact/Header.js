@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { breakpoints } from '../../utils/styles'
 
 import clockIcon from './../../assets/images/contact/clock.svg'
 import mapIcon from './../../assets/images/contact/map.svg'
@@ -92,10 +93,26 @@ export const MainContainer = styled.div`
   padding: 0 8em;
   max-width: 60em;
   margin: 3em auto 0 auto;
+
+  @media (max-width: ${breakpoints.l}px) {
+    padding: 0 3em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    padding: 0 1em;
+  }
 `
 
 export const LeftBox = styled.div`
   max-width: 35em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 0 auto;
+  }
 `
 
 export const PhoneImg = styled.img`
@@ -108,10 +125,20 @@ export const RightBox = styled.div`
   width: 66%;
   max-width: 34em;
   margin-left: 3em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 100%;
+    margin-left: 0;
+    max-width: max-content;
+  }
 `
 
 export const RightHeaderContent = styled.div`
   margin-bottom: 4em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    text-align: center;
+  }
 `
 
 export const RightHeaderTitle = styled.p`
@@ -119,6 +146,10 @@ export const RightHeaderTitle = styled.p`
   font-size: 3em;
   font-family: 'Avenir Next Bold', sans-serif;
   margin: 0;
+
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 2.5em;
+  }
 `
 
 export const RightHeaderText = styled.p`
@@ -152,12 +183,29 @@ export const RightInfoBox = styled.div`
   display: flex;
   flex-direction: row;
   margin: 1em 0;
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 0 auto;
+    width: 30em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
 `
 
 export const RightIconBox = styled.div`
   display: flex;
   justify-content: center;
   width: 7em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin-bottom: 1em;
+  }
 `
 
 export const Separator = styled.div`
@@ -165,6 +213,10 @@ export const Separator = styled.div`
   width: 7em;
   margin: 1em 0;
   height: 2px;
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 2em auto;
+  }
 `
 
 export const RightIcon = styled.img``
@@ -175,6 +227,10 @@ export const RightContentBox = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 2em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin-left: 0;
+  }
 `
 
 export const RightContentText = styled.p`

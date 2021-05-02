@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from '@emotion/styled'
 
+import { breakpoints } from '../utils/styles'
 import ContactForm from '../components/Contact/Form'
 import Header from '../components/Contact/Header'
 import Map from '../components/Contact/Map'
@@ -51,6 +52,15 @@ export const FormTitle = styled.p`
   text-align: center;
   font-size: 2.3em;
   margin: 2em 0;
+
+  @media (max-width: ${breakpoints.m}px) {
+    padding: 0 1em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin: 1em 0;
+    font-size: 2em;
+  }
 `
 
 export const FormSection = styled.div`
@@ -59,6 +69,10 @@ export const FormSection = styled.div`
   margin: 0 auto;
   width: 70%;
   max-width: 60em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+  }
 `
 
 export const FormImg = styled.img`
@@ -66,4 +80,8 @@ export const FormImg = styled.img`
   max-width: 30em;
   margin-left: 3em;
   margin-top: -8em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    display: none;
+  }
 `

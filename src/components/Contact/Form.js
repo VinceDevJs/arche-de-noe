@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { breakpoints } from '../../utils/styles'
 
-import selectArrow from '../../assets/icons/select-arrow.png'
-
 const ContactForm = () => {
   const [errMsg, setErrMsg] = useState({
     name: false,
@@ -16,9 +14,7 @@ const ContactForm = () => {
     mail: '',
     phone: '',
     subject: '',
-    message: '',
-    type: 'Particulier',
-    events: ''
+    message: ''
   })
 
   const [success, setSuccess] = useState(false)
@@ -32,27 +28,22 @@ const ContactForm = () => {
   }
 
   const validateData = () => {
-    const { name, message, mail, events, type } = dataForm
+    const { name, message, mail } = dataForm
 
     function validateEmail (mail) {
       const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       return re.test(String(mail).toLowerCase())
     }
 
-    console.log(type, events)
-
     setErrMsg({
       name: name.length === 0,
       mail: !validateEmail(mail),
-      message: message.length === 0,
-      events: type === 'Professionnel' && events.length === 0
+      message: message.length === 0
     })
 
     if (name.length < 1) {
       return false
     } else if (!validateEmail(mail)) {
-      return false
-    } else if (type === 'Professionnel' && events === '') {
       return false
     } else return message.length >= 1
   }
@@ -62,10 +53,10 @@ const ContactForm = () => {
     e.preventDefault()
     const isValid = validateData()
 
-    const { name, mail, message, subject, phone, type, events } = dataForm
+    const { name, mail, message, subject, phone } = dataForm
 
     if (isValid) {
-      const payload = { name, mail, message, phone, subject, type, events }
+      const payload = { name, mail, message, phone, subject }
       fetch('https://formcarry.com/s/YN6WHvLzxu', {
         method: 'POST',
         headers: {
@@ -83,9 +74,7 @@ const ContactForm = () => {
               mail: '',
               message: '',
               phone: '',
-              subject: '',
-              type: '',
-              events: ''
+              subject: ''
             })
             setTimeout(() => setSuccess(false), 5000)
           }
@@ -99,7 +88,7 @@ const ContactForm = () => {
   return (
     <>
       <div style={{ height: '2em' }}>
-        {errMsg.name || errMsg.mail || errMsg.message || errMsg.events ? (
+        {errMsg.name || errMsg.mail || errMsg.message ? (
           <ErrorMessage>
             Veuillez remplir correctement les champs en rouge !!!
           </ErrorMessage>
@@ -238,6 +227,7 @@ export const Form = styled.form`
   max-width: 900px;
   width: 80%;
   margin: 1em auto 2em auto;
+
   @media (max-width: ${breakpoints.l}px) {
     width: 90%;
   }
