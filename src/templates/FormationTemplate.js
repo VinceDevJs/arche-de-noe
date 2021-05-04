@@ -155,7 +155,7 @@ const FormationTemplate = ({ data, path }) => {
             <LinkButton to='/nos-ouvrages' color='true'>
               Nos ouvrages
             </LinkButton>
-            <LinkButton to='/contact'>J’ai une question</LinkButton>
+            <LinkButton to='/contact#form'>J’ai une question</LinkButton>
 
             <SocialText>
               J’informe une connaissance <br /> de la formation

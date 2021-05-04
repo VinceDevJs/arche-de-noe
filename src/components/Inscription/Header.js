@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { breakpoints } from '../../utils/styles'
 
 import logo from '../../assets/images/inscription/Logo-inscription.svg'
 
@@ -8,7 +9,6 @@ const Header = () => {
   return (
     <Container>
       <Logo left='true' src={logo} alt='logo arche de noe' />
-      <Logo src={logo} alt='logo arche de noe' />
 
       <TextContent>
         L’Institut l’Arche de Noé a le plaisir de vous informer que les
@@ -25,6 +25,7 @@ const Header = () => {
           Nos formations
         </Button>
       </ButtonsBox>
+      <Logo src={logo} alt='logo arche de noe' />
     </Container>
   )
 }
@@ -40,6 +41,14 @@ export const Container = styled.div`
   height: 16em;
   background-color: #007cad;
   text-align: center;
+
+  @media (max-width: ${breakpoints.m}px) {
+    height: 22em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    height: 50em;
+  }
 `
 
 export const Logo = styled.img`
@@ -51,6 +60,29 @@ export const Logo = styled.img`
   bottom: 0;
   height: 75%;
   padding: 2em 0;
+
+  @media (max-width: ${breakpoints.l}px) {
+    height: 65%;
+    left: ${props => (props.left ? '1em' : 'none')};
+    right: ${props => (props.left ? 'none' : '1em')};
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    height: 35%;
+    max-width: 38em;
+    left: ${props => (props.left ? '1em' : 'none')};
+    right: ${props => (props.left ? 'none' : '1em')};
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    position: relative;
+    height: 20%;
+    max-width: 38em;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
 `
 
 export const TextContent = styled.p`
@@ -61,6 +93,15 @@ export const TextContent = styled.p`
   max-width: 35em;
   text-align: center;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.l}px) {
+    width: 65%;
+    max-width: 38em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 90%;
+  }
 `
 
 export const DateContent = styled.p`
@@ -70,6 +111,19 @@ export const DateContent = styled.p`
   width: 60%;
   max-width: 38em;
   font-family: 'Avenir Next Bold', monospace;
+
+  @media (max-width: ${breakpoints.l}px) {
+    width: 65%;
+    max-width: 38em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 60%;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 90%;
+  }
 `
 
 export const ButtonsBox = styled.div`
@@ -80,6 +134,14 @@ export const ButtonsBox = styled.div`
   margin-top: 3em;
   width: 35em;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.m}px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 90%;
+  }
 `
 
 export const Button = styled(Link)`
@@ -93,9 +155,11 @@ export const Button = styled(Link)`
   color: ${props => (props.color ? '#007CAD' : 'white')};
   text-decoration: none;
 
+  @media (max-width: ${breakpoints.m}px) {
+    margin-bottom: ${props => (props.color ? '0' : '1em')};
+  }
+
   :hover {
-    color: ${props => (!props.color ? '#007CAD' : 'white')};
-    background-color: ${props => (!props.color ? '#6CDCEF' : 'transparent')};
     border: ${props =>
       !props.color ? '2px solid #6CDCEF' : '2px solid white'};
     cursor: pointer;

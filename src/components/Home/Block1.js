@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import { Link } from 'gatsby'
 import booksSvg from '../../assets/images/home/block1/books.svg'
 import logoSvg from '../../assets/images/home/block1/logo.svg'
 import wavesBackground from '../../assets/images/home/block1/waves.png'
@@ -16,7 +17,7 @@ const Block1 = () => {
           L’Institut l’arche de Noé dispense des cours d’arabe et de culture
           islamique pour enfants et adultes.
         </Text>
-        <Button>En savoir plus</Button>
+        <Button to='#block3'>En savoir plus</Button>
       </LeftBox>
       <RightBox data-aos='fade-down' data-aos-duration='2000'>
         <BookImage src={booksSvg} />
@@ -89,7 +90,7 @@ export const Text = styled.p`
   }
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   background-color: transparent;
   border-radius: 30px;
   border: 2.5px solid #007cad;
@@ -98,6 +99,7 @@ export const Button = styled.button`
   font-weight: bold;
   padding: 2px 20px;
   margin-top: 1.8em;
+  text-decoration: none;
   font-family: 'Avenir Next Bold', sans-serif;
 
   :hover {

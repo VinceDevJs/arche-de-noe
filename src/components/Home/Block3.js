@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import { Link } from 'gatsby'
+
 import arabicIcon from '../../assets/images/home/block3/arabic.png'
 import booksSvg from '../../assets/images/home/block3/books.svg'
 import booksIcon from '../../assets/images/home/block3/books_lamp.png'
@@ -7,11 +9,15 @@ import hadithIcon from '../../assets/images/home/block3/hadith.png'
 import handIcon from '../../assets/images/home/block3/hand.png'
 import quranIcon from '../../assets/images/home/block3/quran.png'
 import salatIcon from '../../assets/images/home/block3/salat.png'
-import { breakpoints, primaryColor, secondaryColor } from '../../utils/styles.js'
+import {
+  breakpoints,
+  primaryColor,
+  secondaryColor
+} from '../../utils/styles.js'
 
 const Block3 = () => {
   return (
-    <Container>
+    <Container id='block3'>
       <ImageWrapper>
         <BooksImg
           data-aos='fade-right'
@@ -24,7 +30,11 @@ const Block3 = () => {
         <TitleBox>
           <Title title='true'>Nos Domaines</Title>
           <Title>d’enseignement</Title>
-          <TextContent>L’Institut l’Arche de Noé a développé, au ﬁl des ans une réelle expertise dans différents domaines relatifes à la culture Islamique ainsi qu’à la langue Arabe en général.</TextContent>
+          <TextContent>
+            L’Institut l’Arche de Noé a développé, au ﬁl des ans une réelle
+            expertise dans différents domaines relatifes à la culture Islamique
+            ainsi qu’à la langue Arabe en général.
+          </TextContent>
         </TitleBox>
 
         <IconContainer>
@@ -50,7 +60,11 @@ const Block3 = () => {
 
             <IconBox>
               <Icon src={salatIcon} alt='arche de noe' />
-              <IconText>Sciences<br />Islamiques</IconText>
+              <IconText>
+                Sciences
+                <br />
+                Islamiques
+              </IconText>
             </IconBox>
           </IconWrapper>
 
@@ -80,7 +94,7 @@ const Block3 = () => {
             </IconBox>
           </IconWrapper>
         </IconContainer>
-        <Button>Accéder à nos formations</Button>
+        <Button to='/formation'>Accéder à nos formations</Button>
       </ContentWrapper>
     </Container>
   )
@@ -89,72 +103,70 @@ const Block3 = () => {
 export default Block3
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: row;
-    padding: 2em 5em;
-    justify-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 2em 5em;
+  justify-items: center;
 
-    @media (max-width: ${breakpoints.l}px) {
-      padding: 2em 2em;
+  @media (max-width: ${breakpoints.l}px) {
+    padding: 2em 2em;
   }
 
   @media (max-width: ${breakpoints.s}px) {
-      padding: 2em 1em;
+    padding: 2em 1em;
   }
 `
 
 export const ImageWrapper = styled.div`
-    margin-right: 2em;
-    width: 50%;
-    max-width: 550px;
+  margin-right: 2em;
+  width: 50%;
+  max-width: 550px;
 
-    @media (max-width: ${breakpoints.l}px) {
-      max-width: 400px;
+  @media (max-width: ${breakpoints.l}px) {
+    max-width: 400px;
   }
 
   @media (max-width: ${breakpoints.s}px) {
-      display: none;
+    display: none;
   }
 `
 
-export const BooksImg = styled.img`
-`
+export const BooksImg = styled.img``
 
 export const ContentWrapper = styled.div`
-    width: 50%;
-    padding-top: 4em;
+  width: 50%;
+  padding-top: 4em;
 
-    @media (max-width: ${breakpoints.l}px) {
-      padding-top: 0;
+  @media (max-width: ${breakpoints.l}px) {
+    padding-top: 0;
   }
 
   @media (max-width: ${breakpoints.s}px) {
-      width: 100%;
-      text-align: center;
+    width: 100%;
+    text-align: center;
   }
 `
-export const TitleBox = styled.div`
-`
+export const TitleBox = styled.div``
 
 export const Title = styled.p`
-    font-size: 3.5em;
-    margin: 0;
-    font-weight: bold;
-    color: ${props => (props.title ? primaryColor : secondaryColor)};
-    font-family: 'Avenir Next Bold';
-    line-height: 1.1;
+  font-size: 3.5em;
+  margin: 0;
+  font-weight: bold;
+  color: ${props => (props.title ? primaryColor : secondaryColor)};
+  font-family: 'Avenir Next Bold';
+  line-height: 1.1;
 
-    @media (max-width: ${breakpoints.l}px) {
-      font-size: 2.8em;
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 2.8em;
   }
 
   @media (max-width: ${breakpoints.m}px) {
-      font-size: 2.2em;
+    font-size: 2.2em;
   }
 
   @media (max-width: ${breakpoints.s}px) {
-      text-align: center;
-      font-size: 2.4em;
+    text-align: center;
+    font-size: 2.4em;
   }
 
   @media (max-width: 340px) {
@@ -163,14 +175,14 @@ export const Title = styled.p`
 `
 
 export const TextContent = styled.p`
-    display: block;
-    width: 30em;
-    color: #195780;
-    margin-top: 2em;
+  display: block;
+  width: 30em;
+  color: #195780;
+  margin-top: 2em;
 
-    @media (max-width: ${breakpoints.l}px) {
-      font-size: 1em;
-      width: 100%;
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 1em;
+    width: 100%;
   }
 `
 
@@ -190,10 +202,10 @@ export const IconWrapper = styled.div`
   width: 50%;
 
   @media (max-width: ${breakpoints.s}px) {
-      width: 45%;
-      align-items: center;
-      margin-top: 3em;
-      height: 30em;
+    width: 45%;
+    align-items: center;
+    margin-top: 3em;
+    height: 30em;
   }
 `
 
@@ -238,25 +250,27 @@ export const IconText = styled.p`
   }
 
   @media (max-width: ${breakpoints.s}px) {
-   font-size: 1.2em;
+    font-size: 1.2em;
   }
 `
 
-export const Button = styled.button`
-    background-color: ${secondaryColor};
-    color: white;
-    border-radius: 30px;
-    font-size: 1em;
-    border: 2px solid transparent;
-    padding: .2em 1.3em;
-    font-weight: bold;
-    margin: 2em auto 0 auto;
-    display: block;
+export const Button = styled(Link)`
+  background-color: ${secondaryColor};
+  color: white;
+  width: fit-content;
+  border-radius: 30px;
+  font-size: 1em;
+  border: 2px solid transparent;
+  padding: 0.2em 1.3em;
+  font-weight: bold;
+  margin: 2em auto 0 auto;
+  display: block;
+  text-decoration: none;
 
-    :hover {
-      border: 2px solid ${secondaryColor};
-        cursor: pointer;
-        color: ${secondaryColor};
-        background-color: transparent;
-    }
+  :hover {
+    border: 2px solid ${secondaryColor};
+    cursor: pointer;
+    color: ${secondaryColor};
+    background-color: transparent;
+  }
 `

@@ -14,7 +14,7 @@ const Header = () => {
         <PhoneImg src={bigPhoneIcon} alt='phone arche de noe' />
       </LeftBox>
 
-      <RightBox>
+      <RightBox id='contact'>
         <RightHeaderContent>
           <RightHeaderTitle>Nous contacter</RightHeaderTitle>
           <RightHeaderText>

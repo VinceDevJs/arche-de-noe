@@ -53,12 +53,12 @@ export const Container = styled.div`
 
   @media (max-width: ${breakpoints.m}px) {
     flex-direction: column-reverse;
-    height: 40em;
-    padding-top: 3em;
+    height: 52em;
+    padding-top: 9em;
   }
 
   @media (max-width: ${breakpoints.s}px) {
-    height: 35em;
+    height: 45em;
     padding-top: 3em;
   }
 `
@@ -78,14 +78,16 @@ export const ComputerImg = styled.img`
   z-index: 2;
 
   @media (max-width: ${breakpoints.m}px) {
-    margin-top: 1em;
+    margin-top: 7em;
     margin-bottom: -3em;
     max-width: 50em;
-    width: 70%;
+    width: 80%;
   }
 
   @media (max-width: ${breakpoints.s}px) {
     width: 100%;
+    margin-top: 5em;
+    margin-bottom: -5em;
   }
 `
 

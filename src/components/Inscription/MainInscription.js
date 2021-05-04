@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
+import { breakpoints } from '../../utils/styles'
 import stepOneIcon from '../../assets/images/inscription/step-1.svg'
 import stepTwoIcon from '../../assets/images/inscription/step-2.svg'
 import stepThreeIcon from '../../assets/images/inscription/step-3.svg'
@@ -42,7 +43,7 @@ const MainInscription = () => {
         </ContentIconBox>
         <ContentText>
           Je le dépose au secrétariat{' '}
-          <ContentLink to='/contact'>
+          <ContentLink to='/contact#contact'>
             <span>à l’adresse suivante</span>
           </ContentLink>
           .
@@ -58,7 +59,7 @@ const MainInscription = () => {
         </ContentText>
       </ContentBox>
 
-      <Button to='/contact'>J’ai une question</Button>
+      <Button to='/contact#form'>J’ai une question</Button>
     </Container>
   )
 }
@@ -76,6 +77,18 @@ export const Title = styled.p`
   font-size: 3em;
   color: #00a1c6;
   text-align: center;
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 0 auto 2em;
+    width: 90%;
+    font-size: 2.5em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 95%;
+    font-size: 2em;
+    margin: 0 auto 3em;
+  }
 `
 
 export const ContentBox = styled.div`
@@ -85,11 +98,26 @@ export const ContentBox = styled.div`
   width: 70%;
   max-width: 55em;
   margin: 7em auto;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 85%;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 4em auto;
+  }
 `
 
 export const ContentIconBox = styled.div`
   width: 8em;
   margin-right: 3em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    margin-right: 0;
+  }
 `
 
 export const ContentIcon = styled.img`
@@ -100,6 +128,10 @@ export const ContentText = styled.p`
   font-size: 1.7em;
   color: ${props => (!props.color ? '#00a0c5' : '#007bac')};
   font-family: 'Avenir Next Bold', monospace;
+
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+  }
 `
 
 export const ContentLink = styled(Link)`
@@ -118,7 +150,7 @@ export const Button = styled(Link)`
   border-radius: 40px;
   border: 2px solid transparent;
   text-decoration: none;
-  margin: 0 auto;
+  margin: 0 auto 3em;
 
   :hover {
     background-color: transparent;

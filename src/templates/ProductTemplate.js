@@ -104,7 +104,7 @@ const ProductTemplate = ({ data, path }) => {
           <LinkButton color='true' to='/formation'>
             Nos Formations
           </LinkButton>
-          <LinkButton to='/contact'>J'ai une question</LinkButton>
+          <LinkButton to='/contact#form'>J'ai une question</LinkButton>
         </LeftWrapper>
 
         <RightWrapper>

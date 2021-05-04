@@ -19,17 +19,22 @@ const Footer = () => {
           <LinkText to='/'>Accueil</LinkText>
           <LinkText to='/formation'>Formation</LinkText>
           <LinkText to='/emplois-du-temps'>Emplois du temps</LinkText>
-          <LinkText to='/nos-ouvrages'>Nos  ouvrages</LinkText>
+          <LinkText to='/nos-ouvrages'>Nos ouvrages</LinkText>
           <LinkText to='/inscription'>Inscription</LinkText>
           <LinkText to='/contact'>Contact</LinkText>
         </Box>
         <Box>
           <Title>A propos</Title>
           <LinkText to='/'>Mentions légales</LinkText>
+          <LinkText to='/'>CGV</LinkText>
           <LinkText to='/'>FAQ</LinkText>
           <IconBox>
-            <a href='https://fr-fr.facebook.com/institutarchedenoe'><SocialIcon style={{ marginRight: '1em' }} src={facebookIcon} /></a>
-            <a href='https://twitter.com'><SocialIcon src={twitterIcon} /></a>
+            <a href='https://fr-fr.facebook.com/institutarchedenoe'>
+              <SocialIcon style={{ marginRight: '1em' }} src={facebookIcon} />
+            </a>
+            <a href='https://twitter.com'>
+              <SocialIcon src={twitterIcon} />
+            </a>
           </IconBox>
         </Box>
       </BlockLeft>
@@ -108,7 +113,6 @@ export const Title = styled.p`
   }
 
   @media (max-width: ${breakpoints.s}px) {
-    
   }
 `
 

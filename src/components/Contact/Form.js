@@ -4,10 +4,9 @@ import { breakpoints } from '../../utils/styles'
 
 const ContactForm = () => {
   const [errMsg, setErrMsg] = useState({
-    name: false,
+    phone: false,
     mail: false,
-    message: false,
-    events: false
+    message: false
   })
   const [dataForm, setDataForm] = useState({
     name: '',
@@ -28,7 +27,7 @@ const ContactForm = () => {
   }
 
   const validateData = () => {
-    const { name, message, mail } = dataForm
+    const { phone, message, mail } = dataForm
 
     function validateEmail (mail) {
       const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -36,12 +35,12 @@ const ContactForm = () => {
     }
 
     setErrMsg({
-      name: name.length === 0,
+      phone: phone.length < 8,
       mail: !validateEmail(mail),
       message: message.length === 0
     })
 
-    if (name.length < 1) {
+    if (phone.length < 8) {
       return false
     } else if (!validateEmail(mail)) {
       return false
@@ -49,15 +48,21 @@ const ContactForm = () => {
   }
 
   const sendMsg = e => {
-    console.log('send')
     e.preventDefault()
     const isValid = validateData()
-
+    // console.log(isValid)
     const { name, mail, message, subject, phone } = dataForm
 
     if (isValid) {
-      const payload = { name, mail, message, phone, subject }
-      fetch('https://formcarry.com/s/YN6WHvLzxu', {
+      // console.log('send')
+      const payload = {
+        nom: name,
+        email: mail,
+        telephone: phone,
+        sujet: subject,
+        message
+      }
+      fetch('https://formcarry.com/s/_gQTAtDuOOg', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -66,7 +71,7 @@ const ContactForm = () => {
         body: JSON.stringify(payload)
       })
         .then(res => {
-          // console.log('sended', res.ok)
+          console.log('sended', res.ok)
           if (res.ok) {
             setSuccess(true)
             setDataForm({
@@ -87,13 +92,6 @@ const ContactForm = () => {
 
   return (
     <>
-      <div style={{ height: '2em' }}>
-        {errMsg.name || errMsg.mail || errMsg.message ? (
-          <ErrorMessage>
-            Veuillez remplir correctement les champs en rouge !!!
-          </ErrorMessage>
-        ) : null}
-      </div>
       <Form onSubmit={sendMsg}>
         <InputsWrapper>
           <LabelWrapper>
@@ -103,7 +101,6 @@ const ContactForm = () => {
               value={dataForm.name}
               type='text'
               onChange={handleChange}
-              error={errMsg.name}
             />
           </LabelWrapper>
 
@@ -125,6 +122,7 @@ const ContactForm = () => {
               value={dataForm.phone}
               type='tel'
               onChange={handleChange}
+              error={errMsg.phone}
             />
           </LabelWrapper>
 
@@ -149,12 +147,20 @@ const ContactForm = () => {
             />
           </LabelWrapper>
 
-          <SubmitButton type='submit' />
-          <div style={{ height: '3em', marginTop: '1em' }}>
+          <div style={{ height: '2em', textAlign: 'center' }}>
+            {errMsg.phone || errMsg.mail || errMsg.message ? (
+              <ErrorMessage>
+                Veuillez remplir correctement les champs en rouge !!!
+              </ErrorMessage>
+            ) : null}
+          </div>
+          <div style={{ height: '2em' }}>
             {success ? (
               <SuccessMessage>Votre message a bien été envoyer</SuccessMessage>
             ) : null}
           </div>
+
+          <SubmitButton type='submit' />
         </InputsWrapper>
       </Form>
     </>
@@ -291,7 +297,7 @@ export const SubmitButton = styled.input`
   border-radius: 40px;
   border: 1px solid transparent;
   color: white;
-  margin: 2em auto 0;
+  margin: 0.5em auto;
   font-size: 1em;
   width: 10em;
   height: 2.5em;
@@ -310,14 +316,14 @@ export const SubmitButton = styled.input`
 `
 
 export const SuccessMessage = styled.p`
-  background-color: #00e6a8;
+  background-color: #32d13f;
   color: white;
   width: fit-content;
   padding: 0.4em 1em;
   border-radius: 40px;
   font-size: 0.9em;
   margin: 0 auto;
-  font-family: 'Avenir Light', serif;
+  font-family: 'Avenir Next Bold', sans-serif;
   animation: fadeIn ease 1s;
   -webkit-animation: fadeIn ease 1s;
   -moz-animation: fadeIn ease 1s;
