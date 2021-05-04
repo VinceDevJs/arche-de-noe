@@ -23,7 +23,9 @@ const Contact = () => {
       />
       <Header />
       <Map />
-      <FormTitle>Une question ? Un renseignement ? c’est ici !</FormTitle>
+      <FormTitle id='form'>
+        Une question ? Un renseignement ? c’est ici !
+      </FormTitle>
       <FormSection>
         <ContactForm />
         <FormImg

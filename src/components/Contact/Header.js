@@ -22,7 +22,7 @@ const Header = () => {
             expertise dans différents domaines relatifes à la culture Islamique
             ainsi qu’à la langue Arabe en général.
           </RightHeaderText>
-          <RightHeaderButton to='#'>J’ai un question</RightHeaderButton>
+          <RightHeaderButton to='#form'>J’ai un question</RightHeaderButton>
         </RightHeaderContent>
 
         <RightInfoContainer>
