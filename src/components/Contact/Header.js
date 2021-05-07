@@ -1,20 +1,37 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { breakpoints } from '../../utils/styles'
+import Img from 'gatsby-image'
 
 import clockIcon from './../../assets/images/contact/clock.svg'
 import mapIcon from './../../assets/images/contact/map.svg'
 import phoneIcon from './../../assets/images/contact/phone.svg'
-import bigPhoneIcon from './../../assets/images/contact/big_phone.svg'
+
 const Header = () => {
+  const image = useStaticQuery(graphql`
+    query {
+      phone: file(relativePath: { eq: "images/contact/big_phone.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 450) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(image)
   return (
     <MainContainer>
-      <LeftBox>
-        <PhoneImg src={bigPhoneIcon} alt='phone arche de noe' />
+      <LeftBox data-aos='fade-right' data-aos-duration='2000'>
+        <PhoneImg
+          fluid={image.phone.childImageSharp.fluid}
+          alt='phone arche de noe'
+        />
       </LeftBox>
 
-      <RightBox id='contact'>
+      <RightBox data-aos='fade-left' data-aos-duration='3000' id='contact'>
         <RightHeaderContent>
           <RightHeaderTitle>Nous contacter</RightHeaderTitle>
           <RightHeaderText>
@@ -108,14 +125,15 @@ export const MainContainer = styled.div`
 `
 
 export const LeftBox = styled.div`
-  max-width: 35em;
+  width: 460px;
 
   @media (max-width: ${breakpoints.m}px) {
     margin: 0 auto;
+    width: 340px;
   }
 `
 
-export const PhoneImg = styled.img`
+export const PhoneImg = styled(Img)`
   width: 100%;
 `
 
