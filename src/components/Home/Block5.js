@@ -32,7 +32,7 @@ const Block5 = () => {
       </Text>
       <BooksImage src={booksSvg} />
       <SubTitle>
-        Ce que me permet l’apprentissage <br /> de la langue Arabe
+        Ce que me permet l’apprentissage <br /> au sein de l'institut l'Arche de Noé
       </SubTitle>
       <IconsWrapper>
         <IconBox
@@ -130,7 +130,7 @@ export const BooksImage = styled.img`
 `
 
 export const SubTitle = styled.p`
-  font-family: 'Avenir Next Bold';
+  font-family: 'Avenir Next Bold',serif;
   color: ${secondaryColor};
   font-size: 2em;
 `

@@ -16,6 +16,7 @@ const Footer = () => {
       <BlockLeft>
         <Box>
           <Title>L’Institut</Title>
+          <Separator />
           <LinkText to='/'>Accueil</LinkText>
           <LinkText to='/formation'>Formation</LinkText>
           <LinkText to='/emplois-du-temps'>Emplois du temps</LinkText>
@@ -25,6 +26,7 @@ const Footer = () => {
         </Box>
         <Box>
           <Title>A propos</Title>
+          <Separator />
           <LinkText to='/'>Mentions légales</LinkText>
           <LinkText to='/'>CGV</LinkText>
           <LinkText to='/'>FAQ</LinkText>
@@ -51,9 +53,18 @@ export default Footer
 export const FooterContainer = styled.footer`
   position: relative;
   display: flex;
-  height: 45em;
+  height: 42em;
   background-color: #0079b2;
   color: antiquewhite;
+  padding-left: 4em;
+
+  @media (max-width: ${breakpoints.l}px) {
+    padding-left: 2em;
+  }
+
+  @media (max-width: ${breakpoints.m}px) {
+    padding-left: 0;
+  }
 
   @media (max-width: ${breakpoints.s}px) {
     height: 57em;
@@ -79,7 +90,7 @@ export const Box = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-left: 5em;
-  height: 25em;
+  height: 20em;
   width: 50%;
 
   @media (max-width: ${breakpoints.l}px) {
@@ -98,11 +109,17 @@ export const Box = styled.div`
   }
 `
 
+export const Separator = styled.div`
+  width: 2.3em;
+  border-top: 3px solid white;
+  margin: 1em 0;
+`
+
 export const Title = styled.p`
   font-family: 'Avenir Next Bold';
   color: #00b9d8;
   font-size: 2.7em;
-  margin: 0 0 0.7em 0;
+  margin: 0;
 
   @media (max-width: ${breakpoints.l}px) {
     font-size: 2.2em;
@@ -119,7 +136,7 @@ export const Title = styled.p`
 export const LinkText = styled(Link)`
   color: white;
   font-size: 1.4em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
   font-family: 'Avenir Next Bold Demi';
   text-decoration: none;
 
@@ -153,7 +170,7 @@ export const BlockRight = styled.div`
 `
 
 export const Image = styled.img`
-  width: 18em;
+  width: 15em;
 
   @media (max-width: ${breakpoints.s}px) {
     width: 13em;

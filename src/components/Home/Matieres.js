@@ -162,8 +162,8 @@ export const IconBox = styled.div`
   text-align: center;
 
   @media (max-width: ${breakpoints.s}px) {
-    max-width: 90%;
-    min-height: 10em;
+    max-width: 100%;
+    min-height: 12em;
   }
 `
 

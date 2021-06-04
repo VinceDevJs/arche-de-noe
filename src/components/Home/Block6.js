@@ -6,14 +6,14 @@ import { breakpoints, secondaryColor } from '../../utils/styles.js'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const Block6 = () => {
-  const initialMessage = 'Votre adresse mail'
+  const initialMessage = 'Votre adresse e-mail'
 
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState(initialMessage)
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log('send')
+    // console.log('send')
 
     addToMailchimp(email).then((resp) => {
       console.log(resp)
@@ -35,7 +35,8 @@ const Block6 = () => {
       <LogoImage src={logoBoat} />
       <LeftBox>
         <Title>Restons en <span style={{ color: '#007cad' }}>contact</span></Title>
-        <Text>Recevez l'actualité de notre institut : derniers événements, nouveaux cours, dates des inscriptions et les infos majeures à ne pas manquer.</Text>
+        <Text>Recevez l'actualité de notre institut : derniers événements, nouveaux cours, dates des inscriptions  et les infos majeures à ne pas manquer.
+        </Text>
       </LeftBox>
       <RightBox>
         <Form onSubmit={handleSubmit}>
