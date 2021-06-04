@@ -12,7 +12,7 @@ import level from '../../assets/images/formation/level.png'
 import price from '../../assets/images/formation/price.png'
 
 const Main = ({ allFormations }) => {
-  // console.log(allFormations)
+  console.log(allFormations)
   return (
     <Container>
       {allFormations &&
@@ -28,7 +28,7 @@ const Main = ({ allFormations }) => {
               data-aos-delay={slideTime}
             >
               <ImgWrapper>
-                <FormationImg src={books} alt='formation book' />
+                <FormationImg src={formation.thumbnail} alt='formation book' />
                 <FormationTitle small={formation.subjects.length > 7}>
                   {formation.subjects} <br />
                   <span>

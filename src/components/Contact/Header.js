@@ -38,7 +38,7 @@ const Header = () => {
           <RightHeaderText>
             Vous avez une question, nous vous répondons par téléphone, E-mail, Whatsapp et sur les réseaux sociaux
           </RightHeaderText>
-          <RightHeaderButton to='#form'>J’ai un question</RightHeaderButton>
+          <RightHeaderButton to='#form'>J’ai une question</RightHeaderButton>
         </RightHeaderContent>
 
         <RightInfoContainer>
@@ -52,7 +52,7 @@ const Header = () => {
             </RightIconBox>
             <RightContentBox>
               <RightContentText style={{ fontSize: '2.2em', textAlign: 'center' }}>
-                <span style={{ color: 'black', fontSize: '16px' }}>
+                <span style={{ fontSize: '16px' }}>
                   12, Avenue du générale de Gaulle
                 </span>
                 <br />
