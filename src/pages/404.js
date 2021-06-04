@@ -27,15 +27,15 @@ const codeStyles = {
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
+    <div style={pageStyles}>
       <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
+      <h1 style={headingStyles}>Page non trouvée</h1>
       <p style={paragraphStyles}>
-        Sorry{' '}
+        {' '}
         <span role='img' aria-label='Pensive emoji'>
           😔
         </span>{' '}
-        we couldn’t find what you were looking for.
+        Désole cette page n'existe pas.
         <br />
         {process.env.NODE_ENV === 'development'
           ? (
@@ -47,9 +47,9 @@ const NotFoundPage = () => {
             )
           : null}
         <br />
-        <Link to='/'>Go home</Link>.
+        <Link to='/'>Page d'acceuil</Link>.
       </p>
-    </main>
+    </div>
   )
 }
 
