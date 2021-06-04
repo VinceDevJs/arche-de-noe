@@ -36,11 +36,11 @@ const BurgerMenu = () => {
         </CartContainerMobile>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Accueil</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/formation'>Formation</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/emplois-du-temps'>Emplois du temps</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/emploi-du-temps'>Emploi du temps</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/nos-ouvrages'>Nos  ouvrages</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/inscription'>Inscription</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/contact'>Contact</LinkText>
-        <Button>Espace pro</Button>
+        <Button>Se connecter</Button>
       </Menu>
     </div>
   )

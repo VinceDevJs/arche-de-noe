@@ -40,8 +40,14 @@ const Main = ({ allOuvrages }) => {
                 En savoir plus
               </Button>
               <SocialBox>
-                <SocialIcon src={facebook} />
-                <SocialIcon src={twitter} />
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+/nos-ouvrages/${ouvrageSlug}`}
+                >
+                  <SocialIcon src={facebook} />
+                </a>
+                <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/nos-ouvrages/${ouvrageSlug}&text=`}>
+                  <SocialIcon src={twitter} />
+                </a>
               </SocialBox>
             </FormationBox>
           )
@@ -72,7 +78,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 4em;
-  width: 80%;
+  width: 90%;
 
   @media (max-width: ${breakpoints.m}px) {
     padding: 0 1em;

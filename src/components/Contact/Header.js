@@ -7,6 +7,7 @@ import Img from 'gatsby-image'
 import clockIcon from './../../assets/images/contact/clock.svg'
 import mapIcon from './../../assets/images/contact/map.svg'
 import phoneIcon from './../../assets/images/contact/phone.svg'
+import whatsappIcon from './../../assets/images/contact/whatsapp-icon.png'
 
 const Header = () => {
   const image = useStaticQuery(graphql`
@@ -35,9 +36,7 @@ const Header = () => {
         <RightHeaderContent>
           <RightHeaderTitle>Nous contacter</RightHeaderTitle>
           <RightHeaderText>
-            L’Institut l’Arche de Noé a développé, au ﬁl des ans une réelle
-            expertise dans différents domaines relatifes à la culture Islamique
-            ainsi qu’à la langue Arabe en général.
+            Vous avez une question, nous vous répondons par téléphone, E-mail, Whatsapp et sur les réseaux sociaux
           </RightHeaderText>
           <RightHeaderButton to='#form'>J’ai un question</RightHeaderButton>
         </RightHeaderContent>
@@ -76,6 +75,21 @@ const Header = () => {
               <RightContentText style={{ fontSize: '1.9em' }}>
                 01. 83. 37. 75. 84
               </RightContentText>
+            </RightContentBox>
+          </RightInfoBox>
+
+          <Separator />
+
+          <RightInfoBox>
+            <RightIconBox>
+              <RightIcon
+                src={whatsappIcon}
+                style={{ width: '4.3em' }}
+                alt='telephone arche de noe'
+              />
+            </RightIconBox>
+            <RightContentBox>
+              <WhatsButton href='https://wa.me/33666512772'>Nous contacter via Whatsapp</WhatsButton>
             </RightContentBox>
           </RightInfoBox>
 
@@ -261,4 +275,19 @@ export const RightContentText = styled.p`
 export const DayTitle = styled.span`
   font-family: 'Avenir Next', sans-serif;
   font-weight: normal;
+`
+
+export const WhatsButton = styled.a`
+  border: 2px solid #00A1C6;
+  border-radius: 30px;
+  padding: .5em 2em;
+  color: #00A1C6;
+  font-size: 1.1em;
+  font-family: 'Avenir Next Bold', sans-serif;
+  text-decoration: none;
+  
+  :hover {
+    background-color: #00A1C6;
+    color: white;
+  }
 `

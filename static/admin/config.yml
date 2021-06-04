@@ -34,21 +34,21 @@ collections:
               label: "Nombres de professeurs",
               name: "teachers",
               widget: "number",
-              hint: "Indiquer le nombres de professeurs.",
+              hint: "Indiquer le nombre de professeur.",
               required: true,
             }
           - {
-              label: "Nombres de professeurs 2",
+              label: "Nombres de formation",
               name: "teachers2",
               widget: "number",
-              hint: "Indiquer le nombres professeurs2.",
+              hint: "Indiquer le nombre de formation.",
               required: true,
             }
           - {
-              label: "Nombres de matieres",
+              label: "Nombres de cursus",
               name: "curses",
               widget: "number",
-              hint: "Indiquer le nombres de matieres.",
+              hint: "Indiquer le nombre de cursus.",
               required: true,
             }
 
@@ -355,7 +355,9 @@ collections:
           [
             "vide",
             "Eveil",
+            "Niv.Cp",
             "Niv.1",
+            "Niv.1+",
             "Niv.2",
             "Niv.3",
             "Niv.4",

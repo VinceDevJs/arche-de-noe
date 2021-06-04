@@ -7,9 +7,9 @@ import { convertToSlug } from './../../utils/functions'
 import books from '../../assets/images/formation/books.svg'
 import twitter from '../../assets/images/formation/twitter.svg'
 import facebook from '../../assets/images/formation/facebook.svg'
-import table from '../../assets/images/formation/table.svg'
-import level from '../../assets/images/formation/level.svg'
-import price from '../../assets/images/formation/price.svg'
+import table from '../../assets/images/formation/table.png'
+import level from '../../assets/images/formation/level.png'
+import price from '../../assets/images/formation/price.png'
 
 const Main = ({ allFormations }) => {
   console.log(allFormations)
@@ -39,21 +39,27 @@ const Main = ({ allFormations }) => {
               <IconsWrapper>
                 <IconBox>
                   <Icon src={price} />
-                  <IconText>{formation.price}€</IconText>
+                  <IconText style={{ color: '#FFC440' }}>{formation.price}€</IconText>
                 </IconBox>
                 <IconBox>
                   <Icon src={level} />
-                  <IconText>{formation.level}</IconText>
+                  <IconText style={{ color: '#00A99D' }}>{formation.level}</IconText>
                 </IconBox>
                 <IconBox>
                   <Icon src={table} />
-                  <IconText>{formation.place_avaible} Places</IconText>
+                  <IconText style={{ color: '#007CAD' }}>{formation.place_avaible} Places</IconText>
                 </IconBox>
               </IconsWrapper>
               <Button to={`/formation/${formationSlug}`}>En savoir plus</Button>
               <SocialBox>
-                <SocialIcon src={facebook} />
-                <SocialIcon src={twitter} />
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+/formation/${formationSlug}`}
+                >
+                  <SocialIcon src={facebook} />
+                </a>
+                <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/formation/${formationSlug}&text=`}>
+                  <SocialIcon src={twitter} />
+                </a>
               </SocialBox>
             </FormationBox>
           )
@@ -83,8 +89,8 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4em;
-  width: 80%;
+  padding: 0 3.5em;
+  width: 90%;
 
   @media (max-width: ${breakpoints.m}px) {
     padding: 0 1em;
@@ -99,8 +105,7 @@ export const Container = styled.div`
 `
 
 export const FormationBox = styled.div`
-  width: 40%;
-  max-width: 19em;
+  width: 20em;
   margin: 0 0 4em;
 
   @media (max-width: ${breakpoints.m}px) {
@@ -136,7 +141,7 @@ export const FormationTitle = styled.p`
   span {
     -webkit-text-stroke: 2px #00a1c6;
     color: white;
-    font-size: 40px;
+    font-size: 35px;
   }
 `
 
@@ -166,7 +171,7 @@ export const Icon = styled.img`
 
 export const IconText = styled.p`
   color: #007cad;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-family: 'Avenir Next Bold', sans-serif;
 `
 

@@ -174,7 +174,7 @@ export const Input = styled.input`
   background-color: transparent;
   border: none;
   width: 90%;
-  font-size: 2em;
+  font-size: 1.6em;
   color: white;
 
   @media (max-width: ${breakpoints.l}px) {

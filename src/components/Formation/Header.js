@@ -55,7 +55,7 @@ export const Container = styled.div`
 
   @media (max-width: ${breakpoints.m}px) {
     flex-direction: column-reverse;
-    height: 40em;
+    height: 44em;
     padding-top: 3em;
   }
 
@@ -120,7 +120,7 @@ export const Title = styled.p`
 export const Separator = styled.div`
   border-bottom: 2px solid white;
   width: 8em;
-  margin: 2em 0;
+  margin: 1.5em 0;
 
   @media (max-width: ${breakpoints.m}px) {
     margin: 2em auto;

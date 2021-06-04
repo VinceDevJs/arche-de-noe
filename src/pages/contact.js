@@ -6,7 +6,6 @@ import { breakpoints } from '../utils/styles'
 import ContactForm from '../components/Contact/Form'
 import Header from '../components/Contact/Header'
 import Map from '../components/Contact/Map'
-import boiteAuxLettresImg from '../../src/assets/images/contact/boite-au-lettre.svg'
 import waves from './../assets/images/formation/waves_2.png'
 
 const Contact = () => {
@@ -28,10 +27,6 @@ const Contact = () => {
       </FormTitle>
       <FormSection>
         <ContactForm />
-        <FormImg
-          src={boiteAuxLettresImg}
-          alt='arche de noe boite aux lettres'
-        />
       </FormSection>
       <img
         src={waves}
@@ -69,8 +64,12 @@ export const FormSection = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  width: 70%;
+  width: 50%;
   max-width: 60em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: 80%;
+  }
 
   @media (max-width: ${breakpoints.s}px) {
     width: 100%;

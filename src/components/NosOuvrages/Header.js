@@ -22,8 +22,7 @@ const Header = () => {
         </Title>
         <Separator />
         <SubTitle>
-          L’Institut l’arche de Noé propose 3 types de formations adaptés à
-          différentes tranches d’âges, que vous pouvez consulter ci-dessous
+          Retrouver tous les livres de l’Institut l’arche de Noé disponible a l'achat
         </SubTitle>
       </TitleWrapper>
     </Container>

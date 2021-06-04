@@ -97,7 +97,7 @@ const ProductTemplate = ({ data, path }) => {
             showNav={false}
             infinite={false}
             showPlayButton={false}
-            showBullets={true}
+            showBullets
             showThumbnails={false}
             items={gallery}
           />
@@ -176,10 +176,12 @@ const ProductTemplate = ({ data, path }) => {
               J’informe une connaissance <br /> de l’ouvrage
             </SocialText>
             <SocialBox>
-              <a href='https://fr-fr.facebook.com/institutarchedenoe'>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+${path}`}
+              >
                 <SocialIcon src={facebookIcon} />
               </a>
-              <a href='https://twitter.com'>
+              <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}>
                 <SocialIcon src={twitterIcon} />
               </a>
             </SocialBox>
@@ -213,6 +215,10 @@ export const TitleWrapper = styled.div`
   }
 
   @media (max-width: ${breakpoints.m}px) {
+    margin-left: 1em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
     margin-left: 0;
   }
 `
@@ -279,10 +285,14 @@ export const LeftWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50%;
-  max-width: 32em;
+  max-width: 29em;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    max-width: 22em;
+  }
 
   @media (max-width: ${breakpoints.l}px) {
-    max-width: 25em;
+    max-width: 21em;
   }
 
   @media (max-width: ${breakpoints.m}px) {
@@ -411,7 +421,7 @@ export const AddToCartQuantity = styled.select`
   border: 2px solid #00a1c6;
   text-align: center;
   background-color: white;
-  padding-left: 0.8em;
+  padding-right: 0.5em;
   font-weight: bold;
   margin-left: 0.7em;
   font-size: 1.3em;

@@ -35,13 +35,13 @@ const Index = () => {
           </Link>
         </li>
         <li>
-          <Link to='/emplois-du-temps'>Emplois du temps</Link>
+          <Link to='/emplois-du-temps'>Emploi du temps</Link>
         </li>
         <li>
           <Link to='/contact'>Contact</Link>
         </li>
         <li>
-          <Button>Espace pro</Button>
+          <Button>Se connecter</Button>
         </li>
         <CartContainer className='snipcart-checkout'>
           <CartIcon src={cartIcon} />

@@ -8,7 +8,7 @@ import logo from '../../assets/icons/header/logo_header.png'
 const Map = () => {
   return (
     <MapContainer>
-      <MapTitle>Nous contacter</MapTitle>
+      <MapTitle>Nous trouver</MapTitle>
       <GoogleMapBox>
         <GoogleMap
           src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2620.209831451531!2d2.412601315662936!3d48.94949027929648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66b9c0dca7879%3A0xf620ea681b83a458!2sAssociation%20culturelle%20des%20Musulmans%20de%20Dugny!5e0!3m2!1sfr!2sfr!4v1619876106798!5m2!1sfr!2sfr'

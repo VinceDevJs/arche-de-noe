@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const EmploisDuTemps = () => {
+const EmploiDuTemps = () => {
   return (
     <>
       <Helmet>
@@ -12,4 +12,4 @@ const EmploisDuTemps = () => {
   )
 }
 
-export default EmploisDuTemps
+export default EmploiDuTemps

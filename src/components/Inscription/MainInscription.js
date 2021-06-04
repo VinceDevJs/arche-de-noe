@@ -97,7 +97,7 @@ export const ContentBox = styled.div`
   align-items: center;
   width: 70%;
   max-width: 55em;
-  margin: 7em auto;
+  margin: 4.5em auto;
 
   @media (max-width: ${breakpoints.m}px) {
     width: 85%;
@@ -112,7 +112,7 @@ export const ContentBox = styled.div`
 `
 
 export const ContentIconBox = styled.div`
-  width: 8em;
+  width: 6em;
   margin-right: 3em;
 
   @media (max-width: ${breakpoints.s}px) {

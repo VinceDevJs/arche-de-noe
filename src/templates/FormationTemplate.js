@@ -161,10 +161,12 @@ const FormationTemplate = ({ data, path }) => {
               J’informe une connaissance <br /> de la formation
             </SocialText>
             <SocialBox>
-              <a href='https://fr-fr.facebook.com/institutarchedenoe'>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+${path}`}
+              >
                 <SocialIcon src={facebookIcon} />
               </a>
-              <a href='https://twitter.com'>
+              <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}>
                 <SocialIcon src={twitterIcon} />
               </a>
             </SocialBox>
@@ -287,12 +289,12 @@ export const IconBox = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   text-align: center;
-  height: 8em;
+  height: 7em;
   color: #00a1c6;
 `
 
 export const IconText = styled.p`
-  font-size: 1.1em;
+  font-size: 1em;
 `
 
 export const Icon = styled.img``
