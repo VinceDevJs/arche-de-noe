@@ -77,6 +77,11 @@ export const ComputerImg = styled.img`
   margin-top: 12em;
   z-index: 2;
 
+  @media (max-width: ${breakpoints.l}px) {
+    margin-top: 14em;
+    width: 50%;
+  }
+
   @media (max-width: ${breakpoints.m}px) {
     margin-top: 7em;
     margin-bottom: -3em;
@@ -113,6 +118,10 @@ export const Title = styled.p`
   margin: 0;
   font-family: 'Avenir Next Bold', sans-serif;
 
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 3.5em;
+  }
+
   @media (max-width: ${breakpoints.s}px) {
     font-size: 3.3em;
   }
@@ -140,4 +149,8 @@ export const Button = styled(Link)`
   font-size: 1.1em;
   text-decoration: none;
   font-family: 'Avenir Next Bold', monospace;
+
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 1em;
+  }
 `

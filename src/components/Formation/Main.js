@@ -12,7 +12,7 @@ import level from '../../assets/images/formation/level.png'
 import price from '../../assets/images/formation/price.png'
 
 const Main = ({ allFormations }) => {
-  console.log(allFormations)
+  // console.log(allFormations)
   return (
     <Container>
       {allFormations &&
