@@ -176,12 +176,14 @@ const ProductTemplate = ({ data, path }) => {
               J’informe une connaissance <br /> de l’ouvrage
             </SocialText>
             <SocialBox>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+              <a
+                target='_blank'
+                href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 ${path}`}
               >
                 <SocialIcon src={facebookIcon} />
               </a>
-              <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}>
+              <a target='_blank' href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}>
                 <SocialIcon src={twitterIcon} />
               </a>
             </SocialBox>
@@ -419,9 +421,9 @@ export const AddToCartQuantity = styled.select`
   height: 2em;
   border-radius: 30px;
   border: 2px solid #00a1c6;
-  text-align: center;
+  text-align: left;
   background-color: white;
-  padding-right: 0.5em;
+  padding-left: 0.7em;
   font-weight: bold;
   margin-left: 0.7em;
   font-size: 1.3em;
@@ -438,6 +440,7 @@ export const AddToCartQuantity = styled.select`
   
   @media (max-width: ${breakpoints.s}px) {
     margin-left: 1em;
+    padding-left: 0.4em;
     height: 1.8em;
   }
 `

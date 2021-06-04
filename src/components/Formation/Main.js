@@ -52,12 +52,13 @@ const Main = ({ allFormations }) => {
               </IconsWrapper>
               <Button to={`/formation/${formationSlug}`}>En savoir plus</Button>
               <SocialBox>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+                <a
+                  target='_blank' href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 /formation/${formationSlug}`}
                 >
                   <SocialIcon src={facebook} />
                 </a>
-                <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/formation/${formationSlug}&text=`}>
+                <a target='_blank' href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/formation/${formationSlug}&text=`}>
                   <SocialIcon src={twitter} />
                 </a>
               </SocialBox>
@@ -107,6 +108,10 @@ export const Container = styled.div`
 export const FormationBox = styled.div`
   width: 20em;
   margin: 0 0 4em;
+
+  @media (max-width: ${breakpoints.xl}px) {
+    width: 40%;
+  }
 
   @media (max-width: ${breakpoints.m}px) {
     width: 47%;

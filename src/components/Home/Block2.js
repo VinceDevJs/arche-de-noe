@@ -84,7 +84,7 @@ export const Container = styled.div`
   background-color: #00a1c6;
 
   @media (max-width: ${breakpoints.l}px) {
-    padding: 0 6em;
+    padding: 0 4em;
   }
 
   @media (max-width: ${breakpoints.m}px) {

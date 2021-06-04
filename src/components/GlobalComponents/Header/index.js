@@ -100,7 +100,7 @@ export const NavMobile = styled.div`
 
 export const LogoMobile = styled.img`
   position: absolute;
-  height: 4em;
+  height: 4.4em;
   width: 4em;
   top: 12px;
   left: 15px;

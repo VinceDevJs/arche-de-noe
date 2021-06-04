@@ -10,9 +10,9 @@ import bookIcon from './../assets/images/formation/template/books.svg'
 import cibleIcon from './../assets/images/formation/template/cible.svg'
 import programmeIcon from './../assets/images/formation/template/programme.svg'
 import calendarIcon from './../assets/images/formation/template/calendar.svg'
-import levelIcon from './../assets/images/formation/level.svg'
-import priceIcon from './../assets/images/formation/price.svg'
-import tableIcon from './../assets/images/formation/table.svg'
+import levelIcon from './../assets/images/formation/level.png'
+import priceIcon from './../assets/images/formation/price.png'
+import tableIcon from './../assets/images/formation/table.png'
 import exempleImg from './../assets/images/formation/template/image-exemple.svg'
 import facebookIcon from './../assets/images/formation/template/facebook.svg'
 import twitterIcon from './../assets/images/formation/template/twitter.svg'
@@ -92,17 +92,17 @@ const FormationTemplate = ({ data, path }) => {
           <IconsWrapper>
             <IconBox>
               <Icon src={priceIcon} />
-              <IconText>{price}€</IconText>
+              <IconText style={{ color: '#FFC440' }}>{price}€</IconText>
             </IconBox>
 
             <IconBox>
               <Icon src={levelIcon} />
-              <IconText>{level}</IconText>
+              <IconText style={{ color: '#00A99D' }}>{level}</IconText>
             </IconBox>
 
             <IconBox>
               <Icon src={tableIcon} />
-              <IconText>{place_avaible} places</IconText>
+              <IconText style={{ color: '#007CAD' }}>{place_avaible} places</IconText>
             </IconBox>
           </IconsWrapper>
           <Link to='/emplois-du-temps' style={{ textDecoration: 'none' }}>
@@ -161,12 +161,14 @@ const FormationTemplate = ({ data, path }) => {
               J’informe une connaissance <br /> de la formation
             </SocialText>
             <SocialBox>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+              <a
+                target='_blank'
+                href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 ${path}`}
               >
                 <SocialIcon src={facebookIcon} />
               </a>
-              <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}>
+              <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`} target='_blank'>
                 <SocialIcon src={twitterIcon} />
               </a>
             </SocialBox>

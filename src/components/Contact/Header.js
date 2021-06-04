@@ -51,7 +51,7 @@ const Header = () => {
               />
             </RightIconBox>
             <RightContentBox>
-              <RightContentText style={{ fontSize: '2.2em' }}>
+              <RightContentText style={{ fontSize: '2.2em', textAlign: 'center' }}>
                 <span style={{ color: 'black', fontSize: '16px' }}>
                   12, Avenue du générale de Gaulle
                 </span>
@@ -72,7 +72,7 @@ const Header = () => {
               />
             </RightIconBox>
             <RightContentBox>
-              <RightContentText style={{ fontSize: '1.9em' }}>
+              <RightContentText style={{ fontSize: '1.8em' }}>
                 01. 83. 37. 75. 84
               </RightContentText>
             </RightContentBox>
@@ -283,6 +283,7 @@ export const WhatsButton = styled.a`
   padding: .5em 2em;
   color: #00A1C6;
   font-size: 1.1em;
+  text-align: center;
   font-family: 'Avenir Next Bold', sans-serif;
   text-decoration: none;
   

@@ -59,7 +59,7 @@ export const FooterContainer = styled.footer`
   padding-left: 4em;
 
   @media (max-width: ${breakpoints.l}px) {
-    padding-left: 2em;
+    padding-left: 1em;
   }
 
   @media (max-width: ${breakpoints.m}px) {

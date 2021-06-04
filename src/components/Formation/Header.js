@@ -78,6 +78,13 @@ export const ComputerImg = styled.img`
   margin-top: 12em;
   z-index: 2;
 
+  @media (max-width: ${breakpoints.l}px) {
+    margin-top: 1em;
+    margin-bottom: -12em;
+    max-width: 50em;
+    width: 65%;
+  }
+
   @media (max-width: ${breakpoints.m}px) {
     margin-top: 1em;
     margin-bottom: -3em;
@@ -111,6 +118,10 @@ export const Title = styled.p`
   font-size: 4em;
   margin: 0;
   font-family: 'Avenir Next Bold', sans-serif;
+
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 3em;
+  }
 
   @media (max-width: ${breakpoints.s}px) {
     font-size: 3.3em;

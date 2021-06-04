@@ -40,12 +40,13 @@ const Main = ({ allOuvrages }) => {
                 En savoir plus
               </Button>
               <SocialBox>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+                <a
+                  target='_blank' href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 /nos-ouvrages/${ouvrageSlug}`}
                 >
                   <SocialIcon src={facebook} />
                 </a>
-                <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/nos-ouvrages/${ouvrageSlug}&text=`}>
+                <a target='_blank' href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/nos-ouvrages/${ouvrageSlug}&text=`}>
                   <SocialIcon src={twitter} />
                 </a>
               </SocialBox>
