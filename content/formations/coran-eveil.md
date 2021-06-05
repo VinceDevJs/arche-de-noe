@@ -2,14 +2,14 @@
 formation_name: coran eveil
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/coran-eveil.png
 subjects: Coran
 sub_title: Eveil
-price: 218
+price: 200
 discipline: coran
 age: Maternelles
 level: Débutant
-place_avaible: 39
+place_avaible: 15
 prerequis: Avoir 5 ans
 objectifs: "-\tÉveil à la mémorisation du Coran \r
 
