@@ -2,7 +2,7 @@
 formation_name: Arabe Enfant Niveau 4
 show_formation: true
 templateKey: formation
-thumbnail: /img/enfant-4.png
+thumbnail: /img/asset-14.png
 subjects: Enfant
 sub_title: Niv.4
 price: 250
