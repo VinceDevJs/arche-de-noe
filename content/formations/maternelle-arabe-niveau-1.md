@@ -1,9 +1,9 @@
 ---
-formation_name: maternelle arabe niveau 1
+formation_name: Arabe Mater Niveau 1
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Arabe
+subjects: Mater
 sub_title: Niv.1
 price: 250
 discipline: arabe
