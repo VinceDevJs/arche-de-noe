@@ -2,14 +2,14 @@
 formation_name: enfant arabe niveau 2
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/images_formations-11.png
 subjects: Enfant
 sub_title: Niv.2
-price: 218
+price: 250
 discipline: arabe
 age: Enfant
-level: Intermédiaire
-place_avaible: 28
+level: Débutant
+place_avaible: 40
 prerequis: Savoir lire sans confondre les lettres et écrire un texte court en
   respectant la bonne graphie des lettres
 objectifs: "-\tLire un texte simple vocalisé en arabe de manière fluide\r
