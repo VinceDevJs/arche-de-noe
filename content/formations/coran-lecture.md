@@ -1,5 +1,5 @@
 ---
-formation_name: coran lecture debutant
+formation_name: "Coran Enfant Lecture "
 show_formation: true
 templateKey: formation
 thumbnail: /img/coran-lecture.png
