@@ -1,5 +1,5 @@
 ---
-formation_name: Sciences Islamiques Niveau 1
+formation_name: Science Islamique Niveau 1
 show_formation: true
 templateKey: formation
 thumbnail: /img/science-islamique-niv-1.png
