@@ -5,11 +5,11 @@ templateKey: formation
 thumbnail: /img/formation.png
 subjects: Arabe
 sub_title: Niv.1
-price: 217
+price: 250
 discipline: arabe
 age: Enfant
 level: Intermédiaire
-place_avaible: 28
+place_avaible: 60
 prerequis: Savoir  lire un texte simple vocalisée ( Avoir validé le Niveau CP )
 objectifs: >-
   -	Lire un texte simple vocalisé en arabe-	Ecrire un texte simple vocalisé en
