@@ -6,7 +6,7 @@ thumbnail: /img/images_formations-14.png
 subjects: ADULTE
 sub_title: Niv.1
 price: 250
-discipline: coran
+discipline: arabe
 age: Adultes
 level: Débutant
 place_avaible: 50
