@@ -21,7 +21,7 @@ programme: |-
 
   * Explication de la science des fondements juridiques 
   * Explication des fondements juridiques de l’école Malikite 
-  * Apprentissages des fondements juridiques de l’école Malikite
+  * Apprentissage des fondements juridiques de l’école Malikite
 
   Les 40 ahadiths de l’Imam An Nawawi : 
 
