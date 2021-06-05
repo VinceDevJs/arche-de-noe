@@ -2,7 +2,7 @@
 formation_name: Arabe Enfant Niveau 2
 show_formation: true
 templateKey: formation
-thumbnail: /img/asset-9.png
+thumbnail: /img/asset-9-3x.png
 subjects: Enfant
 sub_title: Niv.2
 price: 250
