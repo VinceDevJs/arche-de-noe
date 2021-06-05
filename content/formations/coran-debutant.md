@@ -1,5 +1,5 @@
 ---
-formation_name: coran debutant
+formation_name: Coran Enfant Débutant
 show_formation: true
 templateKey: formation
 thumbnail: /img/coran-débutant-.png
