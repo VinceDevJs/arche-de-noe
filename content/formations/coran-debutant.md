@@ -2,7 +2,7 @@
 formation_name: Coran Enfant Débutant
 show_formation: true
 templateKey: formation
-thumbnail: /img/asset-3.png
+thumbnail: /img/asset-3-3x.png
 subjects: Coran
 sub_title: Débutant
 price: 300
