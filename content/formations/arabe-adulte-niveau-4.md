@@ -2,7 +2,7 @@
 formation_name: Arabe Adulte Niveau 4
 show_formation: true
 templateKey: formation
-thumbnail: /img/arabe-adulte-niv-4.png
+thumbnail: /img/images_formations-17.png
 subjects: ADULTE
 sub_title: Niv.4
 price: 250
