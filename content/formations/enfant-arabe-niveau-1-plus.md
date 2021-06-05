@@ -2,14 +2,14 @@
 formation_name: enfant arabe niveau 1 plus
 show_formation: true
 templateKey: formation
-thumbnail: /img/images_formations-10.png
+thumbnail: /img/images_formations-09.png
 subjects: Arabe
-sub_title: Niv.1
+sub_title: Niv.1+
 price: 250
 discipline: arabe
 age: Enfant
 level: Intermédiaire
-place_avaible: 60
+place_avaible: 25
 prerequis: Savoir  lire un texte simple vocalisée ( Avoir validé le Niveau CP )
 objectifs: >-
   -	Lire un texte simple vocalisé en arabe-	Ecrire un texte simple vocalisé en
