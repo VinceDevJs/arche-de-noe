@@ -2,7 +2,7 @@
 formation_name: Arabe Adulte Niveau 5
 show_formation: true
 templateKey: formation
-thumbnail: /img/arabe-adulte-niveau-5.png
+thumbnail: /img/images_formations-18.png
 subjects: ADULTE
 sub_title: Niv.5
 price: 250
