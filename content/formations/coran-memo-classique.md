@@ -2,14 +2,14 @@
 formation_name: coran memo classique
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/coran-mémo-classique.png
 subjects: Coran Memo
 sub_title: Classique
-price: 209
+price: 300
 discipline: coran
 age: Enfant
 level: Intermédiaire
-place_avaible: 18
+place_avaible: 15
 prerequis: Avoir validé le niveau LECTURE (Test pour les élèves extérieur)
 objectifs: "-\tObjectif de mémorisation personnalisé\r
 
