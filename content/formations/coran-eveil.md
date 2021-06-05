@@ -2,7 +2,7 @@
 formation_name: Coran Enfant Eveil
 show_formation: true
 templateKey: formation
-thumbnail: /img/coran-eveil.png
+thumbnail: /img/asset-3.png
 subjects: Coran
 sub_title: Eveil
 price: 200
