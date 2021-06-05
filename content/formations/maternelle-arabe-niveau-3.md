@@ -2,7 +2,7 @@
 formation_name: Arabe Mater Niveau 3
 show_formation: true
 templateKey: formation
-thumbnail: /img/asset-13.png
+thumbnail: /img/asset-13-3x.png
 subjects: Mater
 sub_title: Niv.3
 price: 250
