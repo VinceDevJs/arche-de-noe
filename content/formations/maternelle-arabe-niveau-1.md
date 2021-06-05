@@ -5,10 +5,11 @@ templateKey: formation
 thumbnail: /img/formation.png
 subjects: Arabe
 sub_title: Niv.1
-price: 297
+price: 250
+discipline: arabe
 age: Maternelles
 level: Débutant
-place_avaible: 54
+place_avaible: 25
 prerequis: Avoir 3 ans
 objectifs: "-\tÉveil à l’apprentissage de la langue arabe et à la mémorisation du Coran "
 programme: "-\tApprentissage des lettre de l’alphabet arabe à travers l’univers
