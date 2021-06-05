@@ -2,14 +2,14 @@
 formation_name: college arabe niveau 1
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/collège-niv-1.png
 subjects: Collège
 sub_title: Niv.1
 price: 250
 discipline: arabe
 age: Collèges
-level: Débutant
-place_avaible: 40
+level: Confirmé
+place_avaible: 25
 prerequis: Avoir suivi et validé la classe ENFANT 5 (Test d’entrée pour les
   élèves extérieurs)
 objectifs: |-
