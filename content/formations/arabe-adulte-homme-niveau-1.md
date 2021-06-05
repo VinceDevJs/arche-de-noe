@@ -2,7 +2,7 @@
 formation_name: Arabe Adulte Homme Niveau 1
 show_formation: true
 templateKey: formation
-thumbnail: /img/images_formations-15.png
+thumbnail: /img/asset-11-3x.png
 subjects: ADULTE
 sub_title: Niv.1
 price: 250
