@@ -2,7 +2,7 @@
 formation_name: Arabe Adulte Niveau 3
 show_formation: true
 templateKey: formation
-thumbnail: /img/arabe-adulte-niv-3.png
+thumbnail: /img/images_formations-16.png
 subjects: ADULTE
 sub_title: Niv.3
 price: 250
