@@ -1,15 +1,15 @@
 ---
-formation_name: maternelle arabe niveau 2
+formation_name: Arabe Mater Niveau 2
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Arabe
+subjects: Mater
 sub_title: Niv.2
-price: 448
+price: 250
 discipline: arabe
 age: Maternelles
 level: Débutant
-place_avaible: 28
+place_avaible: 25
 prerequis: Avoir 4 ans
 objectifs: "-\tÉveil à l’apprentissage de la langue arabe et à la mémorisation du Coran "
 programme: >-
