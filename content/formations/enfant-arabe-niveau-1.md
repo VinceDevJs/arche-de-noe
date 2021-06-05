@@ -2,7 +2,7 @@
 formation_name: Arabe Enfant Niveau Cp
 show_formation: true
 templateKey: formation
-thumbnail: /img/images_formations-08.png
+thumbnail: /img/images_formations-07.png
 subjects: Enfant
 sub_title: Niv.Cp
 price: 250
