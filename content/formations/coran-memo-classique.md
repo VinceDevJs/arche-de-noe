@@ -2,7 +2,7 @@
 formation_name: Coran Enfant Mémo Classique
 show_formation: true
 templateKey: formation
-thumbnail: /img/coran-mémo-classique.png
+thumbnail: /img/asset-3.png
 subjects: Coran Memo
 sub_title: Classique
 price: 300
