@@ -1,15 +1,15 @@
 ---
-formation_name: maternelle arabe niveau 3
+formation_name: Arabe Mater Niveau 3
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
-subjects: Arabe
+subjects: Mater
 sub_title: Niv.3
-price: 238
+price: 250
 discipline: arabe
 age: Maternelles
-level: Intermédiaire
-place_avaible: 28
+level: Débutant
+place_avaible: 25
 prerequis: Connaitre les lettres de l’alphabet arabe
 objectifs: "-\tÉveil à l’apprentissage de la langue arabe et à la mémorisation du "
 programme: "-\tApprentissage des lettre de l’alphabet arabe à travers l’univers
