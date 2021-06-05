@@ -2,7 +2,7 @@
 formation_name: Coran Adulte Homme Confirmé
 show_formation: true
 templateKey: formation
-thumbnail: /img/coran-adulte-homme-confirmé.png
+thumbnail: /img/asset-1-3x.png
 subjects: CORAN HOMME
 sub_title: Confirmé
 price: 300
