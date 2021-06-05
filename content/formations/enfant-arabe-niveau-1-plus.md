@@ -2,7 +2,7 @@
 formation_name: enfant arabe niveau 1 plus
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/images_formations-10.png
 subjects: Arabe
 sub_title: Niv.1
 price: 250
