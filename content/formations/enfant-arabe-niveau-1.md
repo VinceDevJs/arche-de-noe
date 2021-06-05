@@ -2,14 +2,14 @@
 formation_name: enfant arabe cp
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/images_formations-08.png
 subjects: Enfant Cp
 sub_title: vide
-price: 218
+price: 250
 discipline: arabe
 age: Enfant
 level: Débutant
-place_avaible: 28
+place_avaible: 25
 prerequis: Avoir 6 ans
 objectifs: "-\tLire un texte simple vocalisé en arabe\r
 
