@@ -1,15 +1,15 @@
 ---
-formation_name: enfant arabe niveau 1
+formation_name: Arabe Enfant Niveau 1
 show_formation: true
 templateKey: formation
 thumbnail: /img/formation.png
 subjects: Enfant
 sub_title: Niv.1
-price: 220
+price: 250
 discipline: arabe
 age: Enfant
-level: Intermédiaire
-place_avaible: 28
+level: Débutant
+place_avaible: 60
 prerequis: Avoir 7 ans
 objectifs: "-\tLire un texte simple vocalisé en arabe\r
 
