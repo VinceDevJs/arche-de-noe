@@ -2,14 +2,14 @@
 formation_name: enfant arabe cp plus
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
-subjects: Enfant 1+
-sub_title: vide
-price: 219
+thumbnail: /img/enfant-1-.png
+subjects: Enfant
+sub_title: Niv.1+
+price: 250
 discipline: arabe
 age: Enfant
 level: Débutant
-place_avaible: 39
+place_avaible: 22
 prerequis: Savoir  lire un texte simple vocalisée ( Avoir validé le Niveau CP )
 objectifs: "-\tLire un texte simple vocalisé en arabe\r
 
