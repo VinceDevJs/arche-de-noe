@@ -2,7 +2,7 @@
 formation_name: Arabe Adulte Niveau 2
 show_formation: true
 templateKey: formation
-thumbnail: /img/arabe-adulte-2.png
+thumbnail: /img/images_formations-15.png
 subjects: ADULTE
 sub_title: Niv.2
 price: 250
