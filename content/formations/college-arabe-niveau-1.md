@@ -5,11 +5,11 @@ templateKey: formation
 thumbnail: /img/formation.png
 subjects: Collège
 sub_title: Niv.1
-price: 220
+price: 250
 discipline: arabe
 age: Collèges
 level: Débutant
-place_avaible: 37
+place_avaible: 40
 prerequis: Avoir suivi et validé la classe ENFANT 5 (Test d’entrée pour les
   élèves extérieurs)
 objectifs: |-
