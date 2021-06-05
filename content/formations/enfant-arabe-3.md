@@ -2,10 +2,10 @@
 formation_name: enfant arabe niveau 3
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/images_formations-12.png
 subjects: Enfant
 sub_title: Niv.3
-price: 218
+price: 250
 discipline: arabe
 age: Enfant
 level: Intermédiaire
