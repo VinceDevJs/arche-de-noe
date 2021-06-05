@@ -2,7 +2,7 @@
 formation_name: Arabe Enfant Niveau 5
 show_formation: true
 templateKey: formation
-thumbnail: /img/enfant-5.png
+thumbnail: /img/asset-10.png
 subjects: Enfant
 sub_title: Niv.5
 price: 250
