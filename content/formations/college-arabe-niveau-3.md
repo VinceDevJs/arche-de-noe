@@ -1,5 +1,5 @@
 ---
-formation_name: college arabe niveau 3
+formation_name: Arabe College Niveau 3
 show_formation: true
 templateKey: formation
 thumbnail: /img/collège-niv-3.png
