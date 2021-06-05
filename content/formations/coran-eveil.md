@@ -1,5 +1,5 @@
 ---
-formation_name: coran eveil
+formation_name: Coran Enfant Eveil
 show_formation: true
 templateKey: formation
 thumbnail: /img/coran-eveil.png
