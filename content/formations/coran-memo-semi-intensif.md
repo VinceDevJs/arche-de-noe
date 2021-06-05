@@ -2,7 +2,7 @@
 formation_name: Coran Enfant Mémo Semi Intensif
 show_formation: true
 templateKey: formation
-thumbnail: /img/coran-semi-intensif.png
+thumbnail: /img/asset-3.png
 subjects: Coran Memo
 sub_title: semi-intensif
 price: 300
