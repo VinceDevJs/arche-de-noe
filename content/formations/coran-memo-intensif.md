@@ -2,7 +2,7 @@
 formation_name: Coran Enfant Mémo Intensif
 show_formation: true
 templateKey: formation
-thumbnail: /img/asset-3-3x.png
+thumbnail: /img/images_formations-03.png
 subjects: Coran Mémo
 sub_title: intensif
 price: 300
