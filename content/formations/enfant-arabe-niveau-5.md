@@ -1,15 +1,15 @@
 ---
-formation_name: enfant arabe niveau 5
+formation_name: Arabe Enfant Niveau 5
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/enfant-5.png
 subjects: Enfant
 sub_title: Niv.5
-price: 219
+price: 250
 discipline: arabe
 age: Enfant
-level: Confirmé
-place_avaible: 39
+level: Intermédiaire
+place_avaible: 30
 prerequis: Avoir suivi et validé la classe ENFANT 4 (Test d’entrée pour les
   élèves extérieurs)
 objectifs: "-\tLire un texte vocalisé en arabe de manière fluide\r
