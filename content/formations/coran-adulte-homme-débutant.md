@@ -2,7 +2,7 @@
 formation_name: Coran Adulte Homme Débutant
 show_formation: true
 templateKey: formation
-thumbnail: /img/coran-adulte-homme-débutant.png
+thumbnail: /img/asset-1-3x.png
 subjects: CORAN HOMME
 sub_title: Débutant
 price: 300
