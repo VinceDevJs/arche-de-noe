@@ -2,7 +2,7 @@
 formation_name: Science Islamique Niveau 3
 show_formation: true
 templateKey: formation
-thumbnail: /img/asset-2.png
+thumbnail: /img/asset-2-3x.png
 subjects: Sc. ISLAMIQUES
 sub_title: Niv.3
 price: 120
