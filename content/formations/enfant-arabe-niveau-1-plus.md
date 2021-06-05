@@ -1,5 +1,5 @@
 ---
-formation_name: Enfant Arabe Niveau 1 Plus
+formation_name: Arabe Enfant Niveau 1 Plus
 show_formation: true
 templateKey: formation
 thumbnail: /img/images_formations-09.png
