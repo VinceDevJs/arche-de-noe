@@ -1,15 +1,15 @@
 ---
-formation_name: coran memo semi intensif
+formation_name: Coran Enfant Mémo Semi Intensif
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/coran-semi-intensif.png
 subjects: Coran Memo
 sub_title: semi-intensif
-price: 198
+price: 300
 discipline: coran
 age: Enfant
 level: Intermédiaire
-place_avaible: 18
+place_avaible: 15
 prerequis: Avoir validé le niveau LECTURE (Test pour les élèves extérieur)
 objectifs: "-\tObjectif de mémorisation personnalisé\r
 
