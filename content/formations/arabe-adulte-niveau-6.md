@@ -2,7 +2,7 @@
 formation_name: Arabe Adulte Niveau 6
 show_formation: true
 templateKey: formation
-thumbnail: /img/arabe-adulte-niveau-6.png
+thumbnail: /img/images_formations-19.png
 subjects: ADULTE
 sub_title: Niv.6
 price: 250
