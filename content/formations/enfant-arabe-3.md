@@ -1,5 +1,5 @@
 ---
-formation_name: enfant arabe niveau 3
+formation_name: Arabe Enfant Niveau 3
 show_formation: true
 templateKey: formation
 thumbnail: /img/images_formations-12.png
