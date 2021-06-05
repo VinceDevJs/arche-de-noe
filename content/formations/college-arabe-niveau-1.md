@@ -2,7 +2,7 @@
 formation_name: Arabe Collège Niveau 1
 show_formation: true
 templateKey: formation
-thumbnail: /img/collège-niv-1.png
+thumbnail: /img/asset-4.png
 subjects: Collège
 sub_title: Niv.1
 price: 250
