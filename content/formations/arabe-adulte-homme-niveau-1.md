@@ -1,5 +1,5 @@
 ---
-formation_name: Arabe Adulte Homme Niveau 1
+formation_name: Arabe Adulte Niveau 1
 show_formation: true
 templateKey: formation
 thumbnail: /img/asset-11-3x.png
