@@ -2,14 +2,14 @@
 formation_name: coran lecture debutant
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/coran-lecture.png
 subjects: Coran Lec
-sub_title: Débutant
-price: 219
+sub_title: vide
+price: 300
 discipline: coran
 age: Enfant
 level: Intermédiaire
-place_avaible: 19
+place_avaible: 15
 prerequis: Avoir validé le niveau DEBUTANT (Test pour les élèves extérieur)
 objectifs: "-\tLire le Coran de manière fluide \r
 
