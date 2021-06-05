@@ -2,7 +2,7 @@
 formation_name: Science Islamique Niveau 1
 show_formation: true
 templateKey: formation
-thumbnail: /img/science-islamique-niv-1.png
+thumbnail: /img/asset-2.png
 subjects: Sc. ISLAMIQUES
 sub_title: Niv.1
 price: 120
