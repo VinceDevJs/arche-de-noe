@@ -2,7 +2,7 @@
 formation_name: Arabe College Niveau 3
 show_formation: true
 templateKey: formation
-thumbnail: /img/asset-6.png
+thumbnail: /img/asset-6-3x.png
 subjects: Collège
 sub_title: Niv.3
 price: 250
