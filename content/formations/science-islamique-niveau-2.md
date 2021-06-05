@@ -2,7 +2,7 @@
 formation_name: Science Islamique Niveau 2
 show_formation: true
 templateKey: formation
-thumbnail: /img/science-islamique-niv-2.png
+thumbnail: /img/asset-2.png
 subjects: Sc. ISLAMIQUES
 sub_title: Niv.2
 price: 120
