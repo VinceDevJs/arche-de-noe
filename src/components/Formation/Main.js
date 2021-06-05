@@ -124,7 +124,7 @@ export const FormationBox = styled.div`
 
 export const ImgWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `
@@ -140,8 +140,9 @@ export const FormationImg = styled.img`
 export const FormationTitle = styled.p`
   font-family: 'Avenir Next Bold', sans-serif;
   font-size: ${props => (props.small ? '1.8em' : '2.2em')};
-  margin-left: -0.8em;
   color: #00a1c6;
+  margin: 0.2em 0 0;
+  text-align: center;
 
   span {
     -webkit-text-stroke: 2px #00a1c6;

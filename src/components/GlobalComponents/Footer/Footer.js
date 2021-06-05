@@ -27,9 +27,9 @@ const Footer = () => {
         <Box>
           <Title>A propos</Title>
           <Separator />
-          <LinkText to='/'>Mentions légales</LinkText>
-          <LinkText to='/'>CGV</LinkText>
-          <LinkText to='/'>FAQ</LinkText>
+          <LinkText to='/mentions-legales'>Mentions légales</LinkText>
+          <LinkText to='/cgv'>CGV</LinkText>
+          <LinkText to='/faq'>FAQ</LinkText>
           <IconBox>
             <a href='https://fr-fr.facebook.com/institutarchedenoe'>
               <SocialIcon style={{ marginRight: '1em' }} src={facebookIcon} />
