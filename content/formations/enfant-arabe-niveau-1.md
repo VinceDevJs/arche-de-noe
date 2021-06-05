@@ -1,5 +1,5 @@
 ---
-formation_name: Enfant Arabe CP
+formation_name: Arabe Enfant CP
 show_formation: true
 templateKey: formation
 thumbnail: /img/images_formations-08.png
