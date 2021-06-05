@@ -2,14 +2,14 @@
 formation_name: college arabe niveau 3
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/collège-niv-3.png
 subjects: Collège
 sub_title: Niv.3
-price: 248
+price: 250
 discipline: arabe
 age: Collèges
-level: Intermédiaire
-place_avaible: 43
+level: Confirmé
+place_avaible: 25
 prerequis: Avoir suivi et validé la classe COLLEGE 2 (Test d’entrée pour les
   élèves extérieurs)
 objectifs: "-\tLire un texte vocalisé en arabe de manière fluide\r
