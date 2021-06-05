@@ -2,14 +2,14 @@
 formation_name: coran debutant
 show_formation: true
 templateKey: formation
-thumbnail: /img/formation.png
+thumbnail: /img/coran-débutant-.png
 subjects: Coran
 sub_title: Débutant
-price: 220
+price: 300
 discipline: coran
 age: Enfant
 level: Débutant
-place_avaible: 29
+place_avaible: 15
 prerequis: Avoir 6 ans
 objectifs: "-\tÉveil à la mémorisation du Coran \r
 
