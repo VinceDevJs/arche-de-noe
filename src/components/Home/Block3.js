@@ -17,7 +17,7 @@ import {
 
 const Block3 = () => {
   return (
-    <Container id='block3'>
+    <Container>
       <ImageWrapper>
         <BooksImg
           data-aos='fade-right'

@@ -7,7 +7,7 @@ import { breakpoints } from '../../utils/styles.js'
 
 const Block3Bis = () => {
   return (
-    <Container>
+    <Container id='block3'>
       <img
         src={waves}
         style={{ width: '100%', marginBottom: '2.5em', position: 'absolute', top: '0', left: '0' }}

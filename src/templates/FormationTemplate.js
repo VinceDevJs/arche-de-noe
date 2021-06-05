@@ -299,7 +299,10 @@ export const IconText = styled.p`
   font-size: 1em;
 `
 
-export const Icon = styled.img``
+export const Icon = styled.img`
+max-width: 3.7em;
+  margin: 0 auto;
+`
 
 export const PlanningButton = styled.div`
   border: 2px solid #007cad;
