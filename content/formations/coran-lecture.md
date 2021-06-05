@@ -2,7 +2,7 @@
 formation_name: "Coran Enfant Lecture "
 show_formation: true
 templateKey: formation
-thumbnail: /img/asset-3.png
+thumbnail: /img/asset-3-3x.png
 subjects: Coran Lec
 sub_title: vide
 price: 300
