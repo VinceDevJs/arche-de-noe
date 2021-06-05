@@ -1,10 +1,10 @@
 ---
-formation_name: enfant arabe cp
+formation_name: Enfant Arabe CP
 show_formation: true
 templateKey: formation
 thumbnail: /img/images_formations-08.png
-subjects: Enfant Cp
-sub_title: vide
+subjects: Enfant
+sub_title: Niv.Cp
 price: 250
 discipline: arabe
 age: Enfant
