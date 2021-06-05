@@ -1,5 +1,5 @@
 ---
-formation_name: coran memo classique
+formation_name: Coran Enfant Mémo Classique
 show_formation: true
 templateKey: formation
 thumbnail: /img/coran-mémo-classique.png
