@@ -2,7 +2,7 @@
 formation_name: Coran Adulte Femme Débutant
 show_formation: true
 templateKey: formation
-thumbnail: /img/asset-1-3x.png
+thumbnail: /img/images_formations-01.png
 subjects: CORAN FEMME
 sub_title: Débutant
 price: 300
