@@ -29,7 +29,7 @@ const Main = ({ allFormations }) => {
             >
               <ImgWrapper>
                 <FormationImg src={formation.thumbnail} alt='formation book' />
-                <FormationTitle small={formation.subjects.length > 7}>
+                <FormationTitle>
                   {formation.subjects} <br />
                   <span>
                     {formation.sub_title !== 'vide' ? formation.sub_title : ''}
@@ -130,24 +130,26 @@ export const ImgWrapper = styled.div`
 `
 
 export const FormationImg = styled.img`
-  width: 12em;
+  width: 14em;
 
   @media (max-width: ${breakpoints.m}px) {
-    width: 10em;
+    width: 15em;
   }
 `
 
 export const FormationTitle = styled.p`
   font-family: 'Avenir Next Bold', sans-serif;
-  font-size: ${props => (props.small ? '1.8em' : '2.2em')};
+  font-size: 2.2em;
   color: #00a1c6;
   margin: 0.2em 0 0;
   text-align: center;
 
   span {
     -webkit-text-stroke: 2px #00a1c6;
+    display: block; 
     color: white;
     font-size: 35px;
+    height: 35px;
   }
 `
 
