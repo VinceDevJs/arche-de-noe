@@ -163,15 +163,14 @@ export const IconBox = styled.div`
 
   @media (max-width: ${breakpoints.s}px) {
     max-width: 100%;
-    min-height: 12em;
+    height: 6em;
   }
 `
-
 export const Icon = styled.img`
   margin: 0 auto;
 
   @media (max-width: ${breakpoints.s}px) {
-    min-width: 80%;
+    max-width: 90%;
   }
 `
 

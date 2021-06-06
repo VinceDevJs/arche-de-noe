@@ -13,11 +13,11 @@ const Block3Bis = () => {
         style={{ width: '100%', marginBottom: '2.5em', position: 'absolute', top: '0', left: '0' }}
         alt=''
       />
-      <BlockLeft>
+      <BlockLeft data-aos='fade-right' data-aos-duration='3000'>
         <Image src={BooksImg} alt='arche de noe' />
       </BlockLeft>
 
-      <BlockRight>
+      <BlockRight data-aos='fade-left' data-aos-delay='50' data-aos-duration='3000'>
         <Title style={{ color: '#00A1C6' }}>Nos Domaines</Title>
         <Title style={{ color: '#007CAD' }}>d’enseignement</Title>
         <Separator />

@@ -21,7 +21,7 @@ const MainInscription = () => {
         </ContentIconBox>
         <ContentText>
           Je télécharge le dossier d’inscription en cliquant{' '}
-          <ContentLink>
+          <ContentLink target='_blank' href='Formulaire_Inscription.pdf'>
             <span>ici</span>
           </ContentLink>
           .
@@ -134,7 +134,7 @@ export const ContentText = styled.p`
   }
 `
 
-export const ContentLink = styled(Link)`
+export const ContentLink = styled.a`
   color: #8bc53e;
   text-decoration: none;
 `
