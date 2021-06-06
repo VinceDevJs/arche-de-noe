@@ -1,6 +1,6 @@
 ---
 name: j'apprend l'arabe 2
-show: true
+show: false
 avaible: true
 templateKey: shop
 productPrice: "20"
