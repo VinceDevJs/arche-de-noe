@@ -28,7 +28,7 @@ const MobileSort = ({
         onChange={e => handleFilterFormations('age', e.target.value)}
       >
         <option value='default' disabled selected>
-          Sélectionner un age
+          Section
         </option>
         <option value='Maternelles'>Maternelles</option>
         <option value='Enfant'>Enfant</option>
@@ -42,7 +42,7 @@ const MobileSort = ({
         onChange={e => handleFilterFormations('level', e.target.value)}
       >
         <option value='default' disabled selected>
-          Sélectionner un niveau
+          Par Niveau
         </option>
         <option value='Débutant'>Débutant</option>
         <option value='Intermédiaire'>Intermédiaire</option>

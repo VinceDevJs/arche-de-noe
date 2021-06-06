@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
 import { convertToSlug } from './../../utils/functions'
 
-import books from '../../assets/images/formation/books.svg'
 import twitter from '../../assets/images/formation/twitter.svg'
 import facebook from '../../assets/images/formation/facebook.svg'
 import table from '../../assets/images/formation/table.png'

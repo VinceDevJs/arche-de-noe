@@ -186,6 +186,7 @@ export const RightHeaderTitle = styled.p`
 
 export const RightHeaderText = styled.p`
   margin-bottom: 2em;
+  color: #00a1c6;
 `
 
 export const RightHeaderButton = styled(Link)`

@@ -69,7 +69,7 @@ const SideBar = ({
       </Wrapper>
 
       <Wrapper style={{ marginTop: '3em' }}>
-        <SortTitle>Par niveau</SortTitle>
+        <SortTitle>Par Niveau</SortTitle>
         <Separator />
         <SortBox>
           <SortText
