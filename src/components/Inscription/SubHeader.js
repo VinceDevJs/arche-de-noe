@@ -21,7 +21,7 @@ const SubHeader = () => {
         <Separator />
         <SubTitle>
           L’Institut l’Arche de Noé a développé, au fil des ans une réelle
-          expertise dans différents domaines relatifes à la culture Islamique
+          expertise dans différents domaines relatifs à la culture Islamique
           ainsi qu’à la langue Arabe en général.
         </SubTitle>
         <Button to='#main_inscription'>Connaître les modalités</Button>
