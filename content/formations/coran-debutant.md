@@ -5,7 +5,7 @@ templateKey: formation
 thumbnail: /img/images_formations-03.png
 subjects: Coran
 sub_title: Débutant
-price: 300
+price: 250
 discipline: coran
 age: Enfant
 level: Débutant
