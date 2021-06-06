@@ -91,7 +91,7 @@ const NosOuvrages = () => {
           level={level}
           handleReset={handleReset}
         />
-        <Main allOuvrages={ouvragesFiltered} />
+        <Main age={age} level={level} allOuvrages={ouvragesFiltered} />
       </MainContainer>
       <img
         src={waves}

@@ -7,12 +7,14 @@ import { convertToSlug } from './../../utils/functions'
 import twitter from '../../assets/images/formation/twitter.svg'
 import facebook from '../../assets/images/formation/facebook.svg'
 
-const Main = ({ allOuvrages }) => {
+const Main = ({ allOuvrages, age, level }) => {
   console.log(allOuvrages)
+
+  const allOuvragesToShow = allOuvrages.filter(({ node: ouvrage }) => ouvrage.frontmatter.show === true)
   return (
     <Container>
-      {allOuvrages &&
-        allOuvrages.map(({ node: data }, index) => {
+      {allOuvragesToShow &&
+        allOuvragesToShow.map(({ node: data }, index) => {
           const ouvrage = data.frontmatter
           const ouvrageSlug = convertToSlug(ouvrage.name)
           const slideTime = `${index}00`
@@ -53,7 +55,7 @@ const Main = ({ allOuvrages }) => {
             </FormationBox>
           )
         })}
-      {!allOuvrages.length && (
+      {!allOuvragesToShow.length && (
         <p
           style={{
             fontSize: '2em',
@@ -63,7 +65,7 @@ const Main = ({ allOuvrages }) => {
             textAlign: 'center'
           }}
         >
-          Aucun ouvrage disponible pour cette sélection
+          Aucun ouvrage disponible {age || level ? 'pour cette sélection' : ''}
         </p>
       )}
     </Container>
