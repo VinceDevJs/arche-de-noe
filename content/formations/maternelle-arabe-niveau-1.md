@@ -25,5 +25,5 @@ programme: "-\tApprentissage des lettre de l’alphabet arabe à travers l’uni
   La pédagogie adopter par l’institut permet à chaque enfant d’apprendre et de
   developer ses connaissances tout en s’amusant et progresser vers la lecture,
   l’écriture et l’apprentissage des mots en arabe.\r\n"
-ouvrages: Cahier d’activité  « Les Alphanimos » Mater 1
+ouvrages: Cahier d’activité  « Les Alphanimos de l'Arche de Noé » Mater 1
 ---
