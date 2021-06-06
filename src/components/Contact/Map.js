@@ -62,8 +62,8 @@ export const GoogleMap = styled.iframe`
   height: 25em;
   border: none;
   border-radius: 25px;
-  -webkit-box-shadow: 1px 2px 8px 8px rgba(7, 52, 68, 0.42);
-  box-shadow: 1px 2px 8px 8px rgba(7, 52, 68, 0.42);
+  /* -webkit-box-shadow: 1px 2px 8px 8px rgba(7, 52, 68, 0.42);
+  box-shadow: 1px 2px 8px 8px rgba(7, 52, 68, 0.42); */
 
   @media (max-width: ${breakpoints.m}px) {
     width: 90%;
