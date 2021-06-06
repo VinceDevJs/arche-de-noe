@@ -3,9 +3,9 @@ formation_name: Coran Enfant Mémo Classique
 show_formation: true
 templateKey: formation
 thumbnail: /img/images_formations-03.png
-subjects: Coran Memo
+subjects: Coran Mémo
 sub_title: Classique
-price: 300
+price: 250
 discipline: coran
 age: Enfant
 level: Intermédiaire
