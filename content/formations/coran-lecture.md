@@ -5,7 +5,7 @@ templateKey: formation
 thumbnail: /img/images_formations-03.png
 subjects: Coran Lec
 sub_title: vide
-price: 300
+price: 250
 discipline: coran
 age: Enfant
 level: Intermédiaire
