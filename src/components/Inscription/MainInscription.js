@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
+import downloadPdf from './../../assets/formulaire_inscription.pdf'
 import { breakpoints } from '../../utils/styles'
 import stepOneIcon from '../../assets/images/inscription/step-1.svg'
 import stepTwoIcon from '../../assets/images/inscription/step-2.svg'
@@ -21,7 +22,7 @@ const MainInscription = () => {
         </ContentIconBox>
         <ContentText>
           Je télécharge le dossier d’inscription en cliquant{' '}
-          <ContentLink target='_blank' href='Formulaire_Inscription.pdf'>
+          <ContentLink target='_blank' href={downloadPdf}>
             <span>ici</span>
           </ContentLink>
           .
