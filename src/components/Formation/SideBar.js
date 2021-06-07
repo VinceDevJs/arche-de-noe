@@ -32,7 +32,7 @@ const SideBar = ({
             onClick={() =>
               handleFilterFormations('discipline', 'science islamique')}
           >
-            Science Islamique
+            Sciences Islamiques
           </SortText>
         </SortBox>
       </Wrapper>

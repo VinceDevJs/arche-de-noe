@@ -22,7 +22,7 @@ const Header = () => {
         </Title>
         <Separator />
         <SubTitle>
-          Retrouver tous les livres de l’Institut l’arche de Noé disponible a l'achat
+          Retrouver tous les livres de l’institut l’Arche de Noé disponible a l'achat
         </SubTitle>
       </TitleWrapper>
     </Container>

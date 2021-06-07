@@ -36,7 +36,7 @@ const Header = () => {
         <RightHeaderContent>
           <RightHeaderTitle>Nous contacter</RightHeaderTitle>
           <RightHeaderText>
-            Vous avez une question, nous vous répondons par téléphone, E-mail, Whatsapp et sur les réseaux sociaux
+            Vous avez une question, nous vous répondons par téléphone, e-mail ou via l’application WhatsApp
           </RightHeaderText>
           <RightHeaderButton to='#form'>J’ai une question</RightHeaderButton>
         </RightHeaderContent>
@@ -105,8 +105,8 @@ const Header = () => {
             </RightIconBox>
             <RightContentBox>
               <RightContentText>
-                <DayTitle>Mercredi:</DayTitle> 13h-17h30 <br />
-                <DayTitle>Samedi:</DayTitle> 8h00-13h00 & 14h00-20h00
+                <DayTitle>Mercredi:</DayTitle> 10h00-15h00 <br />
+                <DayTitle>Samedi:</DayTitle> 11h00-16h00
               </RightContentText>
             </RightContentBox>
           </RightInfoBox>

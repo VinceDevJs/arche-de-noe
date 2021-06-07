@@ -14,7 +14,7 @@ const Block1 = () => {
         <Logo src={logoSvg} />
         <Title>L'Arche de Noé</Title>
         <Text>
-          L’Institut l’arche de Noé dispense des cours d’arabe et de culture islamique pour enfants et adultes.
+          L’institut l’Arche de Noé dispense des cours d’arabe et de culture islamique pour enfants et adultes
         </Text>
         <Button to='#block3'>En savoir plus</Button>
       </LeftBox>

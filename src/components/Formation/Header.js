@@ -22,8 +22,8 @@ const Header = () => {
         </Title>
         <Separator />
         <SubTitle>
-          L’Institut l’arche de Noé vous propose trois types de formations adaptées à
-          différentes tranches d’âges: Langue arabe, Coran, Science islamique
+          L’institut l’Arche de Noé vous propose trois types de formations adaptées à
+          différentes tranches d’âges: Langue arabe, Coran, Sciences islamiques
           <br /> <br />
           Découvrez ci-dessous le détails de ces formations
         </SubTitle>

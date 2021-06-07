@@ -20,9 +20,7 @@ const SubHeader = () => {
         <Title>Inscription</Title>
         <Separator />
         <SubTitle>
-          L’Institut l’Arche de Noé a développé, au fil des ans une réelle
-          expertise dans différents domaines relatifs à la culture Islamique
-          ainsi qu’à la langue Arabe en général.
+          Les inscriptions à l’institut l’Arche de Noé se déroulent tous les ans, de fin juin à fin septembre
         </SubTitle>
         <Button to='#main_inscription'>Connaître les modalités</Button>
       </TitleWrapper>

@@ -127,7 +127,7 @@ const ContactForm = () => {
           </LabelWrapper>
 
           <LabelWrapper>
-            <p>Adresse éléctronique*</p>
+            <p>E-mail*</p>
             <StyledInput
               name='mail'
               value={dataForm.mail}
@@ -148,19 +148,23 @@ const ContactForm = () => {
           </LabelWrapper>
 
           <div style={{ height: '2em', textAlign: 'center' }}>
-            {errMsg.phone || errMsg.mail || errMsg.message ? (
-              <ErrorMessage>
-                Veuillez remplir correctement les champs en rouge !!!
-              </ErrorMessage>
-            ) : null}
+            {errMsg.phone || errMsg.mail || errMsg.message
+              ? (
+                <ErrorMessage>
+                  Veuillez remplir correctement les champs en rouge !!!
+                </ErrorMessage>
+                )
+              : null}
           </div>
           <div style={{ height: '2em' }}>
-            {success ? (
-              <SuccessMessage>Votre message a bien été envoyer</SuccessMessage>
-            ) : null}
+            {success
+              ? (
+                <SuccessMessage>Votre message a bien été envoyer</SuccessMessage>
+                )
+              : null}
           </div>
 
-          <SubmitButton type='submit' />
+          <SubmitButton type='submit'>Envoyer</SubmitButton>
         </InputsWrapper>
       </Form>
     </>
@@ -291,7 +295,7 @@ export const StyledTextarea = styled.textarea`
   }
 `
 
-export const SubmitButton = styled.input`
+export const SubmitButton = styled.button`
   display: block;
   background-color: #0094be;
   border-radius: 40px;

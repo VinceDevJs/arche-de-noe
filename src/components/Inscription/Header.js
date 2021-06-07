@@ -11,12 +11,12 @@ const Header = () => {
       <Logo left='true' src={logo} alt='logo arche de noe' />
 
       <TextContent>
-        L’Institut l’Arche de Noé a le plaisir de vous informer que les
+        L’institut l’Arche de Noé a le plaisir de vous informer que les
         inscriptions pour l’année 2021 | 2022 se dérouleront les jours suivants
         :
       </TextContent>
       <DateContent>
-        26 & 27 JUIN 2021 et le 3 & 4 Juillet 2021
+        26 & 27 JUIN 2021 et le 3 & 4 JUILLET 2021
       </DateContent>
 
       <ButtonsBox>
