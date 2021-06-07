@@ -3,8 +3,8 @@ formation_name: "Coran Enfant Lecture "
 show_formation: true
 templateKey: formation
 thumbnail: /img/images_formations-03.png
-subjects: Coran Lec
-sub_title: vide
+subjects: Coran
+sub_title: Lecture
 price: 250
 discipline: coran
 age: Enfant
