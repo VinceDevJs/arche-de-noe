@@ -4,7 +4,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: https://institutarchedenoe.fr/static/arche-de-noe.png
+logo_url: https://institutarchedenoe.fr/img/arche-de-noe.png
 site_url: https://institutarchedenoe.fr
 display_url: https://institutarchedenoe.fr
 locale: "fr"
