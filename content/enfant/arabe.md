@@ -1,5 +1,5 @@
 ---
-title: Arab
+title: Arabe
 templateKey: enfant
 day: []
 ---
