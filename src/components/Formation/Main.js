@@ -149,6 +149,7 @@ export const FormationTitle = styled.p`
     color: white;
     font-size: 35px;
     height: 35px;
+    text-transform: capitalize;
   }
 `
 

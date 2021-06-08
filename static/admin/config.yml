@@ -4,9 +4,9 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: http://institutarchedenoe.fr/wp-content/uploads/2018/04/logo-principal.png
-site_url: https://archedenoe.netlify.app/
-display_url: https://archedenoe.netlify.app/
+logo_url: https://institutarchedenoe.fr/static/arche-de-noe.png
+site_url: https://institutarchedenoe.fr
+display_url: https://institutarchedenoe.fr
 locale: "fr"
 
 collections:
@@ -52,7 +52,7 @@ collections:
               required: true,
             }
 
-  - label: "Categorie Enfant"
+  - label: "Planning Enfant"
     name: "enfant"
     folder: "content/enfant"
     identifier_field: title
@@ -77,10 +77,13 @@ collections:
         name: "day"
         minimize_collapsed: false
         widget: "list"
+        min: 1
+        max: 7
         fields:
           - label: "Jours de la semaine"
             name: "daySelected"
             widget: "select"
+            required: true
             options:
               [
                 "lundi",
@@ -103,6 +106,8 @@ collections:
             name: "cours"
             minimize_collapsed: true
             widget: "list"
+            min: 1
+            max: 30
             allow_add: true
             label_singular: "un cours"
             fields:
@@ -118,31 +123,47 @@ collections:
                 widget: "select"
                 options:
                   [
-                    "Débutant",
-                    "Confirmé",
-                    "Tous niveaux",
-                    "Niveau 1",
-                    "Niveau 2",
-                    "Niveau 3",
-                    "Niveau 4",
-                    "Niveau 5",
-                    "Niveau 6",
+                      "vide",
+                      "Eveil",
+                      "Niv.Cp",
+                      "Niv.1",
+                      "Niv.1+",
+                      "Niv.2",
+                      "Niv.3",
+                      "Niv.4",
+                      "Niv.5",
+                      "Niv.6",
+                      "Lecture",
+                      "Débutant",
+                      "Intérmédiaire",
+                      "Confirmé",
+                      "Classique",
+                      "semi-intensif",
+                      "intensif",
                   ]
                 hint: "Sélectionner le Niveau a afficher pour ce cours."
+              - {
+                label: "Tranche d'âge",
+                name: "title",
+                widget: "string",
+                hint: "Indiquer la tranche d'âge, ex: 7-8 ans",
+                required: false
+              }
+              - {
+                label: "Créneaux horaire",
+                name: "curse hour",
+                widget: string,
+                require: true,
+                hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
+              }
               - label: "Salle de classe"
                 name: "room"
                 widget: "select"
-                options: ["Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4"]
+                options: ["Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4", "Salle N°5"]
                 hint: "Sélectionner la salle de cours a afficher."
-              - {
-                  label: "Créneaux horaire",
-                  name: "curse hour",
-                  widget: string,
-                  require: true,
-                  hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
-                }
 
-  - label: "Categorie Adulte"
+
+  - label: "Planning Adulte"
     name: "adulte"
     folder: "content/adulte"
     identifier_field: title
@@ -151,58 +172,99 @@ collections:
       preview: false
     fields:
       - {
-          label: "Nom de la matiere",
-          name: "title",
-          widget: "string",
-          hint: "Indiquer le nom de la matiere a afficher dans l'onglet.",
-          required: true,
-        }
+        label: "Nom de la matiere",
+        name: "title",
+        widget: "string",
+        hint: "Indiquer le nom de la matiere a afficher dans l'onglet.",
+        required: true,
+      }
       - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "adulte",
-        }
+        label: "Template Key",
+        name: "templateKey",
+        widget: "hidden",
+        default: "enfant",
+      }
       - label: "Jours à afficher"
         name: "day"
         minimize_collapsed: false
         widget: "list"
+        min: 1
+        max: 7
         fields:
-          - {
-              label: "Nom du cour",
-              name: "curse name",
-              widget: string,
-              require: true,
-              hint: "Indiquer le nom du cours",
-            }
-          - label: "Niveaux du cours"
-            name: "level"
+          - label: "Jours de la semaine"
+            name: "daySelected"
             widget: "select"
             options:
               [
-                "Débutant",
-                "Confirmé",
-                "Tous niveaux",
-                "Niveau 1",
-                "Niveau 2",
-                "Niveau 3",
-                "Niveau 4",
-                "Niveau 5",
-                "Niveau 6",
+                  "lundi",
+                  "mardi",
+                  "mercredi",
+                  "jeudi",
+                  "vendredi",
+                  "samedi",
+                  "dimanche",
               ]
-            hint: "Sélectionner le Niveau a afficher pour ce cours."
-          - label: "Salle de classe"
-            name: "room"
-            widget: "select"
-            options: ["Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4"]
-            hint: "Sélectionner la salle de cours a afficher."
+            hint: "Sélectionner le jour a afficher."
+            required: true
           - {
-              label: "Créneaux horaire",
-              name: "curse hour",
-              widget: string,
-              require: true,
-              hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
-            }
+            label: "Afficher",
+            name: "show",
+            widget: "boolean",
+            default: false,
+            hint: "Activer pour afficher ce jour sur le site.",
+          }
+          - label: "Cours"
+            name: "cours"
+            minimize_collapsed: true
+            widget: "list"
+            allow_add: true
+            min: 1
+            max: 30
+            label_singular: "un cours"
+            fields:
+              - {
+                label: "Nom du cour",
+                name: "curse name",
+                widget: string,
+                require: true,
+                hint: "Indiquer le nom du cours",
+              }
+              - label: "Niveaux du cours"
+                name: "level"
+                widget: "select"
+                options:
+                  [
+                      "vide",
+                      "Eveil",
+                      "Niv.Cp",
+                      "Niv.1",
+                      "Niv.1+",
+                      "Niv.2",
+                      "Niv.3",
+                      "Niv.4",
+                      "Niv.5",
+                      "Niv.6",
+                      "Lecture",
+                      "Débutant",
+                      "Intérmédiaire",
+                      "Confirmé",
+                      "Classique",
+                      "Semi-intensif",
+                      "Intensif",
+                  ]
+                hint: "Sélectionner le Niveau a afficher pour ce cours."
+              - {
+                label: "Créneaux horaire",
+                name: "curse hour",
+                widget: string,
+                require: true,
+                hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
+              }
+              - label: "Salle de classe"
+                name: "room"
+                widget: "select"
+                options: [ "Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4", "Salle N°5" ]
+                hint: "Sélectionner la salle de cours a afficher."
 
   - label: "Shop"
     name: "shop"
