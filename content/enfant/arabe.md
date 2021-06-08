@@ -7,7 +7,7 @@ day:
     cours:
       - curse name: fsdafasd
         level: Niv.Cp
-        title: 17vsdfsd
+        title: ""
         room: Salle N°4
         curse hour: sdfsdf
 ---
