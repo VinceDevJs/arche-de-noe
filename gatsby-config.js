@@ -11,6 +11,15 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-layout',
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'G-K7S1720TJ0',
+        // this option places the tracking script into the head of the DOM
+        head: true
+        // other options
+      }
+    },
+    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: ['Oswald: 300,400,700'],
