@@ -144,7 +144,7 @@ const ProductTemplate = ({ data, path }) => {
               className='snipcart-add-item'
               data-item-id={name}
               data-item-price={productPrice.replace(',', '.')}
-              data-item-url={`http://localhost:8000/${path}`} // TODO changer l url
+              data-item-url={`https://institutarchedenoe.fr/nos-ouvrages/${path}`} // TODO changer l url
               data-item-description={description}
               data-item-image={images && images[0].image}
               data-item-name={name}
