@@ -40,4 +40,11 @@ day:
         level: Niv.4
         curse hour: 14:00 - 18:00
         room: Salle N°1
+  - show: true
+    daySelected: vendredi
+    cours:
+      - curse name: Maman
+        level: Niv.1
+        curse hour: 10:00 - 12:00
+        room: Salle N°1
 ---
