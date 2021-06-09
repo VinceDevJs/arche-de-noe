@@ -29,4 +29,15 @@ day:
         level: Niv.1
         curse hour: 17:30 - 20:00
         room: Salle N°4
+  - show: true
+    daySelected: dimanche
+    cours:
+      - curse name: Adulte
+        level: Niv.5
+        curse hour: 08:00 - 12:00
+        room: Salle N°3
+      - curse name: Adulte
+        level: Niv.4
+        curse hour: 14:00 - 18:00
+        room: Salle N°1
 ---
