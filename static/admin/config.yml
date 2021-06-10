@@ -118,6 +118,13 @@ collections:
                   require: true,
                   hint: "Indiquer le nom du cours",
                 }
+              - {
+                label: "Lien du cour",
+                name: "curse link",
+                widget: string,
+                require: true,
+                hint: "Indiquer la fin de l'url du cours ex: arabe-adulte-niveau-1",
+              }
               - label: "Niveaux du cours"
                 name: "level"
                 widget: "select"
@@ -237,6 +244,13 @@ collections:
                 widget: string,
                 require: true,
                 hint: "Indiquer le nom du cours",
+              }
+              - {
+                label: "Lien du cour",
+                name: "curse link",
+                widget: string,
+                require: true,
+                hint: "Indiquer la fin de l'url du cours ex: arabe-adulte-niveau-1",
               }
               - label: "Niveaux du cours"
                 name: "level"
