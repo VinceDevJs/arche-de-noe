@@ -1,5 +1,5 @@
 ---
-formation_name: Arabe Maman
+formation_name: Arabe Maman Niveau 1
 show_formation: false
 templateKey: formation
 thumbnail: /img/formation.png
