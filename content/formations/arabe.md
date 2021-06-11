@@ -1,5 +1,5 @@
 ---
-formation_name: Arabe
+formation_name: Arabe Maman
 show_formation: false
 templateKey: formation
 thumbnail: /img/formation.png
