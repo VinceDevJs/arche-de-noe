@@ -41,7 +41,7 @@ const Index = () => {
           <Link to='/contact'>Contact</Link>
         </li>
         <li>
-          <Button>Se connecter</Button>
+          <Button href='http://intranet2.institutarchedenoe.fr/ekattor/'>Se connecter</Button>
         </li>
         <CartContainer className='snipcart-checkout'>
           <CartIcon src={cartIcon} />
@@ -106,21 +106,21 @@ export const LogoMobile = styled.img`
   left: 15px;
 `
 
-export const Button = styled.button`
+export const Button = styled.a`
   background-color: ${primaryColor};
-  color: white;
+  color: white!important;
   border-radius: 40px;
-  border: none;
   padding: 2px 25px;
   line-height: 1;
   font-size: 1em;
+  text-decoration: none;
   border: 2px solid transparent;
-  font-family: 'Avenir Next Bold Demi';
+  font-family: 'Avenir Next Bold Demi',serif;
 
   :hover {
     background-color: transparent;
     border: 2px solid ${secondaryColor};
-    color: ${secondaryColor};
+    color: ${secondaryColor}!important;
     cursor: pointer;
   }
 `

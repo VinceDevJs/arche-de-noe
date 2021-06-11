@@ -1,6 +1,6 @@
 ---
 title: Arabe
-templateKey: enfant
+templateKey: adulte
 day:
   - show: true
     daySelected: samedi

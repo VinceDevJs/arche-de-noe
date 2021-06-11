@@ -1,6 +1,6 @@
 ---
 title: Sciences Islamiques
-templateKey: enfant
+templateKey: adulte
 day:
   - show: true
     daySelected: samedi

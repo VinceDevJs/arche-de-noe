@@ -119,65 +119,71 @@ collections:
                   hint: "Indiquer le nom du cours",
                 }
               - {
-                label: "Lien du cour",
-                name: "curse link",
-                widget: string,
-                require: true,
-                hint: "Indiquer la fin de l'url du cours ex: arabe-adulte-niveau-1",
-              }
+                  label: "Lien du cour",
+                  name: "curse link",
+                  widget: string,
+                  require: true,
+                  hint: "Indiquer la fin de l'url du cours ex: arabe-adulte-niveau-1",
+                }
               - label: "Niveaux du cours"
                 name: "level"
                 widget: "select"
                 options:
                   [
-                      "vide",
-                      "Eveil",
-                      "Niv.Cp",
-                      "Niv.1",
-                      "Niv.1+",
-                      "Niv.1 A",
-                      "Niv.1 B",
-                      "Niv.1 C",
-                      "Niv.2",
-                      "Niv.2 A",
-                      "Niv.2 B",
-                      "Niv.2 C",
-                      "Niv.3",
-                      "Niv.3 A",
-                      "Niv.3 B",
-                      "Niv.3 C",
-                      "Niv.4",
-                      "Niv.5",
-                      "Niv.6",
-                      "Lecture",
-                      "Débutant",
-                      "Intérmédiaire",
-                      "Confirmé",
-                      "Classique",
-                      "semi-intensif",
-                      "intensif",
+                    "vide",
+                    "Eveil",
+                    "Niv.Cp",
+                    "Niv.1",
+                    "Niv.1+",
+                    "Niv.1 A",
+                    "Niv.1 B",
+                    "Niv.1 C",
+                    "Niv.2",
+                    "Niv.2 A",
+                    "Niv.2 B",
+                    "Niv.2 C",
+                    "Niv.3",
+                    "Niv.3 A",
+                    "Niv.3 B",
+                    "Niv.3 C",
+                    "Niv.4",
+                    "Niv.5",
+                    "Niv.6",
+                    "Lecture",
+                    "Débutant",
+                    "Intérmédiaire",
+                    "Confirmé",
+                    "Classique",
+                    "semi-intensif",
+                    "intensif",
                   ]
                 hint: "Sélectionner le Niveau a afficher pour ce cours."
               - {
-                label: "Tranche d'âge",
-                name: "title",
-                widget: "string",
-                hint: "Indiquer la tranche d'âge, ex: 7-8 ans",
-                required: false
-              }
+                  label: "Tranche d'âge",
+                  name: "title",
+                  widget: "string",
+                  hint: "Indiquer la tranche d'âge, ex: 7-8 ans",
+                  required: false,
+                }
               - {
-                label: "Créneaux horaire",
-                name: "curse hour",
-                widget: string,
-                require: true,
-                hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
-              }
+                  label: "Créneaux horaire",
+                  name: "curse hour",
+                  widget: string,
+                  require: true,
+                  hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
+                }
               - label: "Salle de classe"
                 name: "room"
                 widget: "select"
-                options: ["Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4", "Salle N°5"]
+                options:
+                  [
+                    "Salle N°1",
+                    "Salle N°2",
+                    "Salle N°3",
+                    "Salle N°4",
+                    "Salle N°5",
+                  ]
                 hint: "Sélectionner la salle de cours a afficher."
-
 
   - label: "Planning Adulte"
     name: "adulte"
@@ -188,18 +194,18 @@ collections:
       preview: false
     fields:
       - {
-        label: "Nom de la matiere",
-        name: "title",
-        widget: "string",
-        hint: "Indiquer le nom de la matiere a afficher dans l'onglet.",
-        required: true,
-      }
+          label: "Nom de la matiere",
+          name: "title",
+          widget: "string",
+          hint: "Indiquer le nom de la matiere a afficher dans l'onglet.",
+          required: true,
+        }
       - {
-        label: "Template Key",
-        name: "templateKey",
-        widget: "hidden",
-        default: "enfant",
-      }
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "adulte",
+        }
       - label: "Jours à afficher"
         name: "day"
         minimize_collapsed: false
@@ -212,23 +218,23 @@ collections:
             widget: "select"
             options:
               [
-                  "lundi",
-                  "mardi",
-                  "mercredi",
-                  "jeudi",
-                  "vendredi",
-                  "samedi",
-                  "dimanche",
+                "lundi",
+                "mardi",
+                "mercredi",
+                "jeudi",
+                "vendredi",
+                "samedi",
+                "dimanche",
               ]
             hint: "Sélectionner le jour a afficher."
             required: true
           - {
-            label: "Afficher",
-            name: "show",
-            widget: "boolean",
-            default: false,
-            hint: "Activer pour afficher ce jour sur le site.",
-          }
+              label: "Afficher",
+              name: "show",
+              widget: "boolean",
+              default: false,
+              hint: "Activer pour afficher ce jour sur le site.",
+            }
           - label: "Cours"
             name: "cours"
             minimize_collapsed: true
@@ -239,54 +245,61 @@ collections:
             label_singular: "un cours"
             fields:
               - {
-                label: "Nom du cour",
-                name: "curse name",
-                widget: string,
-                require: true,
-                hint: "Indiquer le nom du cours",
-              }
+                  label: "Nom du cour",
+                  name: "curse name",
+                  widget: string,
+                  require: true,
+                  hint: "Indiquer le nom du cours",
+                }
               - {
-                label: "Lien du cour",
-                name: "curse link",
-                widget: string,
-                require: true,
-                hint: "Indiquer la fin de l'url du cours ex: arabe-adulte-niveau-1",
-              }
+                  label: "Lien du cour",
+                  name: "curse link",
+                  widget: string,
+                  require: true,
+                  hint: "Indiquer la fin de l'url du cours ex: arabe-adulte-niveau-1",
+                }
               - label: "Niveaux du cours"
                 name: "level"
                 widget: "select"
                 options:
                   [
-                      "vide",
-                      "Eveil",
-                      "Niv.Cp",
-                      "Niv.1",
-                      "Niv.1+",
-                      "Niv.2",
-                      "Niv.3",
-                      "Niv.4",
-                      "Niv.5",
-                      "Niv.6",
-                      "Lecture",
-                      "Débutant",
-                      "Intérmédiaire",
-                      "Confirmé",
-                      "Classique",
-                      "Semi-intensif",
-                      "Intensif",
+                    "vide",
+                    "Eveil",
+                    "Niv.Cp",
+                    "Niv.1",
+                    "Niv.1+",
+                    "Niv.2",
+                    "Niv.3",
+                    "Niv.4",
+                    "Niv.5",
+                    "Niv.6",
+                    "Lecture",
+                    "Débutant",
+                    "Intérmédiaire",
+                    "Confirmé",
+                    "Classique",
+                    "Semi-intensif",
+                    "Intensif",
                   ]
                 hint: "Sélectionner le Niveau a afficher pour ce cours."
               - {
-                label: "Créneaux horaire",
-                name: "curse hour",
-                widget: string,
-                require: true,
-                hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
-              }
+                  label: "Créneaux horaire",
+                  name: "curse hour",
+                  widget: string,
+                  require: true,
+                  hint: "Indiquer le creneaux horaire du cours, ex: 16:30 - 17:30",
+                }
               - label: "Salle de classe"
                 name: "room"
                 widget: "select"
-                options: [ "Salle N°1", "Salle N°2", "Salle N°3", "Salle N°4", "Salle N°5" ]
+                options:
+                  [
+                    "Salle N°1",
+                    "Salle N°2",
+                    "Salle N°3",
+                    "Salle N°4",
+                    "Salle N°5",
+                  ]
                 hint: "Sélectionner la salle de cours a afficher."
 
   - label: "Shop"

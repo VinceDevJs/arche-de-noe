@@ -40,7 +40,7 @@ const BurgerMenu = () => {
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/nos-ouvrages'>Nos  ouvrages</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/inscription'>Inscription</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/contact'>Contact</LinkText>
-        <Button>Se connecter</Button>
+        <Button href='http://intranet2.institutarchedenoe.fr/ekattor/'>Se connecter</Button>
       </Menu>
     </div>
   )
@@ -57,9 +57,9 @@ export const LinkText = styled(Link)`
   
 `
 
-export const Button = styled.button`
+export const Button = styled.a`
   background-color: ${primaryColor};
-  width: 100%;
+  width: 6em;
   color: white;
   border-radius: 30px;
   padding: 5px 25px;

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import Header from './../components/Planning/Header'
+import Main from './../components/Planning/Main'
 
 const EmploiDuTemps = () => {
   return (
@@ -7,7 +9,8 @@ const EmploiDuTemps = () => {
       <Helmet>
         <title>Emplois du temps | Arche de noé</title>
       </Helmet>
-      <h1>Emplois du temps</h1>
+      <Header />
+      <Main />
     </>
   )
 }

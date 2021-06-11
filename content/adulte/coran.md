@@ -1,6 +1,6 @@
 ---
 title: Coran
-templateKey: enfant
+templateKey: adulte
 day:
   - show: true
     daySelected: lundi
