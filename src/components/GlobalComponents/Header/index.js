@@ -12,7 +12,7 @@ import cartIcon from './../../../assets/icons/header/cart-icon.png'
 
 const Index = () => {
   const { state } = useContext(SnipcartContext)
-  console.log(state)
+  // console.log(state)
   const { userStatus, cartQuantity } = state
   return (
     <>
@@ -35,7 +35,7 @@ const Index = () => {
           </Link>
         </li>
         <li>
-          <Link to='/'>Emploi du temps</Link>
+          <Link to='/emploi-du-temps'>Emploi du temps</Link>
         </li>
         <li>
           <Link to='/contact'>Contact</Link>

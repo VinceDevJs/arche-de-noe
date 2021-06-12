@@ -5,12 +5,14 @@ import Header from '../components/GlobalComponents/Header'
 import BurgerMenu from '../components/GlobalComponents/Header/BurgerMenu'
 import PushUp from '../components/pushUp'
 import Block6 from '../components/Home/Block6'
+import PopUp from '../components/GlobalComponents/PopUp'
 
 const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
       <div id='app'>
+        <PopUp />
         <BurgerMenu />
         <Header />
         {children}

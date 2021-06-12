@@ -21,7 +21,7 @@ const Header = () => {
         <SubTitle>
           Retrouvez le créneau de chaque formation ci-dessous
         </SubTitle>
-        <Button to='#main_inscription'>Acceder â l’emploi du temps</Button>
+        <Button to='#main_time'>Acceder â l’emploi du temps</Button>
       </TitleWrapper>
       <Wave style={{ bottom: '0' }} src={wave} alt='wave logo' />
     </Container>

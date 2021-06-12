@@ -154,6 +154,8 @@ collections:
                     "Intérmédiaire",
                     "Confirmé",
                     "Classique",
+                    "Classique A",
+                    "Classique B",
                     "semi-intensif",
                     "intensif",
                   ]

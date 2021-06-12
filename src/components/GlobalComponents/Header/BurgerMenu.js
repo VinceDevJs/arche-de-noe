@@ -13,7 +13,7 @@ const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const { state } = useContext(SnipcartContext)
-  console.log(state)
+  // console.log(state)
   const { userStatus, cartQuantity, totalPrice } = state
 
   const isMenuOpen = state => {
@@ -36,7 +36,7 @@ const BurgerMenu = () => {
         </CartContainerMobile>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Accueil</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/formation'>Formation</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Emploi du temps</LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to='/emploi-du-temps'>Emploi du temps</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/nos-ouvrages'>Nos  ouvrages</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/inscription'>Inscription</LinkText>
         <LinkText onClick={() => setIsOpen(!isOpen)} to='/contact'>Contact</LinkText>

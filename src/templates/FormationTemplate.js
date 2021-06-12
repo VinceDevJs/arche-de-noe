@@ -105,7 +105,7 @@ const FormationTemplate = ({ data, path }) => {
               <IconText style={{ color: '#007CAD' }}>{place_avaible} places</IconText>
             </IconBox>
           </IconsWrapper>
-          <Link to='/emplois-du-temps' style={{ textDecoration: 'none' }}>
+          <Link to='/emploi-du-temps' style={{ textDecoration: 'none' }}>
             <PlanningButton>
               <PlanningIcon src={calendarIcon} />
               <p>Emploi du temps</p>

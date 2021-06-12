@@ -19,7 +19,7 @@ const Footer = () => {
           <Separator />
           <LinkText to='/'>Accueil</LinkText>
           <LinkText to='/formation'>Formation</LinkText>
-          <LinkText to='/'>Emploi du temps</LinkText>
+          <LinkText to='/emploi-du-temps'>Emploi du temps</LinkText>
           <LinkText to='/nos-ouvrages'>Nos ouvrages</LinkText>
           <LinkText to='/inscription'>Inscription</LinkText>
           <LinkText to='/contact'>Contact</LinkText>

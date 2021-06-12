@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import PlanningSort from './PlanningSort'
+import { breakpoints } from '../../utils/styles'
 
 import leftArow from '../../assets/icons/left_arrow.png'
 import rightArow from '../../assets/icons/right_arrow.png'
@@ -10,7 +11,7 @@ import clockIcon from '../../assets/images/planning/clock-icon.png'
 import roomIcon from '../../assets/images/planning/room-icon.png'
 
 const Main = () => {
-  const childrenPlanning = useStaticQuery(graphql`
+  const planningData = useStaticQuery(graphql`
     {
       enfant: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "enfant"}}}) {
         edges {
@@ -24,6 +25,7 @@ const Main = () => {
                 cours {
                   curse_hour
                   curse_name
+                  curse_link
                   level
                   room
                   title
@@ -60,42 +62,138 @@ const Main = () => {
   const [formationSelectorList, setFormationSelectorList] = useState([])
   const [publicSelected, setPublicSelected] = useState('enfant')
   const [formationSelected, setFormationSelected] = useState('arabe')
-  const [daySelected, setDaySelected] = useState('samedi')
-  const [dayList, setDayList] = useState([])
-  const [formationToShow, setFormationToShow] = useState([])
+  const [dayListToShow, setDayListToShow] = useState([])
+  const [daySelected, setDaySelected] = useState(dayListToShow[0])
+  const [formationToShow, setFormationToShow] = useState()
+
+  const [formationData, setFormationData] = useState()
+
+  const [matieresListData, setMatieresListData] = useState()
 
   useEffect(() => {
-    if (childrenPlanning) {
-      if (publicSelected === 'enfant') {
-        console.log(childrenPlanning.enfant.edges)
-        const matieresList = []
-        childrenPlanning.enfant.edges.forEach(({ node: matiere }) => matieresList.push(matiere.frontmatter.title.toLowerCase()))
-        const formationFilteredByMatiere = childrenPlanning.enfant.edges.find(({ node: formation }) => formation.frontmatter.title.toLowerCase() === formationSelected)
-        const formationFilteredByDay = formationFilteredByMatiere.node.frontmatter.day.find(formation => formation.daySelected === daySelected)
-        setFormationSelectorList(matieresList)
-        setFormationToShow(formationFilteredByDay)
-      } else {
-        const matieresList = []
-        childrenPlanning.adulte.edges.forEach(({ node: matiere }) => matieresList.push(matiere.frontmatter.title.toLowerCase()))
-        const formationFilteredByMatiere = childrenPlanning.adulte.edges.find(({ node: formation }) => formation.frontmatter.title.toLowerCase() === formationSelected)
-        const formationFilteredByDay = formationFilteredByMatiere.node.frontmatter.day.find(formation => formation.daySelected === daySelected)
-        setFormationSelectorList(matieresList)
-        setFormationToShow(formationFilteredByDay)
+    // console.log(planningData)
+    const allChildrenData = planningData.enfant.edges
+    const allAdulteData = planningData.adulte.edges
+
+    const childrenMatieresList = []
+    const childrenFormationData = []
+
+    allChildrenData.map(({ node: matiere }) => {
+      const { frontmatter } = matiere
+      const dayPerFormation = frontmatter.day.map(day => day.daySelected.toLowerCase())
+      childrenFormationData.push({
+        daysPerFormation: dayPerFormation,
+        public: frontmatter.templateKey,
+        title: frontmatter.title,
+        formationData: frontmatter.day
+      })
+      childrenMatieresList.push(frontmatter.title.toLowerCase())
+    })
+
+    const adulteMatieresList = []
+    const adulteFormationData = []
+
+    allAdulteData.map(({ node: matiere }) => {
+      const { frontmatter } = matiere
+      const dayPerFormation = frontmatter.day.map(day => day.daySelected.toLowerCase())
+      adulteFormationData.push({
+        daysPerFormation: dayPerFormation,
+        public: frontmatter.templateKey,
+        title: frontmatter.title,
+        formationData: frontmatter.day
+      })
+      adulteMatieresList.push(frontmatter.title.toLowerCase())
+    })
+
+    setMatieresListData({
+      adulte: adulteMatieresList,
+      enfant: childrenMatieresList
+    })
+
+    setFormationData({
+      enfant: childrenFormationData,
+      adulte: adulteFormationData
+    })
+  }, [])
+
+  // console.log(formationData)
+
+  const handleSetDayList = () => {
+    const dayList = formationData[publicSelected].find(day => day.title.toLowerCase() === formationSelected)
+    if (dayList) {
+      setDayListToShow(dayList.daysPerFormation)
+      setDaySelected(dayList.daysPerFormation[0])
+      const getFormationsToShow = dayList.formationData.find(el => el.daySelected === dayList.daysPerFormation[0])
+      setFormationToShow(getFormationsToShow.cours)
+      // console.log('daylist', formationSelected, dayList)
+    }
+  }
+
+  const handleSetFormationsToShow = () => {
+    const dayList = formationData[publicSelected].find(day => day.title.toLowerCase() === formationSelected)
+    if (dayList) {
+      const getFormationsToShow = dayList.formationData.find(el => el.daySelected === daySelected)
+      // console.log('day', getFormationsToShow)
+      if (getFormationsToShow) {
+        setFormationToShow(getFormationsToShow.cours)
       }
     }
-  }, [daySelected, publicSelected, formationSelected])
+  }
 
-  console.log(childrenPlanning)
-  console.log(publicSelected)
-  console.log(formationToShow)
-  console.log(formationSelectorList)
+  useEffect(() => {
+    if (matieresListData) {
+      handleSetDayList()
+    }
+  }, [formationSelected])
+
+  useEffect(() => {
+    // console.log(matieresListData)
+    if (matieresListData) {
+      setFormationSelectorList(matieresListData[publicSelected])
+      // console.log(formationSelectorList)
+      if (formationSelectorList) {
+        setFormationSelected(formationSelectorList[0])
+        handleSetDayList()
+      }
+    }
+  }, [publicSelected, matieresListData])
+
+  useEffect(() => {
+    if (matieresListData) {
+      handleSetFormationsToShow()
+    }
+  }, [daySelected])
+
+  // console.log(formationData)
+
+  // console.log(planningData)
+  // console.log(publicSelected)
+  // console.log(formationToShow)
+  // console.log(formationSelectorList)
+  // console.log(dayListToShow)
+
+  const handleSetNextDay = () => {
+    if (daySelected === dayListToShow[dayListToShow.length - 1]) return
+
+    const dayIndex = dayListToShow.indexOf(daySelected)
+
+    setDaySelected(dayListToShow[dayIndex + 1])
+  }
+
+  const handleSetPreviousDay = () => {
+    if (daySelected === dayListToShow[0]) return
+
+    const dayIndex = dayListToShow.indexOf(daySelected)
+
+    setDaySelected(dayListToShow[dayIndex - 1])
+  }
 
   return (
     <Container>
-      <DayContainer>
-        <ArrowIcon src={leftArow} />
-        <DayText>Mercredi</DayText>
-        <ArrowIcon src={rightArow} />
+      <DayContainer id='main_time'>
+        <ArrowIcon onClick={handleSetPreviousDay} src={leftArow} />
+        <DayText>{daySelected}</DayText>
+        <ArrowIcon onClick={handleSetNextDay} src={rightArow} />
       </DayContainer>
 
       <PlanningSort
@@ -109,28 +207,39 @@ const Main = () => {
 
       <PlanningFormationWrapper>
 
-        <PlanningFormationBox>
-          <ContentBox>
-            <Icon src={lampIcon} />
-            <InfoTitle>Enfant <br /> Niv.1A</InfoTitle>
-            <InfoAge>7-8 ans</InfoAge>
-          </ContentBox>
+        {
+          formationToShow && formationToShow.map((cour, index) => {
+            return (
+              <PlanningFormationBox
+                color={index % 2}
+                key={`${cour.daySelected}-${cour.curse_name}-${cour.level}`}
+                data-aos='fade-left'
+                data-aos-duration='2000'
+              >
+                <ContentBox>
+                  <Icon src={lampIcon} />
+                  <InfoTitle size={cour.curse_name.length > 10 || cour.level.length > 10}>{cour.curse_name} <br /> {cour.level}</InfoTitle>
+                  <InfoAge>{cour.title ? cour.title : ''}</InfoAge>
+                </ContentBox>
 
-          <Separator />
+                <Separator />
 
-          <ContentBox>
-            <Icon src={clockIcon} />
-            <InfoTime>15:00 - 18:00</InfoTime>
-            <FornmationLinkButton to='/'>La formation</FornmationLinkButton>
-          </ContentBox>
+                <ContentBox center>
+                  <Icon src={clockIcon} />
+                  <InfoTime>{cour.curse_hour}</InfoTime>
+                  <FornmationLinkButton to={cour.curse_link ? `/formation/${cour.curse_link}` : '/formation'}>La formation</FornmationLinkButton>
+                </ContentBox>
 
-          <Separator />
+                <Separator />
 
-          <ContentBox>
-            <Icon src={roomIcon} />
-            <RoomText>Salle 1</RoomText>
-          </ContentBox>
-        </PlanningFormationBox>
+                <ContentBox>
+                  <Icon src={roomIcon} />
+                  <RoomText>{cour.room}</RoomText>
+                </ContentBox>
+              </PlanningFormationBox>
+            )
+          })
+        }
 
       </PlanningFormationWrapper>
     </Container>
@@ -142,6 +251,10 @@ export default Main
 export const Container = styled.div`
   max-width: 55em;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.m}px) {
+    max-width: 95%;
+  }
 `
 
 export const DayContainer = styled.div`
@@ -151,6 +264,11 @@ export const DayContainer = styled.div`
   align-items: center;
   width: 35em;
   margin: 5em auto;
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 95%;
+    margin: 7em auto 5em auto;
+  }
 `
 
 export const DayText = styled.p`
@@ -158,6 +276,11 @@ export const DayText = styled.p`
   margin: 0;
   font-family: 'Avenir Next Bold', sans-serif;
   color: #35ACD0;
+  text-transform: capitalize;
+
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 2.4em;
+  }
 `
 
 export const ArrowIcon = styled.img`
@@ -166,7 +289,9 @@ export const ArrowIcon = styled.img`
   cursor: pointer;
 `
 
-export const PlanningFormationWrapper = styled.div``
+export const PlanningFormationWrapper = styled.div`
+  margin-bottom: 10em;
+`
 
 export const PlanningFormationBox = styled.div`
   display: flex;
@@ -175,10 +300,17 @@ export const PlanningFormationBox = styled.div`
   align-items: center;
   width: 100%;
   height: 15em;
-  background-color: #35ACD0;
+  background-color: ${props => !props.color ? '#35ACD0' : '#3285a0'};
   border-radius: 30px;
   color: white;
   margin-bottom: 2em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 2em 0;
+  }
 `
 
 export const ContentBox = styled.div`
@@ -187,21 +319,47 @@ export const ContentBox = styled.div`
   align-items: center;
   width: fit-content;
   font-family: 'Avenir Next Bold', sans-serif;
+  width: ${props => props.center ? '' : '10em'};
+
+  @media (max-width: ${breakpoints.m}px) {
+    width: ${props => props.center ? '' : '9em'};
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+  margin: 0.5em 0;
+  }
 `
 
 export const Separator = styled.div`
   border-right: 2px solid white;
   height: 8em;
   margin: 0 3.5em;
+
+  @media (max-width: ${breakpoints.m}px) {
+    margin: 0 2em;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    display: none;
+  }
 `
 
 export const Icon = styled.img`
   max-width: 3.2em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    display: none;
+  }
 `
 
 export const InfoTitle = styled.p`
-  font-size: 2.1em;
+  font-size: ${props => props.size ? '1.6em' : '2.1em'};
   margin: 0.2em 0;
+  text-align: center;
+
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 2em;
+  }
 `
 
 export const InfoAge = styled.p`
@@ -217,12 +375,19 @@ export const FornmationLinkButton = styled(Link)`
   border: 1px solid white;
   text-decoration: none;
   color: white;
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 0.2em 3.3em ;
+  text-align: center;
 
   :hover {
     background-color: white;
     color: #35ACD0;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    padding: 0.6em 4em;
+    font-size: 1.3em;
+    margin-top: 0.4em;
   }
 `
 

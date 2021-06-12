@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import { breakpoints } from '../../utils/styles'
 import selectArrow from './../../assets/icons/select-arrow.png'
 
 const PlanningSort = ({ setFormationSelectorList, setFormationSelected, setPublicSelected, formationSelected, publicSelected, formationSelectorList }) => {
@@ -26,7 +27,7 @@ const PlanningSort = ({ setFormationSelectorList, setFormationSelected, setPubli
           onChange={(e) => setFormationSelected(e.target.value)}
         >
           {
-            formationSelectorList.map(name => (
+            formationSelectorList.sort().map(name => (
               <option key={name} value={name}>{name}</option>
             ))
           }
@@ -43,16 +44,29 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: center;
     margin-bottom: 3em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const BoxSelector = styled.div`
-    
+  @media (max-width: ${breakpoints.s}px) {
+    margin-bottom: 1em;
+    width: 95%;
+  }
 `
 
 export const TitleSelector = styled.p`
     margin:0 0 0.5em 2em;
     color: #29ABE2;
     font-size: 1.1em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+    margin: 0 0 0.5em;
+  }
 `
 
 export const SelectInput = styled.select`
@@ -82,5 +96,16 @@ export const SelectInput = styled.select`
   option {
     width: 10em;
     text-transform: capitalize;
+  }
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100%;
+    margin: 0;
+    height: 2.5em;
+    text-align: center;
+    text-align-last: center;
+    font-size: 1.5em;
+    padding: 0;
+    background-color: white;
   }
 `
