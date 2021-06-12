@@ -1,6 +1,6 @@
 ---
 name: J'apprends l'arabe Niveau Cp
-show: true
+show: false
 avaible: true
 templateKey: shop
 productPrice: "15"
