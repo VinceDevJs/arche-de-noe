@@ -105,14 +105,14 @@ const Main = () => {
       adulteMatieresList.push(frontmatter.title.toLowerCase())
     })
 
-    setMatieresListData({
-      adulte: adulteMatieresList,
-      enfant: childrenMatieresList
-    })
-
     setFormationData({
       enfant: childrenFormationData,
       adulte: adulteFormationData
+    })
+
+    setMatieresListData({
+      adulte: adulteMatieresList,
+      enfant: childrenMatieresList
     })
   }, [])
 
@@ -125,18 +125,23 @@ const Main = () => {
       setDaySelected(dayList.daysPerFormation[0])
       const getFormationsToShow = dayList.formationData.find(el => el.daySelected === dayList.daysPerFormation[0])
       setFormationToShow(getFormationsToShow.cours)
-      // console.log('daylist', formationSelected, dayList)
+      console.log('daylist', formationSelected, dayList)
     }
   }
 
   const handleSetFormationsToShow = () => {
-    const dayList = formationData[publicSelected].find(day => day.title.toLowerCase() === formationSelected)
-    if (dayList) {
-      const getFormationsToShow = dayList.formationData.find(el => el.daySelected === daySelected)
-      // console.log('day', getFormationsToShow)
-      if (getFormationsToShow) {
-        setFormationToShow(getFormationsToShow.cours)
+    console.log(formationSelectorList)
+    if (formationSelected) {
+      const dayList = formationData[publicSelected].find(day => day.title.toLowerCase() === formationSelected)
+      if (dayList) {
+        const getFormationsToShow = dayList.formationData.find(el => el.daySelected === daySelected)
+        console.log('day', getFormationsToShow)
+        if (getFormationsToShow) {
+          setFormationToShow(getFormationsToShow.cours)
+        }
       }
+    } else {
+      setFormationSelected(formationSelectorList.sort()[0])
     }
   }
 
