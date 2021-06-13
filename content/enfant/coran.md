@@ -26,7 +26,7 @@ day:
         room: Salle N°2
         curse link: coran-enfant-lecture-
       - curse name: Coran Mémo
-        level: Classique
+        level: Classique A
         title: 7-14 ans
         curse hour: 13:00 - 16:00
         room: Salle N°2
