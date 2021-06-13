@@ -3,6 +3,14 @@ title: Arabe
 templateKey: adulte
 day:
   - show: true
+    daySelected: vendredi
+    cours:
+      - curse name: Maman
+        level: Niv.1
+        curse hour: 10:00 - 12:00
+        room: Salle N°1
+        curse link: arabe-adulte-niveau-1
+  - show: true
     daySelected: samedi
     cours:
       - curse name: Adulte Femme
@@ -48,12 +56,4 @@ day:
         curse hour: 14:00 - 18:00
         room: Salle N°1
         curse link: arabe-adulte-niveau-4
-  - show: true
-    daySelected: vendredi
-    cours:
-      - curse name: Maman
-        level: Niv.1
-        curse hour: 10:00 - 12:00
-        room: Salle N°1
-        curse link: arabe-adulte-niveau-1
 ---
