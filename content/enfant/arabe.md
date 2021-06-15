@@ -23,7 +23,7 @@ day:
         room: Salle N°1
         curse link: arabe-enfant-niveau-1
       - curse name: Enfant
-        level: Niv.2
+        level: Niv.2 A
         title: 8-9 ans
         curse hour: 09:00 - 12:00
         room: Salle N°3
@@ -104,7 +104,7 @@ day:
         room: Salle N°4
         curse link: arabe-mater-niveau-3
       - curse name: Enfant
-        level: Niv.2
+        level: Niv.2 B
         title: 8-10 ans
         curse hour: 15:00 - 18:00
         room: Salle N°2
