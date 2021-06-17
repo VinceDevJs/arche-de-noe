@@ -102,6 +102,7 @@ export const SelectInput = styled.select`
     width: 100%;
     margin: 0;
     height: 2.5em;
+    text-align: -moz-center;
     text-align: center;
     text-align-last: center;
     -moz-text-align-last: center;

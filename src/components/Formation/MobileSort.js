@@ -76,10 +76,11 @@ export const SelectInput = styled.select`
   border: 2px solid #00A1C6;
   outline: none;
   color: #00A1C6;
+  text-align: -webkit-center;
   text-align: center;
+  text-align: -moz-center;
   text-align-last: center;
   -moz-text-align-last: center;
-  text-align: -webkit-center;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
