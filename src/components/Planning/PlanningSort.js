@@ -101,6 +101,10 @@ export const SelectInput = styled.select`
   @media (max-width: ${breakpoints.s}px) {
     width: 100%;
     margin: 0;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
     height: 2.5em;
     text-align: -moz-center;
     text-align: center;
@@ -108,7 +112,6 @@ export const SelectInput = styled.select`
     -moz-text-align-last: center;
     text-align: -webkit-center;
     font-size: 1.5em;
-    padding: 0;
     background-color: white;
   }
 `
