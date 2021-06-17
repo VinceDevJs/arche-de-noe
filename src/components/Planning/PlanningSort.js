@@ -83,7 +83,7 @@ export const SelectInput = styled.select`
   text-align: left;
   text-align-last: left;
   padding-left: 1em;
-  -moz-text-align-last: center;
+  -moz-text-align-last: left;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -104,6 +104,8 @@ export const SelectInput = styled.select`
     height: 2.5em;
     text-align: center;
     text-align-last: center;
+    -moz-text-align-last: center;
+    text-align: -webkit-center;
     font-size: 1.5em;
     padding: 0;
     background-color: white;

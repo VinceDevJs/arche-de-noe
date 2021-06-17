@@ -30,10 +30,10 @@ const MobileSort = ({
         <option value='default' disabled selected>
           Section
         </option>
-        <option value='Maternelles'>Maternelles</option>
+        <option value='Maternelles'>Maternelle</option>
         <option value='Enfant'>Enfant</option>
-        <option value='Collèges'>Collèges</option>
-        <option value='Adultes'>Adultes</option>
+        <option value='Collèges'>Collège</option>
+        <option value='Adultes'>Adulte</option>
       </SelectInput>
 
       <SelectInput
@@ -79,6 +79,7 @@ export const SelectInput = styled.select`
   text-align: center;
   text-align-last: center;
   -moz-text-align-last: center;
+  text-align: -webkit-center;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

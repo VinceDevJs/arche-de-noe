@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import { breakpoints } from '../../utils/styles'
 import wave from '../../assets/images/formation/wave.svg'
 import computer from '../../assets/images/formation/computer.svg'
-import { LeftBox } from '../Home/Block1'
 
 const Header = () => {
   return (
@@ -60,7 +59,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${breakpoints.s}px) {
-    height: 35em;
+    height: 39em;
     padding-top: 3em;
   }
 `

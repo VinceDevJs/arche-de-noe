@@ -47,6 +47,7 @@ const Main = () => {
                             cours {
                                 curse_hour
                                 curse_name
+                                curse_link
                                 level
                                 room
                                 title

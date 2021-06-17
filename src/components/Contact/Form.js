@@ -159,7 +159,7 @@ const ContactForm = () => {
           <div style={{ height: '2em' }}>
             {success
               ? (
-                <SuccessMessage>Votre message a bien été envoyer</SuccessMessage>
+                <SuccessMessage>Votre message a bien été envoyé</SuccessMessage>
                 )
               : null}
           </div>
