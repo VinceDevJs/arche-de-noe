@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 
 import { breakpoints } from '../../utils/styles'
 import selectArrow from './../../assets/icons/select-arrow.png'
 
 const PlanningSort = ({ setFormationSelectorList, setFormationSelected, setPublicSelected, formationSelected, publicSelected, formationSelectorList }) => {
+  const [selectWidth, setSelectWidth] = useState()
+  const selectEl = useRef(null)
+
+  useEffect(() => {
+    console.log(selectEl.current.offsetWidth)
+
+    setSelectWidth(selectEl.current.offsetWidth / 2)
+  }, [selectEl])
   return (
     <Container>
       <BoxSelector>
         <TitleSelector>Public</TitleSelector>
         <SelectInput
+          ref={selectEl}
+          width={selectWidth}
           value={publicSelected}
           arrow={selectArrow}
           onChange={(e) => setPublicSelected(e.target.value)}
@@ -101,11 +111,9 @@ export const SelectInput = styled.select`
   @media (max-width: ${breakpoints.s}px) {
     width: 100%;
     margin: 0;
-    display: flex;
     padding: 0;
-    justify-content: center;
-    align-items: center;
     height: 2.5em;
+    text-indent: ${props => props.width ? `calc(50% - ${props.width})` : 'none'} ;
     text-align: -moz-center;
     text-align: center;
     text-align-last: center;
