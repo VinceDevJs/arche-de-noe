@@ -69,6 +69,7 @@ export const Container = styled.div`
 export const SelectInput = styled.select`
   width: 100%;
   height: 3em;
+  padding-left: 1.2em;
   border-radius: 30px;
   background-color: white;
   font-family: 'Avenir Next Bold', sans-serif;
@@ -76,11 +77,11 @@ export const SelectInput = styled.select`
   border: 2px solid #00A1C6;
   outline: none;
   color: #00A1C6;
-  text-align: -webkit-center;
+  text-align: -webkit-left;
   text-align: center;
-  text-align: -moz-center;
-  text-align-last: center;
-  -moz-text-align-last: center;
+  text-align: -moz-left;
+  text-align-last: left;
+  -moz-text-align-last: left;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
