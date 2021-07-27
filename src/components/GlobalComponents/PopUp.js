@@ -22,7 +22,7 @@ const PopUp = () => {
               inscriptions pour l’année 2021 | 2022 se dérouleront les jours suivants
               :
             </TextContent>
-            <DateContent>4 & 5 SEPTEMBRE 2021
+            <DateContent>SAMEDI 4 & DIMANCHE 5 SEPTEMBRE 2021
             </DateContent>
 
             <ButtonsBox>
