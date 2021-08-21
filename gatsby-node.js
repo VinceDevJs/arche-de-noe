@@ -64,4 +64,41 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     })
   })
+
+  // CREATION DE PAGE AUDIO DES LIVRES
+  const audioBook = await graphql(`
+    {
+      allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "audioBook"}}}) {
+        edges {
+          node {
+            frontmatter {
+              bookTitle
+              audio {
+                audioLink
+                audioTitle
+              }
+              templateKey
+            }
+          }
+        }
+      }
+    }
+  `)
+  audioBook.data.allMarkdownRemark.edges.forEach(edge => {
+    const audioBook = edge.node.frontmatter
+    const audioBookTitle = convertToSlug(audioBook.bookTitle)
+
+    audioBook.audio.forEach(audio => {
+      const audioTitle = convertToSlug(audio.audioTitle)
+
+      createPage({
+        path: `/audios/${audioBookTitle}/${audioTitle}`,
+        component: require.resolve('./src/templates/AudioBook.js'),
+        context: {
+          title: audio.audioTitle,
+          audioBookTitle
+        }
+      })
+    })
+  })
 }

@@ -542,3 +542,42 @@ collections:
           required: true,
           hint: "Indiquez les ouvrages utilisez.",
         }
+
+
+  - label: "Livres Audio"
+    name: "audioBook"
+    folder: "content/audio-book"
+    identifier_field: bookTitle
+    create: true
+    editor:
+      preview: false
+    fields:
+      - {
+        label: "Nom du livre",
+        name: "bookTitle",
+        widget: "string",
+        hint: "Indiquer le nom du livre.",
+        required: true,
+      }
+      - {
+        label: "Template Key",
+        name: "templateKey",
+        widget: "hidden",
+        default: "audioBook",
+      }
+      - label: "Audio"
+        name: "audio"
+        minimize_collapsed: false
+        widget: "list"
+        min: 1
+        fields:
+          - label: "Titre de l'audio"
+            name: "audioTitle"
+            widget: "string"
+            required: true
+            hint: "Indiquer le titre de l'audio."
+          - label: "Lien de l'audio"
+            name: "audioLink"
+            widget: "string"
+            required: true
+            hint: "Indiquer le lien de l'audio."
