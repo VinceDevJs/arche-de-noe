@@ -16,7 +16,7 @@ const Header = () => {
         :
       </TextContent>
       <DateContent>
-        26 & 27 JUIN 2021 et le 3 & 4 JUILLET 2021
+        SAMEDI 4 et 5 SEPTEMBRE 2021
       </DateContent>
 
       <ButtonsBox>
