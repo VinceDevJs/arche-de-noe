@@ -13,6 +13,7 @@ import priceIcon from './../assets/icons/price_icon.svg'
 import facebookIcon from './../assets/images/formation/template/facebook.svg'
 import twitterIcon from './../assets/images/formation/template/twitter.svg'
 import selectArrow from './../assets/icons/select-arrow.png'
+import DefaultLayout from '@/layouts/default'
 
 export const query = graphql`
   query($name: String!) {
@@ -70,136 +71,138 @@ const ProductTemplate = ({ data, path }) => {
   const [quantity, setQuantity] = useState(1)
   console.log(path)
   return (
-    <Container>
-      <Helmet>
-        <title>{title} | Arche de noé</title>
-      </Helmet>
+    <DefaultLayout>
+      <Container>
+        <Helmet>
+          <title>{title} | Arche de noé</title>
+        </Helmet>
 
-      <img
-        src={waves}
-        style={{ width: '100%', marginBottom: '2.5em' }}
-        alt=''
-      />
+        <img
+          src={waves}
+          style={{ width: '100%', marginBottom: '2.5em' }}
+          alt=''
+        />
 
-      <TitleWrapper>
-        <ReturnLink to='/nos-ouvrages'>
-          Revenir à la page de Nos Ouvrages
-        </ReturnLink>
-        <Title>
-          {title} <TitleSeparator>|</TitleSeparator>
-          <Br /> {subTitle.toUpperCase()}
-        </Title>
-      </TitleWrapper>
+        <TitleWrapper>
+          <ReturnLink to='/nos-ouvrages'>
+            Revenir à la page de Nos Ouvrages
+          </ReturnLink>
+          <Title>
+            {title} <TitleSeparator>|</TitleSeparator>
+            <Br /> {subTitle.toUpperCase()}
+          </Title>
+        </TitleWrapper>
 
-      <MainContainer>
-        <LeftWrapper>
-          <ProductImage
-            showNav={false}
-            infinite={false}
-            showPlayButton={false}
-            showBullets
-            showThumbnails={false}
-            items={gallery}
-          />
-          <LinkButton color='true' to='/formation'>
-            Nos Formations
-          </LinkButton>
-          <LinkButton to='/contact#form'>J'ai une question</LinkButton>
-        </LeftWrapper>
+        <MainContainer>
+          <LeftWrapper>
+            <ProductImage
+              showNav={false}
+              infinite={false}
+              showPlayButton={false}
+              showBullets
+              showThumbnails={false}
+              items={gallery}
+            />
+            <LinkButton color='true' to='/formation'>
+              Nos Formations
+            </LinkButton>
+            <LinkButton to='/contact#form'>J'ai une question</LinkButton>
+          </LeftWrapper>
 
-        <RightWrapper>
-          <ContentBox>
-            <IconWrapper>
-              <img src={descriptionIcon} />
-            </IconWrapper>
-            <TextWrapper>
-              <ContentTitle>Description</ContentTitle>
-              <ContentText>{description}</ContentText>
-            </TextWrapper>
-          </ContentBox>
+          <RightWrapper>
+            <ContentBox>
+              <IconWrapper>
+                <img src={descriptionIcon} />
+              </IconWrapper>
+              <TextWrapper>
+                <ContentTitle>Description</ContentTitle>
+                <ContentText>{description}</ContentText>
+              </TextWrapper>
+            </ContentBox>
 
-          <ContentBox>
-            <IconWrapper>
-              <img src={coupesIcon} />
-            </IconWrapper>
-            <TextWrapper>
-              <ContentTitle>Les points forts de l’ouvrage</ContentTitle>
-              <ContentText>{pointsForts}</ContentText>
-            </TextWrapper>
-          </ContentBox>
+            <ContentBox>
+              <IconWrapper>
+                <img src={coupesIcon} />
+              </IconWrapper>
+              <TextWrapper>
+                <ContentTitle>Les points forts de l’ouvrage</ContentTitle>
+                <ContentText>{pointsForts}</ContentText>
+              </TextWrapper>
+            </ContentBox>
 
-          <ContentBox>
-            <IconWrapper>
-              <img src={priceIcon} />
-            </IconWrapper>
-            <TextWrapper>
-              <ContentTitle>Prix</ContentTitle>
-              <Price>{productPrice} € TTC</Price>
-            </TextWrapper>
-          </ContentBox>
+            <ContentBox>
+              <IconWrapper>
+                <img src={priceIcon} />
+              </IconWrapper>
+              <TextWrapper>
+                <ContentTitle>Prix</ContentTitle>
+                <Price>{productPrice} € TTC</Price>
+              </TextWrapper>
+            </ContentBox>
 
-          <AddToCartWrapper>
-            <AddToCartButton
-              disabled={!avaible}
-              className='snipcart-add-item'
-              data-item-id={name}
-              data-item-price={productPrice.replace(',', '.')}
-              data-item-url={`https://institutarchedenoe.fr/nos-ouvrages/${path}`} // TODO changer l url
-              data-item-description={description}
-              data-item-image={images && images[0].image}
-              data-item-name={name}
-              data-item-quantity={quantity}
-            >
-              Ajouter au panier
-            </AddToCartButton>
-            <AddToCartQuantity
-              arrow={selectArrow}
-              onChange={e => {
-                const { value } = e.target
-                setQuantity(value)
-              }}
-            >
-              {productSelectQuantity.map(el => (
-                <option
-                  key={`quantity${el}`}
-                  value={el}
-                  selected={el === quantity}
-                >
-                  0{el}
-                </option>
-              ))}
-            </AddToCartQuantity>
-          </AddToCartWrapper>
-
-          <LinkContainer>
-            <SocialText>
-              J’informe une connaissance <br /> de l’ouvrage
-            </SocialText>
-            <SocialBox>
-              <a
-                target='_blank'
-                href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
-${path}`}
+            <AddToCartWrapper>
+              <AddToCartButton
+                disabled={!avaible}
+                className='snipcart-add-item'
+                data-item-id={name}
+                data-item-price={productPrice.replace(',', '.')}
+                data-item-url={`https://institutarchedenoe.fr/nos-ouvrages/${path}`} // TODO changer l url
+                data-item-description={description}
+                data-item-image={images && images[0].image}
+                data-item-name={name}
+                data-item-quantity={quantity}
               >
-                <SocialIcon src={facebookIcon} />
-              </a>
-              <a target='_blank' href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}>
-                <SocialIcon src={twitterIcon} />
-              </a>
-            </SocialBox>
-          </LinkContainer>
-        </RightWrapper>
-      </MainContainer>
-      <img
-        src={waves}
-        style={{
-          width: '100%',
-          marginTop: '3.5em',
-          transform: 'rotate(180deg) scaleX(-1)'
-        }}
-        alt=''
-      />
-    </Container>
+                Ajouter au panier
+              </AddToCartButton>
+              <AddToCartQuantity
+                arrow={selectArrow}
+                onChange={e => {
+                  const { value } = e.target
+                  setQuantity(value)
+                }}
+              >
+                {productSelectQuantity.map(el => (
+                  <option
+                    key={`quantity${el}`}
+                    value={el}
+                    selected={el === quantity}
+                  >
+                    0{el}
+                  </option>
+                ))}
+              </AddToCartQuantity>
+            </AddToCartWrapper>
+
+            <LinkContainer>
+              <SocialText>
+                J’informe une connaissance <br /> de l’ouvrage
+              </SocialText>
+              <SocialBox>
+                <a
+                  target='_blank'
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+${path}`}
+                >
+                  <SocialIcon src={facebookIcon} />
+                </a>
+                <a target='_blank' href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}>
+                  <SocialIcon src={twitterIcon} />
+                </a>
+              </SocialBox>
+            </LinkContainer>
+          </RightWrapper>
+        </MainContainer>
+        <img
+          src={waves}
+          style={{
+            width: '100%',
+            marginTop: '3.5em',
+            transform: 'rotate(180deg) scaleX(-1)'
+          }}
+          alt=''
+        />
+      </Container>
+    </DefaultLayout>
   )
 }
 

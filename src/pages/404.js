@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import DefaultLayout from '../layouts/default'
 
 // styles
 const pageStyles = {
@@ -27,29 +28,31 @@ const codeStyles = {
 // markup
 const NotFoundPage = () => {
   return (
-    <div style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page non trouvée</h1>
-      <p style={paragraphStyles}>
-        {' '}
-        <span role='img' aria-label='Pensive emoji'>
-          😔
-        </span>{' '}
-        Désole cette page n'existe pas.
-        <br />
-        {process.env.NODE_ENV === 'development'
-          ? (
-            <>
-              <br />
-              Try creating a page in <code style={codeStyles}>src/pages/</code>.
-              <br />
-            </>
-            )
-          : null}
-        <br />
-        <Link to='/'>Page d'acceuil</Link>.
-      </p>
-    </div>
+    <DefaultLayout>
+      <div style={pageStyles}>
+        <title>Not found</title>
+        <h1 style={headingStyles}>Page non trouvée</h1>
+        <p style={paragraphStyles}>
+          {' '}
+          <span role='img' aria-label='Pensive emoji'>
+            😔
+          </span>{' '}
+          Désole cette page n'existe pas.
+          <br />
+          {process.env.NODE_ENV === 'development'
+            ? (
+              <>
+                <br />
+                Try creating a page in <code style={codeStyles}>src/pages/</code>.
+                <br />
+              </>
+              )
+            : null}
+          <br />
+          <Link to='/'>Page d'acceuil</Link>.
+        </p>
+      </div>
+    </DefaultLayout>
   )
 }
 

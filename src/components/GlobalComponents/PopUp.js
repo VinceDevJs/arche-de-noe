@@ -1,13 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
-
 import closeCross from '../../assets/icons/Close-cross.png'
 import logo from '../../assets/images/inscription/Logo-inscription.svg'
 import { breakpoints } from '../../utils/styles'
 import { Link } from 'gatsby'
 
 const PopUp = () => {
-  const [showPopUp, setShowPopUp] = useState(true)
+  const [showPopUp, setShowPopUp] = useState(!window.sessionStorage.getItem('popup') && true)
+
+  useEffect(() => {
+    if (!showPopUp) {
+      window.sessionStorage.setItem('popup', 'false')
+    }
+  }, [showPopUp])
+
   return (
     <>
       {showPopUp &&

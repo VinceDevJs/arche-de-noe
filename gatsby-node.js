@@ -92,7 +92,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       const audioTitle = convertToSlug(audio.audioTitle)
 
       createPage({
-        path: `/audios/${audioBookTitle}/${audioTitle}`,
+        path: `/audios/${audioBookTitle}-${audioTitle}`,
         component: require.resolve('./src/templates/AudioBook.js'),
         context: {
           title: audio.audioTitle,

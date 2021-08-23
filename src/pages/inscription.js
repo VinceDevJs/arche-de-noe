@@ -5,10 +5,11 @@ import Header from '../components/Inscription/Header'
 import SubHeader from '../components/Inscription/SubHeader'
 import MainIncription from '../components/Inscription/MainInscription'
 import waves from '../assets/images/formation/waves_2.png'
+import DefaultLayout from '../layouts/default'
 
 const Inscription = () => {
   return (
-    <>
+    <DefaultLayout>
       <Helmet>
         <title>Inscription | Arche de noé</title>
       </Helmet>
@@ -32,7 +33,7 @@ const Inscription = () => {
         }}
         alt=''
       />
-    </>
+    </DefaultLayout>
   )
 }
 

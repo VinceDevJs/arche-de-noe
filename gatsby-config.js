@@ -9,7 +9,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-layout',
+    // 'gatsby-plugin-layout',
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {

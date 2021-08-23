@@ -7,7 +7,7 @@ import PushUp from '../components/pushUp'
 import Block6 from '../components/Home/Block6'
 import PopUp from '../components/GlobalComponents/PopUp'
 
-const Layout = ({ children }) => {
+const DefaultLayout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
@@ -24,4 +24,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default DefaultLayout

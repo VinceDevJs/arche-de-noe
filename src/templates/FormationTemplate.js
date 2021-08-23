@@ -4,6 +4,7 @@ import waves from './../assets/images/formation/waves_2.png'
 import styled from '@emotion/styled'
 import ReactMarkdown from 'react-markdown'
 import { breakpoints } from '../utils/styles'
+import DefaultLayout from '../layouts/default'
 
 import cerveauIcon from './../assets/images/formation/template/cerveau.svg'
 import bookIcon from './../assets/images/formation/template/books.svg'
@@ -13,7 +14,6 @@ import calendarIcon from './../assets/images/formation/template/calendar.svg'
 import levelIcon from './../assets/images/formation/level.png'
 import priceIcon from './../assets/images/formation/price.png'
 import tableIcon from './../assets/images/formation/table.png'
-import exempleImg from './../assets/images/formation/template/image-exemple.svg'
 import facebookIcon from './../assets/images/formation/template/facebook.svg'
 import twitterIcon from './../assets/images/formation/template/twitter.svg'
 
@@ -70,121 +70,123 @@ const FormationTemplate = ({ data, path }) => {
     programme
   } = data.allMarkdownRemark.edges[0].node.frontmatter
   return (
-    <Container>
-      <img
-        src={waves}
-        style={{ width: '100%', marginBottom: '2.5em' }}
-        alt=''
-      />
+    <DefaultLayout>
+      <Container>
+        <img
+          src={waves}
+          style={{ width: '100%', marginBottom: '2.5em' }}
+          alt=''
+        />
 
-      <TitleWrapper>
-        <ReturnLink to='/formation'>
-          Revenir à la page des formations
-        </ReturnLink>
-        <Title>
-          {subjects.toUpperCase()} {sub_title}
-        </Title>
-      </TitleWrapper>
+        <TitleWrapper>
+          <ReturnLink to='/formation'>
+            Revenir à la page des formations
+          </ReturnLink>
+          <Title>
+            {subjects.toUpperCase()} {sub_title}
+          </Title>
+        </TitleWrapper>
 
-      <ContentWrapper>
-        <ContainerLeft>
-          <Img src={thumbnail} />
-          <IconsWrapper>
-            <IconBox>
-              <Icon src={priceIcon} />
-              <IconText style={{ color: '#FFC440' }}>{price}€</IconText>
-            </IconBox>
+        <ContentWrapper>
+          <ContainerLeft>
+            <Img src={thumbnail} />
+            <IconsWrapper>
+              <IconBox>
+                <Icon src={priceIcon} />
+                <IconText style={{ color: '#FFC440' }}>{price}€</IconText>
+              </IconBox>
 
-            <IconBox>
-              <Icon src={levelIcon} />
-              <IconText style={{ color: '#00A99D' }}>{level}</IconText>
-            </IconBox>
+              <IconBox>
+                <Icon src={levelIcon} />
+                <IconText style={{ color: '#00A99D' }}>{level}</IconText>
+              </IconBox>
 
-            <IconBox>
-              <Icon src={tableIcon} />
-              <IconText style={{ color: '#007CAD' }}>{place_avaible} places</IconText>
-            </IconBox>
-          </IconsWrapper>
-          <Link to='/emploi-du-temps' style={{ textDecoration: 'none' }}>
-            <PlanningButton>
-              <PlanningIcon src={calendarIcon} />
-              <p>Emploi du temps</p>
-            </PlanningButton>
-          </Link>
-        </ContainerLeft>
+              <IconBox>
+                <Icon src={tableIcon} />
+                <IconText style={{ color: '#007CAD' }}>{place_avaible} places</IconText>
+              </IconBox>
+            </IconsWrapper>
+            <Link to='/emploi-du-temps' style={{ textDecoration: 'none' }}>
+              <PlanningButton>
+                <PlanningIcon src={calendarIcon} />
+                <p>Emploi du temps</p>
+              </PlanningButton>
+            </Link>
+          </ContainerLeft>
 
-        <ContainerRight>
-          <RightContentContainer>
-            <RightContentWrapper>
-              <ContentIcon alt='' src={cerveauIcon} />
-              <ContentBox>
-                <RightContentTitle>Prérequis</RightContentTitle>
-                <RightContentText>{prerequis}</RightContentText>
-              </ContentBox>
-            </RightContentWrapper>
+          <ContainerRight>
+            <RightContentContainer>
+              <RightContentWrapper>
+                <ContentIcon alt='' src={cerveauIcon} />
+                <ContentBox>
+                  <RightContentTitle>Prérequis</RightContentTitle>
+                  <RightContentText>{prerequis}</RightContentText>
+                </ContentBox>
+              </RightContentWrapper>
 
-            <RightContentWrapper>
-              <ContentIcon alt='' src={cibleIcon} />
-              <ContentBox>
-                <RightContentTitle>Objectif(s)</RightContentTitle>
-                <RightContentText>{objectifs}</RightContentText>
-              </ContentBox>
-            </RightContentWrapper>
+              <RightContentWrapper>
+                <ContentIcon alt='' src={cibleIcon} />
+                <ContentBox>
+                  <RightContentTitle>Objectif(s)</RightContentTitle>
+                  <RightContentText>{objectifs}</RightContentText>
+                </ContentBox>
+              </RightContentWrapper>
 
-            <RightContentWrapper>
-              <ContentIcon alt='' src={programmeIcon} />
-              <ContentBox>
-                <RightContentTitle>Programme</RightContentTitle>
-                <RightContentText>{programme}</RightContentText>
-              </ContentBox>
-            </RightContentWrapper>
+              <RightContentWrapper>
+                <ContentIcon alt='' src={programmeIcon} />
+                <ContentBox>
+                  <RightContentTitle>Programme</RightContentTitle>
+                  <RightContentText>{programme}</RightContentText>
+                </ContentBox>
+              </RightContentWrapper>
 
-            <RightContentWrapper>
-              <ContentIcon alt='' src={bookIcon} />
-              <ContentBox>
-                <RightContentTitle>Ouvrage(s) utilisé(s)</RightContentTitle>
-                <RightContentText>{ouvrages}</RightContentText>
-              </ContentBox>
-            </RightContentWrapper>
-          </RightContentContainer>
+              <RightContentWrapper>
+                <ContentIcon alt='' src={bookIcon} />
+                <ContentBox>
+                  <RightContentTitle>Ouvrage(s) utilisé(s)</RightContentTitle>
+                  <RightContentText>{ouvrages}</RightContentText>
+                </ContentBox>
+              </RightContentWrapper>
+            </RightContentContainer>
 
-          <LinkContainer>
-            <LinkButton to='/inscription' fontSize='true'>
-              Connaitre les modalités <br /> d’inscription
-            </LinkButton>
-            <LinkButton to='/nos-ouvrages' color='true'>
-              Nos ouvrages
-            </LinkButton>
-            <LinkButton to='/contact#form'>J’ai une question</LinkButton>
+            <LinkContainer>
+              <LinkButton to='/inscription' fontSize='true'>
+                Connaitre les modalités <br /> d’inscription
+              </LinkButton>
+              <LinkButton to='/nos-ouvrages' color='true'>
+                Nos ouvrages
+              </LinkButton>
+              <LinkButton to='/contact#form'>J’ai une question</LinkButton>
 
-            <SocialText>
-              J’informe une connaissance <br /> de la formation
-            </SocialText>
-            <SocialBox>
-              <a
-                target='_blank'
-                href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+              <SocialText>
+                J’informe une connaissance <br /> de la formation
+              </SocialText>
+              <SocialBox>
+                <a
+                  target='_blank'
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 ${path}`}
-              >
-                <SocialIcon src={facebookIcon} />
-              </a>
-              <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`} target='_blank'>
-                <SocialIcon src={twitterIcon} />
-              </a>
-            </SocialBox>
-          </LinkContainer>
-        </ContainerRight>
-      </ContentWrapper>
-      <img
-        src={waves}
-        style={{
-          width: '100%',
-          marginTop: '3.5em',
-          transform: 'rotate(180deg) scaleX(-1)'
-        }}
-        alt=''
-      />
-    </Container>
+                >
+                  <SocialIcon src={facebookIcon} />
+                </a>
+                <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`} target='_blank'>
+                  <SocialIcon src={twitterIcon} />
+                </a>
+              </SocialBox>
+            </LinkContainer>
+          </ContainerRight>
+        </ContentWrapper>
+        <img
+          src={waves}
+          style={{
+            width: '100%',
+            marginTop: '3.5em',
+            transform: 'rotate(180deg) scaleX(-1)'
+          }}
+          alt=''
+        />
+      </Container>
+    </DefaultLayout>
   )
 }
 

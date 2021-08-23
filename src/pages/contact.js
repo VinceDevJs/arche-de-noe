@@ -7,10 +7,11 @@ import ContactForm from '../components/Contact/Form'
 import Header from '../components/Contact/Header'
 import Map from '../components/Contact/Map'
 import waves from './../assets/images/formation/waves_2.png'
+import DefaultLayout from '../layouts/default'
 
 const Contact = () => {
   return (
-    <>
+    <DefaultLayout>
       <Helmet>
         <title>Contact | Arche de noé</title>
       </Helmet>
@@ -37,7 +38,7 @@ const Contact = () => {
         }}
         alt=''
       />
-    </>
+    </DefaultLayout>
   )
 }
 

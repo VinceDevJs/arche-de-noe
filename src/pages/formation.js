@@ -9,6 +9,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import { breakpoints } from '../utils/styles'
 import waves from '../assets/images/formation/waves_2.png'
+import DefaultLayout from '../layouts/default'
 
 const Formation = () => {
   const data = useStaticQuery(graphql`
@@ -71,7 +72,7 @@ const Formation = () => {
   }, [discipline, age, level])
 
   return (
-    <>
+    <DefaultLayout>
       <Helmet>
         <title>Formation | Arche de noé</title>
       </Helmet>
@@ -94,7 +95,7 @@ const Formation = () => {
         <Main allFormations={formationFiltered} />
       </MainContainer>
       <img src={waves} style={{ width: '100%', marginTop: '3.5em', transform: 'rotate(180deg) scaleX(-1)' }} alt='' />
-    </>
+    </DefaultLayout>
   )
 }
 
