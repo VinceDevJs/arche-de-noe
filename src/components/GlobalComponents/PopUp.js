@@ -25,7 +25,7 @@ const PopUp = ({ showPopUp, handleClosePopUp }) => {
 
             <ButtonsBox>
               <Button
-                onClick={() => setPopUp(false)}
+                onClick={() => handleClosePopUp()}
                 to='/inscription#main_inscription'
               >
                 Connaître les modalités
@@ -33,7 +33,7 @@ const PopUp = ({ showPopUp, handleClosePopUp }) => {
               <Button
                 to='/formation'
                 color='true'
-                onClick={() => setPopUp(false)}
+                onClick={() => handleClosePopUp()}
               >
                 Nos formations
               </Button>
