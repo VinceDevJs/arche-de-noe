@@ -11,7 +11,8 @@ const DefaultLayout = ({ children }) => {
   const [showPopUp, setShowPopUp] = useState(typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))
 
   const handleClosePopUp = () => {
-    window.sessionStorage.setItem('popup', 'closed')
+    console.log('test')
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('popup', 'closed')
     setShowPopUp(typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))
   }
 
