@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 import closeCross from '../../assets/icons/Close-cross.png'
 import logo from '../../assets/images/inscription/Logo-inscription.svg'
 import { breakpoints } from '../../utils/styles'
 import { Link } from 'gatsby'
 
-const PopUp = () => {
-  const [showPopUp, setShowPopUp] = useState(true)
-
-  useEffect(() => {
-    if (!showPopUp) {
-      window.sessionStorage.setItem('popup', 'false')
-    }
-  }, [showPopUp])
-
+const PopUp = ({ showPopUp, handleClosePopUp }) => {
   return (
     <>
-      {showPopUp &&
+      {!showPopUp &&
         <Container>
           <BoxContainer>
-            <CrossContainer onClick={() => setShowPopUp(false)}>
+            <CrossContainer onClick={() => handleClosePopUp()}>
               <img src={closeCross} alt='' />
             </CrossContainer>
             <Logo src={logo} />
@@ -33,7 +25,7 @@ const PopUp = () => {
 
             <ButtonsBox>
               <Button
-                onClick={() => setShowPopUp(false)}
+                onClick={() => setPopUp(false)}
                 to='/inscription#main_inscription'
               >
                 Connaître les modalités
@@ -41,7 +33,7 @@ const PopUp = () => {
               <Button
                 to='/formation'
                 color='true'
-                onClick={() => setShowPopUp(false)}
+                onClick={() => setPopUp(false)}
               >
                 Nos formations
               </Button>
