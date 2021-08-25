@@ -6,7 +6,7 @@ import { breakpoints } from '../../utils/styles'
 import { Link } from 'gatsby'
 
 const PopUp = () => {
-  const [showPopUp, setShowPopUp] = useState(false)
+  const [showPopUp, setShowPopUp] = useState()
 
   useEffect(() => {
     setShowPopUp(!!((typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))))
