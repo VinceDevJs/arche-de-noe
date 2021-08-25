@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 
 import LogoIcon from './../assets/icons/header/logo_header.png'
+import AudioLayout from '../layouts/audios'
 
 export const query = graphql`
   query($audioBookTitle: String!, $title: String!) {
@@ -36,21 +37,23 @@ const AudioBook = ({ data }) => {
   const { bookTitle, audio } = data.allMarkdownRemark.edges[0].node.frontmatter
   console.log(bookTitle, audio)
   return (
-    <Container>
-      <Logo src={LogoIcon} />
-      <Iframe
-        width='100%'
-        height='166'
-        scrolling='no'
-        frameBorder='no'
-        allow='autoplay'
-        src={audio[0].audioLink}
-      />
-      <ButtonsWrapper>
-        <Button to='/'>Acceuil</Button>
-        <Button to='/nos-ouvrages'>Boutique</Button>
-      </ButtonsWrapper>
-    </Container>
+    <AudioLayout>
+      <Container>
+        <Logo src={LogoIcon} />
+        <Iframe
+          width='100%'
+          height='166'
+          scrolling='no'
+          frameBorder='no'
+          allow='autoplay'
+          src={audio[0].audioLink}
+        />
+        <ButtonsWrapper>
+          <Button to='/'>Acceuil</Button>
+          <Button to='/nos-ouvrages'>Boutique</Button>
+        </ButtonsWrapper>
+      </Container>
+    </AudioLayout>
   )
 }
 

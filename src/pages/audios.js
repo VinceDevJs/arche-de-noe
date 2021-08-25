@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import styled from '@emotion/styled'
+import AudioLayout from '../layouts/audios'
 
 const Audios = () => {
   const data = useStaticQuery(graphql`
@@ -26,33 +27,35 @@ const Audios = () => {
 
   // console.log(allAudioBooks)
   return (
-    <Container>
-      <PageTitle>Liste des livres audio</PageTitle>
-      <BookLinkTitleContainer>
-        {
-          allAudioBooks.map(({ node: audioBook }) => (
-            <BookLinkTitle to={`#${audioBook.frontmatter.bookTitle}`} key={audioBook.frontmatter.bookTitle}>
-              {audioBook.frontmatter.bookTitle}
-            </BookLinkTitle>
-          ))
-        }
-      </BookLinkTitleContainer>
+    <AudioLayout>
+      <Container>
+        <PageTitle>Liste des livres audio</PageTitle>
+        <BookLinkTitleContainer>
+          {
+                      allAudioBooks.map(({ node: audioBook }) => (
+                        <BookLinkTitle to={`#${audioBook.frontmatter.bookTitle}`} key={audioBook.frontmatter.bookTitle}>
+                          {audioBook.frontmatter.bookTitle}
+                        </BookLinkTitle>
+                      ))
+                  }
+        </BookLinkTitleContainer>
 
-      {
-          allAudioBooks.map(({ node: audioBook }, index) => (
-            <AudioBookContainer id={audioBook.frontmatter.bookTitle} key={audioBook.frontmatter.bookTitle + index}>
-              <AudioBookTitle>{audioBook.frontmatter.bookTitle}</AudioBookTitle>
-              {
-                audioBook.frontmatter.audio.map((audio, index) => (
-                  <AudioLink key={audio.audioTitle} to={`/audios/${audioBook.frontmatter.bookTitle}-${audio.audioTitle}`}>
-                    {index + 1} - {audio.audioTitle}
-                  </AudioLink>
-                ))
-                }
-            </AudioBookContainer>
-          ))
-        }
-    </Container>
+        {
+                  allAudioBooks.map(({ node: audioBook }, index) => (
+                    <AudioBookContainer id={audioBook.frontmatter.bookTitle} key={audioBook.frontmatter.bookTitle + index}>
+                      <AudioBookTitle>{audioBook.frontmatter.bookTitle}</AudioBookTitle>
+                      {
+                              audioBook.frontmatter.audio.map((audio, index) => (
+                                <AudioLink key={audio.audioTitle} to={`/audios/${audioBook.frontmatter.bookTitle}-${audio.audioTitle}`}>
+                                  {index + 1} - {audio.audioTitle}
+                                </AudioLink>
+                              ))
+                          }
+                    </AudioBookContainer>
+                  ))
+              }
+      </Container>
+    </AudioLayout>
   )
 }
 
