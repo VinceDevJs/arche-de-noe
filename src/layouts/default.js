@@ -6,7 +6,6 @@ import BurgerMenu from '../components/GlobalComponents/Header/BurgerMenu'
 import PushUp from '../components/pushUp'
 import Block6 from '../components/Home/Block6'
 import PopUp from '../components/GlobalComponents/PopUp'
-import './default.css'
 
 const DefaultLayout = ({ children }) => {
   const [showPopUp, setShowPopUp] = useState(typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))

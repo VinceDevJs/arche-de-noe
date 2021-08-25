@@ -1,5 +1,6 @@
 import { css, Global } from '@emotion/react'
 import React from 'react'
+import { injectGlobal } from '@emotion/css'
 import avenirNextBold from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Bold.otf'
 import avenirNextBoldDemi from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Demi.otf'
 import avenirNext from './../assets/fonts/Avenir-Next/AvenirNextLTPro-Regular.otf'
@@ -135,3 +136,18 @@ export const GlobalStyle = () => (
     `}
   />
 )
+
+injectGlobal`
+  @font-face {
+    font-family: 'Avenir Next Bold';
+    src: url(${avenirNextBold}) format('truetype');
+  }
+  @font-face {
+    font-family: 'Avenir Next';
+    src: url(${avenirNext}) format('truetype');
+  }
+  @font-face {
+    font-family: 'Avenir Next Bold Demi';
+    src: url(${avenirNextBoldDemi}) format('truetype');
+  }
+`
