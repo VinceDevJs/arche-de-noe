@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Footer from '../components/GlobalComponents/Footer/Footer'
 import { GlobalStyle } from '../utils/styles'
 import Header from '../components/GlobalComponents/Header'
@@ -8,23 +8,11 @@ import Block6 from '../components/Home/Block6'
 import PopUp from '../components/GlobalComponents/PopUp'
 
 const DefaultLayout = ({ children }) => {
-  const [showPopUp, setShowPopUp] = useState()
-
-  useEffect(() => {
-    setShowPopUp((typeof window !== 'undefined' && window.sessionStorage.getItem('popup')))
-  }, [])
-
-  const handleClosePopUp = () => {
-    console.log('test')
-    if (typeof window !== 'undefined') window.sessionStorage.setItem('popup', 'closed')
-    setShowPopUp(typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))
-  }
-
   return (
     <>
       <GlobalStyle />
       <div id='app'>
-        <PopUp showPopUp={showPopUp} handleClosePopUp={handleClosePopUp} />
+        <PopUp />
         <BurgerMenu />
         <Header />
         {children}

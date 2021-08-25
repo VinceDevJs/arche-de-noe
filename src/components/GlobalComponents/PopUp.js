@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import closeCross from '../../assets/icons/Close-cross.png'
 import logo from '../../assets/images/inscription/Logo-inscription.svg'
 import { breakpoints } from '../../utils/styles'
 import { Link } from 'gatsby'
 
-const PopUp = ({ showPopUp, handleClosePopUp }) => {
+const PopUp = () => {
+  const [showPopUp, setShowPopUp] = useState()
+
+  useEffect(() => {
+    setShowPopUp((typeof window !== 'undefined' && window.sessionStorage.getItem('popup')))
+  }, [])
+
+  const handleClosePopUp = () => {
+    console.log('test')
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('popup', 'closed')
+    setShowPopUp(typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))
+  }
   return (
     <>
       {!showPopUp &&
