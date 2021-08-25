@@ -8,7 +8,7 @@ import Block6 from '../components/Home/Block6'
 import PopUp from '../components/GlobalComponents/PopUp'
 
 const DefaultLayout = ({ children }) => {
-  const [showPopUp, setShowPopUp] = useState(typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))
+  const [showPopUp, setShowPopUp] = useState(!!(typeof window !== 'undefined' && window.sessionStorage.getItem('popup')))
 
   const handleClosePopUp = () => {
     console.log('test')
