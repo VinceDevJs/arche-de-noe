@@ -6,16 +6,16 @@ import { breakpoints } from '../../utils/styles'
 import { Link } from 'gatsby'
 
 const PopUp = () => {
-  const [showPopUp, setShowPopUp] = useState()
+  const [showPopUp, setShowPopUp] = useState(false)
 
   useEffect(() => {
-    setShowPopUp((typeof window !== 'undefined' && window.sessionStorage.getItem('popup')))
+    setShowPopUp(!!((typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))))
   }, [])
 
   const handleClosePopUp = () => {
     console.log('test')
     if (typeof window !== 'undefined') window.sessionStorage.setItem('popup', 'closed')
-    setShowPopUp(typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))
+    setShowPopUp(!!((typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))))
   }
   return (
     <>
