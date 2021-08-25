@@ -32,12 +32,12 @@ const Audios = () => {
         <PageTitle>Liste des livres audio</PageTitle>
         <BookLinkTitleContainer>
           {
-                      allAudioBooks.map(({ node: audioBook }) => (
-                        <BookLinkTitle to={`#${audioBook.frontmatter.bookTitle}`} key={audioBook.frontmatter.bookTitle}>
-                          {audioBook.frontmatter.bookTitle}
-                        </BookLinkTitle>
-                      ))
-                  }
+              allAudioBooks.map(({ node: audioBook }) => (
+                <BookLinkTitle to={`#${audioBook.frontmatter.bookTitle}`} key={audioBook.frontmatter.bookTitle}>
+                  {audioBook.frontmatter.bookTitle}
+                </BookLinkTitle>
+              ))
+          }
         </BookLinkTitleContainer>
 
         {

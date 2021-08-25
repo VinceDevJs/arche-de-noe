@@ -17,18 +17,6 @@ export const secondaryColor = '#007cad'
 export const GlobalStyle = () => (
   <Global
     styles={css`
-      @font-face {
-        font-family: 'Avenir Next Bold';
-        src: url(${avenirNextBold}) format('truetype');
-      }
-      @font-face {
-        font-family: 'Avenir Next';
-        src: url(${avenirNext}) format('truetype');
-      }
-      @font-face {
-        font-family: 'Avenir Next Bold Demi';
-        src: url(${avenirNextBoldDemi}) format('truetype');
-      }
       body {
         margin: 0 auto;
         max-width: 1600px;
