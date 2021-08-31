@@ -11,59 +11,64 @@ import level from '../../assets/images/formation/level.png'
 import price from '../../assets/images/formation/price.png'
 
 const Main = ({ allFormations }) => {
-  console.log(allFormations)
+  // console.log(allFormations)
   return (
     <Container>
       {allFormations &&
-        allFormations.map(({ node: data }, index) => {
-          const formation = data.frontmatter
-          const formationSlug = convertToSlug(formation.formation_name)
-          const slideTime = `${index}00`
-          return (
-            <FormationBox
-              key={formation.formation_name}
-              data-aos='fade-left'
-              data-aos-duration='2000'
-              data-aos-delay={slideTime}
-            >
-              <ImgWrapper>
-                <FormationImg src={formation.thumbnail} alt='formation book' />
-                <FormationTitle>
-                  {formation.subjects} <br />
-                  <span>
-                    {formation.sub_title !== 'vide' ? formation.sub_title : ''}
-                  </span>
-                </FormationTitle>
-              </ImgWrapper>
-              <IconsWrapper>
-                <IconBox>
-                  <Icon src={price} />
-                  <IconText style={{ color: '#FFC440' }}>{formation.price}€</IconText>
-                </IconBox>
-                <IconBox>
-                  <Icon src={level} />
-                  <IconText style={{ color: '#00A99D' }}>{formation.level}</IconText>
-                </IconBox>
-                <IconBox>
-                  <Icon src={table} />
-                  <IconText style={{ color: '#007CAD' }}>{formation.place_avaible} Places</IconText>
-                </IconBox>
-              </IconsWrapper>
-              <Button to={`/formation/${formationSlug}`}>En savoir plus</Button>
-              <SocialBox>
-                <a
-                  target='_blank' href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+      allFormations.map(({ node: data }, index) => {
+        const formation = data.frontmatter
+        const formationSlug = convertToSlug(formation.formation_name)
+        const slideTime = `${index}00`
+        return (
+          <FormationBox
+            key={formation.formation_name}
+            data-aos='fade-left'
+            data-aos-duration='2000'
+            data-aos-delay={slideTime}
+          >
+            <ImgWrapper>
+              <FormationImg src={formation.thumbnail} alt='formation book' />
+              <FormationTitle>
+                {formation.subjects} <br />
+                <span>
+                  {formation.sub_title !== 'vide' ? formation.sub_title : ''}
+                </span>
+              </FormationTitle>
+            </ImgWrapper>
+            <IconsWrapper>
+              <IconBox>
+                <Icon src={price} />
+                <IconText style={{ color: '#FFC440' }}>{formation.price}€</IconText>
+              </IconBox>
+              <IconBox>
+                <Icon src={level} />
+                <IconText style={{ color: '#00A99D' }}>{formation.level}</IconText>
+              </IconBox>
+              <IconBox>
+                <Icon src={table} />
+                <IconText style={{ color: '#007CAD' }}>{formation.place_avaible} Places</IconText>
+              </IconBox>
+            </IconsWrapper>
+            <Button to={`/formation/${formationSlug}`}>En savoir plus</Button>
+            <SocialBox>
+              <a
+                rel='noreferrer'
+                target='_blank' href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 /formation/${formationSlug}`}
-                >
-                  <SocialIcon src={facebook} />
-                </a>
-                <a target='_blank' href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/formation/${formationSlug}&text=`}>
-                  <SocialIcon src={twitter} />
-                </a>
-              </SocialBox>
-            </FormationBox>
-          )
-        })}
+              >
+                <SocialIcon src={facebook} />
+              </a>
+              <a
+                rel='noreferrer'
+                target='_blank'
+                href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/formation/${formationSlug}&text=`}
+              >
+                <SocialIcon src={twitter} />
+              </a>
+            </SocialBox>
+          </FormationBox>
+        )
+      })}
       {!allFormations.length && (
         <p
           style={{
@@ -145,7 +150,7 @@ export const FormationTitle = styled.p`
 
   span {
     -webkit-text-stroke: 2px #00a1c6;
-    display: block; 
+    display: block;
     color: white;
     font-size: 35px;
     height: 35px;

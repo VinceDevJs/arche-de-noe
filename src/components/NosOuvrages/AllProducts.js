@@ -1,33 +1,33 @@
 import React from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import { convertToSlug } from '../../utils/functions'
 
 const AllProducts = () => {
   const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "shop" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              templateKey
-              price
-              name
-              show
-              description
-              avaible
-              images {
-                image
+      {
+          allMarkdownRemark(
+              filter: { frontmatter: { templateKey: { eq: "shop" } } }
+          ) {
+              edges {
+                  node {
+                      frontmatter {
+                          templateKey
+                          price
+                          name
+                          show
+                          description
+                          avaible
+                          images {
+                              image
+                          }
+                      }
+                  }
               }
-            }
           }
-        }
       }
-    }
   `)
 
-  console.log(data.allMarkdownRemark.edges)
+  // console.log(data.allMarkdownRemark.edges)
 
   const allProducts = data.allMarkdownRemark.edges
 

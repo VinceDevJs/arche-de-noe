@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import { breakpoints } from '../../utils/styles'
 import wave from '../../assets/images/formation/wave.svg'
 import store from '../../assets/images/nos_ouvrages/store.svg'
-import { LeftBox } from '../Home/Block1'
 
 const Header = () => {
   return (
@@ -39,11 +38,9 @@ export const Container = styled.div`
   justify-content: center;
   height: 37em;
   background: rgb(112, 194, 225);
-  background: radial-gradient(
-    circle,
-    rgba(112, 194, 225, 1) 0%,
-    rgba(0, 148, 190, 1) 58%
-  );
+  background: radial-gradient(circle,
+  rgba(112, 194, 225, 1) 0%,
+  rgba(0, 148, 190, 1) 58%);
   margin: 0 0 5em;
 
   @media (max-width: ${breakpoints.l}px) {

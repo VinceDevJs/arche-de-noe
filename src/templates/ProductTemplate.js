@@ -16,31 +16,31 @@ import selectArrow from './../assets/icons/select-arrow.png'
 import DefaultLayout from '@/layouts/default'
 
 export const query = graphql`
-  query($name: String!) {
-    allMarkdownRemark(
-      filter: {
-        frontmatter: { templateKey: { eq: "shop" }, name: { eq: $name } }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            templateKey
-            productPrice
-            name
-            pointsForts
-            subTitle
-            description
-            title
-            avaible
-            images {
-              image
+    query($name: String!) {
+        allMarkdownRemark(
+            filter: {
+                frontmatter: { templateKey: { eq: "shop" }, name: { eq: $name } }
             }
-          }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        templateKey
+                        productPrice
+                        name
+                        pointsForts
+                        subTitle
+                        description
+                        title
+                        avaible
+                        images {
+                            image
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
 `
 
 const ProductTemplate = ({ data, path }) => {
@@ -65,7 +65,7 @@ const ProductTemplate = ({ data, path }) => {
     })
   )
 
-  console.log(gallery)
+  // console.log(gallery)
 
   const productSelectQuantity = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const [quantity, setQuantity] = useState(1)
@@ -180,12 +180,17 @@ const ProductTemplate = ({ data, path }) => {
               <SocialBox>
                 <a
                   target='_blank'
+                  rel='noreferrer'
                   href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 ${path}`}
                 >
                   <SocialIcon src={facebookIcon} />
                 </a>
-                <a target='_blank' href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}>
+                <a
+                  target='_blank'
+                  rel='noreferrer'
+                  href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}
+                >
                   <SocialIcon src={twitterIcon} />
                 </a>
               </SocialBox>
@@ -420,7 +425,7 @@ export const AddToCartButton = styled.button`
 `
 
 export const AddToCartQuantity = styled.select`
- width: 4em;
+  width: 4em;
   height: 2em;
   border-radius: 30px;
   border: 2px solid #00a1c6;
@@ -440,7 +445,7 @@ export const AddToCartQuantity = styled.select`
   background-size: 20px;
   outline: none;
   cursor: pointer;
-  
+
   @media (max-width: ${breakpoints.s}px) {
     margin-left: 1em;
     padding-left: 0.4em;

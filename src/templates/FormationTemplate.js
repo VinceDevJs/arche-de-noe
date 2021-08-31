@@ -18,41 +18,41 @@ import facebookIcon from './../assets/images/formation/template/facebook.svg'
 import twitterIcon from './../assets/images/formation/template/twitter.svg'
 
 export const query = graphql`
-  query($name: String!) {
-    allMarkdownRemark(
-      filter: {
-        frontmatter: {
-          templateKey: { eq: "formation" }
-          formation_name: { eq: $name }
+    query($name: String!) {
+        allMarkdownRemark(
+            filter: {
+                frontmatter: {
+                    templateKey: { eq: "formation" }
+                    formation_name: { eq: $name }
+                }
+            }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        templateKey
+                        thumbnail
+                        price
+                        sub_title
+                        show_formation
+                        level
+                        formation_name
+                        subjects
+                        age
+                        place_avaible
+                        prerequis
+                        ouvrages
+                        objectifs
+                        programme
+                    }
+                }
+            }
         }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            templateKey
-            thumbnail
-            price
-            sub_title
-            show_formation
-            level
-            formation_name
-            subjects
-            age
-            place_avaible
-            prerequis
-            ouvrages
-            objectifs
-            programme
-          }
-        }
-      }
     }
-  }
 `
 
 const FormationTemplate = ({ data, path }) => {
-  console.log(data, path)
+  // console.log(data, path)
   const {
     templateKey,
     thumbnail,
@@ -169,7 +169,10 @@ ${path}`}
                 >
                   <SocialIcon src={facebookIcon} />
                 </a>
-                <a href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`} target='_blank'>
+                <a
+                  href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}
+                  target='_blank'
+                >
                   <SocialIcon src={twitterIcon} />
                 </a>
               </SocialBox>
@@ -302,7 +305,7 @@ export const IconText = styled.p`
 `
 
 export const Icon = styled.img`
-max-width: 3.7em;
+  max-width: 3.7em;
   margin: 0 auto;
 `
 
@@ -315,6 +318,7 @@ export const PlanningButton = styled.div`
   width: 13em;
   margin: 0.5em auto 0;
   padding: 0 1.2em;
+
   p {
     color: #007cad;
     font-size: 1.1em;

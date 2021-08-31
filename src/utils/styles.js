@@ -24,6 +24,7 @@ export const GlobalStyle = () => (
         overflow-x: hidden;
         width: 100%;
       }
+
       // FIX AOS WHITE SPACE
       html,
       body {
@@ -142,16 +143,14 @@ injectGlobal`
     font-family: 'Avenir Next Bold';
     src: url(${avenirNextBold}) format('truetype');
   }
+
   @font-face {
     font-family: 'Avenir Next';
     src: url(${avenirNext}) format('truetype');
   }
+
   @font-face {
     font-family: 'Avenir Next Bold Demi';
     src: url(${avenirNextBoldDemi}) format('truetype');
-  }
-
-  .sc-media-right {
-    display: none!important; ;
   }
 `

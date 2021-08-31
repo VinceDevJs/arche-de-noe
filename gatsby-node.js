@@ -70,7 +70,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     {
       allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "audioBook"}}}) {
         edges {
-          node {
+          node { 
             frontmatter {
               bookTitle
               audio {

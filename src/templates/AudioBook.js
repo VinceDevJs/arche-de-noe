@@ -7,36 +7,36 @@ import LogoIcon from './../assets/icons/header/logo_header.png'
 import AudioLayout from '../layouts/audios'
 
 export const query = graphql`
-  query($audioBookTitle: String!, $title: String!) {
-    allMarkdownRemark(
-      filter: {
-        frontmatter: { 
-          templateKey: {eq: "audioBook"}, 
-          bookTitle: {eq: $audioBookTitle}, 
-          audio: {
-            elemMatch: { audioTitle: {eq: $title} }
-          }
+    query($audioBookTitle: String!, $title: String!) {
+        allMarkdownRemark(
+            filter: {
+                frontmatter: {
+                    templateKey: {eq: "audioBook"},
+                    bookTitle: {eq: $audioBookTitle},
+                    audio: {
+                        elemMatch: { audioTitle: {eq: $title} }
+                    }
+                }
+            }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        bookTitle
+                        thumbnail
+                        audio {
+                            audioLink
+                            audioTitle
+                        }
+                        templateKey
+                    }
+                }
+            }
         }
-      }
-    ) {
-    edges {
-      node {
-        frontmatter {
-          bookTitle
-          thumbnail
-          audio {
-            audioLink
-            audioTitle
-          }
-          templateKey
-        }
-      }
-    }
-  }
-  }`
+    }`
 
 const AudioBook = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   const { bookTitle, thumbnail, audio } = data.allMarkdownRemark.edges[0].node.frontmatter
 
   return (
@@ -121,7 +121,7 @@ export const Button = styled(Link)`
   font-size: 1.2em;
   cursor: pointer;
   text-decoration: none;
-  
+
   :hover {
     background-color: white;
     color: #00a0c5;

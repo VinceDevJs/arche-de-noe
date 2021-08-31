@@ -62,7 +62,7 @@ const ContactForm = () => {
         sujet: subject,
         message
       }
-      fetch('https://formcarry.com/s/_gQTAtDuOOg', {
+      window.fetch('https://formcarry.com/s/_gQTAtDuOOg', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -85,7 +85,7 @@ const ContactForm = () => {
           }
         })
         .catch(err => {
-          // console.log("not send", err);
+          console.error('not send', err)
         })
     }
   }
@@ -186,7 +186,7 @@ export const ErrorMessage = styled.p`
   -webkit-animation: fadeIn ease 1s;
   -moz-animation: fadeIn ease 1s;
   -o-animation: fadeIn ease 1s;
-  -ms-animation: fadeIn ease 1s;
+
   @media (max-width: ${breakpoints.m}px) {
     text-align: center;
     width: 90%;
@@ -262,11 +262,13 @@ export const LabelWrapper = styled.label`
   flex-direction: column;
   width: 100%;
   margin-bottom: 0.5em;
+
   p {
     margin: 0 0 0.2em 2em;
     color: #0094be;
     font-family: 'Avenir Next Bold Demi', sans-serif;
   }
+
   @media (max-width: ${breakpoints.m}px) {
     margin-bottom: 1em;
   }
@@ -289,6 +291,7 @@ export const StyledTextarea = styled.textarea`
   resize: none;
   border: 2px solid ${props => (props.error ? '#ff5757' : '#0094be')};
   outline: none;
+
   p {
     margin: 0 0 0 1.6em;
     color: #0094be;
@@ -312,6 +315,7 @@ export const SubmitButton = styled.button`
     height: 2.6em;
     font-size: 1.2em;
   }
+
   :hover {
     cursor: pointer;
     background-color: #2b5c6b;
@@ -332,7 +336,7 @@ export const SuccessMessage = styled.p`
   -webkit-animation: fadeIn ease 1s;
   -moz-animation: fadeIn ease 1s;
   -o-animation: fadeIn ease 1s;
-  -ms-animation: fadeIn ease 1s;
+  
   @keyframes fadeIn {
     0% {
       opacity: 0;

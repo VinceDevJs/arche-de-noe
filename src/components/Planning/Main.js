@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import PlanningSort from './PlanningSort'
 import { breakpoints } from '../../utils/styles'
 
@@ -12,52 +12,52 @@ import roomIcon from '../../assets/images/planning/room-icon.png'
 
 const Main = () => {
   const planningData = useStaticQuery(graphql`
-    {
-      enfant: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "enfant"}}}) {
-        edges {
-          node {
-            frontmatter {
-              templateKey
-              title
-              day {
-                daySelected
-                show
-                cours {
-                  curse_hour
-                  curse_name
-                  curse_link
-                  level
-                  room
-                  title
-                }
+      {
+          enfant: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "enfant"}}}) {
+              edges {
+                  node {
+                      frontmatter {
+                          templateKey
+                          title
+                          day {
+                              daySelected
+                              show
+                              cours {
+                                  curse_hour
+                                  curse_name
+                                  curse_link
+                                  level
+                                  room
+                                  title
+                              }
+                          }
+                      }
+                  }
               }
-            }
+          },
+          adulte: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "adulte"}}}) {
+              edges {
+                  node {
+                      frontmatter {
+                          templateKey
+                          title
+                          day {
+                              daySelected
+                              show
+                              cours {
+                                  curse_hour
+                                  curse_name
+                                  curse_link
+                                  level
+                                  room
+                                  title
+                              }
+                          }
+                      }
+                  }
+              }
           }
-        }
-      },
-        adulte: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "adulte"}}}) {
-            edges {
-                node {
-                    frontmatter {
-                        templateKey
-                        title
-                        day {
-                            daySelected
-                            show
-                            cours {
-                                curse_hour
-                                curse_name
-                                curse_link
-                                level
-                                room
-                                title
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+      }
   `)
 
   const [formationSelectorList, setFormationSelectorList] = useState([])
@@ -136,7 +136,7 @@ const Main = () => {
       const dayList = formationData[publicSelected].find(day => day.title.toLowerCase() === formationSelected)
       if (dayList) {
         const getFormationsToShow = dayList.formationData.find(el => el.daySelected === daySelected)
-        console.log('day', getFormationsToShow)
+        // console.log('day', getFormationsToShow)
         if (getFormationsToShow) {
           setFormationToShow(getFormationsToShow.cours)
         }
@@ -224,7 +224,9 @@ const Main = () => {
               >
                 <ContentBox>
                   <Icon src={lampIcon} />
-                  <InfoTitle size={cour.curse_name.length > 10 || cour.level.length > 10}>{cour.curse_name} <br /> {cour.level}</InfoTitle>
+                  <InfoTitle size={cour.curse_name.length > 10 || cour.level.length > 10}>{cour.curse_name}
+                    <br /> {cour.level}
+                  </InfoTitle>
                   <InfoAge>{cour.title ? cour.title : ''}</InfoAge>
                 </ContentBox>
 
@@ -233,7 +235,9 @@ const Main = () => {
                 <ContentBox center>
                   <Icon src={clockIcon} />
                   <InfoTime>{cour.curse_hour}</InfoTime>
-                  <FornmationLinkButton to={cour.curse_link ? `/formation/${cour.curse_link}` : '/formation'}>La formation</FornmationLinkButton>
+                  <FornmationLinkButton to={cour.curse_link ? `/formation/${cour.curse_link}` : '/formation'}>La
+                    formation
+                  </FornmationLinkButton>
                 </ContentBox>
 
                 <Separator />
@@ -332,7 +336,7 @@ export const ContentBox = styled.div`
   }
 
   @media (max-width: ${breakpoints.s}px) {
-  margin: 0.5em 0;
+    margin: 0.5em 0;
   }
 `
 
@@ -382,7 +386,7 @@ export const FornmationLinkButton = styled(Link)`
   text-decoration: none;
   color: white;
   border-radius: 30px;
-  padding: 0.2em 3.3em ;
+  padding: 0.2em 3.3em;
   text-align: center;
 
   :hover {

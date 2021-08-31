@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import { breakpoints } from '../../utils/styles'
 import Img from 'gatsby-image'
@@ -11,18 +11,18 @@ import whatsappIcon from './../../assets/images/contact/whatsapp-icon.png'
 
 const Header = () => {
   const image = useStaticQuery(graphql`
-    query {
-      phone: file(relativePath: { eq: "images/contact/big_phone.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 450) {
-            ...GatsbyImageSharpFluid
+      query {
+          phone: file(relativePath: { eq: "images/contact/big_phone.png" }) {
+              childImageSharp {
+                  fluid(maxWidth: 450) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
           }
-        }
       }
-    }
   `)
 
-  console.log(image)
+  // console.log(image)
   return (
     <MainContainer>
       <LeftBox data-aos='fade-right' data-aos-duration='2000'>
@@ -287,7 +287,7 @@ export const WhatsButton = styled.a`
   text-align: center;
   font-family: 'Avenir Next Bold', sans-serif;
   text-decoration: none;
-  
+
   :hover {
     background-color: #00A1C6;
     color: white;

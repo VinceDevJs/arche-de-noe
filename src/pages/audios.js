@@ -1,29 +1,29 @@
 import React from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import AudioLayout from '../layouts/audios'
 import { convertToSlug } from './../utils/functions'
 
 const Audios = () => {
   const data = useStaticQuery(graphql`
-        {
-            allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "audioBook"}}}) {
-                edges {
-                    node {
-                        frontmatter {
-                            audio {
-                                audioLink
-                                audioTitle
-                            }
-                            bookTitle
-                            thumbnail
-                            templateKey
-                        }
-                    }
-                }
-            }
-        }
-    `)
+      {
+          allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "audioBook"}}}) {
+              edges {
+                  node {
+                      frontmatter {
+                          audio {
+                              audioLink
+                              audioTitle
+                          }
+                          bookTitle
+                          thumbnail
+                          templateKey
+                      }
+                  }
+              }
+          }
+      }
+  `)
 
   const allAudioBooks = data.allMarkdownRemark.edges
 
@@ -34,11 +34,11 @@ const Audios = () => {
         <PageTitle>Liste des livres audio</PageTitle>
         <BookLinkTitleContainer>
           {
-              allAudioBooks.map(({ node: audioBook }) => (
-                <BookLinkTitle to={`#${audioBook.frontmatter.bookTitle}`} key={audioBook.frontmatter.bookTitle}>
-                  {audioBook.frontmatter.bookTitle}
-                </BookLinkTitle>
-              ))
+            allAudioBooks.map(({ node: audioBook }) => (
+              <BookLinkTitle to={`#${audioBook.frontmatter.bookTitle}`} key={audioBook.frontmatter.bookTitle}>
+                {audioBook.frontmatter.bookTitle}
+              </BookLinkTitle>
+            ))
           }
         </BookLinkTitleContainer>
 
@@ -56,7 +56,7 @@ const Audios = () => {
                     <br />
                   </div>
                 ))
-                  }
+              }
             </AudioBookContainer>
           ))
         }
