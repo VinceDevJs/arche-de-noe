@@ -1,5 +1,6 @@
 ---
 bookTitle: test
+thumbnail: /static/images/audio_books/twitter-icon-black.png
 templateKey: audioBook
 audio:
   - audioTitle: test
