@@ -1,8 +1,8 @@
 ---
-bookTitle: test
+bookTitle: Livre 1
 thumbnail: /static/img/audio_books/cross-24-48.png
 templateKey: audioBook
 audio:
-  - audioTitle: test
-    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/116270422&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true
+  - audioTitle: Audio 1
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1109349634&color=%2300aabb&inverse=false&auto_play=true&show_user=true
 ---
