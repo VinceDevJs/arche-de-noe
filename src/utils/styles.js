@@ -150,4 +150,8 @@ injectGlobal`
     font-family: 'Avenir Next Bold Demi';
     src: url(${avenirNextBoldDemi}) format('truetype');
   }
+
+  .sc-media-right {
+    display: none!important; ;
+  }
 `

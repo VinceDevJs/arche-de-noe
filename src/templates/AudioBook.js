@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { breakpoints } from '../../src/utils/styles'
 
 import LogoIcon from './../assets/icons/header/logo_header.png'
 import AudioLayout from '../layouts/audios'
@@ -22,6 +23,7 @@ export const query = graphql`
       node {
         frontmatter {
           bookTitle
+          thumbnail
           audio {
             audioLink
             audioTitle
@@ -34,37 +36,47 @@ export const query = graphql`
   }`
 
 const AudioBook = ({ data }) => {
-  const { bookTitle, audio } = data.allMarkdownRemark.edges[0].node.frontmatter
-  console.log(bookTitle, audio)
+  console.log(data)
+  const { bookTitle, thumbnail, audio } = data.allMarkdownRemark.edges[0].node.frontmatter
+
   return (
     <AudioLayout>
-      <Container>
-        <Logo src={LogoIcon} />
-        <Iframe
-          width='100%'
-          height='166'
-          scrolling='no'
-          frameBorder='no'
-          allow='autoplay'
-          src={audio[0].audioLink}
-        />
-        <ButtonsWrapper>
-          <Button to='/'>Acceuil</Button>
-          <Button to='/nos-ouvrages'>Boutique</Button>
-        </ButtonsWrapper>
-      </Container>
+      <Wrapper>
+        <Container>
+          <Logo src={LogoIcon} />
+          <Iframe
+            id='iFrame'
+            width='100%'
+            height='20'
+            scrolling='no'
+            frameBorder='no'
+            allow='autoplay'
+            src={audio[0].audioLink}
+          />
+          <ButtonsWrapper>
+            <Button to='/'>Acceuil</Button>
+            <Button to='/nos-ouvrages'>Boutique</Button>
+          </ButtonsWrapper>
+        </Container>
+      </Wrapper>
     </AudioLayout>
   )
 }
 
 export default AudioBook
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
+`
+
+export const Container = styled.div`
+  height: 25em;
+  display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 5em;
 `
 
 export const Logo = styled.img`
@@ -73,7 +85,11 @@ export const Logo = styled.img`
 `
 
 export const Iframe = styled.iframe`
-  width: 35em;
+  width: 30em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    width: 80vw;
+  }
 `
 
 export const ButtonsWrapper = styled.div`
@@ -82,6 +98,13 @@ export const ButtonsWrapper = styled.div`
   justify-content: space-between;
   margin-top: 3em;
   width: 35em;
+
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 8em;
+  }
 `
 
 export const Button = styled(Link)`

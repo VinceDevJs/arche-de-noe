@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import AudioLayout from '../layouts/audios'
+import { convertToSlug } from './../utils/functions'
 
 const Audios = () => {
   const data = useStaticQuery(graphql`
@@ -15,6 +16,7 @@ const Audios = () => {
                                 audioTitle
                             }
                             bookTitle
+                            thumbnail
                             templateKey
                         }
                     }
@@ -46,7 +48,7 @@ const Audios = () => {
                       <AudioBookTitle>{audioBook.frontmatter.bookTitle}</AudioBookTitle>
                       {
                               audioBook.frontmatter.audio.map((audio, index) => (
-                                <AudioLink key={audio.audioTitle} to={`/audios/${audioBook.frontmatter.bookTitle}-${audio.audioTitle}`}>
+                                <AudioLink key={audio.audioTitle} to={`/audios/${convertToSlug(audioBook.frontmatter.bookTitle)}-${convertToSlug(audio.audioTitle)}`}>
                                   {index + 1} - {audio.audioTitle}
                                 </AudioLink>
                               ))

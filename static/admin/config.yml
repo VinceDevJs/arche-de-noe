@@ -588,4 +588,4 @@ collections:
             name: "audioLink"
             widget: "string"
             required: true
-            hint: "Indiquer le lien de l'audio."
+            hint: "Indiquer le lien de l'audio ex: src=\"ici\""
