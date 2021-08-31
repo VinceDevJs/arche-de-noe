@@ -559,6 +559,14 @@ collections:
         hint: "Indiquer le nom du livre.",
         required: true,
       }
+      - label: "Image du livre"
+        name: "thumbnail"
+        widget: "image"
+        choose_url: true
+        media_folder: '/static/img/audio_books/'
+        media_library:
+          config:
+            multiple: false
       - {
         label: "Template Key",
         name: "templateKey",
