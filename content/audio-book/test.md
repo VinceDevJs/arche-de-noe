@@ -1,6 +1,6 @@
 ---
 bookTitle: test
-thumbnail: /static/images/audio_books/up-arrow.png
+thumbnail: /static/img/audio_books/cross-24-48.png
 templateKey: audioBook
 audio:
   - audioTitle: test
