@@ -1,6 +1,6 @@
 ---
 bookTitle: test
-thumbnail: /static/images/audio_books/twitter-icon-black.png
+thumbnail: /static/images/audio_books/up-arrow.png
 templateKey: audioBook
 audio:
   - audioTitle: test
