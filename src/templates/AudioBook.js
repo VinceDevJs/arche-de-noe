@@ -35,9 +35,13 @@ export const query = graphql`
         }
     }`
 
-const AudioBook = ({ data }) => {
-  // console.log(data)
+const AudioBook = ({ data, pageContext }) => {
+  // console.log(data, pageContext)
   const { bookTitle, thumbnail, audio } = data.allMarkdownRemark.edges[0].node.frontmatter
+
+  const audioToPlay = audio.find((value) => value.audioTitle === pageContext.title)
+
+  // console.log(audioToPlay)
 
   return (
     <AudioLayout>
@@ -51,7 +55,7 @@ const AudioBook = ({ data }) => {
             scrolling='no'
             frameBorder='no'
             allow='autoplay'
-            src={audio[0].audioLink}
+            src={audioToPlay.audioLink}
           />
           <ButtonsWrapper>
             <Button to='/'>Acceuil</Button>
