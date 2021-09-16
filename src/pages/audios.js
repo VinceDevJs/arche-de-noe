@@ -36,7 +36,7 @@ const Audios = () => {
           {
             allAudioBooks.map(({ node: audioBook }) => (
               <BookLinkTitle to={`#${audioBook.frontmatter.bookTitle}`} key={audioBook.frontmatter.bookTitle}>
-                {audioBook.frontmatter.bookTitle}
+                - {audioBook.frontmatter.bookTitle} <br />
               </BookLinkTitle>
             ))
           }
