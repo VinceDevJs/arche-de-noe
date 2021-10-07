@@ -20,7 +20,7 @@ audio:
   - audioTitle: La lettre DHEL CP
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1137743755&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
   - audioTitle: La lettre RA CP
-    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1137743755&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1137743833&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
   - audioTitle: "La lettre ZAY CP "
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1137743914&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
   - audioTitle: La lettre SINE CP
