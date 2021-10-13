@@ -85,4 +85,6 @@ audio:
     audioTitle: Texte As salatou imadou dine
   - audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323275&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
     audioTitle: Texte Ar rojou3 minal madrassat
+  - audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323263&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+    audioTitle: Texte At tilmizoul mouhazzab
 ---
