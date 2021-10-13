@@ -61,4 +61,18 @@ audio:
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323170&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
   - audioTitle: La lettre Dha (ظ)
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323176&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioTitle: Texte fil madrassaty
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323320&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioTitle: Texte Fatima bint mouhazzab
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323320&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioTitle: Texte 3outlatou sayf
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323314&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioTitle: Texte Sharou ramadan
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323311&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioTitle: Texte al wada3ou
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323311&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323302&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+    audioTitle: Texte An Nadhafatou
+  - audioTitle: "Texte al mouslimou akrou al mouslimou "
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323296&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
 ---
