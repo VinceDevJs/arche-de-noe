@@ -81,4 +81,6 @@ audio:
     audioTitle: Texte al Qamarou
   - audioTitle: Texte Al fallahou
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323287&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323284&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+    audioTitle: Texte As salatou imadou dine
 ---
