@@ -64,7 +64,7 @@ audio:
   - audioTitle: Texte fil madrassaty
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323320&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
   - audioTitle: Texte Fatima bint mouhazzab
-    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323317&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323317&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true
   - audioTitle: Texte 3outlatou sayf
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323314&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
   - audioTitle: Texte Sharou ramadan
