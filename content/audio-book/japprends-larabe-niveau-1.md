@@ -89,4 +89,6 @@ audio:
     audioTitle: Texte At tilmizoul mouhazzab
   - audioTitle: Texte Ana Mouslim
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1125323257&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioTitle: Texte Az zamanou
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1166161366&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true
 ---
