@@ -117,4 +117,6 @@ audio:
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1137743551&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
   - audioTitle: "ALPHABET COMPLET "
     audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1137743563&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true
+  - audioTitle: YADOUNE CP
+    audioLink: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181109244&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true
 ---
