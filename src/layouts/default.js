@@ -12,7 +12,7 @@ const DefaultLayout = ({ children }) => {
     <>
       <GlobalStyle />
       <div id='app'>
-        <PopUp />
+        {/* <PopUp /> */}
         <BurgerMenu />
         <Header />
         {children}
