@@ -52,6 +52,81 @@ collections:
               required: true,
             }
 
+      - label: "Slider"
+        name: "slider"
+        file: "/content/slider.md"
+        fields:
+          - {
+            label: "Template Key",
+            name: "templateKey",
+            widget: "hidden",
+            default: "slider",
+          }
+
+          - label: "Slide"
+            name: "slide"
+            minimize_collapsed: false
+            widget: "list"
+            min: 0
+            max: 7
+            fields:
+              - {
+                label: "Affiche",
+                name: "show",
+                widget: "boolean",
+                default: false,
+                hint: "Afficher le slide"
+              }
+              - {
+                label: "Titre",
+                name: "title",
+                widget: "string",
+                hint: "Indiquer le titre a afficher dans le slide.",
+                required: true,
+              }
+              - {
+                label: "Sous titre",
+                name: "subTitle",
+                widget: "string",
+                hint: "Indiquer le sous titre a afficher dans le slide.",
+                required: true,
+              }
+              - {
+                label: "Texte du slider",
+                name: "content",
+                widget: "string",
+                hint: "Indiquer le texte a afficher dans le slide.",
+                required: true,
+              }
+              - {
+                label: "Image",
+                name: "image",
+                widget: "image",
+                allow_multiple: false,
+                choose_url: false,
+                hint: "Sélectionner une image"
+              }
+              - {
+                label: "Affiché le bouton",
+                name: "showButton",
+                widget: "boolean",
+                default: false,
+                hint: "Afficher le bouton"
+              }
+              - {
+                label: "Texte du bouton",
+                name: "buttonTitle",
+                widget: "string",
+                hint: "Indiquer le texte a afficher dans le boutton.",
+              }
+              - {
+                label: "Lien du bouton",
+                name: "buttonLink",
+                widget: "string",
+                hint: "Indiquer le lien du bouton.",
+              }
+
+
   - label: "Planning Enfant"
     name: "enfant"
     folder: "content/enfant"

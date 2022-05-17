@@ -8,6 +8,7 @@ import Block5 from '../components/Home/Block5'
 import Block3Bis from '../components/Home/Block3Bis'
 import Matieres from './../components/Home/Matieres'
 import DefaultLayout from '../layouts/default'
+import TopSlider from './../components/Home/TopSlider'
 
 const IndexPage = () => {
   return (
@@ -16,7 +17,8 @@ const IndexPage = () => {
         <Helmet>
           <title>Acceuil | Arche de noé</title>
         </Helmet>
-        <Block1 />
+        <TopSlider />
+        {/* <Block1 /> */}
         <Block2 />
         <Block3Bis />
         <Matieres />

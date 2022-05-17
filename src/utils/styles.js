@@ -42,7 +42,7 @@ export const GlobalStyle = () => (
         margin: 0;
       }
 
-      .image-gallery-image {
+      .test {
       }
 
       .image-gallery {
