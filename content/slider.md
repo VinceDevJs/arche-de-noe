@@ -1,6 +1,6 @@
 ---
 slide:
-  - show: true
+  - show: false
     showButton: true
     image: /img/volume-1-methode-de-la-madrassah.jpg
     title: Titre 1
