@@ -1,7 +1,7 @@
 ---
 slide:
   - show: true
-    showButton: true
+    showButton: false
     title: titre 1
     subTitle: sous titre 1
     content: bla bla bla
