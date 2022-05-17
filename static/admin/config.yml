@@ -60,9 +60,8 @@ collections:
             label: "Template Key",
             name: "templateKey",
             widget: "hidden",
-            default: "slider",
+            default: "slider"
           }
-
           - label: "Slide"
             name: "slide"
             minimize_collapsed: false
