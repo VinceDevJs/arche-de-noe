@@ -23,7 +23,9 @@ slide:
   - show: true
     clearText: false
     showButton: false
-    title: Réunion Parents Professeurs
+    title: |-
+      Réunion Parents 
+      Professeurs
     subTitle: "Section maternelle et enfant : Mercredi 29 juin 2022"
     content: >-
       Bilan deuxième semestre, Échange individuel, Remise des bulletins,
