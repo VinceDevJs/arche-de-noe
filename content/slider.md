@@ -14,6 +14,8 @@ slide:
       Restauration sur place.
 
 
+
+
       ##### Stade Municipal Alain Mimoun
 
 
@@ -42,7 +44,9 @@ slide:
   - buttonTitle: Inscription
     buttonLink: https://institutarchedenoe.fr/inscription
     showButton: true
-    title: Inscriptions 2022 - 2023
+    title: |-
+      Inscriptions 
+      2022 - 2023
     subTitle: 3 juillet 2022 de 10h00 à 19h00
     content: Langue Arabe, Coran & Sciences Islamiques pour Adultes & Enfants
     clearText: true
