@@ -65,6 +65,7 @@ collections:
           - label: "Slide"
             name: "slide"
             minimize_collapsed: false
+            summary: '{{fields.title}}'
             widget: "list"
             min: 0
             max: 7
@@ -77,23 +78,30 @@ collections:
                 hint: "Afficher le slide"
               }
               - {
+                label: "Texte claire",
+                name: "clearText",
+                widget: "boolean",
+                default: false,
+                hint: "Afficher le texte claire"
+              }
+              - {
                 label: "Titre",
                 name: "title",
-                widget: "string",
+                widget: "text",
                 hint: "Indiquer le titre a afficher dans le slide.",
                 required: true,
               }
               - {
                 label: "Sous titre",
                 name: "subTitle",
-                widget: "string",
+                widget: "text",
                 hint: "Indiquer le sous titre a afficher dans le slide.",
                 required: true,
               }
               - {
                 label: "Texte du slider",
                 name: "content",
-                widget: "string",
+                widget: "markdown",
                 hint: "Indiquer le texte a afficher dans le slide.",
                 required: true,
               }
@@ -117,12 +125,14 @@ collections:
                 name: "buttonTitle",
                 widget: "string",
                 hint: "Indiquer le texte a afficher dans le boutton.",
+                required: false,
               }
               - {
                 label: "Lien du bouton",
                 name: "buttonLink",
                 widget: "string",
                 hint: "Indiquer le lien du bouton.",
+                required: false,
               }
 
 

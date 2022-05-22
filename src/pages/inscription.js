@@ -13,7 +13,7 @@ const Inscription = () => {
       <Helmet>
         <title>Inscription | Arche de noé</title>
       </Helmet>
-      <Header />
+      {/* <Header /> */}
       <SubHeader />
       <img
         src={waves}

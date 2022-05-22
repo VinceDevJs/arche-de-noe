@@ -62,6 +62,8 @@ export const Container = styled.div`
   animation: lightboxin 0.3s;
   overflow: auto;
   transition: opacity 0.3s;
+
+
   @keyframes lightboxin {
     from {
       opacity: 0;

@@ -69,7 +69,7 @@ const ProductTemplate = ({ data, path }) => {
 
   const productSelectQuantity = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const [quantity, setQuantity] = useState(1)
-  console.log(path)
+  // console.log(path)
   return (
     <DefaultLayout>
       <Container>

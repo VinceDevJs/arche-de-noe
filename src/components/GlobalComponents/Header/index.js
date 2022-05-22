@@ -17,36 +17,39 @@ const Index = () => {
   return (
     <>
       <Nav>
-        <li>
-          <Link to='/'>Accueil</Link>
-        </li>
-        <li>
-          <Link to='/formation'>Formation</Link>
-        </li>
-        <li>
-          <Link to='/inscription'>Inscription</Link>
-        </li>
-        <li>
-          <Link to='/nos-ouvrages'>Nos ouvrages</Link>
-        </li>
-        <li>
+        <div>
           <Link to='/'>
             <Logo src={logoHeader} alt='arche de noe' />
           </Link>
-        </li>
-        <li>
-          <Link to='/emploi-du-temps'>Emploi du temps</Link>
-        </li>
-        <li>
-          <Link to='/contact'>Contact</Link>
-        </li>
-        <li>
-          <Button href='http://intranet2.institutarchedenoe.fr/ekattor/'>Se connecter</Button>
-        </li>
-        <CartContainer className='snipcart-checkout'>
-          <CartIcon src={cartIcon} />
-          {cartQuantity > 0 ? <CartQuantity>{cartQuantity}</CartQuantity> : ''}
-        </CartContainer>
+        </div>
+
+        <LinkBox>
+          <li>
+            <Link to='/'>Accueil</Link>
+          </li>
+          <li>
+            <Link to='/formation'>Formation</Link>
+          </li>
+          <li>
+            <Link to='/inscription'>Inscription</Link>
+          </li>
+          <li>
+            <Link to='/nos-ouvrages'>Nos ouvrages</Link>
+          </li>
+          <li>
+            <Link to='/emploi-du-temps'>Emploi du temps</Link>
+          </li>
+          <li>
+            <Link to='/contact'>Contact</Link>
+          </li>
+          <li>
+            <Button href='http://intranet2.institutarchedenoe.fr/ekattor/'>Mon espace</Button>
+          </li>
+          <CartContainer className='snipcart-checkout'>
+            <CartIcon src={cartIcon} />
+            {cartQuantity > 0 ? <CartQuantity>{cartQuantity}</CartQuantity> : ''}
+          </CartContainer>
+        </LinkBox>
       </Nav>
       <NavMobile>
         <Link to='/'>
@@ -60,11 +63,11 @@ const Index = () => {
 export default Index
 
 export const Logo = styled.img`
-  height: 5.4em;
-  width: 5em;
+  height: 4em;
+  width: 4em;
 `
 
-export const Nav = styled.ul`
+export const Nav = styled.div`
   display: flex;
   flex-direction: row;
   height: 5em;
@@ -89,6 +92,13 @@ export const Nav = styled.ul`
   }
 `
 
+export const LinkBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+`
+
 export const NavMobile = styled.div`
   @media (max-width: ${breakpoints.l}px) {
     height: 6em;
@@ -107,20 +117,18 @@ export const LogoMobile = styled.img`
 `
 
 export const Button = styled.a`
-  background-color: ${primaryColor};
-  color: white!important;
+  color: ${primaryColor}!important;
   border-radius: 40px;
   padding: 2px 25px;
   line-height: 1;
   font-size: 1em;
   text-decoration: none;
-  border: 2px solid transparent;
+  border: 2px solid ${primaryColor};
   font-family: 'Avenir Next Bold Demi',serif;
 
   :hover {
-    background-color: transparent;
-    border: 2px solid ${secondaryColor};
-    color: ${secondaryColor}!important;
+    background-color: ${primaryColor};
+    color: white!important;
     cursor: pointer;
   }
 `

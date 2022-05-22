@@ -4,6 +4,46 @@ schema {
     query: Query
 }
 
+"Add date formatting options."
+directive @dateformat(difference: String, formatString: String, fromNow: Boolean, locale: String) on FIELD_DEFINITION
+
+"Link to node by foreign-key relation."
+directive @link(by: String! = "id", from: String, on: String) on FIELD_DEFINITION
+
+"Link to File node by relative path."
+directive @fileByRelativePath(from: String) on FIELD_DEFINITION
+
+"Proxy resolver from another field."
+directive @proxy(from: String!, fromNode: Boolean! = false) on FIELD_DEFINITION
+
+"Infer field types from field values."
+directive @infer on OBJECT
+
+"Do not infer field types from field values."
+directive @dontInfer on OBJECT
+
+"Define the mime-types handled by this type."
+directive @mimeTypes(
+    "The mime-types handled by this type."
+    types: [String!]! = []
+) on OBJECT
+
+"Define parent-child relations between types. This is used to add `child*` and `children*` convenience fields like `childImageSharp`."
+directive @childOf(
+    "A list of mime-types this type is a child of. Usually these are the mime-types handled by a transformer plugin."
+    mimeTypes: [String!]! = [],
+    "A list of types this type is a child of. Usually these are the types handled by a transformer plugin."
+    types: [String!]! = ["File"]
+) on OBJECT
+
+"""
+
+DEPRECATED: Use interface inheritance instead, i.e. "interface Foo implements Node".
+
+Adds root query fields for an interface. All implementing types must also implement the Node interface.
+"""
+directive @nodeInterface on INTERFACE
+
 "Node Interface"
 interface Node {
     children: [Node!]!
@@ -46,8 +86,8 @@ type Directory implements Node {
         "Configures the locale Moment.js will use to format the date."
         locale: String
     ): Date!
-    birthtime: Date @deprecated(reason : "Use `birthTime` instead")
-    birthtimeMs: Float @deprecated(reason : "Use `birthTime` instead")
+    birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+    birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
     blksize: Int
     blocks: Int
     changeTime(
@@ -173,8 +213,8 @@ type File implements Node {
         "Configures the locale Moment.js will use to format the date."
         locale: String
     ): Date!
-    birthtime: Date @deprecated(reason : "Use `birthTime` instead")
-    birthtimeMs: Float @deprecated(reason : "Use `birthTime` instead")
+    birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+    birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
     blksize: Int
     blocks: Int
     changeTime(
@@ -536,6 +576,7 @@ type MarkdownRemarkFrontmatter {
     programme: String
     show: Boolean
     show_formation: Boolean
+    slide: [MarkdownRemarkFrontmatterSlide]
     students: Int
     subTitle: String
     sub_title: String
@@ -569,6 +610,18 @@ type MarkdownRemarkFrontmatterDayCours {
 
 type MarkdownRemarkFrontmatterImages {
     image: String
+}
+
+type MarkdownRemarkFrontmatterSlide {
+    buttonLink: String
+    buttonTitle: String
+    clearText: Boolean
+    content: String
+    image: String
+    show: Boolean
+    showButton: Boolean
+    subTitle: String
+    title: String
 }
 
 type MarkdownRemarkGroupConnection {
@@ -1006,94 +1059,94 @@ enum FileFieldsEnum {
     blksize
     blocks
     changeTime
-    childImageSharp___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fixed___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___original___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___original___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___original___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___resize___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___resize___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___resize___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___resize___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___resize___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childImageSharp___resize___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___excerpt @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___excerptAst @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___fileAbsolutePath @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___base64 @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___srcSet @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___srcSetWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___srcWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fixed___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___base64 @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___originalImg @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___presentationHeight @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___presentationWidth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___sizes @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___srcSet @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___srcSetWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___srcWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___fluid___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___gatsbyImageData @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___original___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___original___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___original___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childImageSharp___resize___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___fileAbsolutePath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     childMarkdownRemark___frontmatter___age
     childMarkdownRemark___frontmatter___audio
     childMarkdownRemark___frontmatter___audio___audioLink
@@ -1122,6 +1175,16 @@ enum FileFieldsEnum {
     childMarkdownRemark___frontmatter___programme
     childMarkdownRemark___frontmatter___show
     childMarkdownRemark___frontmatter___show_formation
+    childMarkdownRemark___frontmatter___slide
+    childMarkdownRemark___frontmatter___slide___buttonLink
+    childMarkdownRemark___frontmatter___slide___buttonTitle
+    childMarkdownRemark___frontmatter___slide___clearText
+    childMarkdownRemark___frontmatter___slide___content
+    childMarkdownRemark___frontmatter___slide___image
+    childMarkdownRemark___frontmatter___slide___show
+    childMarkdownRemark___frontmatter___slide___showButton
+    childMarkdownRemark___frontmatter___slide___subTitle
+    childMarkdownRemark___frontmatter___slide___title
     childMarkdownRemark___frontmatter___students
     childMarkdownRemark___frontmatter___subTitle
     childMarkdownRemark___frontmatter___sub_title
@@ -1131,132 +1194,132 @@ enum FileFieldsEnum {
     childMarkdownRemark___frontmatter___templateKey
     childMarkdownRemark___frontmatter___thumbnail
     childMarkdownRemark___frontmatter___title
-    childMarkdownRemark___headings @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___headings___depth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___headings___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___headings___value @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___html @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___htmlAst @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___html @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___htmlAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     childMarkdownRemark___id
-    childMarkdownRemark___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___rawMarkdownBody @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___tableOfContents @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___timeToRead @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___wordCount___paragraphs @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___wordCount___sentences @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childMarkdownRemark___wordCount___words @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___rawMarkdownBody @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___timeToRead @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childMarkdownRemark___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     children
     childrenImageSharp
-    childrenImageSharp___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fixed___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___original___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___original___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___original___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___resize___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___resize___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___resize___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___resize___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___resize___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenImageSharp___resize___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___base64 @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___srcSet @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___srcSetWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___srcWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fixed___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___base64 @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___originalImg @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___presentationHeight @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___presentationWidth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___sizes @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___srcSet @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___srcSetWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___srcWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___fluid___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___gatsbyImageData @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___original___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___original___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___original___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___resize___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___resize___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___resize___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___resize___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___resize___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenImageSharp___resize___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     childrenMarkdownRemark
-    childrenMarkdownRemark___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___excerpt @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___excerptAst @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___fileAbsolutePath @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___fileAbsolutePath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     childrenMarkdownRemark___frontmatter___age
     childrenMarkdownRemark___frontmatter___audio
     childrenMarkdownRemark___frontmatter___audio___audioLink
@@ -1285,6 +1348,16 @@ enum FileFieldsEnum {
     childrenMarkdownRemark___frontmatter___programme
     childrenMarkdownRemark___frontmatter___show
     childrenMarkdownRemark___frontmatter___show_formation
+    childrenMarkdownRemark___frontmatter___slide
+    childrenMarkdownRemark___frontmatter___slide___buttonLink
+    childrenMarkdownRemark___frontmatter___slide___buttonTitle
+    childrenMarkdownRemark___frontmatter___slide___clearText
+    childrenMarkdownRemark___frontmatter___slide___content
+    childrenMarkdownRemark___frontmatter___slide___image
+    childrenMarkdownRemark___frontmatter___slide___show
+    childrenMarkdownRemark___frontmatter___slide___showButton
+    childrenMarkdownRemark___frontmatter___slide___subTitle
+    childrenMarkdownRemark___frontmatter___slide___title
     childrenMarkdownRemark___frontmatter___students
     childrenMarkdownRemark___frontmatter___subTitle
     childrenMarkdownRemark___frontmatter___sub_title
@@ -1294,41 +1367,41 @@ enum FileFieldsEnum {
     childrenMarkdownRemark___frontmatter___templateKey
     childrenMarkdownRemark___frontmatter___thumbnail
     childrenMarkdownRemark___frontmatter___title
-    childrenMarkdownRemark___headings @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___headings___depth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___headings___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___headings___value @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___html @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___htmlAst @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___html @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___htmlAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     childrenMarkdownRemark___id
-    childrenMarkdownRemark___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___rawMarkdownBody @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___tableOfContents @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___timeToRead @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___wordCount___paragraphs @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___wordCount___sentences @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    childrenMarkdownRemark___wordCount___words @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___rawMarkdownBody @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___timeToRead @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    childrenMarkdownRemark___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     children___children
     children___children___children
     children___children___children___children
@@ -1484,124 +1557,124 @@ enum ImagePlaceholder {
 }
 
 enum ImageSharpFieldsEnum {
-    children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fixed___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    original___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    original___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    original___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    resize___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    resize___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    resize___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    resize___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    resize___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    resize___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___base64 @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___srcSet @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___srcSetWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___srcWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fixed___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___base64 @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___originalImg @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___presentationHeight @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___presentationWidth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___sizes @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___srcSet @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___srcSetWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___srcWebp @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fluid___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    gatsbyImageData @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    original___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    original___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    original___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___aspectRatio @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___height @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___originalName @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___src @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___tracedSVG @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    resize___width @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
 }
 
 enum MarkdownExcerptFormats {
@@ -1620,48 +1693,48 @@ enum MarkdownHeadingLevels {
 }
 
 enum MarkdownRemarkFieldsEnum {
-    children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    children___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    excerpt @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    excerptAst @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    fileAbsolutePath @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    children___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    excerptAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    fileAbsolutePath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     frontmatter___age
     frontmatter___audio
     frontmatter___audio___audioLink
@@ -1696,6 +1769,16 @@ enum MarkdownRemarkFieldsEnum {
     frontmatter___programme
     frontmatter___show
     frontmatter___show_formation
+    frontmatter___slide
+    frontmatter___slide___buttonLink
+    frontmatter___slide___buttonTitle
+    frontmatter___slide___clearText
+    frontmatter___slide___content
+    frontmatter___slide___image
+    frontmatter___slide___show
+    frontmatter___slide___showButton
+    frontmatter___slide___subTitle
+    frontmatter___slide___title
     frontmatter___students
     frontmatter___subTitle
     frontmatter___sub_title
@@ -1705,65 +1788,65 @@ enum MarkdownRemarkFieldsEnum {
     frontmatter___templateKey
     frontmatter___thumbnail
     frontmatter___title
-    headings @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    headings___depth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    headings___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    headings___value @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    html @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    htmlAst @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    headings___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    html @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    htmlAst @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
     id
-    internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    parent___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    rawMarkdownBody @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    tableOfContents @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    timeToRead @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    wordCount___paragraphs @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    wordCount___sentences @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-    wordCount___words @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    parent___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    rawMarkdownBody @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    timeToRead @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+    wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
 }
 
 enum PotraceTurnPolicy {
@@ -2316,6 +2399,12 @@ enum SortOrderEnum {
     DESC
 }
 
+"A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar Date
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
+
 input AVIFOptions {
     lossless: Boolean
     quality: Int
@@ -2646,6 +2735,7 @@ input MarkdownRemarkFrontmatterFilterInput {
     programme: StringQueryOperatorInput
     show: BooleanQueryOperatorInput
     show_formation: BooleanQueryOperatorInput
+    slide: MarkdownRemarkFrontmatterSlideFilterListInput
     students: IntQueryOperatorInput
     subTitle: StringQueryOperatorInput
     sub_title: StringQueryOperatorInput
@@ -2663,6 +2753,22 @@ input MarkdownRemarkFrontmatterImagesFilterInput {
 
 input MarkdownRemarkFrontmatterImagesFilterListInput {
     elemMatch: MarkdownRemarkFrontmatterImagesFilterInput
+}
+
+input MarkdownRemarkFrontmatterSlideFilterInput {
+    buttonLink: StringQueryOperatorInput
+    buttonTitle: StringQueryOperatorInput
+    clearText: BooleanQueryOperatorInput
+    content: StringQueryOperatorInput
+    image: StringQueryOperatorInput
+    show: BooleanQueryOperatorInput
+    showButton: BooleanQueryOperatorInput
+    subTitle: StringQueryOperatorInput
+    title: StringQueryOperatorInput
+}
+
+input MarkdownRemarkFrontmatterSlideFilterListInput {
+    elemMatch: MarkdownRemarkFrontmatterSlideFilterInput
 }
 
 input MarkdownRemarkSortInput {
@@ -2900,10 +3006,3 @@ input TransformOptions {
 input WebPOptions {
     quality: Int
 }
-
-
-"A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
-scalar Date
-
-"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
-scalar JSON

@@ -2,19 +2,24 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { Link } from 'gatsby'
 import booksSvg from '../../assets/images/home/block1/books.png'
-import logoSvg from '../../assets/images/home/block1/logo.svg'
-import wavesBackground from '../../assets/images/home/block1/waves.png'
+import logo from '../../assets/images/home/block1/logo.png'
+// import wavesBackground from '../../assets/images/home/block1/waves.png'
 import { breakpoints, secondaryColor } from '../../utils/styles'
 
 const Block1 = () => {
   return (
     <Container>
-      <Waves src={wavesBackground} alt='arche de noe' />
+      {/* <Waves src={wavesBackground} alt='arche de noe' /> */}
       <LeftBox data-aos='fade-right' data-aos-duration='3000'>
-        <Logo src={logoSvg} />
+        <Logo src={logo} />
+        <TopTitle>institut</TopTitle>
         <Title>L'Arche de Noé</Title>
         <Text>
-          L’institut l’Arche de Noé dispense des cours d’arabe et de culture islamique pour enfants et adultes
+          L’Institut l’arche de Noé dispense
+          <Bold>
+            &nbsp;des cours d’arabe et de culture islamique&nbsp;
+          </Bold>
+          pour enfants et adultes.
         </Text>
         <Button to='#block3'>En savoir plus</Button>
       </LeftBox>
@@ -28,12 +33,11 @@ const Block1 = () => {
 export default Block1
 
 export const Container = styled.div`
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5em 0em 2em 3em;
-  height: 34em;
+  padding: 5em 0 2em 3em;
+  height: 28em;
 
   @media (max-width: ${breakpoints.m}px) {
     flex-direction: column;
@@ -63,14 +67,24 @@ export const LeftBox = styled.div`
 `
 
 export const Logo = styled.img`
-  width: 180px;
+  width: 120px;
 `
+
+export const TopTitle = styled.p`
+  font-size: 1.1em;
+  font-family: Futurist,serif;
+  color: #666666;
+  margin: .9em 0 0;
+  text-transform: uppercase;
+  letter-spacing: .9em;
+`
+
 export const Title = styled.h2`
   font-family: 'Avenir Next Bold', sans-serif;
-  color: #007cad;
+  color: #00A1C6;
   font-size: 3.2em;
   font-weight: bold;
-  margin: 0.2em 0;
+  margin: 0 0 0.5em;
   text-align: center;
 
   @media (max-width: ${breakpoints.l}px) {
@@ -87,6 +101,11 @@ export const Text = styled.p`
   @media (max-width: ${breakpoints.m}px) {
     width: 80%;
   }
+`
+
+export const Bold = styled.span`
+  font-weight: bold;
+  margin: 0;
 `
 
 export const Button = styled(Link)`
@@ -111,11 +130,11 @@ export const Button = styled(Link)`
 export const RightBox = styled.div`
   width: 65%;
   max-width: 800px;
+  padding-left: 3em;
   right: 0;
-  z-index: 10;
 
   @media (max-width: ${breakpoints.m}px) {
-    width: 80%;
+    width: 65%;
     margin-top: 2em;
     margin-left: 3.5em;
   }
@@ -126,8 +145,8 @@ export const RightBox = styled.div`
 `
 
 export const BookImage = styled.img`
-  width: 100%;
-  margin-top: 1em;
+  width: 86%;
+  margin-top: 0;
   animation: MoveUpDown 3s linear infinite;
   left: 0;
   bottom: 0;

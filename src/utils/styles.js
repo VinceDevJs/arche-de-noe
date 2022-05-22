@@ -41,12 +41,9 @@ export const GlobalStyle = () => (
         scroll-behavior: smooth;
         margin: 0;
       }
-
-      .test {
-      }
-
-      .image-gallery {
-        width: 100% !important;
+      
+      .swiper-pagination-bullet-active {
+        background: #00a0c5;
       }
 
       .image-gallery-bullets .image-gallery-bullets-container {
