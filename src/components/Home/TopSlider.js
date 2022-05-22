@@ -60,25 +60,27 @@ const TopSlider = () => {
       </SwiperSlide>
 
       {
-        slides.map(slide => (
-          <SwiperSlide key={slide.title}>
-            <SlideContainer>
-              <ContentBox color={slide.clearText}>
-                <Title>{slide.title}</Title>
-                <Separator color={slide.clearText} />
-                <SubTitle>{slide.subTitle}</SubTitle>
-                <Content>{slide.content}</Content>
-                {slide.showButton && (
-                  <Button color={slide.clearText} href={slide.buttonLink}>
-                    {slide.buttonTitle}
-                  </Button>
-                )}
-              </ContentBox>
+        slides.map(slide => {
+          return slide.show && (
+            <SwiperSlide key={slide.title}>
+              <SlideContainer>
+                <ContentBox color={slide.clearText}>
+                  <Title>{slide.title}</Title>
+                  <Separator color={slide.clearText} />
+                  <SubTitle>{slide.subTitle}</SubTitle>
+                  <Content>{slide.content}</Content>
+                  {slide.showButton && (
+                    <Button color={slide.clearText} href={slide.buttonLink}>
+                      {slide.buttonTitle}
+                    </Button>
+                  )}
+                </ContentBox>
 
-              <BackgroundImage src={slide.image} alt='arche de noe slider' />
-            </SlideContainer>
-          </SwiperSlide>
-        ))
+                <BackgroundImage src={slide.image} alt='arche de noe slider' />
+              </SlideContainer>
+            </SwiperSlide>
+          )
+        })
       }
 
     </Swiper>
