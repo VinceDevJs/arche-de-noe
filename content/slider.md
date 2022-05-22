@@ -34,4 +34,13 @@ slide:
 
       ***\*Les dates et créneaux horaires vous seront communiqués dans les groupes Whatsapp des différentes classes***
     image: /img/asset-16.png
+  - buttonTitle: Inscription
+    buttonLink: https://institutarchedenoe.fr/inscription
+    showButton: true
+    title: Inscriptions 2022 - 2023
+    subTitle: 3 juillet 2022 de 10h00 à 19h00
+    content: Langue Arabe, Coran & Sciences Islamiques pour Adultes & Enfants
+    clearText: true
+    image: /img/asset-17.png
+    show: true
 ---
