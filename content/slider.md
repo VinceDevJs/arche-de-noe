@@ -23,7 +23,7 @@ slide:
     clearText: false
     image: /img/fichier-18.png
     show: false
-  - show: true
+  - show: false
     clearText: false
     showButton: false
     title: |-
