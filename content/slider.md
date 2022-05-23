@@ -20,9 +20,9 @@ slide:
 
 
       ##### **rue Léo Lagrange 93440 Dugny**
-    clearText: true
+    clearText: false
     image: /img/fichier-18.png
-    show: true
+    show: false
   - show: true
     clearText: false
     showButton: false
