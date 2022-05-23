@@ -46,7 +46,7 @@ slide:
     showButton: true
     title: |-
       Inscriptions 
-      2022 - 2023
+      2022_2023
     subTitle: 3 juillet 2022 de 11h00 à 19h00
     content: Langue Arabe, Coran & Sciences Islamiques pour Adultes & Enfants
     clearText: true
