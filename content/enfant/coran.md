@@ -7,7 +7,7 @@ day:
     cours:
       - curse name: Coran Mémo
         level: intensif
-        curse hour: 18:00 - 20:00
+        curse hour: 17:30 - 19:30
         room: Salle N°1
         curse link: coran-enfant-mmo-intensif
   - show: true
@@ -43,7 +43,7 @@ day:
       - curse name: Coran Mémo
         level: intensif
         title: ""
-        curse hour: 18:00 - 20:00
+        curse hour: 17:30 - 19:30
         room: Salle N°1
         curse link: coran-enfant-mmo-intensif
   - show: true
