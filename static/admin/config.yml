@@ -538,6 +538,10 @@ collections:
         options:
           [
             "vide",
+            "Éveil +",
+            "Lecture +",
+            "Lecture C",
+            "Nouraniya",
             "Eveil",
             "Niv.Cp",
             "Niv.1",
