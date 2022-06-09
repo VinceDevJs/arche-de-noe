@@ -2,17 +2,11 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import BooksImg from './../../assets/images/home/block3-bis/books.png'
-import waves from './../../assets/images/formation/waves_2.png'
 import { breakpoints } from '../../utils/styles.js'
 
 const Block3Bis = () => {
   return (
     <Container id='block3'>
-      <img
-        src={waves}
-        style={{ width: '100%', marginBottom: '2.5em', position: 'absolute', top: '0', left: '0' }}
-        alt=''
-      />
       <BlockLeft data-aos='fade-right' data-aos-duration='3000'>
         <Image src={BooksImg} alt='arche de noe' />
       </BlockLeft>
@@ -22,7 +16,7 @@ const Block3Bis = () => {
         <Title style={{ color: '#007CAD' }}>d’enseignement</Title>
         <Separator />
         <Text>L’Institut l’Arche de Noé a développé au fil des années une réelle expertise dans différents domaines d’enseignement relatif à la langue arabe et à la culture islamique.</Text>
-        <Button to='#matieres'>Les matières enseignées</Button>
+        <Button to='#matieres'>Les matières</Button>
       </BlockRight>
     </Container>
   )
@@ -124,7 +118,7 @@ export const Button = styled(Link)`
   color: #00A1C6;
   font-size: 1.1em;
   font-family: 'Avenir Next Bold',serif ;
-  padding: 0.3em 2em;
+  padding: 0.3em 2.5em;
   
   :hover {
     background-color: #00A1C6;

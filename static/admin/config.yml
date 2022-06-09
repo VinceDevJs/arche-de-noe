@@ -57,84 +57,83 @@ collections:
         file: "/content/slider.md"
         fields:
           - {
-            label: "Template Key",
-            name: "templateKey",
-            widget: "hidden",
-            default: "slider"
-          }
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "slider",
+            }
           - label: "Slide"
             name: "slide"
             minimize_collapsed: false
-            summary: '{{fields.title}}'
+            summary: "{{fields.title}}"
             widget: "list"
             min: 0
             max: 7
             fields:
               - {
-                label: "Affiche",
-                name: "show",
-                widget: "boolean",
-                default: false,
-                hint: "Afficher le slide"
-              }
+                  label: "Affiche",
+                  name: "show",
+                  widget: "boolean",
+                  default: false,
+                  hint: "Afficher le slide",
+                }
               - {
-                label: "Texte claire",
-                name: "clearText",
-                widget: "boolean",
-                default: false,
-                hint: "Afficher le texte claire"
-              }
+                  label: "Texte claire",
+                  name: "clearText",
+                  widget: "boolean",
+                  default: false,
+                  hint: "Afficher le texte claire",
+                }
               - {
-                label: "Titre",
-                name: "title",
-                widget: "text",
-                hint: "Indiquer le titre a afficher dans le slide.",
-                required: true,
-              }
+                  label: "Titre",
+                  name: "title",
+                  widget: "text",
+                  hint: "Indiquer le titre a afficher dans le slide.",
+                  required: true,
+                }
               - {
-                label: "Sous titre",
-                name: "subTitle",
-                widget: "text",
-                hint: "Indiquer le sous titre a afficher dans le slide.",
-                required: true,
-              }
+                  label: "Sous titre",
+                  name: "subTitle",
+                  widget: "text",
+                  hint: "Indiquer le sous titre a afficher dans le slide.",
+                  required: true,
+                }
               - {
-                label: "Texte du slider",
-                name: "content",
-                widget: "markdown",
-                hint: "Indiquer le texte a afficher dans le slide.",
-                required: true,
-              }
+                  label: "Texte du slider",
+                  name: "content",
+                  widget: "markdown",
+                  hint: "Indiquer le texte a afficher dans le slide.",
+                  required: true,
+                }
               - {
-                label: "Image",
-                name: "image",
-                widget: "image",
-                allow_multiple: false,
-                choose_url: false,
-                hint: "Sélectionner une image"
-              }
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  allow_multiple: false,
+                  choose_url: false,
+                  hint: "Sélectionner une image",
+                }
               - {
-                label: "Affiché le bouton",
-                name: "showButton",
-                widget: "boolean",
-                default: false,
-                hint: "Afficher le bouton"
-              }
+                  label: "Affiché le bouton",
+                  name: "showButton",
+                  widget: "boolean",
+                  default: false,
+                  hint: "Afficher le bouton",
+                }
               - {
-                label: "Texte du bouton",
-                name: "buttonTitle",
-                widget: "string",
-                hint: "Indiquer le texte a afficher dans le boutton.",
-                required: false,
-              }
+                  label: "Texte du bouton",
+                  name: "buttonTitle",
+                  widget: "string",
+                  hint: "Indiquer le texte a afficher dans le boutton.",
+                  required: false,
+                }
               - {
-                label: "Lien du bouton",
-                name: "buttonLink",
-                widget: "string",
-                hint: "Indiquer le lien du bouton.",
-                required: false,
-              }
-
+                  label: "Lien du bouton",
+                  name: "buttonLink",
+                  widget: "string",
+                  hint: "Indiquer le lien du bouton.",
+                  required: false,
+                }
 
   - label: "Planning Enfant"
     name: "enfant"
@@ -631,7 +630,6 @@ collections:
           hint: "Indiquez les ouvrages utilisez.",
         }
 
-
   - label: "Livres Audio"
     name: "audioBook"
     folder: "content/audio-book"
@@ -641,26 +639,26 @@ collections:
       preview: false
     fields:
       - {
-        label: "Nom du livre",
-        name: "bookTitle",
-        widget: "string",
-        hint: "Indiquer le nom du livre.",
-        required: true,
-      }
+          label: "Nom du livre",
+          name: "bookTitle",
+          widget: "string",
+          hint: "Indiquer le nom du livre.",
+          required: true,
+        }
       - label: "Image du livre"
         name: "thumbnail"
         widget: "image"
         choose_url: true
-        media_folder: '/static/img/audio_books/'
+        media_folder: "/static/img/audio_books/"
         media_library:
           config:
             multiple: false
       - {
-        label: "Template Key",
-        name: "templateKey",
-        widget: "hidden",
-        default: "audioBook",
-      }
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "audioBook",
+        }
       - label: "Audio"
         name: "audio"
         minimize_collapsed: false
@@ -676,4 +674,4 @@ collections:
             name: "audioLink"
             widget: "string"
             required: true
-            hint: "Indiquer le lien de l'audio ex: src=\"ici\""
+            hint: 'Indiquer le lien de l''audio ex: src="ici"'

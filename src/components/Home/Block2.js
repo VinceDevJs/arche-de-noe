@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+
+import wave from '../../assets/images/home/block4/waves_3.png'
 import booksIcon from '../../assets/images/home/block2/books.png'
 import penIcon from '../../assets/images/home/block2/pen.png'
 import professorsIcon from '../../assets/images/home/block2/professors.png'
@@ -33,6 +35,7 @@ const Block2 = () => {
   const numbersData = numbers.allMarkdownRemark.edges[0].node.frontmatter
   return (
     <Container>
+      <Wave src={wave} />
       <Box data-aos='fade-down' data-aos-delay='100' data-aos-duration='1000'>
         <TextBox color='true'>
           <Number>{numbersData.students}</Number>
@@ -76,10 +79,11 @@ export default Block2
 
 export const Container = styled.div`
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12em;
+  padding: 0 8em;
   height: 17em;
   background-color: #00a1c6;
 
@@ -205,4 +209,12 @@ export const LastIcon = styled(Icon)`
 export const LastText = styled(Text)`
   color: white;
   line-height: 1.1;
+`
+
+export const Wave = styled.img`
+  position: absolute;
+  opacity: .4;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 `
