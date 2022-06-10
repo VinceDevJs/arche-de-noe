@@ -16,66 +16,75 @@ const Matieres = () => {
       <Title style={{ color: '#049fc5' }}>Les matières enseignées</Title>
       <Title style={{ color: '#007CAD', marginBottom: '1.5em' }}>au sein de l’institut</Title>
 
-      <ContentBox>
+      <ContentBox
+        data-aos='fade-right'
+        data-aos-delay='200'
+        data-aos-duration='2000'
+      >
         <ContentTitle>
-            La langue <br /> arabe
+          La langue <br /> arabe
         </ContentTitle>
 
         <Separator />
 
         <ContentIconContainer>
-            <IconBox>
-                <ContentIcon>
-                    <img src={arabicIcon} alt="" />
-                </ContentIcon>
-                <ContentIconText> Alphabétisation </ContentIconText>
-            </IconBox>
+          <IconBox>
+            <ContentIcon>
+              <img src={arabicIcon} alt='' />
+            </ContentIcon>
+            <ContentIconText> Alphabétisation </ContentIconText>
+          </IconBox>
 
-            <IconBox>
-                <ContentIcon>
-                    <img src={handIcon} alt="" />
-                </ContentIcon>
-                <ContentIconText> Grammaire </ContentIconText>
-            </IconBox>
+          <IconBox>
+            <ContentIcon>
+              <img src={handIcon} alt='' />
+            </ContentIcon>
+            <ContentIconText> Grammaire </ContentIconText>
+          </IconBox>
 
-            <IconBox>
-                <ContentIcon>
-                    <img src={booksIcon} alt="" />
-                </ContentIcon>
-                <ContentIconText> Conjugaison </ContentIconText>
-            </IconBox>
+          <IconBox>
+            <ContentIcon>
+              <img src={booksIcon} alt='' />
+            </ContentIcon>
+            <ContentIconText> Conjugaison </ContentIconText>
+          </IconBox>
         </ContentIconContainer>
 
       </ContentBox>
 
-      <ContentBox dark="true">
-        <ContentTitle dark="true">
-            Les sciences <br /> Islamiques
+      <ContentBox
+        data-aos='fade-left'
+        data-aos-delay='200'
+        data-aos-duration='2000'
+        dark='true'
+      >
+        <ContentTitle dark='true'>
+          Les sciences <br /> Islamiques
         </ContentTitle>
 
         <Separator />
 
         <ContentIconContainer>
-            <IconBox>
-                <ContentIcon>
-                    <img style={{ height: '4.7em', width: '4em' }} src={quranIcon} alt="" />
-                </ContentIcon>
-                <ContentIconText dark="true"> Coran </ContentIconText>
-            </IconBox>
+          <IconBox>
+            <ContentIcon>
+              <img style={{ height: '4.7em', width: '4em' }} src={quranIcon} alt='' />
+            </ContentIcon>
+            <ContentIconText dark='true'> Coran </ContentIconText>
+          </IconBox>
 
-            <IconBox>
-                <ContentIcon>
-                    <img style={{ width: '6em' }} src={salatIcon} alt="" />
-                </ContentIcon>
-                <ContentIconText dark="true"> Jurisprudence <br /> (Fiqh) </ContentIconText>
-            </IconBox>
+          <IconBox>
+            <ContentIcon>
+              <img style={{ width: '6em' }} src={salatIcon} alt='' />
+            </ContentIcon>
+            <ContentIconText dark='true'> Jurisprudence <br /> (Fiqh) </ContentIconText>
+          </IconBox>
 
-            <IconBox>
-                <ContentIcon>
-                    <img style={{ width: '4.3em' }} src={hadithIcon} alt="" />
-                </ContentIcon>
-                <ContentIconText dark="true"> Sciences du <br /> hadith </ContentIconText>
-            </IconBox>
+          <IconBox>
+            <ContentIcon>
+              <img style={{ width: '4.3em' }} src={hadithIcon} alt='' />
+            </ContentIcon>
+            <ContentIconText dark='true'> Sciences du <br /> hadith </ContentIconText>
+          </IconBox>
         </ContentIconContainer>
 
       </ContentBox>
@@ -90,7 +99,7 @@ const Matieres = () => {
 export default Matieres
 
 export const Container = styled.div`
-  margin: 0 auto 4em auto;
+  margin: 0 auto 8em auto;
 
   @media (max-width: ${breakpoints.m}px) {
   }
