@@ -4,7 +4,7 @@ show_formation: true
 templateKey: formation
 thumbnail: /img/images_formations-03.png
 subjects: Coran
-sub_title: Eveil
+sub_title: Éveil +
 price: 200
 discipline: coran
 age: Maternelles
