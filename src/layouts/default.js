@@ -4,8 +4,8 @@ import { GlobalStyle } from '../utils/styles'
 import Header from '../components/GlobalComponents/Header'
 import BurgerMenu from '../components/GlobalComponents/Header/BurgerMenu'
 import PushUp from '../components/pushUp'
-import Block6 from '../components/Home/Block6'
-import PopUp from '../components/GlobalComponents/PopUp'
+import Block6Bis from '../components/Home/Block6Bis'
+// import PopUp from '../components/GlobalComponents/PopUp'
 
 const DefaultLayout = ({ children }) => {
   return (
@@ -17,7 +17,7 @@ const DefaultLayout = ({ children }) => {
         <Header />
         {children}
         <PushUp />
-        <Block6 />
+        <Block6Bis />
         <Footer />
       </div>
     </>

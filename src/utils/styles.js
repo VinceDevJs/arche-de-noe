@@ -9,7 +9,8 @@ export const breakpoints = {
   s: 576,
   m: 825,
   l: 1025,
-  xl: 1200
+  xl: 1200,
+  xxl: 1400
 }
 
 export const primaryColor = '#00a1c6'

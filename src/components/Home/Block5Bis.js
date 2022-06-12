@@ -4,14 +4,9 @@ import { Link } from 'gatsby'
 
 import arabicIcon from '../../assets/images/home/block5/arabic.png'
 import boardIcon from '../../assets/images/home/block5/board.png'
-import booksSvg from '../../assets/images/home/block5/books_large.svg'
 import quranIcon from '../../assets/images/home/block5/quran.png'
 import salatIcon from '../../assets/images/home/block5/salat.png'
-import {
-  breakpoints,
-  primaryColor,
-  secondaryColor
-} from '../../utils/styles.js'
+import { breakpoints } from '../../utils/styles.js'
 
 const Block5Bis = () => {
   return (
