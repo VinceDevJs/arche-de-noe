@@ -4,13 +4,13 @@ show_formation: true
 templateKey: formation
 thumbnail: /img/images_formations-03.png
 subjects: Coran
-sub_title: Lecture +
+sub_title: Débutant
 price: 250
 discipline: coran
 age: Enfant
 level: Débutant
 place_avaible: 15
-prerequis: Avoir 7 ans
+prerequis: Avoir 6 ans
 objectifs: "-\tÉveil à la mémorisation du Coran \r
 
   -\tSavoir lire le Coran \r\n"
