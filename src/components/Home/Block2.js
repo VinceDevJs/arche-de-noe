@@ -39,7 +39,7 @@ const Block2 = () => {
       <Box data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
         <TextBox color="true">
           <Number>{numbersData.students}</Number>
-          <Text>Èlèves</Text>
+          <Text>Élèves</Text>
         </TextBox>
         <Icon src={studentsIcon} />
       </Box>

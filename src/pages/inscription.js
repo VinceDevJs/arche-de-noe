@@ -26,7 +26,9 @@ const Inscription = () => {
       />
       {/* <MainIncription /> */}
 
-      <Message>Bientot Disponible !</Message>
+      <Message>
+        Les inscriptions seront ouvertes à partir du 3 juillet 2022 !
+      </Message>
       {/* <img
         src={waves}
         style={{
@@ -44,9 +46,11 @@ export default Inscription
 
 export const Message = styled.p`
   display: block;
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
-  padding: 2em;
-  font-size: 3em;
+  padding: 0.5em;
+  font-size: 2.5em;
   font-family: 'Avenir Next Bold', sans-serif;
   color: #04a0c5;
 `
