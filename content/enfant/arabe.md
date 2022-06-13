@@ -82,6 +82,11 @@ day:
         curse hour: 12:00 - 15:00
         room: Salle N°3
         curse link: arabe-college-niveau-2
+      - curse name: Collège
+        curse link: arabe-collge-niveau-1
+        level: Intérmédiaire
+        curse hour: 09:00-12:00
+        room: Salle N°3
   - show: true
     daySelected: dimanche
     cours:
