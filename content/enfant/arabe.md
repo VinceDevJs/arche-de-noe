@@ -88,19 +88,19 @@ day:
       - curse name: Mater
         level: Niv.1
         title: 3 ans
-        curse hour: 08:30 - 11:00
+        curse hour: 09:00 - 11:30
         room: Salle N°4
         curse link: arabe-mater-niveau-1
       - curse name: Mater
         level: Niv.2
         title: 4 ans
-        curse hour: 11:00 - 13:30
+        curse hour: 11:30 - 14:00
         room: Salle N°4
         curse link: arabe-mater-niveau-2
       - curse name: Mater
         level: Niv.3
         title: 5 ans
-        curse hour: 13h30 - 16h00
+        curse hour: 14h00 - 16h30
         room: Salle N°4
         curse link: arabe-mater-niveau-3
       - curse name: Enfant
