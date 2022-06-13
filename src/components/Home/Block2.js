@@ -36,15 +36,15 @@ const Block2 = () => {
   return (
     <Container>
       <Wave src={wave} />
-      <Box data-aos='fade-down' data-aos-delay='100' data-aos-duration='1000'>
-        <TextBox color='true'>
+      <Box data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
+        <TextBox color="true">
           <Number>{numbersData.students}</Number>
-          <Text>élèves</Text>
+          <Text>Èlèves</Text>
         </TextBox>
         <Icon src={studentsIcon} />
       </Box>
 
-      <Box data-aos='fade-down' data-aos-delay='300' data-aos-duration='1000'>
+      <Box data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000">
         <TextBox>
           <Number>{numbersData.teachers}</Number>
           <Text>Professeurs</Text>
@@ -52,19 +52,15 @@ const Block2 = () => {
         <Icon src={professorsIcon} />
       </Box>
 
-      <Box data-aos='fade-down' data-aos-delay='500' data-aos-duration='1000'>
-        <TextBox color='true'>
+      <Box data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
+        <TextBox color="true">
           <Number>{numbersData.teachers2}</Number>
           <Text>Formations</Text>
         </TextBox>
         <Icon src={penIcon} />
       </Box>
 
-      <Box
-        data-aos='fade-down'
-        data-aos-delay='700'
-        data-aos-duration='1000'
-      >
+      <Box data-aos="fade-down" data-aos-delay="700" data-aos-duration="1000">
         <TextBox>
           <Number>{numbersData.curses}</Number>
           <Text>Cursus</Text>
@@ -83,9 +79,13 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8em;
+  padding: 0 12em;
   height: 17em;
   background-color: #00a1c6;
+
+  @media (max-width: ${breakpoints.xxl}px) {
+    padding: 0 8em;
+  }
 
   @media (max-width: ${breakpoints.l}px) {
     padding: 0 4em;
@@ -105,7 +105,7 @@ export const Container = styled.div`
 
 export const Box = styled.div`
   display: flex;
-  flex-direction: ${props => (props.column ? 'column' : 'row')};
+  flex-direction: ${(props) => (props.column ? 'column' : 'row')};
   height: 5em;
   font-family: 'Oswald';
   font-weight: 400;
@@ -122,10 +122,10 @@ export const Box = styled.div`
 
 export const TextBox = styled.div`
   display: flex;
-  flex-direction: ${props => (props.row ? 'row' : 'column')};
+  flex-direction: ${(props) => (props.row ? 'row' : 'column')};
   width: fit-content;
   margin: 0 0.2em -0.4em 0;
-  color: ${props => (props.color ? '#80edff' : 'white')};
+  color: ${(props) => (props.color ? '#80edff' : 'white')};
   text-align: right;
   justify-content: flex-end;
 `
@@ -213,7 +213,7 @@ export const LastText = styled(Text)`
 
 export const Wave = styled.img`
   position: absolute;
-  opacity: .4;
+  opacity: 0.4;
   left: 0;
   bottom: 0;
   width: 100%;

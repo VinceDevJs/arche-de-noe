@@ -5,7 +5,7 @@ import { SnipcartContext } from 'gatsby-plugin-snipcart-advanced/context'
 import {
   breakpoints,
   primaryColor,
-  secondaryColor
+  secondaryColor,
 } from '../../../utils/styles.js'
 import logoHeader from './../../../assets/icons/header/logo_header.png'
 import cartIcon from './../../../assets/icons/header/cart-icon.png'
@@ -18,42 +18,48 @@ const Index = () => {
     <>
       <Nav>
         <div>
-          <Link to='/'>
-            <Logo src={logoHeader} alt='arche de noe' />
+          <Link to="/">
+            <Logo src={logoHeader} alt="arche de noe" />
           </Link>
         </div>
 
         <LinkBox>
           <li>
-            <Link to='/'>Accueil</Link>
+            <Link to="/">Accueil</Link>
           </li>
           <li>
-            <Link to='/formation'>Formation</Link>
+            <Link to="/formation">Formation</Link>
           </li>
           <li>
-            <Link to='/inscription'>Inscription</Link>
+            <Link to="/inscription">Inscription</Link>
           </li>
           <li>
-            <Link to='/nos-ouvrages'>Nos ouvrages</Link>
+            <Link to="/nos-ouvrages">Nos ouvrages</Link>
           </li>
           <li>
-            <Link to='/emploi-du-temps'>Emploi du temps</Link>
+            <Link to="/emploi-du-temps">Emploi du temps</Link>
           </li>
           <li>
-            <Link to='/contact'>Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Button href='http://intranet2.institutarchedenoe.fr/ekattor/'>Mon espace</Button>
+            <Button href="https://interface.institutarchedenoe.fr/login.php">
+              Mon espace
+            </Button>
           </li>
-          <CartContainer className='snipcart-checkout'>
+          <CartContainer className="snipcart-checkout">
             <CartIcon src={cartIcon} />
-            {cartQuantity > 0 ? <CartQuantity>{cartQuantity}</CartQuantity> : ''}
+            {cartQuantity > 0 ? (
+              <CartQuantity>{cartQuantity}</CartQuantity>
+            ) : (
+              ''
+            )}
           </CartContainer>
         </LinkBox>
       </Nav>
       <NavMobile>
-        <Link to='/'>
-          <LogoMobile src={logoHeader} alt='arche de noe' />
+        <Link to="/">
+          <LogoMobile src={logoHeader} alt="arche de noe" />
         </Link>
       </NavMobile>
     </>
@@ -124,11 +130,11 @@ export const Button = styled.a`
   font-size: 1em;
   text-decoration: none;
   border: 2px solid ${primaryColor};
-  font-family: 'Avenir Next Bold Demi',serif;
+  font-family: 'Avenir Next Bold Demi', serif;
 
   :hover {
     background-color: ${primaryColor};
-    color: white!important;
+    color: white !important;
     cursor: pointer;
   }
 `

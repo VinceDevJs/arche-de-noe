@@ -16,31 +16,48 @@ const BurgerMenu = () => {
   // console.log(state)
   const { userStatus, cartQuantity, totalPrice } = state
 
-  const isMenuOpen = state => {
+  const isMenuOpen = (state) => {
     return setIsOpen(state.isOpen)
   }
   return (
     <div>
       <Menu
-        outerContainerId='app'
+        outerContainerId="app"
         right
-        customBurgerIcon={<img src={hamburgerIcon} alt='hamburger' />}
-        customCrossIcon={<img src={hamburgerClose} alt='hamburger' />}
-        width='60%'
+        customBurgerIcon={<img src={hamburgerIcon} alt="hamburger" />}
+        customCrossIcon={<img src={hamburgerClose} alt="hamburger" />}
+        width="60%"
         onStateChange={isMenuOpen}
         isOpen={isOpen}
       >
-        <CartContainerMobile onClick={() => setIsOpen(!isOpen)} className='snipcart-checkout'>
+        <CartContainerMobile
+          onClick={() => setIsOpen(!isOpen)}
+          className="snipcart-checkout"
+        >
           <CartIcon src={cartIcon} />
           {cartQuantity > 0 ? <CartQuantity>{cartQuantity}</CartQuantity> : ''}
         </CartContainerMobile>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/'>Accueil</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/formation'>Formation</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/emploi-du-temps'>Emploi du temps</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/nos-ouvrages'>Nos  ouvrages</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/inscription'>Inscription</LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to='/contact'>Contact</LinkText>
-        <Button href='http://intranet2.institutarchedenoe.fr/ekattor/'>Se connecter</Button>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to="/">
+          Accueil
+        </LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to="/formation">
+          Formation
+        </LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to="/emploi-du-temps">
+          Emploi du temps
+        </LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to="/nos-ouvrages">
+          Nos ouvrages
+        </LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to="/inscription">
+          Inscription
+        </LinkText>
+        <LinkText onClick={() => setIsOpen(!isOpen)} to="/contact">
+          Contact
+        </LinkText>
+        <Button href="https://interface.institutarchedenoe.fr/login.php">
+          Se connecter
+        </Button>
       </Menu>
     </div>
   )
@@ -54,7 +71,6 @@ export const LinkText = styled(Link)`
   color: ${secondaryColor};
   font-size: 1.1em;
   outline: none;
-  
 `
 
 export const Button = styled.a`
@@ -66,7 +82,7 @@ export const Button = styled.a`
   line-height: 1;
   font-size: 1em;
   border: 2px solid transparent;
-  font-family: 'Avenir Next Bold Demi',serif;
+  font-family: 'Avenir Next Bold Demi', serif;
 
   :hover {
     background-color: transparent;
