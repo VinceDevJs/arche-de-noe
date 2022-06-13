@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import styled from '@emotion/styled'
 
 import Header from '../components/Inscription/Header'
 import SubHeader from '../components/Inscription/SubHeader'
@@ -19,12 +20,14 @@ const Inscription = () => {
         src={waves}
         style={{
           width: '100%',
-          marginBottom: '5em'
+          marginBottom: '5em',
         }}
-        alt=''
+        alt=""
       />
-      <MainIncription />
-      <img
+      {/* <MainIncription /> */}
+
+      <Message>Bientot Disponible !</Message>
+      {/* <img
         src={waves}
         style={{
           width: '100%',
@@ -32,9 +35,18 @@ const Inscription = () => {
           transform: 'rotate(180deg) scaleX(-1)'
         }}
         alt=''
-      />
+      /> */}
     </DefaultLayout>
   )
 }
 
 export default Inscription
+
+export const Message = styled.p`
+  display: block;
+  text-align: center;
+  padding: 2em;
+  font-size: 3em;
+  font-family: 'Avenir Next Bold', sans-serif;
+  color: #04a0c5;
+`

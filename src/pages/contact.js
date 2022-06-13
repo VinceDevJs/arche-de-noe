@@ -19,17 +19,17 @@ const Contact = () => {
       <img
         src={waves}
         style={{ width: '100%', marginBottom: '2.5em' }}
-        alt=''
+        alt=""
       />
       <Header />
       <Map />
-      <FormTitle id='form'>
+      <FormTitle id="form">
         Une question ? Un renseignement ? c’est ici !
       </FormTitle>
       <FormSection>
         <ContactForm />
       </FormSection>
-      <img
+      {/*  <img
         src={waves}
         style={{
           width: '100%',
@@ -37,7 +37,7 @@ const Contact = () => {
           transform: 'rotate(180deg) scaleX(-1)'
         }}
         alt=''
-      />
+      /> */}
     </DefaultLayout>
   )
 }

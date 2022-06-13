@@ -13,7 +13,7 @@ const Block6 = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState(initialMessage)
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     // console.log('send')
 
@@ -26,7 +26,7 @@ const Block6 = () => {
         setTimeout(() => setMessage(initialMessage), 5000)
       } else {
         setEmail('')
-        setMessage('Une erreur s\'est produite! Recommencer')
+        setMessage("Une erreur s'est produite! Recommencer")
         setTimeout(() => setMessage(initialMessage), 5000)
       }
     })
@@ -41,17 +41,23 @@ const Block6 = () => {
       <RightBox>
         <Title>Restons en contact</Title>
         <Text>
-            Recevez l'actualité de notre institut : derniers événements, nouveaux cours, dates des inscriptions  et les infos majeures à ne pas manquer.
+          Recevez l'actualité de notre institut : derniers événements, nouveaux
+          cours, dates des inscriptions et les infos majeures à ne pas manquer.
         </Text>
 
         <Form onSubmit={handleSubmit}>
           <Input
             placeholder={message}
-            type='email'
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Button><img style={{ width: '1.8em', marginTop: '.3em' }} src={checkIcon} /></Button>
+          <Button>
+            <img
+              style={{ width: '1.8em', marginTop: '.3em' }}
+              src={checkIcon}
+            />
+          </Button>
         </Form>
       </RightBox>
     </Container>
@@ -68,6 +74,7 @@ export const Container = styled.div`
   height: 22em;
   background-color: #ebf5fa;
   padding: 0 12em;
+  margin-top: 15em;
 
   @media (max-width: ${breakpoints.xxl}px) {
     padding: 0 6em;
@@ -77,7 +84,7 @@ export const Container = styled.div`
     padding: 0 4em;
   }
 
-   @media (max-width: ${breakpoints.l}px) {
+  @media (max-width: ${breakpoints.l}px) {
     padding: 0 2em;
   }
 
@@ -165,7 +172,7 @@ export const Form = styled.form`
   flex-direction: row;
   align-items: center;
   border: 2.5px solid #007cad;
-  padding: 0 .5em 0 1em;
+  padding: 0 0.5em 0 1em;
   height: 3.2em;
   max-width: 25em;
   border-radius: 50px;
@@ -205,7 +212,7 @@ export const Input = styled.input`
   ::placeholder {
     display: block;
     color: #007cad;
-    font-size: .6em;
+    font-size: 0.6em;
   }
 
   :focus {
@@ -227,14 +234,13 @@ export const LogoImage = styled.img`
   width: 28em;
   z-index: 10;
 
-
- @media (max-width: ${breakpoints.l}px) {
-   width: 23em;
+  @media (max-width: ${breakpoints.l}px) {
+    width: 23em;
   }
 
   @media (max-width: ${breakpoints.m}px) {
-   width: 20em;
-   margin-top: -10em;
+    width: 20em;
+    margin-top: -10em;
   }
 
   @media (max-width: ${breakpoints.s}px) {
@@ -247,6 +253,6 @@ export const Img = styled.img`
   z-index: 0;
   width: 100%;
   left: 0;
-  top: ${props => (props.top ? '0' : '')};
-  bottom: ${props => (!props.top ? '0' : '')};
+  top: ${(props) => (props.top ? '0' : '')};
+  bottom: ${(props) => (!props.top ? '0' : '')};
 `

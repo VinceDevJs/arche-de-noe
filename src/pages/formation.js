@@ -13,29 +13,29 @@ import DefaultLayout from '../layouts/default'
 
 const Formation = () => {
   const data = useStaticQuery(graphql`
-      {
-          allMarkdownRemark(
-              filter: { frontmatter: { templateKey: { eq: "formation" } } }
-          ) {
-              edges {
-                  node {
-                      frontmatter {
-                          templateKey
-                          thumbnail
-                          price
-                          sub_title
-                          discipline
-                          show_formation
-                          level
-                          formation_name
-                          subjects
-                          age
-                          place_avaible
-                      }
-                  }
-              }
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "formation" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              templateKey
+              thumbnail
+              price
+              sub_title
+              discipline
+              show_formation
+              level
+              formation_name
+              subjects
+              age
+              place_avaible
+            }
           }
+        }
       }
+    }
   `)
   const formations = data.allMarkdownRemark.edges
   const [discipline, setDiscipline] = useState('arabe')
@@ -64,8 +64,12 @@ const Formation = () => {
     if (formations) {
       const result = formations
         .filter(({ node: el }) => el.frontmatter.discipline === discipline)
-        .filter(({ node: el }) => level ? el.frontmatter.level === level : el.frontmatter.level)
-        .filter(({ node: el }) => age ? el.frontmatter.age === age : el.frontmatter.age)
+        .filter(({ node: el }) =>
+          level ? el.frontmatter.level === level : el.frontmatter.level
+        )
+        .filter(({ node: el }) =>
+          age ? el.frontmatter.age === age : el.frontmatter.age
+        )
 
       setFormationFiltered(result)
     }
@@ -94,7 +98,7 @@ const Formation = () => {
         />
         <Main allFormations={formationFiltered} />
       </MainContainer>
-      <img src={waves} style={{ width: '100%', marginTop: '3.5em', transform: 'rotate(180deg) scaleX(-1)' }} alt='' />
+      {/*  <img src={waves} style={{ width: '100%', marginTop: '3.5em', transform: 'rotate(180deg) scaleX(-1)' }} alt='' /> */}
     </DefaultLayout>
   )
 }

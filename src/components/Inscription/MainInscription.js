@@ -11,7 +11,7 @@ import stepFourIcon from '../../assets/images/inscription/step-4.svg'
 
 const MainInscription = () => {
   return (
-    <Container id='main_inscription'>
+    <Container id="main_inscription">
       <Title>
         Les étapes pour m’inscrire et embarquer dans l’arche de Noé !
       </Title>
@@ -22,7 +22,7 @@ const MainInscription = () => {
         </ContentIconBox>
         <ContentText>
           Je télécharge le dossier d’inscription en cliquant{' '}
-          <ContentLinkDownload target='_blank' href={downloadPdf}>
+          <ContentLinkDownload target="_blank" href={downloadPdf}>
             <span>ici</span>
           </ContentLinkDownload>
           .
@@ -33,7 +33,7 @@ const MainInscription = () => {
         <ContentIconBox>
           <ContentIcon src={stepTwoIcon} />
         </ContentIconBox>
-        <ContentText color='true'>
+        <ContentText color="true">
           Je remplis l’intégralité des informations requises.
         </ContentText>
       </ContentBox>
@@ -44,7 +44,7 @@ const MainInscription = () => {
         </ContentIconBox>
         <ContentText>
           Je le dépose au secrétariat{' '}
-          <ContentLink to='/contact#contact'>
+          <ContentLink to="/contact#contact">
             <span>à l’adresse suivante</span>
           </ContentLink>
           .
@@ -55,19 +55,21 @@ const MainInscription = () => {
         <ContentIconBox>
           <ContentIcon src={stepFourIcon} />
         </ContentIconBox>
-        <ContentText color='true'>
+        <ContentText color="true">
           Je finalise mon inscription en réglant la cotisation.
         </ContentText>
       </ContentBox>
 
-      <Button to='/contact#form'>J’ai une question</Button>
+      <Button to="/contact#form">J’ai une question</Button>
     </Container>
   )
 }
 
 export default MainInscription
 
-export const Container = styled.div``
+export const Container = styled.div`
+  margin-bottom: 12em;
+`
 
 export const Title = styled.p`
   display: block;
@@ -127,7 +129,7 @@ export const ContentIcon = styled.img`
 
 export const ContentText = styled.p`
   font-size: 1.7em;
-  color: ${props => (!props.color ? '#00a0c5' : '#007bac')};
+  color: ${(props) => (!props.color ? '#00a0c5' : '#007bac')};
   font-family: 'Avenir Next Bold', monospace;
 
   @media (max-width: ${breakpoints.s}px) {
