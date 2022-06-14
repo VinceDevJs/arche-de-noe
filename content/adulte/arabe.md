@@ -40,8 +40,8 @@ day:
     cours:
       - curse name: Adulte
         level: Niv.5
-        curse hour: 08:00 - 12:00
-        room: Salle N°3
+        curse hour: 16:30 - 19:00
+        room: Salle N°4
         curse link: arabe-adulte-niveau-5
       - curse name: Adulte
         level: Niv.4
