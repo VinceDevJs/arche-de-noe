@@ -56,7 +56,7 @@ const BurgerMenu = () => {
           Contact
         </LinkText>
         <Button href="https://interface.institutarchedenoe.fr/login.php">
-          Se connecter
+          Mon espace
         </Button>
       </Menu>
     </div>
@@ -82,6 +82,7 @@ export const Button = styled.a`
   line-height: 1;
   font-size: 1em;
   border: 2px solid transparent;
+  text-decoration: none;
   font-family: 'Avenir Next Bold Demi', serif;
 
   :hover {
