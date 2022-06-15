@@ -5,7 +5,7 @@ templateKey: formation
 thumbnail: /img/coran-adulte-femme-débutante.png
 subjects: CORAN FEMME
 sub_title: vide
-price: 300
+price: 200
 discipline: coran
 age: Adultes
 level: Intermédiaire
