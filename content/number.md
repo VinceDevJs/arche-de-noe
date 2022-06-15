@@ -1,5 +1,5 @@
 ---
-students: 630
+students: 650
 templateKey: homeNumber
 teachers: 20
 teachers2: 30
