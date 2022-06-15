@@ -5,11 +5,16 @@ day:
   - show: true
     daySelected: lundi
     cours:
-      - curse name: Coran Femme
+      - curse name: Coran Femme Confirmé
         level: Confirmé
         curse hour: 14:00 - 17:00
         room: Salle N°1
         curse link: coran-adulte-femme-confirme
+      - curse name: Coran Femme Débutant
+        level: Débutant
+        curse hour: 18:00 - 20:00
+        room: Salle N°1
+        curse link: coran-adulte-femme-dbutant
   - show: true
     daySelected: dimanche
     cours:
