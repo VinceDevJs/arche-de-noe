@@ -24,7 +24,7 @@ day:
     daySelected: dimanche
     cours:
       - curse name: Coran Femme
-        level: Débutant
+        level: Intérmédiaire
         curse hour: 08:00 - 11:00
         room: Salle N°1
         curse link: coran-adulte-femme-dbutant
