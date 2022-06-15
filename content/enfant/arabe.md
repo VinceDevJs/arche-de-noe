@@ -85,7 +85,7 @@ day:
       - curse name: Collège
         curse link: arabe-collge-niveau-1
         level: Niv.1
-        curse hour: 09:00-12:00
+        curse hour: 09:00 -12:00
         room: Salle N°3
   - show: true
     daySelected: dimanche
