@@ -10,12 +10,7 @@ discipline: coran
 age: Adultes
 level: Débutant
 place_avaible: 25
-prerequis: |-
-  
-
-  * Connaitre les lettres de l’alphabet arabe
-  * Maîtriser la prononciation phonétique exacte de l’alphabet arabe.
-  * Connaitre les règles de lecture du Coran *(Tajwid)*
+prerequis: Aucun
 objectifs: |-
   
 
