@@ -365,6 +365,12 @@ collections:
                     "Classique",
                     "Semi-intensif",
                     "Intensif",
+                    "Lecture A",
+                    "Lecture B",
+                    "Homme",
+                    "Nouraniya",
+                    "Lecture +",
+                    "Éveil +",
                   ]
                 hint: "Sélectionner le Niveau a afficher pour ce cours."
               - {

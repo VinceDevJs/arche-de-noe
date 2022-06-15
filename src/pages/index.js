@@ -15,7 +15,7 @@ const IndexPage = () => {
     <>
       <DefaultLayout>
         <Helmet>
-          <title>Acceuil | Arche de noé</title>
+          <title>Accueil | Arche de noé</title>
         </Helmet>
         <TopSlider />
         {/* <Block1 /> */}
