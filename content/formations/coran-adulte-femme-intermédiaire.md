@@ -2,7 +2,7 @@
 formation_name: Coran Adulte Femme Intermédiaire
 show_formation: true
 templateKey: formation
-thumbnail: /img/coran-adulte-femme-débutante.png
+thumbnail: /img/asset-1-3x.png
 subjects: CORAN FEMME
 sub_title: Intérmédiaire
 price: 300
