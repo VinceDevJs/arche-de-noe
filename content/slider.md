@@ -45,9 +45,9 @@ slide:
     buttonLink: https://institutarchedenoe.fr/inscription
     showButton: true
     title: |-
-      Inscriptions 
+      2ème session d'Inscriptions 
       2022_2023
-    subTitle: 3 juillet 2022 de 11h00 à 19h00
+    subTitle: Week-end du 3-4 septembre 2022 de 11:00 à 19:00
     content: Langue Arabe, Coran & Sciences Islamiques pour Adultes & Enfants
     clearText: true
     image: /img/asset-17.png
