@@ -10,7 +10,7 @@ export const breakpoints = {
   m: 825,
   l: 1025,
   xl: 1200,
-  xxl: 1400
+  xxl: 1400,
 }
 
 export const primaryColor = '#00a1c6'
@@ -42,7 +42,7 @@ export const GlobalStyle = () => (
         scroll-behavior: smooth;
         margin: 0;
       }
-      
+
       .swiper-pagination-bullet-active {
         background: #00a0c5;
       }

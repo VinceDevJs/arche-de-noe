@@ -20,15 +20,17 @@ const Inscription = () => {
         src={waves}
         style={{
           width: '100%',
-          marginBottom: '5em',
+          marginBottom: '5em'
         }}
-        alt=""
+        alt=''
       />
-      {/* <MainIncription /> */}
 
-      <Message>
+      <MainIncription />
+
+      {/* <Message>
         Les inscriptions seront ouvertes à partir du 3 juillet 2022 !
-      </Message>
+      </Message> */}
+
       {/* <img
         src={waves}
         style={{
@@ -53,4 +55,8 @@ export const Message = styled.p`
   font-size: 2.5em;
   font-family: 'Avenir Next Bold', sans-serif;
   color: #04a0c5;
+`
+
+export const LinkButton = styled.a`
+
 `

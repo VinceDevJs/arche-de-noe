@@ -11,56 +11,57 @@ import stepFourIcon from '../../assets/images/inscription/step-4.svg'
 
 const MainInscription = () => {
   return (
-    <Container id="main_inscription">
+    <Container id='main_inscription'>
       <Title>
         Les étapes pour m’inscrire et embarquer dans l’arche de Noé !
       </Title>
 
       <ContentBox>
-        <ContentIconBox>
+        {/* <ContentIconBox>
           <ContentIcon src={stepOneIcon} />
-        </ContentIconBox>
+        </ContentIconBox> */}
         <ContentText>
-          Je télécharge le dossier d’inscription en cliquant{' '}
-          <ContentLinkDownload target="_blank" href={downloadPdf}>
-            <span>ici</span>
-          </ContentLinkDownload>
-          .
+          1. Cliquer <ContentLinkDownload href='https://interface.institutarchedenoe.fr/register.php'>ici</ContentLinkDownload> et compléter le formulaire.
         </ContentText>
       </ContentBox>
 
       <ContentBox>
-        <ContentIconBox>
+        {/* <ContentIconBox>
           <ContentIcon src={stepTwoIcon} />
-        </ContentIconBox>
-        <ContentText color="true">
-          Je remplis l’intégralité des informations requises.
+        </ContentIconBox> */}
+        <ContentText color='true'>
+          2. Choisir la(les) classe(s) pour l’année 2022-2023.
         </ContentText>
       </ContentBox>
 
       <ContentBox>
-        <ContentIconBox>
+        {/* <ContentIconBox>
           <ContentIcon src={stepThreeIcon} />
-        </ContentIconBox>
+        </ContentIconBox> */}
         <ContentText>
-          Je le dépose au secrétariat{' '}
-          <ContentLink to="/contact#contact">
-            <span>à l’adresse suivante</span>
-          </ContentLink>
-          .
+          3. Se présenter au secrétariat le week-end du 3-4 septembre pour finaliser l’inscription.
         </ContentText>
       </ContentBox>
 
-      <ContentBox>
+      {/* <ContentBox>
         <ContentIconBox>
           <ContentIcon src={stepFourIcon} />
         </ContentIconBox>
-        <ContentText color="true">
+        <ContentText color='true'>
           Je finalise mon inscription en réglant la cotisation.
         </ContentText>
-      </ContentBox>
+      </ContentBox> */}
 
-      <Button to="/contact#form">J’ai une question</Button>
+      <p style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '2em' }}>Important :</p>
+
+      <p style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '3em', display: 'block', padding: '0 3em' }}>
+        *La pré-inscription n’est pas une inscription définitive ! Il vous faudra obligatoirement venir finaliser celle-ci le weekend du 3-4 septembre au secrétariat à partir de 11:00 à défaut nous ne vous garantissons pas la(les) place(s).
+      </p>
+
+      <p style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '3em', display: 'block', padding: '0 3em' }}>
+        *Il n’est pas possible de faire la pré-inscription pour les classes Enfants.
+      </p>
+      <Button to='/contact#form'>J’ai une question</Button>
     </Container>
   )
 }
@@ -98,6 +99,7 @@ export const ContentBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: 70%;
   max-width: 55em;
   margin: 4.5em auto;
@@ -131,6 +133,7 @@ export const ContentText = styled.p`
   font-size: 1.7em;
   color: ${(props) => (!props.color ? '#00a0c5' : '#007bac')};
   font-family: 'Avenir Next Bold', monospace;
+  text-align: center;
 
   @media (max-width: ${breakpoints.s}px) {
     text-align: center;
