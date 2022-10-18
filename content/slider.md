@@ -51,5 +51,5 @@ slide:
     content: Langue Arabe, Coran & Sciences Islamiques pour Adultes & Enfants
     clearText: true
     image: /img/asset-17.png
-    show: true
+    show: false
 ---
