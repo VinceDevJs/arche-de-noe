@@ -10,16 +10,16 @@ import handIcon from '../../assets/images/home/block3/hand.png'
 import quranIcon from '../../assets/images/home/block3/quran.png'
 import salatIcon from '../../assets/images/home/block3/salat.png'
 
-const Matieres = () => {
+const Matieres = ({ inscriptionActivated }) => {
   return (
-    <Container id='matieres'>
+    <Container id="matieres">
       <Title style={{ color: '#049fc5' }}>Les matières enseignées</Title>
       <Title style={{ color: '#007CAD', marginBottom: '1.5em' }}>au sein de l’institut</Title>
 
       <ContentBox
-        data-aos='fade-right'
-        data-aos-delay='200'
-        data-aos-duration='2000'
+        data-aos="fade-right"
+        data-aos-delay="200"
+        data-aos-duration="2000"
       >
         <ContentTitle>
           La langue <br /> arabe
@@ -30,21 +30,21 @@ const Matieres = () => {
         <ContentIconContainer>
           <IconBox>
             <ContentIcon>
-              <img src={arabicIcon} alt='' />
+              <img src={arabicIcon} alt="" />
             </ContentIcon>
             <ContentIconText> Alphabétisation </ContentIconText>
           </IconBox>
 
           <IconBox>
             <ContentIcon>
-              <img src={handIcon} alt='' />
+              <img src={handIcon} alt="" />
             </ContentIcon>
             <ContentIconText> Grammaire </ContentIconText>
           </IconBox>
 
           <IconBox>
             <ContentIcon>
-              <img src={booksIcon} alt='' />
+              <img src={booksIcon} alt="" />
             </ContentIcon>
             <ContentIconText> Conjugaison </ContentIconText>
           </IconBox>
@@ -53,12 +53,12 @@ const Matieres = () => {
       </ContentBox>
 
       <ContentBox
-        data-aos='fade-left'
-        data-aos-delay='200'
-        data-aos-duration='2000'
-        dark='true'
+        data-aos="fade-left"
+        data-aos-delay="200"
+        data-aos-duration="2000"
+        dark="true"
       >
-        <ContentTitle dark='true'>
+        <ContentTitle dark="true">
           Les sciences <br /> Islamiques
         </ContentTitle>
 
@@ -67,31 +67,33 @@ const Matieres = () => {
         <ContentIconContainer>
           <IconBox>
             <ContentIcon>
-              <img style={{ height: '4.7em', width: '4em' }} src={quranIcon} alt='' />
+              <img style={{ height: '4.7em', width: '4em' }} src={quranIcon} alt="" />
             </ContentIcon>
-            <ContentIconText dark='true'> Coran </ContentIconText>
+            <ContentIconText dark="true"> Coran </ContentIconText>
           </IconBox>
 
           <IconBox>
             <ContentIcon>
-              <img style={{ width: '6em' }} src={salatIcon} alt='' />
+              <img style={{ width: '6em' }} src={salatIcon} alt="" />
             </ContentIcon>
-            <ContentIconText dark='true'> Jurisprudence <br /> (Fiqh) </ContentIconText>
+            <ContentIconText dark="true"> Jurisprudence <br /> (Fiqh) </ContentIconText>
           </IconBox>
 
           <IconBox>
             <ContentIcon>
-              <img style={{ width: '4.3em' }} src={hadithIcon} alt='' />
+              <img style={{ width: '4.3em' }} src={hadithIcon} alt="" />
             </ContentIcon>
-            <ContentIconText dark='true'> Sciences du <br /> hadith </ContentIconText>
+            <ContentIconText dark="true"> Sciences du <br /> hadith </ContentIconText>
           </IconBox>
         </ContentIconContainer>
 
       </ContentBox>
 
-      <Button to='/formation'>
-        Nos formations
-      </Button>
+      {inscriptionActivated && (
+        <Button to="/formation">
+          Nos formations
+        </Button>
+      )}
     </Container>
   )
 }

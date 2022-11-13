@@ -5,15 +5,15 @@ import { SnipcartContext } from 'gatsby-plugin-snipcart-advanced/context'
 import {
   breakpoints,
   primaryColor,
-  secondaryColor,
+  secondaryColor
 } from '../../../utils/styles.js'
 import logoHeader from './../../../assets/icons/header/logo_header.png'
 import cartIcon from './../../../assets/icons/header/cart-icon.png'
 
-const Index = () => {
+const Index = ({ inscriptionActivated }) => {
   const { state } = useContext(SnipcartContext)
-  // console.log(state)
-  const { userStatus, cartQuantity } = state
+  const { cartQuantity } = state
+
   return (
     <>
       <Nav>
@@ -23,22 +23,26 @@ const Index = () => {
           </Link>
         </div>
 
-        <LinkBox>
+        <LinkBox inscription={inscriptionActivated}>
           <li>
             <Link to="/">Accueil</Link>
           </li>
-          <li>
-            <Link to="/formation">Formation</Link>
-          </li>
+          {inscriptionActivated && (
+            <li>
+              <Link to="/formation">Formation</Link>
+            </li>
+          )}
           <li>
             <Link to="/inscription">Inscription</Link>
           </li>
           <li>
             <Link to="/nos-ouvrages">Nos ouvrages</Link>
           </li>
-          <li>
-            <Link to="/emploi-du-temps">Emploi du temps</Link>
-          </li>
+          {inscriptionActivated && (
+            <li>
+              <Link to="/emploi-du-temps">Emploi du temps</Link>
+            </li>
+          )}
           <li>
             <Link to="/contact">Contact</Link>
           </li>
@@ -49,11 +53,13 @@ const Index = () => {
           </li>
           <CartContainer className="snipcart-checkout">
             <CartIcon src={cartIcon} />
-            {cartQuantity > 0 ? (
-              <CartQuantity>{cartQuantity}</CartQuantity>
-            ) : (
-              ''
-            )}
+            {cartQuantity > 0
+              ? (
+                <CartQuantity>{cartQuantity}</CartQuantity>
+                )
+              : (
+                  ''
+                )}
           </CartContainer>
         </LinkBox>
       </Nav>
@@ -102,7 +108,7 @@ export const LinkBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: ${props => props.inscriptionActivated ? '80%' : '65%'};
 `
 
 export const NavMobile = styled.div`

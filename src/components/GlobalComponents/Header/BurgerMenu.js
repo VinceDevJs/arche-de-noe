@@ -9,11 +9,11 @@ import hamburgerClose from '../../../assets/icons/hamburger_close.png'
 import cartIcon from '../../../assets/icons/header/cart-icon.png'
 import { CartContainer, CartIcon, CartQuantity } from './index'
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ inscriptionActivated }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const { state } = useContext(SnipcartContext)
-  // console.log(state)
+
   const { userStatus, cartQuantity, totalPrice } = state
 
   const isMenuOpen = (state) => {
@@ -40,12 +40,16 @@ const BurgerMenu = () => {
         <LinkText onClick={() => setIsOpen(!isOpen)} to="/">
           Accueil
         </LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to="/formation">
-          Formation
-        </LinkText>
-        <LinkText onClick={() => setIsOpen(!isOpen)} to="/emploi-du-temps">
-          Emploi du temps
-        </LinkText>
+        {inscriptionActivated && (
+          <>
+            <LinkText onClick={() => setIsOpen(!isOpen)} to="/formation">
+              Formation
+            </LinkText>
+            <LinkText onClick={() => setIsOpen(!isOpen)} to="/emploi-du-temps">
+              Emploi du temps
+            </LinkText>
+          </>
+        )}
         <LinkText onClick={() => setIsOpen(!isOpen)} to="/nos-ouvrages">
           Nos ouvrages
         </LinkText>

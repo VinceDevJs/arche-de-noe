@@ -5,16 +5,16 @@ import Header from './../components/Formation/Header'
 import SideBar from '../../src/components/Formation/SideBar'
 import Main from '../../src/components/Formation/Main'
 import MobileSort from '../components/Formation/MobileSort'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, navigate } from 'gatsby'
 
 import { breakpoints } from '../utils/styles'
-import waves from '../assets/images/formation/waves_2.png'
+// import waves from '../assets/images/formation/waves_2.png'
 import DefaultLayout from '../layouts/default'
 
 const Formation = () => {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark(
+      formations: allMarkdownRemark(
         filter: { frontmatter: { templateKey: { eq: "formation" } } }
       ) {
         edges {
@@ -34,14 +34,35 @@ const Formation = () => {
             }
           }
         }
+      },
+       inscription: allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "inscription" } } }
+      ) {
+          edges {
+              node {
+                  frontmatter {
+                      templateKey
+                      activated
+                  }
+              }
+          }
       }
     }
   `)
-  const formations = data.allMarkdownRemark.edges
+  console.log(data)
+  const formations = data.formations.edges
   const [discipline, setDiscipline] = useState('arabe')
   const [age, setAge] = useState()
   const [level, setLevel] = useState()
   const [formationFiltered, setFormationFiltered] = useState(formations)
+
+  const inscriptionActivated = data.inscription.edges[0].node.frontmatter.activated
+
+  useEffect(() => {
+    if (inscriptionActivated === false) {
+      navigate('/')
+    }
+  }, [inscriptionActivated])
 
   const handleFilterFormations = (type, name) => {
     // console.log(type, name)

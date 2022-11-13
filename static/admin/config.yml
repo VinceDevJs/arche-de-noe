@@ -13,6 +13,18 @@ collections:
   - label: "home page"
     name: "home_page"
     files:
+      - label: "Inscription"
+        name: "inscription"
+        file: "/content/inscription.md"
+        fields:
+          - {
+              label: "Activé",
+              name: "activated",
+              widget: "boolean",
+              hint: "Activer l'inscription",
+              default: true,
+            }
+
       - label: "nombre"
         name: "nombre"
         file: "/content/number.md"

@@ -55,6 +55,7 @@ export const GoogleMapBox = styled.div`
 `
 
 export const GoogleMap = styled.iframe`
+  position: relative;
   display: block;
   width: 80%;
   max-width: 65em;
@@ -76,4 +77,5 @@ export const LogoIcon = styled.img`
   top: -50px;
   left: 50%;
   transform: translate(-50%);
+  z-index: 20;
 `

@@ -1,0 +1,4 @@
+---
+activated: false
+templateKey: inscription
+---

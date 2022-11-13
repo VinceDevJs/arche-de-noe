@@ -6,23 +6,25 @@ import { breakpoints } from '../../utils/styles'
 import wave from '../../assets/images/formation/wave.svg'
 import computer from '../../assets/images/inscription/computer-inscription.svg'
 
-const SubHeader = () => {
+const SubHeader = ({ inscriptionActivated }) => {
   return (
     <Container>
-      <Wave src={wave} alt='wave logo' />
+      <Wave src={wave} alt="wave logo" />
       <ComputerImg
-        data-aos='fade-right'
-        data-aos-duration='2000'
+        data-aos="fade-right"
+        data-aos-duration="2000"
         src={computer}
-        alt='çomputer logo'
+        alt="çomputer logo"
       />
-      <TitleWrapper data-aos='fade-left' data-aos-duration='2500'>
+      <TitleWrapper data-aos="fade-left" data-aos-duration="2500">
         <Title>Inscription</Title>
         <Separator />
         <SubTitle>
           Les inscriptions à l’institut l’Arche de Noé se déroulent tous les ans, de fin juin à fin septembre
         </SubTitle>
-        <Button to='#main_inscription'>Connaître les modalités</Button>
+        {inscriptionActivated && (
+          <Button to="#main_inscription">Connaître les modalités</Button>
+        )}
       </TitleWrapper>
     </Container>
   )

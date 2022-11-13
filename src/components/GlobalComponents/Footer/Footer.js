@@ -2,13 +2,13 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import React from 'react'
 import facebookIcon from '../../../assets/images/footer/facebook.png'
-import bottomImg from '../../../assets/images/footer/footer_bottom.png'
+// import bottomImg from '../../../assets/images/footer/footer_bottom.png'
 import waves from '../../../assets/images/footer/waves.png'
 import logoSvg from '../../../assets/images/footer/logo.png'
 import twitterIcon from '../../../assets/images/footer/twitter.png'
 import { breakpoints } from '../../../utils/styles.js'
 
-const Footer = () => {
+const Footer = ({ inscriptionActivated }) => {
   return (
     <FooterContainer>
       <Img top src={waves} />
@@ -18,8 +18,12 @@ const Footer = () => {
           <Title>L’Institut</Title>
           <Separator />
           <LinkText to="/">Accueil</LinkText>
-          <LinkText to="/formation">Formation</LinkText>
-          <LinkText to="/emploi-du-temps">Emploi du temps</LinkText>
+          {inscriptionActivated && (
+            <>
+              <LinkText to="/formation">Formation</LinkText>
+              <LinkText to="/emploi-du-temps">Emploi du temps</LinkText>
+            </>
+          )}
           <LinkText to="/nos-ouvrages">Nos ouvrages</LinkText>
           <LinkText to="/inscription">Inscription</LinkText>
           <LinkText to="/contact">Contact</LinkText>
@@ -46,7 +50,7 @@ const Footer = () => {
 
       <BlockRight>
         <Image src={logoSvg} />
-        <BlockRightTitle>L'Arche de Noé</BlockRightTitle>
+        <BlockRightTitle>L&apos;Arche de Noé</BlockRightTitle>
       </BlockRight>
     </FooterContainer>
   )

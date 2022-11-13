@@ -8,7 +8,7 @@ import quranIcon from '../../assets/images/home/block5/quran.png'
 import salatIcon from '../../assets/images/home/block5/salat.png'
 import { breakpoints } from '../../utils/styles.js'
 
-const Block5Bis = () => {
+const Block5Bis = ({ inscriptionActivated }) => {
   return (
     <Container>
       <LeftBlock
@@ -42,9 +42,11 @@ const Block5Bis = () => {
           attrayants et répondre aux besoins et aux attentes des élèves.
         </LeftBlockText>
 
-        <LeftBlockButton to="/formation">Nos Formations</LeftBlockButton>
-      </LeftBlock>
+        {inscriptionActivated && (
+          <LeftBlockButton to="/formation">Nos Formations</LeftBlockButton>
+        )}
 
+      </LeftBlock>
       <RightBlock
         data-aos="fade-left"
         data-aos-delay="100"

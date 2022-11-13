@@ -1,37 +1,24 @@
 const { convertToSlug } = require('./src/utils/functions')
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  // CREATION DES PAGES FORMATIONS
-  const formations = await graphql(`
-    {
+  const inscription = await graphql(`
+  {
       allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "formation" } } }
+          filter: { frontmatter: { templateKey: { eq: "inscription" } } }
       ) {
-        edges {
-          node {
-            frontmatter {
-              templateKey
-              show_formation
-              formation_name
-            }
+          edges {
+              node {
+                  frontmatter {
+                      templateKey
+                      activated
+                  }
+              }
           }
-        }
       }
-    }
-  `)
-  formations.data.allMarkdownRemark.edges.forEach(edge => {
-    const formation = edge.node.frontmatter
-    if (!formation.show_formation) return
-    const path = convertToSlug(formation.formation_name)
+  }
+`)
 
-    createPage({
-      path: `/formation/${path}`,
-      component: require.resolve('./src/templates/FormationTemplate.js'),
-      context: {
-        name: formation.formation_name
-      }
-    })
-  })
+  const inscriptionActivated = inscription.data.allMarkdownRemark.edges[0].node.frontmatter.activated
 
   // CREATION DE PAGE PRODUIT DU SHOP
   const products = await graphql(`
@@ -103,4 +90,38 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       })
     })
   })
+
+  // CREATION DES PAGES FORMATIONS
+  if (inscriptionActivated) {
+    const formations = await graphql(`
+      {
+        allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "formation" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                templateKey
+                show_formation
+                formation_name
+              }
+            }
+          }
+        }
+      }
+    `)
+    formations.data.allMarkdownRemark.edges.forEach(edge => {
+      const formation = edge.node.frontmatter
+      if (!formation.show_formation) return
+      const path = convertToSlug(formation.formation_name)
+
+      createPage({
+        path: `/formation/${path}`,
+        component: require.resolve('./src/templates/FormationTemplate.js'),
+        context: {
+          name: formation.formation_name
+        }
+      })
+    })
+  }
 }

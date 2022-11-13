@@ -2,16 +2,16 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-import downloadPdf from './../../assets/formulaire_inscription.pdf'
+// import downloadPdf from './../../assets/formulaire_inscription.pdf'
 import { breakpoints } from '../../utils/styles'
-import stepOneIcon from '../../assets/images/inscription/step-1.svg'
-import stepTwoIcon from '../../assets/images/inscription/step-2.svg'
-import stepThreeIcon from '../../assets/images/inscription/step-3.svg'
-import stepFourIcon from '../../assets/images/inscription/step-4.svg'
+// import stepOneIcon from '../../assets/images/inscription/step-1.svg'
+// import stepTwoIcon from '../../assets/images/inscription/step-2.svg'
+// import stepThreeIcon from '../../assets/images/inscription/step-3.svg'
+// import stepFourIcon from '../../assets/images/inscription/step-4.svg'
 
 const MainInscription = () => {
   return (
-    <Container id='main_inscription'>
+    <Container id="main_inscription">
       <Title>
         Les étapes pour m’inscrire et embarquer dans l’arche de Noé !
       </Title>
@@ -21,7 +21,7 @@ const MainInscription = () => {
           <ContentIcon src={stepOneIcon} />
         </ContentIconBox> */}
         <ContentText>
-          1. Cliquer <ContentLinkDownload href='https://interface.institutarchedenoe.fr/register.php'>ici</ContentLinkDownload> et compléter le formulaire.
+          1. Cliquer <ContentLinkDownload href="https://interface.institutarchedenoe.fr/register.php">ici</ContentLinkDownload> et compléter le formulaire.
         </ContentText>
       </ContentBox>
 
@@ -29,7 +29,7 @@ const MainInscription = () => {
         {/* <ContentIconBox>
           <ContentIcon src={stepTwoIcon} />
         </ContentIconBox> */}
-        <ContentText color='true'>
+        <ContentText color="true">
           2. Choisir la(les) classe(s) pour l’année 2022-2023.
         </ContentText>
       </ContentBox>
@@ -61,7 +61,7 @@ const MainInscription = () => {
       <p style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '3em', display: 'block', padding: '0 3em' }}>
         *Il n’est pas possible de faire la pré-inscription pour les classes Enfants.
       </p>
-      <Button to='/contact#form'>J’ai une question</Button>
+      <Button to="/contact#form">J’ai une question</Button>
     </Container>
   )
 }

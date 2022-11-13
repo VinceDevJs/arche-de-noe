@@ -1,31 +1,56 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from '@emotion/styled'
+import { graphql, useStaticQuery } from 'gatsby'
 
-import Header from '../components/Inscription/Header'
+// import Header from '../components/Inscription/Header'
 import SubHeader from '../components/Inscription/SubHeader'
 import MainIncription from '../components/Inscription/MainInscription'
 import waves from '../assets/images/formation/waves_2.png'
 import DefaultLayout from '../layouts/default'
 
 const Inscription = () => {
+  const inscription = useStaticQuery(graphql`
+  {
+      allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "inscription" } } }
+      ) {
+          edges {
+              node {
+                  frontmatter {
+                      templateKey
+                      activated
+                  }
+              }
+          }
+      }
+  }
+`)
+
+  const inscriptionActivated = inscription.allMarkdownRemark.edges[0].node.frontmatter.activated
+
   return (
     <DefaultLayout>
       <Helmet>
         <title>Inscription | Arche de noé</title>
       </Helmet>
       {/* <Header /> */}
-      <SubHeader />
+      <SubHeader inscriptionActivated={inscriptionActivated} />
       <img
         src={waves}
         style={{
           width: '100%',
           marginBottom: '5em'
         }}
-        alt=''
+        alt=""
       />
-
-      <MainIncription />
+      {inscriptionActivated
+        ? <MainIncription />
+        : (
+          <div>
+            <h1 style={{ textAlign: 'center', color: '#007cad', fontWeight: 'bold', display: 'block', padding: '8em 1em' }}>Inscription non disponible actuelement</h1>
+          </div>
+          )}
 
       {/* <Message>
         Les inscriptions seront ouvertes à partir du 3 juillet 2022 !
