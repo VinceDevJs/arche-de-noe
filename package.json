@@ -20,7 +20,7 @@
     "@emotion/styled": "^11.1.5",
     "aos": "3.0.0-beta.6",
     "autoprefixer": "^10.2.5",
-    "gatsby": "^3.14.6",
+    "gatsby": "^5.0.1",
     "gatsby-image": "^3.1.0",
     "gatsby-plugin-emotion": "^6.1.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
