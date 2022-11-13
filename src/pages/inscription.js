@@ -48,7 +48,7 @@ const Inscription = () => {
         ? <MainIncription />
         : (
           <div>
-            <h1 style={{ textAlign: 'center', color: '#007cad', fontWeight: 'bold', display: 'block', padding: '8em 1em' }}>Inscription non disponible actuelement</h1>
+            <h1 style={{ textAlign: 'center', color: '#007cad', fontWeight: 'bold', display: 'block', padding: '8em 1em' }}>Inscription non disponible actuellement</h1>
           </div>
           )}
 
