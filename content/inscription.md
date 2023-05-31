@@ -1,4 +1,4 @@
 ---
-activated: false
+activated: true
 templateKey: inscription
 ---
