@@ -2,7 +2,7 @@
 title: Sciences Islamiques
 templateKey: enfant
 day:
-  - show: false
+  - show: true
     daySelected: samedi
     cours:
       - curse name: Sciences Islamiques Pré-Ados
