@@ -178,15 +178,6 @@ ${path}`} rel="noreferrer"
             </LinkContainer>
           </ContainerRight>
         </ContentWrapper>
-        <img
-          src={waves}
-          style={{
-            width: '100%',
-            marginTop: '3.5em',
-            transform: 'rotate(180deg) scaleX(-1)'
-          }}
-          alt=""
-        />
       </Container>
     </DefaultLayout>
   )
