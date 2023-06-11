@@ -52,7 +52,6 @@ export const query = graphql`
 `
 
 const FormationTemplate = ({ data, path }) => {
-  // console.log(data, path)
   const {
     templateKey,
     thumbnail,
@@ -75,11 +74,11 @@ const FormationTemplate = ({ data, path }) => {
         <img
           src={waves}
           style={{ width: '100%', marginBottom: '2.5em' }}
-          alt=''
+          alt=""
         />
 
         <TitleWrapper>
-          <ReturnLink to='/formation'>
+          <ReturnLink to="/formation">
             Revenir à la page des formations
           </ReturnLink>
           <Title>
@@ -106,7 +105,7 @@ const FormationTemplate = ({ data, path }) => {
                 <IconText style={{ color: '#007CAD' }}>{place_avaible} places</IconText>
               </IconBox>
             </IconsWrapper>
-            <Link to='/emploi-du-temps' style={{ textDecoration: 'none' }}>
+            <Link to="/emploi-du-temps" style={{ textDecoration: 'none' }}>
               <PlanningButton>
                 <PlanningIcon src={calendarIcon} />
                 <p>Emploi du temps</p>
@@ -117,7 +116,7 @@ const FormationTemplate = ({ data, path }) => {
           <ContainerRight>
             <RightContentContainer>
               <RightContentWrapper>
-                <ContentIcon alt='' src={cerveauIcon} />
+                <ContentIcon alt="" src={cerveauIcon} />
                 <ContentBox>
                   <RightContentTitle>Prérequis</RightContentTitle>
                   <RightContentText>{prerequis}</RightContentText>
@@ -125,7 +124,7 @@ const FormationTemplate = ({ data, path }) => {
               </RightContentWrapper>
 
               <RightContentWrapper>
-                <ContentIcon alt='' src={cibleIcon} />
+                <ContentIcon alt="" src={cibleIcon} />
                 <ContentBox>
                   <RightContentTitle>Objectif(s)</RightContentTitle>
                   <RightContentText>{objectifs}</RightContentText>
@@ -133,7 +132,7 @@ const FormationTemplate = ({ data, path }) => {
               </RightContentWrapper>
 
               <RightContentWrapper>
-                <ContentIcon alt='' src={programmeIcon} />
+                <ContentIcon alt="" src={programmeIcon} />
                 <ContentBox>
                   <RightContentTitle>Programme</RightContentTitle>
                   <RightContentText>{programme}</RightContentText>
@@ -141,7 +140,7 @@ const FormationTemplate = ({ data, path }) => {
               </RightContentWrapper>
 
               <RightContentWrapper>
-                <ContentIcon alt='' src={bookIcon} />
+                <ContentIcon alt="" src={bookIcon} />
                 <ContentBox>
                   <RightContentTitle>Ouvrage(s) utilisé(s)</RightContentTitle>
                   <RightContentText>{ouvrages}</RightContentText>
@@ -150,28 +149,28 @@ const FormationTemplate = ({ data, path }) => {
             </RightContentContainer>
 
             <LinkContainer>
-              <LinkButton to='/inscription' fontSize='true'>
+              <LinkButton to="/inscription" fontSize="true">
                 Connaitre les modalités <br /> d’inscription
               </LinkButton>
-              <LinkButton to='/nos-ouvrages' color='true'>
+              <LinkButton to="/nos-ouvrages" color="true">
                 Nos ouvrages
               </LinkButton>
-              <LinkButton to='/contact#form'>J’ai une question</LinkButton>
+              <LinkButton to="/contact#form">J’ai une question</LinkButton>
 
               <SocialText>
                 J’informe une connaissance <br /> de la formation
               </SocialText>
               <SocialBox>
                 <a
-                  target='_blank'
+                  target="_blank"
                   href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
-${path}`}
+${path}`} rel="noreferrer"
                 >
                   <SocialIcon src={facebookIcon} />
                 </a>
                 <a
                   href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}
-                  target='_blank'
+                  target="_blank" rel="noreferrer"
                 >
                   <SocialIcon src={twitterIcon} />
                 </a>
@@ -186,7 +185,7 @@ ${path}`}
             marginTop: '3.5em',
             transform: 'rotate(180deg) scaleX(-1)'
           }}
-          alt=''
+          alt=""
         />
       </Container>
     </DefaultLayout>

@@ -50,11 +50,9 @@ const ContactForm = () => {
   const sendMsg = e => {
     e.preventDefault()
     const isValid = validateData()
-    // console.log(isValid)
     const { name, mail, message, subject, phone } = dataForm
 
     if (isValid) {
-      // console.log('send')
       const payload = {
         nom: name,
         email: mail,
@@ -71,7 +69,6 @@ const ContactForm = () => {
         body: JSON.stringify(payload)
       })
         .then(res => {
-          console.log('sended', res.ok)
           if (res.ok) {
             setSuccess(true)
             setDataForm({
@@ -97,9 +94,9 @@ const ContactForm = () => {
           <LabelWrapper>
             <p>Nom & Prénom</p>
             <StyledInput
-              name='name'
+              name="name"
               value={dataForm.name}
-              type='text'
+              type="text"
               onChange={handleChange}
             />
           </LabelWrapper>
@@ -107,9 +104,9 @@ const ContactForm = () => {
           <LabelWrapper>
             <p>Sujet</p>
             <StyledInput
-              name='subject'
+              name="subject"
               value={dataForm.subject}
-              type='text'
+              type="text"
               onChange={handleChange}
             />
           </LabelWrapper>
@@ -117,10 +114,10 @@ const ContactForm = () => {
           <LabelWrapper>
             <p>Téléphone*</p>
             <StyledInput
-              name='phone'
-              size='10'
+              name="phone"
+              size="10"
               value={dataForm.phone}
-              type='tel'
+              type="tel"
               onChange={handleChange}
               error={errMsg.phone}
             />
@@ -129,9 +126,9 @@ const ContactForm = () => {
           <LabelWrapper>
             <p>E-mail*</p>
             <StyledInput
-              name='mail'
+              name="mail"
               value={dataForm.mail}
-              type='mail'
+              type="mail"
               onChange={handleChange}
               error={errMsg.mail}
             />
@@ -140,7 +137,7 @@ const ContactForm = () => {
           <LabelWrapper>
             <p>Message*</p>
             <StyledTextarea
-              name='message'
+              name="message"
               value={dataForm.message}
               onChange={handleChange}
               error={errMsg.message}
@@ -164,7 +161,7 @@ const ContactForm = () => {
               : null}
           </div>
 
-          <SubmitButton type='submit'>Envoyer</SubmitButton>
+          <SubmitButton type="submit">Envoyer</SubmitButton>
         </InputsWrapper>
       </Form>
     </>

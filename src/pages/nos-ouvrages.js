@@ -46,7 +46,6 @@ const NosOuvrages = () => {
   const [ouvragesFiltered, setOuvragesFiltered] = useState(ouvrages)
 
   const handleFilterOuvrages = (type, name) => {
-    // console.log(type, name)
     if (type === 'age') {
       setAge(name)
     } else {
@@ -101,7 +100,7 @@ const NosOuvrages = () => {
           marginTop: '3.5em',
           transform: 'rotate(180deg) scaleX(-1)'
         }}
-        alt=''
+        alt=""
       />
     </DefaultLayout>
   )

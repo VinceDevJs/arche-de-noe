@@ -15,11 +15,8 @@ const Block6 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // console.log('send')
 
     addToMailchimp(email).then((resp) => {
-      console.log(resp)
-
       if (resp.result === 'success') {
         setEmail('')
         setMessage('Inscription réussi!')

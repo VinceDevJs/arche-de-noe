@@ -27,8 +27,6 @@ const AllProducts = () => {
       }
   `)
 
-  // console.log(data.allMarkdownRemark.edges)
-
   const allProducts = data.allMarkdownRemark.edges
 
   return (
@@ -38,7 +36,7 @@ const AllProducts = () => {
         return (
           <Link key={name} to={`/nos-ouvrages/${convertToSlug(name)}`}>
             <div>
-              <img src={images[0].image} alt='' />
+              <img src={images[0].image} alt="" />
               <p>
                 {name} - {price}€
               </p>

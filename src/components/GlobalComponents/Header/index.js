@@ -11,7 +11,6 @@ import logoHeader from './../../../assets/icons/header/logo_header.png'
 import cartIcon from './../../../assets/icons/header/cart-icon.png'
 
 const Index = ({ inscriptionActivated }) => {
-  console.log('🚀 ~ file: index.js:14 ~ Index ~ inscriptionActivated:', inscriptionActivated)
   const { state } = useContext(SnipcartContext)
   const { cartQuantity } = state
 

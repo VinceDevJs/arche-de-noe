@@ -22,23 +22,22 @@ const Header = () => {
       }
   `)
 
-  // console.log(image)
   return (
     <MainContainer>
-      <LeftBox data-aos='fade-right' data-aos-duration='2000'>
+      <LeftBox data-aos="fade-right" data-aos-duration="2000">
         <PhoneImg
           fluid={image.phone.childImageSharp.fluid}
-          alt='phone arche de noe'
+          alt="phone arche de noe"
         />
       </LeftBox>
 
-      <RightBox data-aos='fade-left' data-aos-duration='3000' id='contact'>
+      <RightBox data-aos="fade-left" data-aos-duration="3000" id="contact">
         <RightHeaderContent>
           <RightHeaderTitle>Nous contacter</RightHeaderTitle>
           <RightHeaderText>
             Vous avez une question, nous vous répondons par téléphone, e-mail ou via l’application WhatsApp
           </RightHeaderText>
-          <RightHeaderButton to='#form'>J’ai une question</RightHeaderButton>
+          <RightHeaderButton to="#form">J’ai une question</RightHeaderButton>
         </RightHeaderContent>
 
         <RightInfoContainer>
@@ -47,7 +46,7 @@ const Header = () => {
               <RightIcon
                 src={mapIcon}
                 style={{ width: '4em' }}
-                alt='carte arche de noe'
+                alt="carte arche de noe"
               />
             </RightIconBox>
             <RightContentBox>
@@ -68,7 +67,7 @@ const Header = () => {
               <RightIcon
                 src={phoneIcon}
                 style={{ width: '4em' }}
-                alt='telephone arche de noe'
+                alt="telephone arche de noe"
               />
             </RightIconBox>
             <RightContentBox>
@@ -85,11 +84,11 @@ const Header = () => {
               <RightIcon
                 src={whatsappIcon}
                 style={{ width: '4.3em' }}
-                alt='telephone arche de noe'
+                alt="telephone arche de noe"
               />
             </RightIconBox>
             <RightContentBox>
-              <WhatsButton href='https://wa.me/33766575082'>Nous contacter via Whatsapp</WhatsButton>
+              <WhatsButton href="https://wa.me/33766575082">Nous contacter via Whatsapp</WhatsButton>
             </RightContentBox>
           </RightInfoBox>
 
@@ -100,7 +99,7 @@ const Header = () => {
               <RightIcon
                 src={clockIcon}
                 style={{ width: '5.5em' }}
-                alt='montre arche de noe'
+                alt="montre arche de noe"
               />
             </RightIconBox>
             <RightContentBox>

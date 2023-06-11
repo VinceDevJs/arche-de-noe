@@ -20,14 +20,11 @@ const PopUp = () => {
       }
     `)
 
-  console.log(image)
-
   useEffect(() => {
     setShowPopUp(!!((typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))))
   }, [])
 
   const handleClosePopUp = () => {
-    console.log('test')
     if (typeof window !== 'undefined') window.sessionStorage.setItem('popup', 'closed')
     setShowPopUp(!!((typeof window !== 'undefined' && window.sessionStorage.getItem('popup'))))
   }
@@ -37,7 +34,7 @@ const PopUp = () => {
         <Container>
           <BoxContainer>
             <CrossContainer onClick={() => handleClosePopUp()}>
-              <img src={closeCross} alt='' />
+              <img src={closeCross} alt="" />
             </CrossContainer>
             <ImagePopUp fluid={image.popUp.childImageSharp.fluid} />
           </BoxContainer>

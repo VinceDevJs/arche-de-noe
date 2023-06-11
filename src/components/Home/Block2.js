@@ -30,8 +30,6 @@ const Block2 = () => {
     }
   `)
 
-  // console.log(numbers.allMarkdownRemark.edges[0].node.frontmatter)
-
   const numbersData = numbers.allMarkdownRemark.edges[0].node.frontmatter
   return (
     <Container>

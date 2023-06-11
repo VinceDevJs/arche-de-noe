@@ -8,8 +8,6 @@ import twitter from '../../assets/images/formation/twitter.svg'
 import facebook from '../../assets/images/formation/facebook.svg'
 
 const Main = ({ allOuvrages, age, level }) => {
-  console.log(allOuvrages)
-
   const allOuvragesToShow = allOuvrages.filter(({ node: ouvrage }) => ouvrage.frontmatter.show === true)
   return (
     <Container>
@@ -21,14 +19,14 @@ const Main = ({ allOuvrages, age, level }) => {
           return (
             <FormationBox
               key={ouvrage.name}
-              data-aos='fade-left'
-              data-aos-duration='2000'
+              data-aos="fade-left"
+              data-aos-duration="2000"
               data-aos-delay={slideTime}
             >
               <ImgWrapper>
                 <FormationImg
                   src={ouvrage.images[0].image}
-                  alt='formation book'
+                  alt="formation book"
                 />
                 <FormationTitle>
                   {ouvrage.title} <br />
@@ -43,12 +41,12 @@ const Main = ({ allOuvrages, age, level }) => {
               </Button>
               <SocialBox>
                 <a
-                  target='_blank' href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
-/nos-ouvrages/${ouvrageSlug}`}
+                  target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+/nos-ouvrages/${ouvrageSlug}`} rel="noreferrer"
                 >
                   <SocialIcon src={facebook} />
                 </a>
-                <a target='_blank' href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/nos-ouvrages/${ouvrageSlug}&text=`}>
+                <a target="_blank" href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/nos-ouvrages/${ouvrageSlug}&text=`} rel="noreferrer">
                   <SocialIcon src={twitter} />
                 </a>
               </SocialBox>

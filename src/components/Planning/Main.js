@@ -72,7 +72,6 @@ const Main = () => {
   const [matieresListData, setMatieresListData] = useState()
 
   useEffect(() => {
-    // console.log(planningData)
     const allChildrenData = planningData.enfant.edges
     const allAdulteData = planningData.adulte.edges
 
@@ -117,8 +116,6 @@ const Main = () => {
     })
   }, [])
 
-  // console.log(formationData)
-
   const handleSetDayList = () => {
     const dayList = formationData[publicSelected].find(day => day.title.toLowerCase() === formationSelected)
     if (dayList) {
@@ -126,17 +123,14 @@ const Main = () => {
       setDaySelected(dayList.daysPerFormation[0])
       const getFormationsToShow = dayList.formationData.find(el => el.daySelected === dayList.daysPerFormation[0])
       setFormationToShow(getFormationsToShow.cours)
-      console.log('daylist', formationSelected, dayList)
     }
   }
 
   const handleSetFormationsToShow = () => {
-    console.log(formationSelectorList)
     if (formationSelected) {
       const dayList = formationData[publicSelected].find(day => day.title.toLowerCase() === formationSelected)
       if (dayList) {
         const getFormationsToShow = dayList.formationData.find(el => el.daySelected === daySelected)
-        // console.log('day', getFormationsToShow)
         if (getFormationsToShow) {
           setFormationToShow(getFormationsToShow.cours)
         }
@@ -153,10 +147,8 @@ const Main = () => {
   }, [formationSelected])
 
   useEffect(() => {
-    // console.log(matieresListData)
     if (matieresListData) {
       setFormationSelectorList(matieresListData[publicSelected])
-      // console.log(formationSelectorList)
       if (formationSelectorList) {
         setFormationSelected(formationSelectorList[0])
         handleSetDayList()
@@ -169,14 +161,6 @@ const Main = () => {
       handleSetFormationsToShow()
     }
   }, [daySelected])
-
-  // console.log(formationData)
-
-  // console.log(planningData)
-  // console.log(publicSelected)
-  // console.log(formationToShow)
-  // console.log(formationSelectorList)
-  // console.log(dayListToShow)
 
   const handleSetNextDay = () => {
     if (daySelected === dayListToShow[dayListToShow.length - 1]) return
@@ -196,7 +180,7 @@ const Main = () => {
 
   return (
     <Container>
-      <DayContainer id='main_time'>
+      <DayContainer id="main_time">
         <ArrowIcon onClick={handleSetPreviousDay} src={leftArow} />
         <DayText>{daySelected}</DayText>
         <ArrowIcon onClick={handleSetNextDay} src={rightArow} />
@@ -219,8 +203,8 @@ const Main = () => {
               <PlanningFormationBox
                 color={index % 2}
                 key={`${cour.daySelected}-${cour.curse_name}-${cour.level}`}
-                data-aos='fade-left'
-                data-aos-duration='2000'
+                data-aos="fade-left"
+                data-aos-duration="2000"
               >
                 <ContentBox>
                   <Icon src={lampIcon} />

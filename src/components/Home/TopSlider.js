@@ -40,8 +40,6 @@ const TopSlider = () => {
 
   const slides = slider.allMarkdownRemark.edges[0].node.frontmatter.slide
 
-  console.log(slides)
-
   return (
     <Swiper
       modules={[Pagination, Autoplay]}
@@ -76,7 +74,7 @@ const TopSlider = () => {
                   )}
                 </ContentBox>
 
-                <BackgroundImage src={slide.image} alt='arche de noe slider' />
+                <BackgroundImage src={slide.image} alt="arche de noe slider" />
               </SlideContainer>
             </SwiperSlide>
           )

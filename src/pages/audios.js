@@ -27,7 +27,6 @@ const Audios = () => {
 
   const allAudioBooks = data.allMarkdownRemark.edges
 
-  // console.log(allAudioBooks)
   return (
     <AudioLayout>
       <Container>

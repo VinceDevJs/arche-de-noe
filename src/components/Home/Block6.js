@@ -13,11 +13,8 @@ const Block6 = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    // console.log('send')
 
     addToMailchimp(email).then((resp) => {
-      console.log(resp)
-
       if (resp.result === 'success') {
         setEmail('')
         setMessage('Inscription réussi!')
@@ -42,7 +39,7 @@ const Block6 = () => {
         <Form onSubmit={handleSubmit}>
           <Input
             placeholder={message}
-            type='email'
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

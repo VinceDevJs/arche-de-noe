@@ -11,7 +11,6 @@ import level from '../../assets/images/formation/level.png'
 import price from '../../assets/images/formation/price.png'
 
 const Main = ({ allFormations }) => {
-  // console.log(allFormations)
   return (
     <Container>
       {allFormations &&
@@ -22,12 +21,12 @@ const Main = ({ allFormations }) => {
         return (
           <FormationBox
             key={formation.formation_name}
-            data-aos='fade-left'
-            data-aos-duration='2000'
+            data-aos="fade-left"
+            data-aos-duration="2000"
             data-aos-delay={slideTime}
           >
             <ImgWrapper>
-              <FormationImg src={formation.thumbnail} alt='formation book' />
+              <FormationImg src={formation.thumbnail} alt="formation book" />
               <FormationTitle>
                 {formation.subjects} <br />
                 <span>
@@ -52,15 +51,15 @@ const Main = ({ allFormations }) => {
             <Button to={`/formation/${formationSlug}`}>En savoir plus</Button>
             <SocialBox>
               <a
-                rel='noreferrer'
-                target='_blank' href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
+                rel="noreferrer"
+                target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 /formation/${formationSlug}`}
               >
                 <SocialIcon src={facebook} />
               </a>
               <a
-                rel='noreferrer'
-                target='_blank'
+                rel="noreferrer"
+                target="_blank"
                 href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr/formation/${formationSlug}&text=`}
               >
                 <SocialIcon src={twitter} />

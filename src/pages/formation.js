@@ -49,7 +49,7 @@ const Formation = () => {
       }
     }
   `)
-  console.log(data)
+
   const formations = data.formations.edges
   const [discipline, setDiscipline] = useState('arabe')
   const [age, setAge] = useState()
@@ -65,7 +65,6 @@ const Formation = () => {
   }, [inscriptionActivated])
 
   const handleFilterFormations = (type, name) => {
-    // console.log(type, name)
     if (type === 'discipline') {
       setDiscipline(name)
     } else if (type === 'age') {

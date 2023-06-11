@@ -65,11 +65,8 @@ const ProductTemplate = ({ data, path }) => {
     })
   )
 
-  // console.log(gallery)
-
   const productSelectQuantity = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const [quantity, setQuantity] = useState(1)
-  // console.log(path)
   return (
     <DefaultLayout>
       <Container>
@@ -80,11 +77,11 @@ const ProductTemplate = ({ data, path }) => {
         <img
           src={waves}
           style={{ width: '100%', marginBottom: '2.5em' }}
-          alt=''
+          alt=""
         />
 
         <TitleWrapper>
-          <ReturnLink to='/nos-ouvrages'>
+          <ReturnLink to="/nos-ouvrages">
             Revenir à la page de Nos Ouvrages
           </ReturnLink>
           <Title>
@@ -103,10 +100,10 @@ const ProductTemplate = ({ data, path }) => {
               showThumbnails={false}
               items={gallery}
             />
-            <LinkButton color='true' to='/formation'>
+            <LinkButton color="true" to="/formation">
               Nos Formations
             </LinkButton>
-            <LinkButton to='/contact#form'>J'ai une question</LinkButton>
+            <LinkButton to="/contact#form">J'ai une question</LinkButton>
           </LeftWrapper>
 
           <RightWrapper>
@@ -143,7 +140,7 @@ const ProductTemplate = ({ data, path }) => {
             <AddToCartWrapper>
               <AddToCartButton
                 disabled={!avaible}
-                className='snipcart-add-item'
+                className="snipcart-add-item"
                 data-item-id={name}
                 data-item-price={productPrice.replace(',', '.')}
                 data-item-url={`https://institutarchedenoe.fr/nos-ouvrages/${path}`} // TODO changer l url
@@ -179,16 +176,16 @@ const ProductTemplate = ({ data, path }) => {
               </SocialText>
               <SocialBox>
                 <a
-                  target='_blank'
-                  rel='noreferrer'
+                  target="_blank"
+                  rel="noreferrer"
                   href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//institutarchedenoe.fr
 ${path}`}
                 >
                   <SocialIcon src={facebookIcon} />
                 </a>
                 <a
-                  target='_blank'
-                  rel='noreferrer'
+                  target="_blank"
+                  rel="noreferrer"
                   href={`https://twitter.com/intent/tweet?url=https://institutarchedenoe.fr${path}&text=`}
                 >
                   <SocialIcon src={twitterIcon} />
@@ -204,7 +201,7 @@ ${path}`}
             marginTop: '3.5em',
             transform: 'rotate(180deg) scaleX(-1)'
           }}
-          alt=''
+          alt=""
         />
       </Container>
     </DefaultLayout>
