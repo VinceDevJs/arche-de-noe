@@ -11,6 +11,7 @@ import logoHeader from './../../../assets/icons/header/logo_header.png'
 import cartIcon from './../../../assets/icons/header/cart-icon.png'
 
 const Index = ({ inscriptionActivated }) => {
+  console.log('🚀 ~ file: index.js:14 ~ Index ~ inscriptionActivated:', inscriptionActivated)
   const { state } = useContext(SnipcartContext)
   const { cartQuantity } = state
 
@@ -108,7 +109,7 @@ export const LinkBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${props => props.inscriptionActivated ? '80%' : '65%'};
+  width: ${props => props.inscription ? '80%' : '65%'};
 `
 
 export const NavMobile = styled.div`

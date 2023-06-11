@@ -253,6 +253,8 @@ collections:
                     "Classique B",
                     "semi-intensif",
                     "intensif",
+                    "Pré Ados",
+                    "Ados",
                   ]
                 hint: "Sélectionner le Niveau a afficher pour ce cours."
               - {
@@ -575,6 +577,8 @@ collections:
             "Classique",
             "semi-intensif",
             "intensif",
+            "Pré Ados",
+            "Ados",
           ]
         hint: "Sélectionner le niveau a afficher en dessous de la matiere."
         required: true

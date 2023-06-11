@@ -13,54 +13,9 @@ const MainInscription = () => {
   return (
     <Container id="main_inscription">
       <Title>
-        Les étapes pour m’inscrire et embarquer dans l’arche de Noé !
+        Pour vous inscrire et embarquer dans l’Arche de Noé veuillez vous présenter sur place aux dates d’inscription
       </Title>
 
-      <ContentBox>
-        {/* <ContentIconBox>
-          <ContentIcon src={stepOneIcon} />
-        </ContentIconBox> */}
-        <ContentText>
-          1. Cliquer <ContentLinkDownload href="https://interface.institutarchedenoe.fr/register.php">ici</ContentLinkDownload> et compléter le formulaire.
-        </ContentText>
-      </ContentBox>
-
-      <ContentBox>
-        {/* <ContentIconBox>
-          <ContentIcon src={stepTwoIcon} />
-        </ContentIconBox> */}
-        <ContentText color="true">
-          2. Choisir la(les) classe(s) pour l’année 2022-2023.
-        </ContentText>
-      </ContentBox>
-
-      <ContentBox>
-        {/* <ContentIconBox>
-          <ContentIcon src={stepThreeIcon} />
-        </ContentIconBox> */}
-        <ContentText>
-          3. Se présenter au secrétariat le week-end du 3-4 septembre pour finaliser l’inscription.
-        </ContentText>
-      </ContentBox>
-
-      {/* <ContentBox>
-        <ContentIconBox>
-          <ContentIcon src={stepFourIcon} />
-        </ContentIconBox>
-        <ContentText color='true'>
-          Je finalise mon inscription en réglant la cotisation.
-        </ContentText>
-      </ContentBox> */}
-
-      <p style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '2em' }}>Important :</p>
-
-      <p style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '3em', display: 'block', padding: '0 3em' }}>
-        *La pré-inscription n’est pas une inscription définitive ! Il vous faudra obligatoirement venir finaliser celle-ci le weekend du 3-4 septembre au secrétariat à partir de 11:00 à défaut nous ne vous garantissons pas la(les) place(s).
-      </p>
-
-      <p style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '3em', display: 'block', padding: '0 3em' }}>
-        *Il n’est pas possible de faire la pré-inscription pour les classes Enfants.
-      </p>
       <Button to="/contact#form">J’ai une question</Button>
     </Container>
   )
@@ -78,7 +33,7 @@ export const Title = styled.p`
   max-width: 50em;
   margin: 1em auto 2em;
   font-family: 'Avenir Next Bold', sans-serif;
-  font-size: 3em;
+  font-size: 2.5em;
   color: #00a1c6;
   text-align: center;
 

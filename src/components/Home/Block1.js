@@ -10,7 +10,7 @@ const Block1 = () => {
   return (
     <Container>
       {/* <Waves src={wavesBackground} alt='arche de noe' /> */}
-      <LeftBox data-aos='fade-right' data-aos-duration='3000'>
+      <LeftBox data-aos="fade-right" data-aos-duration="3000">
         <Logo src={logo} />
         <TopTitle>institut</TopTitle>
         <Title>L'Arche de Noé</Title>
@@ -21,9 +21,9 @@ const Block1 = () => {
           </Bold>
           pour enfants et adultes.
         </Text>
-        <Button to='#block3'>En savoir plus</Button>
+        <Button to="#block3">En savoir plus</Button>
       </LeftBox>
-      <RightBox data-aos='fade-down' data-aos-duration='2000'>
+      <RightBox data-aos="fade-down" data-aos-duration="2000">
         <BookImage src={booksSvg} />
       </RightBox>
     </Container>

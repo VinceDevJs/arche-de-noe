@@ -41,14 +41,14 @@ const BurgerMenu = ({ inscriptionActivated }) => {
           Accueil
         </LinkText>
         {inscriptionActivated && (
-          <>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             <LinkText onClick={() => setIsOpen(!isOpen)} to="/formation">
               Formation
             </LinkText>
             <LinkText onClick={() => setIsOpen(!isOpen)} to="/emploi-du-temps">
               Emploi du temps
             </LinkText>
-          </>
+          </div>
         )}
         <LinkText onClick={() => setIsOpen(!isOpen)} to="/nos-ouvrages">
           Nos ouvrages
