@@ -56,7 +56,7 @@ slide:
     buttonLink: https://institutarchedenoe.fr/inscription
     showButton: true
     title: Inscription 2023_2024
-    subTitle: Dimanche 3 juillet 2023
+    subTitle: Dimanche 2 juillet 2023
     content: Langue Arabe, Coran & Sciences Islamiques pour Adultes & Enfants
     clearText: true
     image: /img/12d9c1a0-7a07-4f32-8ee5-697ac57cd08c.jpg
