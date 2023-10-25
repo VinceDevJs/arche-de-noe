@@ -13,7 +13,7 @@ const Block1 = () => {
       <LeftBox data-aos="fade-right" data-aos-duration="3000">
         <Logo src={logo} />
         <TopTitle>institut</TopTitle>
-        <Title>L'Arche de Noé</Title>
+        <Title>L&apos;Arche de Noé</Title>
         <Text>
           L’Institut l’arche de Noé dispense
           <Bold>
@@ -38,6 +38,8 @@ export const Container = styled.div`
   justify-content: center;
   padding: 5em 0 2em 3em;
   height: 28em;
+ z-index: 100000;
+ position: relative;
 
   @media (max-width: ${breakpoints.m}px) {
     flex-direction: column;
