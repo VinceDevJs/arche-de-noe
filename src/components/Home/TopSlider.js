@@ -57,7 +57,7 @@ const TopSlider = () => {
         <Block1 />
       </SwiperSlide>
 
-      {
+      {/* {
         slides.map(slide => {
           return slide.show && (
             <SwiperSlide key={slide.title}>
@@ -79,7 +79,7 @@ const TopSlider = () => {
             </SwiperSlide>
           )
         })
-      }
+      } */}
 
     </Swiper>
   )
