@@ -95,6 +95,11 @@ export const GlobalStyle = () => (
         outline: none;
       }
 
+      .bm-menu-wrap {
+        background: rgb(255, 255, 255)!important;
+        z-index: 1000000000 !important;
+      }
+
       .bm-menu {
         background: rgb(255, 255, 255);
         padding: 2.5em 1.5em 0;
